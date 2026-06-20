@@ -50,7 +50,11 @@ export default function Hero() {
         <p
           ref={subtextPanelRef}
           className="text-white text-lg lg:text-xl font-medium leading-relaxed max-w-2xl"
-          style={{ opacity: 0, transform: 'translateY(30px)', textShadow: '0 2px 10px rgba(0, 74, 204, 0.35)' }}
+          style={{
+            opacity: 0,
+            transform: 'translateY(30px)',
+            textShadow: '0 1px 6px rgba(78, 166, 117, 0.3), 0 2px 12px rgba(0, 74, 204, 0.25)',
+          }}
         >
           Premium English Coaching and Ethical New Zealand Education Consultancy driven by industry professionals.
         </p>
