@@ -2,6 +2,7 @@ export default function ProgramCard({ program }) {
   const {
     accentColor,
     accentShadow,
+    glowColor,
     floatClass,
     animationDelay,
     image,
@@ -9,6 +10,10 @@ export default function ProgramCard({ program }) {
     badge,
     icon,
     iconPositionClass,
+    logo,
+    logoAlt,
+    logoPositionClass,
+    logoFloatClass,
     title,
     description,
     buttonText,
@@ -35,6 +40,19 @@ export default function ProgramCard({ program }) {
         >
           <span className="block text-2xl font-black mb-0.5 leading-none">{badge.value}</span>
           <span className="block text-[9px] uppercase tracking-wider font-bold leading-tight">{badge.label}</span>
+        </div>
+
+        <div className={`absolute top-1/2 -translate-y-1/2 ${logoPositionClass} ${logoFloatClass} z-10`}>
+          <div
+            className="absolute inset-0 -m-6 rounded-full blur-2xl"
+            style={{ backgroundColor: glowColor }}
+          />
+          <img
+            src={logo}
+            alt={logoAlt}
+            className="relative w-20 h-20 lg:w-24 lg:h-24 object-contain"
+            style={{ filter: `drop-shadow(0 8px 20px ${glowColor})` }}
+          />
         </div>
       </div>
 

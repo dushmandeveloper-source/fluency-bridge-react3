@@ -1,15 +1,22 @@
 import fluencyBridgeImage from '../assets/Fluency Bridge.png';
 import nzAcademicBridgeImage from '../assets/NZ Academic Bridge.png';
+import fluencyBridgeLogo from '../assets/fluency-bridge-logo.png';
+import nzAcademicBridgeLogo from '../assets/nz-academic-bridge-logo.png';
 
 export const programs = [
   {
     id: 'fluency-bridge',
     accentColor: 'var(--custom-green)',
     accentShadow: 'rgba(78,166,117,0.2)',
+    glowColor: 'rgba(78,166,117,0.55)',
     floatClass: 'float-fast',
     animationDelay: undefined,
     image: fluencyBridgeImage,
     imageAlt: 'Coaching',
+    logo: fluencyBridgeLogo,
+    logoAlt: 'Fluency Bridge logo',
+    logoPositionClass: 'left-6',
+    logoFloatClass: 'float-slow',
     badge: { value: '100%', label: 'Natural Method', positionClass: 'right-6', rotationClass: 'rotate-3' },
     icon: (
       <path
@@ -29,10 +36,15 @@ export const programs = [
     id: 'nz-academic-bridge',
     accentColor: 'var(--custom-blue)',
     accentShadow: 'rgba(0,74,204,0.2)',
+    glowColor: 'rgba(0,74,204,0.55)',
     floatClass: 'float-slow',
     animationDelay: '1s',
     image: nzAcademicBridgeImage,
     imageAlt: 'Academic',
+    logo: nzAcademicBridgeLogo,
+    logoAlt: 'NZ Academic Bridge logo',
+    logoPositionClass: 'right-6',
+    logoFloatClass: 'float-fast',
     badge: { value: 'Zero', label: 'Placement Fee', positionClass: 'left-6', rotationClass: '-rotate-3' },
     icon: (
       <>
