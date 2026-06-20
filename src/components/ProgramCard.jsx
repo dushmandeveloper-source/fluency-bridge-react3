@@ -42,17 +42,14 @@ export default function ProgramCard({ program }) {
           <span className="block text-[9px] uppercase tracking-wider font-bold leading-tight">{badge.label}</span>
         </div>
 
-        <div className={`absolute top-1/2 -translate-y-1/2 ${logoPositionClass} ${logoFloatClass} z-10`}>
+        <div className={`absolute top-6 ${logoPositionClass} ${logoFloatClass} z-20`}>
+          <div className="absolute inset-0 -m-4 rounded-full blur-xl" style={{ backgroundColor: glowColor }} />
           <div
-            className="absolute inset-0 -m-6 rounded-full blur-2xl"
-            style={{ backgroundColor: glowColor }}
-          />
-          <img
-            src={logo}
-            alt={logoAlt}
-            className="relative w-20 h-20 lg:w-24 lg:h-24 object-contain"
-            style={{ filter: `drop-shadow(0 8px 20px ${glowColor})` }}
-          />
+            className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-white/95 p-3 flex items-center justify-center"
+            style={{ boxShadow: `0 10px 25px ${glowColor}` }}
+          >
+            <img src={logo} alt={logoAlt} className="w-full h-full object-contain" />
+          </div>
         </div>
       </div>
 
