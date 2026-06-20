@@ -1,3 +1,5 @@
+import fluencyBridgeLogo from '../assets/fluency-bridge-logo.png';
+
 const NAV_LINKS = [
   { label: 'Home', href: '#', active: true, color: 'var(--custom-green)' },
   { label: 'English Coaching', href: '#', color: 'var(--custom-green)' },
@@ -7,21 +9,8 @@ const NAV_LINKS = [
 export default function Navbar() {
   return (
     <nav className="fixed w-full z-50 top-6 px-4 md:px-12 flex justify-between items-center interactive-el">
-      <div className="flex items-center gap-3 glass-nav py-2 px-5 rounded-full">
-        <svg
-          className="w-8 h-8"
-          style={{ color: 'var(--custom-green)' }}
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-        >
-          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
-          <path d="M6.5 2h11" />
-        </svg>
-        <span className="font-extrabold text-slate-800 tracking-wider text-sm md:text-base">
-          FLUENCY BRIDGE
-        </span>
+      <div className="flex items-center glass-nav py-2 px-5 rounded-full">
+        <img src={fluencyBridgeLogo} alt="Fluency Bridge" className="h-10 md:h-12 object-contain" />
       </div>
 
       <div className="hidden md:flex glass-nav rounded-full p-1.5 items-center">

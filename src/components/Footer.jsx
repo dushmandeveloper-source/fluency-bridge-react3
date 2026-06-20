@@ -1,3 +1,5 @@
+import nzAcademicBridgeLogo from '../assets/nz-academic-bridge-logo.png';
+
 const BRANCHES = ['Fluency Bridge Coaching', 'NZ Academic Bridge', 'About the Company'];
 
 export default function Footer() {
@@ -8,10 +10,8 @@ export default function Footer() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
         <div>
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md">
-              <span className="font-black text-xl" style={{ color: 'var(--custom-blue)' }}>
-                NZ
-              </span>
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md overflow-hidden">
+              <img src={nzAcademicBridgeLogo} alt="NZ Academic Bridge" className="w-full h-full object-cover" />
             </div>
             <h4 className="font-black text-2xl tracking-wide">Fluency Bridge Ltd.</h4>
           </div>

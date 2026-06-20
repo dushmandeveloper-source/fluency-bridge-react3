@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
+import bannerImage from '../assets/banner.png';
 
 gsap.registerPlugin(TextPlugin);
 
@@ -48,8 +49,8 @@ export default function Hero() {
   return (
     <header className="relative h-[75vh] min-h-[600px] w-full flex items-center overflow-hidden z-10 bg-slate-900">
       <img
-        src="https://images.unsplash.com/photo-1522163182402-834f871fd851?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-        alt="Mountain Climbing"
+        src={bannerImage}
+        alt="Climber reaching the summit with the New Zealand flag"
         className="absolute inset-0 w-full h-full object-cover object-center animate-bg-zoom opacity-90"
       />
 
