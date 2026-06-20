@@ -95,7 +95,7 @@ h1, h2, h3, .serif-font {
 
 .animate-bg-zoom {
   animation: zoomPan 25s ease-in-out infinite alternate;
-  transform-origin: center center;
+  transform-origin: top center;
 }
 
 @keyframes zoomPan {
@@ -132,6 +132,22 @@ h1, h2, h3, .serif-font {
 
 @keyframes typeBlink {
   50% { opacity: 0; }
+}
+
+.motion-letter-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.motion-letter {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.motion-text-accent {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
 }
 
 .glass-nav {
