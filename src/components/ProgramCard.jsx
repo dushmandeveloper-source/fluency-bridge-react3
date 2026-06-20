@@ -63,10 +63,10 @@ export default function ProgramCard({ program }) {
           </svg>
         </div>
 
-        <h4 className="text-3xl font-black mb-3 sans-font" style={{ color: accentColor }}>
+        <h4 className="text-3xl font-black mb-3 mt-6 sans-font" style={{ color: accentColor }}>
           {title}
         </h4>
-        <p className="text-slate-500 text-sm leading-relaxed font-medium mb-6">{description}</p>
+        <p className="text-slate-500 text-sm leading-relaxed font-medium mb-6 line-clamp-3">{description}</p>
 
         <button
           className="accent-btn w-full bg-slate-50 border border-slate-200 text-slate-800 font-bold py-3.5 rounded-xl transition-all flex justify-center items-center gap-2 hover:text-white"

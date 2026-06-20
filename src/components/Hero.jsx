@@ -11,7 +11,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <header className="relative h-[75vh] min-h-[600px] w-full flex items-center overflow-hidden z-10 bg-slate-900">
+    <header className="relative h-[65vh] min-h-[520px] w-full flex items-center overflow-hidden z-10 bg-slate-900">
       <img
         src={bannerImage}
         alt="Climber reaching the summit with the New Zealand flag"
@@ -40,8 +40,6 @@ export default function Hero() {
           glowRgb="78, 166, 117"
           className="text-4xl sm:text-6xl lg:text-7xl font-bold drop-shadow-lg"
         />
-
-        <div className="w-10 h-1 rounded-full" style={{ backgroundColor: 'var(--custom-green)' }} />
 
         <p
           className={`text-white text-lg lg:text-xl font-medium leading-relaxed max-w-2xl transition-all duration-1000 ease-out ${
