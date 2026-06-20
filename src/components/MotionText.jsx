@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef } from 'react';
-import { animate, stagger } from 'animejs';
+import { animate, stagger, set } from 'animejs';
 
 function toChars(text) {
   return text.split('').map((char, index) => ({
@@ -15,6 +15,8 @@ export default function MotionText({
   delayOffset = 0,
   staggerMs = 40,
   duration = 1200,
+  loop = false,
+  loopDelay = 3500,
   accent = false,
   accentColor,
   glowRgb = '78, 166, 117',
@@ -27,28 +29,38 @@ export default function MotionText({
     const letters = containerRef.current?.querySelectorAll('.motion-letter');
     if (!letters || letters.length === 0) return;
 
-    const reveal = animate(letters, {
-      translateY: ['1.1em', '0em'],
-      opacity: [0, 1],
-      ease: 'outExpo',
-      duration,
-      delay: stagger(staggerMs, { start: delayOffset }),
-      onComplete: () => {
-        if (accent && containerRef.current) {
-          animate(containerRef.current, {
-            opacity: [1, 0.5],
-            duration: 1250,
-            ease: 'inOutSine',
-            loop: true,
-            alternate: true,
-          });
-        }
-        onComplete?.();
-      },
-    });
+    let cancelled = false;
+    let timeoutId;
 
-    return () => reveal.pause();
-  }, [chars, delayOffset, staggerMs, duration, accent, onComplete]);
+    const playReveal = (isFirstPlay) => {
+      if (cancelled) return;
+      animate(letters, {
+        translateY: ['1.1em', '0em'],
+        opacity: [0, 1],
+        ease: 'outExpo',
+        duration,
+        delay: stagger(staggerMs, { start: isFirstPlay ? delayOffset : 0 }),
+        onComplete: () => {
+          if (cancelled) return;
+          if (isFirstPlay) onComplete?.();
+          if (loop) {
+            timeoutId = setTimeout(() => {
+              if (cancelled) return;
+              set(letters, { translateY: '1.1em', opacity: 0 });
+              playReveal(false);
+            }, loopDelay);
+          }
+        },
+      });
+    };
+
+    playReveal(true);
+
+    return () => {
+      cancelled = true;
+      clearTimeout(timeoutId);
+    };
+  }, [chars, delayOffset, staggerMs, duration, loop, loopDelay, onComplete]);
 
   return (
     <Tag
