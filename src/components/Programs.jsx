@@ -4,7 +4,7 @@ import { programs } from '../data/programs.jsx';
 export default function Programs() {
   return (
     <main className="relative z-20 w-full bg-slate-50 pt-20 pb-32">
-      <div className="text-center mb-16 px-6">
+      <div className="text-center mb-8 px-6">
         <h2
           className="text-sm font-extrabold mb-3 sans-font tracking-widest uppercase"
           style={{ color: 'var(--custom-blue)' }}

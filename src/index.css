@@ -46,7 +46,7 @@ h1, h2, h3, .serif-font {
 .cursor-outline {
   width: 40px;
   height: 40px;
-  border: 1px solid rgba(78, 166, 117, 0.5);
+  border: 1px solid rgba(0, 74, 204, 0.5);
   position: fixed;
   border-radius: 50%;
   pointer-events: none;
@@ -63,8 +63,8 @@ h1, h2, h3, .serif-font {
 .cursor-hover .cursor-outline {
   width: 60px;
   height: 60px;
-  background-color: rgba(78, 166, 117, 0.1);
-  border-color: var(--custom-green);
+  background-color: rgba(0, 74, 204, 0.1);
+  border-color: var(--custom-blue);
 }
 
 #particle-container {
