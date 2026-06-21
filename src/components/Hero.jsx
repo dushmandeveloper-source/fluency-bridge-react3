@@ -11,7 +11,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <header className="relative h-[65vh] min-h-[520px] w-full flex items-center overflow-hidden z-10 bg-slate-900">
+    <header className="relative min-h-[600px] sm:min-h-[640px] md:h-[65vh] md:min-h-[560px] w-full flex items-center overflow-hidden z-10 bg-slate-900 py-28 md:py-0">
       <img
         src={bannerImage}
         alt="Climber reaching the summit with the New Zealand flag"
@@ -21,13 +21,13 @@ export default function Hero() {
       <div className="absolute inset-0 bg-slate-900/65" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-50" />
 
-      <div className="relative z-20 w-full max-w-4xl mx-auto px-6 md:px-12 flex flex-col items-center text-center gap-6 mt-16">
+      <div className="relative z-20 w-full max-w-4xl mx-auto px-6 md:px-12 flex flex-col items-center text-center gap-4 sm:gap-6 mt-8 sm:mt-12 md:mt-16">
         <MotionText
           as="h1"
           text="Architecting"
           delayOffset={200}
           loop
-          className="text-5xl sm:text-7xl lg:text-[5.5rem] font-black text-white mb-2 leading-[1.05] tracking-tight sans-font drop-shadow-2xl"
+          className="text-4xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-black text-white mb-2 leading-[1.05] tracking-tight sans-font drop-shadow-2xl"
         />
 
         <MotionText
@@ -38,11 +38,11 @@ export default function Hero() {
           accent
           accentColor="#e2f4ea"
           glowRgb="78, 166, 117"
-          className="text-4xl sm:text-6xl lg:text-7xl font-bold drop-shadow-lg"
+          className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold drop-shadow-lg"
         />
 
         <p
-          className={`text-white text-lg lg:text-xl font-medium leading-relaxed max-w-2xl transition-all duration-1000 ease-out ${
+          className={`text-white text-base sm:text-lg lg:text-xl font-medium leading-relaxed max-w-2xl transition-all duration-1000 ease-out ${
             subtextVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
           style={{

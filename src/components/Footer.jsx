@@ -1,5 +1,3 @@
-import nzAcademicBridgeLogo from '../assets/nz-academic-bridge-logo.png';
-
 const BRANCHES = ['Fluency Bridge Coaching', 'NZ Academic Bridge', 'About the Company'];
 
 export default function Footer() {
@@ -9,12 +7,6 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
         <div>
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md overflow-hidden">
-              <img src={nzAcademicBridgeLogo} alt="NZ Academic Bridge" className="w-full h-full object-cover" />
-            </div>
-            <h4 className="font-black text-2xl tracking-wide">Fluency Bridge Ltd.</h4>
-          </div>
           <p className="text-sm text-white/80 mb-4 pr-4 leading-relaxed font-medium">
             Architecting Global Futures through elite English coaching and ethical NZ education consultancy.
           </p>
@@ -68,6 +60,11 @@ export default function Footer() {
             <li>
               <a href="mailto:info@nzacademicbridge.co.nz" className="hover:text-white transition interactive-el">
                 info@nzacademicbridge.co.nz
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@fluencybg.com" className="hover:text-white transition interactive-el">
+                info@fluencybg.com
               </a>
             </li>
           </ul>

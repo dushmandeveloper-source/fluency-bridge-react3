@@ -7,6 +7,7 @@ export default function ProgramCard({ program }) {
     animationDelay,
     image,
     imageAlt,
+    imageAspect,
     badge,
     icon,
     iconPositionClass,
@@ -21,12 +22,12 @@ export default function ProgramCard({ program }) {
 
   return (
     <div
-      className={`group relative rounded-[2rem] bg-white overflow-hidden shadow-xl ${floatClass} transition-all duration-500 hover:-translate-y-2 interactive-el flex flex-col h-[550px] border border-slate-100`}
+      className={`group relative rounded-[2rem] bg-white overflow-hidden shadow-xl ${floatClass} transition-all duration-500 hover:-translate-y-2 interactive-el flex flex-col border border-slate-100`}
       style={{ animationDelay }}
       onMouseEnter={(e) => (e.currentTarget.style.boxShadow = `0 30px 60px ${accentShadow}`)}
       onMouseLeave={(e) => (e.currentTarget.style.boxShadow = '')}
     >
-      <div className="relative h-[55%] w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden bg-slate-50" style={{ aspectRatio: imageAspect }}>
         <img
           src={image}
           alt={imageAlt}
@@ -53,7 +54,7 @@ export default function ProgramCard({ program }) {
         </div>
       </div>
 
-      <div className="relative h-[45%] bg-white px-10 pb-10 flex flex-col justify-end">
+      <div className="relative bg-white px-6 sm:px-8 md:px-10 pt-8 pb-8 sm:pb-10 flex flex-col flex-1">
         <div
           className={`absolute -top-10 ${iconPositionClass} w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg border border-slate-50 transition-transform group-hover:-translate-y-2`}
           style={{ color: accentColor }}
@@ -63,10 +64,10 @@ export default function ProgramCard({ program }) {
           </svg>
         </div>
 
-        <h4 className="text-3xl font-black mb-3 mt-6 sans-font" style={{ color: accentColor }}>
+        <h4 className="text-2xl sm:text-3xl font-black mb-3 mt-6 sans-font" style={{ color: accentColor }}>
           {title}
         </h4>
-        <p className="text-slate-500 text-sm leading-relaxed font-medium mb-6 line-clamp-3">{description}</p>
+        <p className="text-slate-500 text-sm leading-relaxed font-medium mb-6 line-clamp-3 flex-1">{description}</p>
 
         <button
           className="accent-btn w-full bg-slate-50 border border-slate-200 text-slate-800 font-bold py-3.5 rounded-xl transition-all flex justify-center items-center gap-2 hover:text-white"
