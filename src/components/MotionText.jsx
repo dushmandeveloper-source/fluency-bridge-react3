@@ -18,6 +18,7 @@ export default function MotionText({
   loop = false,
   loopDelay = 3500,
   accent = false,
+  glow = false,
   accentColor,
   glowRgb = '78, 166, 117',
   onComplete,
@@ -68,7 +69,10 @@ export default function MotionText({
       className={`${accent ? 'motion-text-accent' : ''} ${className}`}
       style={{
         color: accentColor,
-        textShadow: accent ? `0 0 8px rgba(${glowRgb}, 0.7), 0 0 28px rgba(${glowRgb}, 0.4)` : undefined,
+        textShadow:
+          accent || glow
+            ? `0 0 10px rgba(${glowRgb}, 0.9), 0 0 26px rgba(${glowRgb}, 0.7), 0 0 48px rgba(${glowRgb}, 0.45)`
+            : undefined,
       }}
     >
       {chars.map(({ key, char }) => (
