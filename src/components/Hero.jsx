@@ -40,7 +40,7 @@ export default function Hero() {
           delayOffset={900}
           loop
           accent
-          accentColor="#86e0ab"
+          accentColor="#ffffff"
           glowRgb="78, 166, 117"
           className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold"
         />
