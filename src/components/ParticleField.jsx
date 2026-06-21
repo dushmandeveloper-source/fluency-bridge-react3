@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-const COLORS = ['#4ea675', '#004acc', '#003185'];
+const COLORS = ['#a8e8c4', '#9cc8ff', '#ffffff'];
 const PARTICLE_COUNT = 18;
 
 export default function ParticleField() {
@@ -10,7 +10,7 @@ export default function ParticleField() {
         const size = Math.random() * 3 + 2;
         const color = COLORS[Math.floor(Math.random() * COLORS.length)];
         const angle = Math.random() * Math.PI * 2;
-        const distance = Math.random() * 50 + 20;
+        const distance = Math.random() * 70 + 50;
         return {
           id: i,
           size,
@@ -19,8 +19,8 @@ export default function ParticleField() {
           top: `${Math.random() * 100}%`,
           dx: `${(Math.cos(angle) * distance).toFixed(0)}px`,
           dy: `${(Math.sin(angle) * distance).toFixed(0)}px`,
-          animationDuration: `${Math.random() * 10 + 8}s`,
-          animationDelay: `-${Math.random() * 15}s`,
+          animationDuration: `${Math.random() * 4 + 3}s`,
+          animationDelay: `-${Math.random() * 7}s`,
         };
       }),
     []
