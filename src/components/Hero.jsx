@@ -12,11 +12,11 @@ export default function Hero() {
   }, []);
 
   return (
-    <header className="relative min-h-[480px] sm:min-h-[560px] md:h-[65vh] md:min-h-[560px] w-full flex items-center overflow-hidden z-10 bg-slate-900 py-20 md:py-0">
+    <header className="relative min-h-[480px] sm:min-h-[560px] md:h-[72vh] md:min-h-[600px] w-full flex items-center overflow-hidden z-10 bg-slate-900 py-20 md:py-0">
       <img
         src={bannerImage}
         alt="Climber reaching the summit with the New Zealand flag"
-        className="absolute inset-0 w-full h-full object-cover object-top animate-bg-zoom opacity-90"
+        className="absolute inset-0 w-full h-full object-cover object-center animate-bg-zoom opacity-90"
       />
 
       <div className="absolute inset-0 bg-slate-900/65" />
