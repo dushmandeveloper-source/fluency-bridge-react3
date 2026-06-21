@@ -42,16 +42,6 @@ export default function ProgramCard({ program }) {
           <span className="block text-2xl font-black mb-0.5 leading-none">{badge.value}</span>
           <span className="block text-[9px] uppercase tracking-wider font-bold leading-tight">{badge.label}</span>
         </div>
-
-        <div className={`absolute top-6 ${logoPositionClass} ${logoFloatClass} z-20`}>
-          <div className="absolute inset-0 -m-4 rounded-full blur-xl" style={{ backgroundColor: glowColor }} />
-          <div
-            className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-white/95 p-3 flex items-center justify-center"
-            style={{ boxShadow: `0 10px 25px ${glowColor}` }}
-          >
-            <img src={logo} alt={logoAlt} className="w-full h-full object-contain" />
-          </div>
-        </div>
       </div>
 
       <div className="relative bg-white px-6 sm:px-8 md:px-10 pt-8 pb-8 sm:pb-10 flex flex-col flex-1">
@@ -62,6 +52,16 @@ export default function ProgramCard({ program }) {
           <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {icon}
           </svg>
+        </div>
+
+        <div className={`absolute -top-10 lg:-top-12 ${logoPositionClass} ${logoFloatClass} z-20`}>
+          <div className="absolute inset-0 -m-4 rounded-full blur-xl" style={{ backgroundColor: glowColor }} />
+          <div
+            className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-white/95 p-3 flex items-center justify-center"
+            style={{ boxShadow: `0 10px 25px ${glowColor}` }}
+          >
+            <img src={logo} alt={logoAlt} className="w-full h-full object-contain" />
+          </div>
         </div>
 
         <h4 className="text-2xl sm:text-3xl font-black mb-3 mt-6 sans-font" style={{ color: accentColor }}>
