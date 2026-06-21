@@ -28,7 +28,6 @@ export default function Hero() {
           as="h1"
           text="Architecting"
           delayOffset={200}
-          loop
           glow
           glowRgb="0, 116, 255"
           className="text-4xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-black text-white mb-2 leading-[1.05] tracking-tight sans-font"
@@ -38,7 +37,6 @@ export default function Hero() {
           as="h2"
           text="Global Futures."
           delayOffset={900}
-          loop
           accent
           accentColor="#ffffff"
           glowRgb="78, 166, 117"
