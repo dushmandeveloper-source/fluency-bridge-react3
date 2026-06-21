@@ -20,7 +20,7 @@ export default function Hero() {
       />
 
       <div className="absolute inset-0 bg-slate-900/65" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-50" />
+      <div className="absolute inset-0 hero-fade" />
       <ParticleField />
 
       <div className="relative z-20 w-full max-w-4xl mx-auto px-6 md:px-12 flex flex-col items-center text-center gap-4 sm:gap-6 mt-8 sm:mt-12 md:mt-16">
