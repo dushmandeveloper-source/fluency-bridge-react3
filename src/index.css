@@ -148,7 +148,7 @@ h1, h2, h3, .serif-font {
 }
 
 .hero-fade {
-  background: linear-gradient(to bottom, transparent 0%, transparent 20%, rgba(248, 250, 252, 0.9) 55%, #f8fafc 78%, #f8fafc 100%);
+  background: linear-gradient(to bottom, transparent 0%, transparent 55%, rgba(248, 250, 252, 0.85) 80%, #f8fafc 96%, #f8fafc 100%);
 }
 
 .glass-nav {
