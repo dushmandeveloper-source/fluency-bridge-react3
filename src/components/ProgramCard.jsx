@@ -6,7 +6,6 @@ export default function ProgramCard({ program }) {
     animationDelay,
     image,
     imageAlt,
-    imageAspect,
     badge,
     iconPositionClass,
     logo,
@@ -23,7 +22,7 @@ export default function ProgramCard({ program }) {
       onMouseEnter={(e) => (e.currentTarget.style.boxShadow = `0 30px 60px ${accentShadow}`)}
       onMouseLeave={(e) => (e.currentTarget.style.boxShadow = '')}
     >
-      <div className="relative w-full overflow-hidden bg-slate-50 rounded-t-[2rem]" style={{ aspectRatio: imageAspect }}>
+      <div className="relative w-full h-56 sm:h-64 md:h-72 overflow-hidden bg-slate-50 rounded-t-[2rem]">
         <img
           src={image}
           alt={imageAlt}
@@ -42,9 +41,9 @@ export default function ProgramCard({ program }) {
 
       <div className="relative bg-white rounded-b-[2rem] px-6 sm:px-8 md:px-10 pt-8 pb-8 sm:pb-10 flex flex-col flex-1">
         <div
-          className={`absolute -top-10 ${iconPositionClass} w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg border border-slate-50 transition-transform group-hover:-translate-y-2 overflow-hidden`}
+          className={`absolute -top-12 ${iconPositionClass} w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-2xl flex items-center justify-center shadow-lg border border-slate-50 transition-transform group-hover:-translate-y-2 overflow-hidden`}
         >
-          <img src={logo} alt={logoAlt} className="w-full h-full object-contain p-2" />
+          <img src={logo} alt={logoAlt} className="w-full h-full object-contain p-2.5" />
         </div>
 
         <h4 className="text-2xl sm:text-3xl font-black mb-3 mt-6 sans-font" style={{ color: accentColor }}>

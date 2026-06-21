@@ -1,13 +1,13 @@
 import { useMemo } from 'react';
 
-const COLORS = ['#4ea675', '#004acc', '#ffffff'];
+const COLORS = ['#4ea675', '#004acc', '#003185'];
 const PARTICLE_COUNT = 60;
 
 export default function ParticleField() {
   const particles = useMemo(
     () =>
       Array.from({ length: PARTICLE_COUNT }, (_, i) => {
-        const size = Math.random() * 2 + 1;
+        const size = Math.random() * 3 + 2;
         const color = COLORS[Math.floor(Math.random() * COLORS.length)];
         return {
           id: i,
