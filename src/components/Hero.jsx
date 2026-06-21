@@ -19,6 +19,7 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full object-cover object-top animate-bg-zoom opacity-90"
       />
 
+      <div className="absolute inset-x-0 bottom-0 h-1/3 backdrop-blur-xl" />
       <div className="absolute inset-0 bg-slate-900/65" />
       <div className="absolute inset-0 hero-fade" />
       <ParticleField />
@@ -31,7 +32,7 @@ export default function Hero() {
           loop
           glow
           glowRgb="0, 116, 255"
-          className="text-4xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-black text-white mb-2 leading-[1.05] tracking-tight sans-font drop-shadow-2xl"
+          className="text-4xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-black text-white mb-2 leading-[1.05] tracking-tight sans-font"
         />
 
         <MotionText
@@ -42,7 +43,7 @@ export default function Hero() {
           accent
           accentColor="#86e0ab"
           glowRgb="78, 166, 117"
-          className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold drop-shadow-lg"
+          className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold"
         />
 
         <p

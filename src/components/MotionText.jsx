@@ -69,9 +69,9 @@ export default function MotionText({
       className={`${accent ? 'motion-text-accent' : ''} ${className}`}
       style={{
         color: accentColor,
-        textShadow:
+        filter:
           accent || glow
-            ? `0 0 10px rgba(${glowRgb}, 0.9), 0 0 26px rgba(${glowRgb}, 0.7), 0 0 48px rgba(${glowRgb}, 0.45)`
+            ? `drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 8px rgba(${glowRgb}, 0.9)) drop-shadow(0 0 20px rgba(${glowRgb}, 0.7)) drop-shadow(0 0 40px rgba(${glowRgb}, 0.45))`
             : undefined,
       }}
     >
