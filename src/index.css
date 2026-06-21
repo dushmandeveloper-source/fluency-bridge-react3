@@ -68,13 +68,10 @@ h1, h2, h3, .serif-font {
 }
 
 #particle-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  position: absolute;
+  inset: 0;
   pointer-events: none;
-  z-index: 9990;
+  z-index: 15;
   overflow: hidden;
 }
 
@@ -86,11 +83,11 @@ h1, h2, h3, .serif-font {
 }
 
 @keyframes twinkleDrift {
-  0% { transform: translateY(110vh) translateX(0); opacity: 0; }
-  15% { opacity: 0.85; box-shadow: 0 0 8px currentColor; }
-  50% { transform: translateY(0vh) translateX(20px); opacity: 0.6; }
-  85% { opacity: 0.85; box-shadow: 0 0 12px currentColor; }
-  100% { transform: translateY(-110vh) translateX(-20px); opacity: 0; }
+  0% { transform: translate(0, 0); opacity: 0; }
+  20% { opacity: 0.85; box-shadow: 0 0 8px currentColor; }
+  50% { transform: translate(var(--dx), var(--dy)); opacity: 0.6; }
+  80% { opacity: 0.85; box-shadow: 0 0 12px currentColor; }
+  100% { transform: translate(0, 0); opacity: 0; }
 }
 
 .animate-bg-zoom {
