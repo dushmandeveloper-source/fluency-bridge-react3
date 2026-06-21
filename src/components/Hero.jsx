@@ -19,7 +19,6 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full object-cover object-top animate-bg-zoom opacity-90"
       />
 
-      <div className="absolute inset-x-0 bottom-0 h-1/3 backdrop-blur-xl" />
       <div className="absolute inset-0 bg-slate-900/65" />
       <div className="absolute inset-0 hero-fade" />
       <ParticleField />
