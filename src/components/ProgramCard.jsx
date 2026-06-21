@@ -2,19 +2,15 @@ export default function ProgramCard({ program }) {
   const {
     accentColor,
     accentShadow,
-    glowColor,
     floatClass,
     animationDelay,
     image,
     imageAlt,
     imageAspect,
     badge,
-    icon,
     iconPositionClass,
     logo,
     logoAlt,
-    logoPositionClass,
-    logoFloatClass,
     title,
     description,
     buttonText,
@@ -22,12 +18,12 @@ export default function ProgramCard({ program }) {
 
   return (
     <div
-      className={`group relative rounded-[2rem] bg-white overflow-hidden shadow-xl ${floatClass} transition-all duration-500 hover:-translate-y-2 interactive-el flex flex-col border border-slate-100`}
+      className={`group relative rounded-[2rem] bg-white shadow-xl ${floatClass} transition-all duration-500 hover:-translate-y-2 interactive-el flex flex-col border border-slate-100`}
       style={{ animationDelay }}
       onMouseEnter={(e) => (e.currentTarget.style.boxShadow = `0 30px 60px ${accentShadow}`)}
       onMouseLeave={(e) => (e.currentTarget.style.boxShadow = '')}
     >
-      <div className="relative w-full overflow-hidden bg-slate-50" style={{ aspectRatio: imageAspect }}>
+      <div className="relative w-full overflow-hidden bg-slate-50 rounded-t-[2rem]" style={{ aspectRatio: imageAspect }}>
         <img
           src={image}
           alt={imageAlt}
@@ -44,24 +40,11 @@ export default function ProgramCard({ program }) {
         </div>
       </div>
 
-      <div className="relative bg-white px-6 sm:px-8 md:px-10 pt-8 pb-8 sm:pb-10 flex flex-col flex-1">
+      <div className="relative bg-white rounded-b-[2rem] px-6 sm:px-8 md:px-10 pt-8 pb-8 sm:pb-10 flex flex-col flex-1">
         <div
-          className={`absolute -top-10 ${iconPositionClass} w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg border border-slate-50 transition-transform group-hover:-translate-y-2`}
-          style={{ color: accentColor }}
+          className={`absolute -top-10 ${iconPositionClass} w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg border border-slate-50 transition-transform group-hover:-translate-y-2 overflow-hidden`}
         >
-          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            {icon}
-          </svg>
-        </div>
-
-        <div className={`absolute -top-10 lg:-top-12 ${logoPositionClass} ${logoFloatClass} z-20`}>
-          <div className="absolute inset-0 -m-4 rounded-full blur-xl" style={{ backgroundColor: glowColor }} />
-          <div
-            className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-white/95 p-3 flex items-center justify-center"
-            style={{ boxShadow: `0 10px 25px ${glowColor}` }}
-          >
-            <img src={logo} alt={logoAlt} className="w-full h-full object-contain" />
-          </div>
+          <img src={logo} alt={logoAlt} className="w-full h-full object-contain p-2" />
         </div>
 
         <h4 className="text-2xl sm:text-3xl font-black mb-3 mt-6 sans-font" style={{ color: accentColor }}>
