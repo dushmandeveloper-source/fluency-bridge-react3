@@ -11,10 +11,10 @@ export default function Programs() {
       </div>
 
       <div
-        className="absolute inset-x-0 bottom-0 h-64 sm:h-80 pointer-events-none"
+        className="absolute inset-x-0 bottom-0 h-40 sm:h-56 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to bottom, transparent 0%, rgba(0, 49, 133, 0.2) 30%, rgba(0, 49, 133, 0.55) 55%, rgba(0, 49, 133, 0.85) 80%, #002c78 100%)',
+            'linear-gradient(to bottom, transparent 0%, rgba(0, 49, 133, 0.2) 50%, rgba(0, 49, 133, 0.55) 70%, rgba(0, 49, 133, 0.85) 88%, #002c78 100%)',
         }}
       />
     </main>

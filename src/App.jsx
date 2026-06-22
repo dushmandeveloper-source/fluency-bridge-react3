@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Programs from './components/Programs';
 import Footer from './components/Footer';
+import ParticleField from './components/ParticleField';
 import bannerImage from './assets/banner.png';
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
         style={{ backgroundImage: `url(${bannerImage})` }}
       />
       <div className="fixed inset-0 bg-slate-900/65 z-0" />
+      <ParticleField />
 
       <CustomCursor />
       <Navbar />

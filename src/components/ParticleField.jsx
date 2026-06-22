@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 const COLORS = ['#a8e8c4', '#9cc8ff', '#ffffff'];
-const PARTICLE_COUNT = 18;
+const PARTICLE_COUNT = 28;
 
 export default function ParticleField() {
   const particles = useMemo(

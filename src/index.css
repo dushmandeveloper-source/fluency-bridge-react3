@@ -68,7 +68,7 @@ h1, h2, h3, .serif-font {
 }
 
 #particle-container {
-  position: absolute;
+  position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 15;
