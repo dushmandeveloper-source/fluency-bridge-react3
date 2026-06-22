@@ -4,7 +4,7 @@ const BRANCHES = ['Fluency Bridge Coaching', 'NZ Academic Bridge', 'About the Co
 
 export default function Footer() {
   return (
-    <footer className="text-white pt-20 pb-10 relative z-20" style={{ backgroundColor: 'var(--custom-blue-dark)' }}>
+    <footer className="text-white pt-10 sm:pt-12 pb-10 relative z-20" style={{ backgroundColor: 'var(--custom-blue-dark)' }}>
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/30 pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
