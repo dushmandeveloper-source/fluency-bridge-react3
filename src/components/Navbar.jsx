@@ -10,8 +10,8 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // flex justify-between on mobile (2 visible groups); lg:grid grid-cols-3 once the center nav pill appears, so it lands at the true page center regardless of the side groups' widths
   return (
-    {/* flex justify-between on mobile (2 visible groups); lg:grid grid-cols-3 once the center nav pill appears, so it lands at the true page center regardless of the side groups' widths */}
     <nav className="fixed w-full z-50 top-4 sm:top-6 px-4 lg:px-12 flex justify-between lg:grid lg:grid-cols-3 items-center interactive-el">
       <div className="flex items-center justify-self-start glass-nav py-2 px-4 sm:px-5 rounded-full">
         <img src={fluencyBridgeLogo} alt="Fluency Bridge" className="h-9 sm:h-10 lg:h-12 object-contain" />
