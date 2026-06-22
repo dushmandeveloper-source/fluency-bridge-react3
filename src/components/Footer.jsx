@@ -13,9 +13,9 @@ export default function Footer() {
             <img
               src={fluencyBridgeLogo}
               alt="Fluency Bridge"
-              className="h-16 sm:h-20 object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.6)]"
+              className="h-12 sm:h-16 object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.6)]"
             />
-            <span className="font-black text-base tracking-wide leading-tight whitespace-nowrap">Fluency Bridge Global Limited</span>
+            <span className="font-black text-sm tracking-wide leading-tight whitespace-nowrap">Fluency Bridge Global Limited</span>
           </div>
           <p className="text-sm text-white/80 mb-4 pr-4 leading-relaxed font-medium">
             Architecting Global Futures through elite English coaching and ethical NZ education consultancy.

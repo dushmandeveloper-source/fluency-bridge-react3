@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import bannerImage from '../assets/banner.png';
 import MotionText from './MotionText';
 import ParticleField from './ParticleField';
 
@@ -12,36 +11,21 @@ export default function Hero() {
   }, []);
 
   return (
-    <header className="relative min-h-[480px] sm:min-h-[560px] md:h-[72vh] md:min-h-[600px] w-full flex items-center overflow-hidden z-10 bg-slate-900 py-20 md:py-0">
-      <img
-        src={bannerImage}
-        alt="Climber reaching the summit with the New Zealand flag"
-        className="absolute inset-0 w-full h-full object-cover object-center animate-bg-zoom opacity-90"
-      />
-
-      <div className="absolute inset-0 bg-slate-900/65" />
-      <div className="absolute inset-0 hero-fade" />
+    <header className="relative z-10 w-full pt-20 sm:pt-24 md:pt-28 pb-2 sm:pb-3">
       <ParticleField />
 
-      <div className="relative z-20 w-full max-w-4xl mx-auto px-6 md:px-12 flex flex-col items-center text-center gap-4 sm:gap-6 mt-8 sm:mt-12 md:mt-16">
-        <MotionText
-          as="h1"
-          text="Architecting"
-          delayOffset={200}
-          glow
-          glowRgb="0, 116, 255"
-          className="text-4xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-black text-white mb-2 leading-[1.05] tracking-tight sans-font"
-        />
-
-        <MotionText
-          as="h2"
-          text="Global Futures."
-          delayOffset={900}
-          accent
-          accentColor="#ffffff"
-          glowRgb="78, 166, 117"
-          className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold"
-        />
+      <div className="relative z-20 w-full max-w-4xl mx-auto px-6 md:px-12 flex flex-col items-center text-center gap-3 sm:gap-4">
+        <h1 className="flex items-baseline justify-center gap-2 sm:gap-3 whitespace-nowrap text-[clamp(0.9rem,3.6vw,3.4rem)] font-black text-white leading-[1.05] tracking-tight sans-font">
+          <MotionText as="span" text="Architecting" delayOffset={200} glow glowRgb="0, 116, 255" />
+          <MotionText
+            as="span"
+            text="Global Futures."
+            delayOffset={900}
+            accent
+            accentColor="#ffffff"
+            glowRgb="78, 166, 117"
+          />
+        </h1>
 
         <p
           className={`text-white text-base sm:text-lg lg:text-xl font-medium leading-relaxed max-w-2xl transition-all duration-1000 ease-out ${

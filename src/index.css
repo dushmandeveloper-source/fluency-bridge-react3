@@ -135,6 +135,8 @@ h1, h2, h3, .serif-font {
   display: inline-block;
   overflow: hidden;
   vertical-align: bottom;
+  padding: 0 0.08em;
+  margin: 0 -0.08em;
 }
 
 .motion-letter {
