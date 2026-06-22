@@ -22,7 +22,7 @@ export default function ProgramCard({ program }) {
       onMouseEnter={(e) => (e.currentTarget.style.boxShadow = `0 30px 60px ${accentShadow}`)}
       onMouseLeave={(e) => (e.currentTarget.style.boxShadow = '')}
     >
-      <div className="relative w-full h-56 sm:h-64 md:h-72 overflow-hidden bg-slate-50 rounded-t-[2rem]">
+      <div className="relative w-full h-44 sm:h-52 md:h-56 overflow-hidden bg-slate-50 rounded-t-[2rem]">
         <img
           src={image}
           alt={imageAlt}
@@ -30,6 +30,7 @@ export default function ProgramCard({ program }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
 
+        {/* Stat badge sits in one top corner (positionClass), the logo badge below sits in the opposite corner */}
         <div
           className={`absolute top-6 ${badge.positionClass} text-white px-5 py-2.5 rounded-xl shadow-lg transform ${badge.rotationClass} group-hover:rotate-0 transition-all duration-300`}
           style={{ backgroundColor: accentColor }}
@@ -37,19 +38,20 @@ export default function ProgramCard({ program }) {
           <span className="block text-2xl font-black mb-0.5 leading-none">{badge.value}</span>
           <span className="block text-[9px] uppercase tracking-wider font-bold leading-tight">{badge.label}</span>
         </div>
+
+        {/* Logo badge flush in its own top corner (iconPositionClass: left-4 or right-4), directly on the photo */}
+        <div
+          className={`absolute top-4 ${iconPositionClass} w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-2xl flex items-center justify-center shadow-lg border border-slate-50 transition-transform group-hover:-translate-y-2 overflow-hidden`}
+        >
+          <img src={logo} alt={logoAlt} className="w-full h-full object-contain p-2" />
+        </div>
       </div>
 
-      <div className="relative bg-white rounded-b-[2rem] px-6 sm:px-8 md:px-10 pt-8 pb-8 sm:pb-10 flex flex-col flex-1">
-        <div
-          className={`absolute -top-12 ${iconPositionClass} w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-2xl flex items-center justify-center shadow-lg border border-slate-50 transition-transform group-hover:-translate-y-2 overflow-hidden`}
-        >
-          <img src={logo} alt={logoAlt} className="w-full h-full object-contain p-2.5" />
-        </div>
-
-        <h4 className="text-2xl sm:text-3xl font-black mb-3 mt-6 sans-font" style={{ color: accentColor }}>
+      <div className="relative bg-white rounded-b-[2rem] px-4 sm:px-6 md:px-7 pt-6 pb-6 sm:pb-7 flex flex-col flex-1">
+        <h4 className="text-lg sm:text-xl font-black mb-2 mt-1 sans-font" style={{ color: accentColor }}>
           {title}
         </h4>
-        <p className="text-slate-500 text-sm leading-relaxed font-medium mb-6 line-clamp-3 flex-1">{description}</p>
+        <p className="text-slate-500 text-sm leading-relaxed font-medium mb-4 line-clamp-3 flex-1">{description}</p>
 
         <button
           className="accent-btn w-full bg-slate-50 border border-slate-200 text-slate-800 font-bold py-3.5 rounded-xl transition-all flex justify-center items-center gap-2 hover:text-white"

@@ -64,6 +64,7 @@ export default function MotionText({
   }, [chars, delayOffset, staggerMs, duration, loop, loopDelay, onComplete]);
 
   return (
+    // accent adds the italic Playfair Display font; glow alone keeps the caller's own font and just adds the drop-shadow glow
     <Tag
       ref={containerRef}
       className={`${accent ? 'motion-text-accent' : ''} ${className}`}

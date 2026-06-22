@@ -9,11 +9,12 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
         <div>
+          {/* Logo + company name mirrors the header branding; white border and layered drop-shadows make it stand out against the dark footer */}
           <div className="flex items-center gap-3 mb-5">
             <img
               src={fluencyBridgeLogo}
               alt="Fluency Bridge"
-              className="h-12 sm:h-16 object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.6)]"
+              className="h-12 sm:h-16 object-contain rounded-xl border-2 border-white p-1.5 drop-shadow-[0_0_14px_rgba(255,255,255,1)] drop-shadow-[0_0_28px_rgba(255,255,255,0.85)] drop-shadow-[0_0_45px_rgba(255,255,255,0.6)]"
             />
             <span className="font-black text-sm tracking-wide leading-tight whitespace-nowrap">Fluency Bridge Global Limited</span>
           </div>

@@ -4,12 +4,13 @@ import { programs } from '../data/programs.jsx';
 export default function Programs() {
   return (
     <main className="relative z-20 w-full mt-4 sm:mt-6 pb-12 sm:pb-16">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12">
         {programs.map((program) => (
           <ProgramCard key={program.id} program={program} />
         ))}
       </div>
 
+      {/* Fades the fixed background image into the footer's color (#002c78 matches the footer's own black/10 top overlay) so the seam isn't visible */}
       <div
         className="absolute inset-x-0 bottom-0 h-40 sm:h-56 pointer-events-none"
         style={{

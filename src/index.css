@@ -67,6 +67,7 @@ h1, h2, h3, .serif-font {
   border-color: var(--custom-blue);
 }
 
+/* fixed (not absolute) so particles cover the whole viewport as you scroll, not just the Hero section */
 #particle-container {
   position: fixed;
   inset: 0;
@@ -135,6 +136,7 @@ h1, h2, h3, .serif-font {
   display: inline-block;
   overflow: hidden;
   vertical-align: bottom;
+  /* padding gives italic glyph overhang (l/f/g/r) room before the reveal mask clips it; negative margin cancels the layout shift */
   padding: 0 0.08em;
   margin: 0 -0.08em;
 }
