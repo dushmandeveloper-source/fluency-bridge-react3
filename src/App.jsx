@@ -8,23 +8,27 @@ import bannerImage from './assets/banner.png';
 
 export default function App() {
   return (
-    <div className="antialiased relative">
-      {/* Page-wide fixed banner background, visible behind Hero and Programs until the opaque Footer covers it */}
-      <div
-        role="img"
-        aria-label="Climber reaching the summit with the New Zealand flag"
-        className="fixed inset-0 w-full h-full bg-cover bg-center animate-bg-zoom opacity-90 z-0"
-        style={{ backgroundImage: `url(${bannerImage})` }}
-      />
-      {/* Dark overlay for text/card contrast against the background photo */}
-      <div className="fixed inset-0 bg-slate-900/65 z-0" />
-      {/* Sparkle particles, fixed full-page so they show across the whole background, not just the hero */}
-      <ParticleField />
-
+    <div className="antialiased relative min-h-screen flex flex-col">
       <CustomCursor />
       <Navbar />
-      <Hero />
-      <Programs />
+
+      {/* Sized to Hero+Programs' own content height (not the viewport), so the banner stops exactly where Footer begins instead of being cut off by a fixed viewport-height background */}
+      <div className="relative">
+        <div
+          role="img"
+          aria-label="Climber reaching the summit with the New Zealand flag"
+          className="absolute inset-0 w-full h-full bg-cover bg-center animate-bg-zoom opacity-90 z-0"
+          style={{ backgroundImage: `url(${bannerImage})` }}
+        />
+        {/* Dark overlay for text/card contrast against the background photo */}
+        <div className="absolute inset-0 bg-slate-900/65 z-0" />
+        {/* Sparkle particles, scoped to this section so they show across the whole banner, not just the hero */}
+        <ParticleField />
+
+        <Hero />
+        <Programs />
+      </div>
+
       <Footer />
     </div>
   );

@@ -4,7 +4,10 @@ const BRANCHES = ['Fluency Bridge Coaching', 'NZ Academic Bridge', 'About the Co
 
 export default function Footer() {
   return (
-    <footer className="text-white pt-10 sm:pt-12 pb-10 relative z-20" style={{ backgroundColor: 'var(--custom-blue-dark)' }}>
+    <footer
+      className="text-white pt-10 sm:pt-12 pb-10 relative z-20 flex-1 flex flex-col justify-between"
+      style={{ backgroundColor: 'var(--custom-blue-dark)' }}
+    >
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/30 pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
@@ -14,7 +17,7 @@ export default function Footer() {
             <img
               src={fluencyBridgeLogo}
               alt="Fluency Bridge"
-              className="h-12 sm:h-16 object-contain rounded-xl border-2 border-white p-1.5 drop-shadow-[0_0_14px_rgba(255,255,255,1)] drop-shadow-[0_0_28px_rgba(255,255,255,0.85)] drop-shadow-[0_0_45px_rgba(255,255,255,0.6)]"
+              className="h-12 sm:h-16 object-contain bg-white rounded-xl border-2 border-white p-1.5 drop-shadow-[0_0_14px_rgba(255,255,255,1)] drop-shadow-[0_0_28px_rgba(255,255,255,0.85)] drop-shadow-[0_0_45px_rgba(255,255,255,0.6)]"
             />
             <span className="font-black text-sm tracking-wide leading-tight whitespace-nowrap">Fluency Bridge Global Limited</span>
           </div>

@@ -67,9 +67,9 @@ h1, h2, h3, .serif-font {
   border-color: var(--custom-blue);
 }
 
-/* fixed (not absolute) so particles cover the whole viewport as you scroll, not just the Hero section */
+/* absolute, sized to the banner wrapper (Hero+Programs), not the full viewport, so it stops where the banner image stops */
 #particle-container {
-  position: fixed;
+  position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 15;

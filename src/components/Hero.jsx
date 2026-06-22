@@ -13,7 +13,7 @@ export default function Hero() {
     <header className="relative z-10 w-full pt-20 sm:pt-24 md:pt-28 pb-2 sm:pb-3">
       <div className="relative z-20 w-full max-w-4xl mx-auto px-6 md:px-12 flex flex-col items-center text-center gap-3 sm:gap-4">
         {/* Title kept on one line (whitespace-nowrap); both words share the same sans font, just different glow colors */}
-        <h1 className="flex items-baseline justify-center gap-2 sm:gap-3 whitespace-nowrap text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-[1.05] tracking-tight sans-font">
+        <h1 className="flex items-baseline justify-center gap-2 sm:gap-3 whitespace-nowrap text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-black text-white leading-[1.05] tracking-tight sans-font">
           <MotionText as="span" text="Architecting" delayOffset={200} glow glowRgb="0, 116, 255" />
           <MotionText
             as="span"
@@ -27,7 +27,7 @@ export default function Hero() {
 
         {/* Subtitle wraps to 2 lines on small screens (max-w caps width) instead of shrinking unreadably small */}
         <p
-          className={`text-white text-xs sm:text-sm md:text-base lg:text-lg font-medium leading-relaxed max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl transition-all duration-1000 ease-out ${
+          className={`text-white text-[0.65rem] sm:text-xs md:text-sm lg:text-base font-medium leading-relaxed max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl transition-all duration-1000 ease-out ${
             subtextVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
           style={{
