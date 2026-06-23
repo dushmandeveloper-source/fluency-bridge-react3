@@ -15,9 +15,9 @@ export default function Footer() {
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/30 pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-16">
-        {/* Brand column is wider so its blurb has room; the link columns stay narrow and aligned */}
-        <div className="lg:col-span-4">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-16">
+        {/* Four equal columns keep the gaps even and the block visually centered */}
+        <div>
           {/* Logo + company name mirrors the header branding; white border and layered drop-shadows make it stand out against the dark footer */}
           <div className="flex items-center gap-3 mb-5">
             <img
@@ -41,7 +41,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="lg:col-span-2">
+        <div>
           <h5 className="font-black text-lg mb-6 tracking-wide" style={{ color: 'var(--custom-green)' }}>
             Quick Links
           </h5>
@@ -56,7 +56,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="lg:col-span-2">
+        <div>
           <h5 className="font-black text-lg mb-6 tracking-wide" style={{ color: 'var(--custom-green)' }}>
             Branches
           </h5>
@@ -71,7 +71,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="lg:col-span-4">
+        <div>
           <h5 className="font-black text-lg mb-6 tracking-wide" style={{ color: 'var(--custom-green)' }}>
             Reach
           </h5>

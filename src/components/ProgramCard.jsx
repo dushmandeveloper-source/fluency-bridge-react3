@@ -15,17 +15,17 @@ export default function ProgramCard({ program }) {
 
   return (
     <div
-      className="group relative rounded-[2rem] bg-slate-100 shadow-xl transition-all duration-500 hover:-translate-y-2 interactive-el flex flex-col border border-slate-200"
+      className="group relative rounded-[2rem] bg-slate-200 shadow-xl transition-all duration-500 hover:-translate-y-2 interactive-el flex flex-col border border-slate-300"
       onMouseEnter={(e) => (e.currentTarget.style.boxShadow = `0 30px 60px ${accentShadow}`)}
       onMouseLeave={(e) => (e.currentTarget.style.boxShadow = '')}
     >
-      <div className="relative w-full h-36 sm:h-44 md:h-48 overflow-hidden bg-slate-100 rounded-t-[2rem]">
+      <div className="relative w-full h-36 sm:h-44 md:h-48 overflow-hidden bg-slate-200 rounded-t-[2rem]">
         <img
           src={image}
           alt={imageAlt}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-slate-100/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-200 via-slate-200/20 to-transparent" />
 
         {/* Stat badge sits in one top corner (positionClass), the logo badge below sits in the opposite corner */}
         <div
@@ -44,7 +44,7 @@ export default function ProgramCard({ program }) {
         </div>
       </div>
 
-      <div className="relative bg-slate-100 rounded-b-[2rem] px-4 sm:px-5 md:px-6 pt-5 pb-5 sm:pb-6 flex flex-col flex-1">
+      <div className="relative bg-slate-200 rounded-b-[2rem] px-4 sm:px-5 md:px-6 pt-5 pb-5 sm:pb-6 flex flex-col flex-1">
         <h4 className="text-base sm:text-lg font-black mb-1.5 mt-1 sans-font" style={{ color: accentColor }}>
           {title}
         </h4>
