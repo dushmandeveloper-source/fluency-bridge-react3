@@ -15,17 +15,17 @@ export default function ProgramCard({ program }) {
 
   return (
     <div
-      className="group relative rounded-[2rem] bg-white shadow-xl transition-all duration-500 hover:-translate-y-2 interactive-el flex flex-col border border-slate-100"
+      className="group relative rounded-[2rem] bg-slate-100 shadow-xl transition-all duration-500 hover:-translate-y-2 interactive-el flex flex-col border border-slate-200"
       onMouseEnter={(e) => (e.currentTarget.style.boxShadow = `0 30px 60px ${accentShadow}`)}
       onMouseLeave={(e) => (e.currentTarget.style.boxShadow = '')}
     >
-      <div className="relative w-full h-36 sm:h-44 md:h-48 overflow-hidden bg-slate-50 rounded-t-[2rem]">
+      <div className="relative w-full h-36 sm:h-44 md:h-48 overflow-hidden bg-slate-100 rounded-t-[2rem]">
         <img
           src={image}
           alt={imageAlt}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-slate-100/20 to-transparent" />
 
         {/* Stat badge sits in one top corner (positionClass), the logo badge below sits in the opposite corner */}
         <div
@@ -44,14 +44,14 @@ export default function ProgramCard({ program }) {
         </div>
       </div>
 
-      <div className="relative bg-white rounded-b-[2rem] px-4 sm:px-5 md:px-6 pt-5 pb-5 sm:pb-6 flex flex-col flex-1">
+      <div className="relative bg-slate-100 rounded-b-[2rem] px-4 sm:px-5 md:px-6 pt-5 pb-5 sm:pb-6 flex flex-col flex-1">
         <h4 className="text-base sm:text-lg font-black mb-1.5 mt-1 sans-font" style={{ color: accentColor }}>
           {title}
         </h4>
         <p className="text-slate-500 text-[0.55rem] sm:text-[0.65rem] leading-relaxed font-medium mb-3 line-clamp-2 flex-1">{description}</p>
 
         <button
-          className="accent-btn w-full bg-slate-50 border border-slate-200 text-slate-800 font-bold py-2.5 rounded-xl transition-all flex justify-center items-center gap-2 hover:text-white text-sm"
+          className="accent-btn w-full bg-white border border-slate-200 text-slate-800 font-bold py-2.5 rounded-xl transition-all flex justify-center items-center gap-2 hover:text-white text-sm"
           style={{ '--btn-accent': accentColor }}
         >
           {buttonText}

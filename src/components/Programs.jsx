@@ -4,7 +4,7 @@ import { programs } from '../data/programs.jsx';
 export default function Programs() {
   return (
     <main className="relative z-20 w-full mt-4 sm:mt-6 pb-6 sm:pb-8">
-      <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+      <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
         {programs.map((program) => (
           <ProgramCard key={program.id} program={program} />
         ))}
