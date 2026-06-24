@@ -13,7 +13,7 @@ export const programs = [
     imageAlt: 'Coaching',
     logo: fluencyBridgeLogo,
     logoAlt: 'Fluency Bridge logo',
-    badge: { value: '100%', label: 'Natural Method', positionClass: 'right-6', rotationClass: 'rotate-3' },
+    badge: { value: '100%', label: 'Natural Method', positionClass: 'right-6', rotationClass: 'rotate-0' },
     iconPositionClass: 'left-4',
     title: 'Fluency Bridge',
     description:
@@ -28,7 +28,7 @@ export const programs = [
     imageAlt: 'Academic',
     logo: nzAcademicBridgeLogo,
     logoAlt: 'NZ Academic Bridge logo',
-    badge: { value: 'Zero', label: 'Placement Fee', positionClass: 'left-6', rotationClass: '-rotate-3' },
+    badge: { value: '100%', label: 'Free Placement', positionClass: 'left-6', rotationClass: 'rotate-0' },
     iconPositionClass: 'right-4',
     title: 'NZ Academic Bridge',
     description:
