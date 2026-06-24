@@ -29,11 +29,11 @@ export default function ProgramCard({ program }) {
 
         {/* Stat badge sits in one top corner (positionClass), the logo badge below sits in the opposite corner */}
         <div
-          className={`absolute top-1 sm:top-3 ${badge.positionClass} text-white px-1.5 sm:px-5 py-0.5 sm:py-2.5 rounded sm:rounded-xl shadow-lg transform ${badge.rotationClass} group-hover:rotate-0 transition-all duration-300`}
+          className={`absolute top-1 sm:top-3 ${badge.positionClass} text-white px-1 sm:px-5 py-0.5 sm:py-2.5 rounded-sm sm:rounded-xl shadow-lg transform ${badge.rotationClass} group-hover:rotate-0 transition-all duration-300`}
           style={{ backgroundColor: accentColor }}
         >
-          <span className="block text-[9px] sm:text-lg md:text-xl font-black mb-0.5 leading-none">{badge.value}</span>
-          <span className="block text-[4px] sm:text-[7px] md:text-[8px] uppercase tracking-wider font-bold leading-tight">{badge.label}</span>
+          <span className="block text-[7px] sm:text-lg md:text-xl font-black mb-0 leading-none">{badge.value}</span>
+          <span className="block text-[3px] sm:text-[7px] md:text-[8px] uppercase tracking-wider font-bold leading-tight">{badge.label}</span>
         </div>
 
         {/* Logo badge flush in its own top corner (iconPositionClass: left-4 or right-4), directly on the photo */}
