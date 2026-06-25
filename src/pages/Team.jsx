@@ -94,20 +94,6 @@ export default function Team() {
               partners. Individual credentials and firm details are provided directly during personal consultations.
             </p>
           </div>
-
-          {/* Per the blueprint, the team page links to the NZ Academic Bridge branch */}
-          <div className="flex justify-center mt-8 sm:mt-10">
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm py-2.5 sm:py-3 px-6 sm:px-7 rounded-lg sm:rounded-xl transition-all hover:opacity-90 interactive-el"
-              style={{ backgroundColor: 'var(--custom-blue)' }}
-            >
-              Visit NZ Academic Bridge
-              <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </div>
         </section>
       </main>
 
