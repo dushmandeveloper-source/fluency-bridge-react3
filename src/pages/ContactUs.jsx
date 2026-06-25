@@ -37,20 +37,20 @@ export default function ContactUs() {
   return (
     <BannerBackground>
       <main className="relative z-20 w-full min-h-screen px-6 py-32 sm:py-40">
-        <div className="max-w-5xl mx-auto flex flex-col items-center gap-3 text-center mb-10 sm:mb-12">
+        <div className="max-w-5xl mx-auto flex flex-col items-center gap-4 text-center mb-10 sm:mb-12">
           <span
-            className="inline-flex items-center gap-2 text-[0.65rem] sm:text-xs font-bold uppercase tracking-[0.2em] text-white px-4 py-1.5 rounded-full"
+            className="inline-flex items-center gap-2 text-[0.5rem] sm:text-[0.6rem] md:text-[0.65rem] font-bold uppercase tracking-[0.2em] text-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-full"
             style={{ backgroundColor: 'var(--custom-blue)' }}
           >
             Contact Us
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">Let's Start the Conversation</h1>
-          <p className="text-white/85 text-sm sm:text-base font-medium max-w-xl" style={{ textShadow: '0 2px 6px rgba(0,0,0,0.35)' }}>
+          <h1 className="sans-font text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-black text-white leading-[1.3] tracking-tight">Let's Start the Conversation</h1>
+          <p className="text-white/85 text-[0.65rem] sm:text-xs md:text-sm lg:text-base font-medium max-w-xl" style={{ textShadow: '0 2px 6px rgba(0,0,0,0.35)' }}>
             Tell us which service you're interested in and our team will be in touch.
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-start">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-stretch">
           {/* Enquiry form */}
           <form onSubmit={handleSubmit} className="glass-panel lg:col-span-3 rounded-3xl px-6 sm:px-9 py-8 sm:py-10 flex flex-col gap-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -69,21 +69,37 @@ export default function ContactUs() {
               <input name="email" type="email" required placeholder="you@example.com" className={inputClass} />
             </label>
 
-            <label className="flex flex-col gap-1.5">
-              <span className="text-white/90 text-xs font-bold uppercase tracking-wider">Purpose</span>
-              <select
-                name="purpose"
-                value={purpose}
-                onChange={(event) => setPurpose(event.target.value)}
-                className={`${inputClass} appearance-none cursor-pointer`}
-              >
-                {PURPOSE_OPTIONS.map((option) => (
-                  <option key={option.value} value={option.value} className="text-slate-800">
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-            </label>
+            <fieldset className="flex flex-col gap-2">
+              <legend className="text-white/90 text-xs font-bold uppercase tracking-wider mb-1.5">Purpose</legend>
+              {PURPOSE_OPTIONS.map((option) => {
+                const checked = purpose === option.value;
+                return (
+                  <label
+                    key={option.value}
+                    className={`flex items-center gap-3 rounded-xl px-4 py-3 border backdrop-blur-md cursor-pointer transition interactive-el ${
+                      checked ? 'border-white/80 bg-white/25' : 'border-white/30 bg-white/10 hover:bg-white/15'
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="purpose"
+                      value={option.value}
+                      checked={checked}
+                      onChange={(event) => setPurpose(event.target.value)}
+                      className="sr-only"
+                    />
+                    <span
+                      className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 transition ${
+                        checked ? 'border-white' : 'border-white/50'
+                      }`}
+                    >
+                      {checked && <span className="w-2 h-2 rounded-full bg-white" />}
+                    </span>
+                    <span className={`text-sm font-semibold ${checked ? 'text-white' : 'text-white/80'}`}>{option.label}</span>
+                  </label>
+                );
+              })}
+            </fieldset>
 
             <label className="flex flex-col gap-1.5">
               <span className="text-white/90 text-xs font-bold uppercase tracking-wider">Message</span>
@@ -105,7 +121,7 @@ export default function ContactUs() {
           {/* Contact info panel */}
           <aside className="lg:col-span-2 flex flex-col gap-4">
             <div className="bg-white/15 border border-white/30 rounded-3xl px-6 py-7 backdrop-blur-md flex flex-col gap-5">
-              <h2 className="text-white font-black text-lg" style={{ color: 'var(--custom-green)' }}>
+              <h2 className="sans-font font-black text-xs sm:text-base md:text-lg" style={{ color: 'var(--custom-green-light)' }}>
                 Reach Us Directly
               </h2>
 
@@ -144,6 +160,20 @@ export default function ContactUs() {
                   </li>
                 ))}
               </ul>
+            </div>
+
+            {/* Location map fills the remaining column height so its bottom edge
+                lines up with the form for a neat, balanced layout. Swap the src
+                query for the registered office address when available. */}
+            <div className="bg-white/15 border border-white/30 rounded-3xl p-2 sm:p-3 overflow-hidden backdrop-blur-md flex-1 flex min-h-[14rem]">
+              <iframe
+                title="Fluency Bridge Global Limited location"
+                src="https://www.google.com/maps?q=Auckland,New+Zealand&output=embed"
+                className="w-full h-full rounded-2xl border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
             </div>
           </aside>
         </div>

@@ -12,6 +12,10 @@
   --custom-green: #4ea675;
   --custom-blue: #004acc;
   --custom-blue-dark: #003185;
+  /* Brighter tints for coloured text sitting on the dark banner/glass panels,
+     where the base green/blue are too low-contrast to read */
+  --custom-green-light: #6fd69b;
+  --custom-blue-light: #5b9dff;
 }
 
 body {
