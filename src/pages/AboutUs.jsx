@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import gsap from 'gsap';
 
 import Reveal from '../components/Reveal';
 import ceoPhoto from '../assets/team-ceo.jpeg';
@@ -34,6 +35,20 @@ export default function AboutUs() {
   useEffect(() => {
     const t = setTimeout(() => setShown(true), 150);
     return () => clearTimeout(t);
+  }, []);
+
+  // GSAP: gentle perpetual float on the image cards + a slow zoom on the photos
+  useEffect(() => {
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return undefined;
+    const ctx = gsap.context(() => {
+      gsap.utils.toArray('.gsap-float').forEach((el, i) => {
+        gsap.to(el, { y: -14, duration: 3.6 + i * 0.4, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: i * 0.2 });
+      });
+      gsap.utils.toArray('.gsap-zoom').forEach((el, i) => {
+        gsap.to(el, { scale: 1.07, duration: 7 + i, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+      });
+    });
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -102,10 +117,12 @@ export default function AboutUs() {
             </div>
           </Reveal>
 
-          <Reveal className="reveal reveal-img relative" delay={150}>
-            <div className="absolute -inset-3 rounded-[2rem] opacity-20 blur-2xl" style={{ background: 'linear-gradient(135deg, var(--custom-green), var(--custom-blue))' }} />
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3]">
-              <img src={INTRO_IMG} alt="Premier university campus" className="w-full h-full object-cover" />
+          <Reveal className="reveal relative" delay={150}>
+            <div className="gsap-float relative">
+              <div className="absolute -inset-3 rounded-[2rem] opacity-20 blur-2xl" style={{ background: 'linear-gradient(135deg, var(--custom-green), var(--custom-blue))' }} />
+              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3]">
+                <img src={INTRO_IMG} alt="Premier university campus" className="w-full h-full object-cover gsap-zoom" />
+              </div>
             </div>
           </Reveal>
         </div>
@@ -142,10 +159,12 @@ export default function AboutUs() {
       {/* ---------- Executive leadership ---------- */}
       <section className="bg-slate-50 py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <Reveal className="reveal reveal-img relative order-2 lg:order-1">
-            <div className="absolute -inset-3 rounded-[2rem] opacity-20 blur-2xl" style={{ background: 'linear-gradient(135deg, var(--custom-blue), var(--custom-green))' }} />
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5] max-w-sm mx-auto lg:mx-0">
-              <img src={ceoPhoto} alt="Chathuranga Liyanage" className="w-full h-full object-cover object-top" />
+          <Reveal className="reveal relative order-2 lg:order-1">
+            <div className="gsap-float relative">
+              <div className="absolute -inset-3 rounded-[2rem] opacity-20 blur-2xl" style={{ background: 'linear-gradient(135deg, var(--custom-blue), var(--custom-green))' }} />
+              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5] max-w-sm mx-auto lg:mx-0">
+                <img src={ceoPhoto} alt="Chathuranga Liyanage" className="w-full h-full object-cover object-top gsap-zoom" />
+              </div>
             </div>
           </Reveal>
           <Reveal className="reveal flex flex-col gap-4 order-1 lg:order-2" delay={150}>
@@ -202,9 +221,11 @@ export default function AboutUs() {
       {/* ---------- Integrity & compliance ---------- */}
       <section className="bg-slate-50 py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <Reveal className="reveal reveal-img relative">
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3]">
-              <img src={VALUES_IMG} alt="Students in a classroom" className="w-full h-full object-cover" />
+          <Reveal className="reveal relative">
+            <div className="gsap-float relative">
+              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3]">
+                <img src={VALUES_IMG} alt="Students in a classroom" className="w-full h-full object-cover gsap-zoom" />
+              </div>
             </div>
           </Reveal>
           <Reveal className="reveal flex flex-col gap-5" delay={150}>
