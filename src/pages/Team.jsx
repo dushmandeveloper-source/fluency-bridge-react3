@@ -4,6 +4,8 @@ import ceoPhoto from '../assets/team-ceo.jpeg';
 import janakiPhoto from '../assets/team-janaki.jpeg';
 import rasikaPhoto from '../assets/team-rasika.jpeg';
 import wasanaPhoto from '../assets/team-wasana.jpeg';
+import consultant5Photo from '../assets/team-consultant-5.jpeg';
+import consultant6Photo from '../assets/team-consultant-6.jpeg';
 
 // Real advisory-board members. Photos are the plain headshots; names, titles and
 // qualifications are taken from the team's "Meet Our Team" profile cards.
@@ -32,6 +34,21 @@ const CONSULTANTS = [
       'MSc Electrical Engineering — Univ. of Moratuwa',
       'BSc (Hons) Electrical & Electronic Eng — Univ. of Peradeniya',
     ],
+  },
+  // Placeholder details — replace with real info when available
+  {
+    id: 'consultant5',
+    name: 'Lorem Ipsum',
+    role: 'Senior Academic Consultant',
+    image: consultant5Photo,
+    lines: ['Lorem ipsum dolor sit amet', 'Consectetur adipiscing elit', 'Sed do eiusmod tempor'],
+  },
+  {
+    id: 'consultant6',
+    name: 'Dolor Sit Amet',
+    role: 'Senior Academic Consultant',
+    image: consultant6Photo,
+    lines: ['Lorem ipsum dolor sit amet', 'Consectetur adipiscing elit', 'Sed do eiusmod tempor'],
   },
 ];
 
