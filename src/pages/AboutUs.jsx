@@ -19,7 +19,7 @@ export default function AboutUs() {
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 grid-flow-row-dense lg:auto-rows-[minmax(9rem,auto)]">
 
           {/* Intro — large feature tile */}
-          <section className="liquid-glass motion-rise rounded-3xl p-7 sm:p-9 flex flex-col justify-center gap-3.5 sm:col-span-2 lg:col-span-2 lg:row-span-2" style={rise()}>
+          <section className="liquid-glass motion-card rounded-3xl p-7 sm:p-9 flex flex-col justify-center gap-3.5 sm:col-span-2 lg:col-span-2 lg:row-span-2" style={rise()}>
             <span className="absolute -top-10 -right-8 w-44 h-44 rounded-full blur-3xl opacity-40 animate-blob pointer-events-none" style={{ background: 'radial-gradient(circle, var(--custom-green), transparent 70%)' }} />
             <span className="absolute -bottom-12 -left-6 w-40 h-40 rounded-full blur-3xl opacity-30 animate-blob pointer-events-none" style={{ background: 'radial-gradient(circle, var(--custom-blue-light), transparent 70%)', animationDelay: '2s' }} />
 
@@ -36,7 +36,7 @@ export default function AboutUs() {
           </section>
 
           {/* Vision — accent (green) tile */}
-          <section className="motion-rise rounded-3xl p-6 sm:p-7 flex flex-col gap-2.5 text-white relative overflow-hidden sm:col-span-1 lg:col-span-2" style={{ ...rise(), background: 'linear-gradient(135deg, var(--custom-green), #347a52)' }}>
+          <section className="motion-card rounded-3xl p-6 sm:p-7 flex flex-col gap-2.5 text-white relative overflow-hidden sm:col-span-1 lg:col-span-2" style={{ ...rise(), background: 'linear-gradient(135deg, var(--custom-green), #347a52)' }}>
             <span className="text-[0.5rem] sm:text-[0.6rem] md:text-[0.65rem] font-bold uppercase tracking-[0.2em] text-white/80">Our Vision</span>
             <p className="text-white text-[0.62rem] sm:text-[0.7rem] md:text-xs font-medium leading-relaxed">
               A world-class global ecosystem integrating high-impact English coaching, transformational career coaching
@@ -46,7 +46,7 @@ export default function AboutUs() {
           </section>
 
           {/* Mission — accent (blue) tile */}
-          <section className="motion-rise rounded-3xl p-6 sm:p-7 flex flex-col gap-2.5 text-white relative overflow-hidden sm:col-span-1 lg:col-span-2" style={{ ...rise(), background: 'linear-gradient(135deg, var(--custom-blue), var(--custom-blue-dark))' }}>
+          <section className="motion-card rounded-3xl p-6 sm:p-7 flex flex-col gap-2.5 text-white relative overflow-hidden sm:col-span-1 lg:col-span-2" style={{ ...rise(), background: 'linear-gradient(135deg, var(--custom-blue), var(--custom-blue-dark))' }}>
             <span className="text-[0.5rem] sm:text-[0.6rem] md:text-[0.65rem] font-bold uppercase tracking-[0.2em] text-white/80">Our Mission</span>
             <p className="text-white text-[0.62rem] sm:text-[0.7rem] md:text-xs font-medium leading-relaxed">
               To democratize authentic fluency through the Natural English Method while delivering transparent, zero-fee
@@ -55,7 +55,7 @@ export default function AboutUs() {
           </section>
 
           {/* Executive Leadership — image feature tile */}
-          <section className="liquid-glass motion-rise rounded-3xl overflow-hidden flex flex-col sm:col-span-2 lg:col-span-2 lg:row-span-2" style={rise()}>
+          <section className="liquid-glass motion-card rounded-3xl overflow-hidden flex flex-col sm:col-span-2 lg:col-span-2 lg:row-span-2" style={rise()}>
             <div className="relative h-40 sm:h-48 lg:h-auto lg:flex-1 min-h-[10rem] overflow-hidden">
               <img src={ceoPhoto} alt="Chathuranga Liyanage" className="absolute inset-0 w-full h-full object-cover object-top" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
@@ -75,7 +75,7 @@ export default function AboutUs() {
           </section>
 
           {/* Strategic Roadmap — tall timeline tile */}
-          <section className="liquid-glass motion-rise rounded-3xl p-7 sm:p-8 flex flex-col gap-4 sm:col-span-2 lg:col-span-2 lg:row-span-2" style={rise()}>
+          <section className="liquid-glass motion-card rounded-3xl p-7 sm:p-8 flex flex-col gap-4 sm:col-span-2 lg:col-span-2 lg:row-span-2" style={rise()}>
             <div className="relative flex flex-col gap-1">
               <h2 className="sans-font text-xs sm:text-base md:text-lg font-black text-white">Strategic Road Map &amp; Future Scale</h2>
               <p className="text-white/80 text-[0.6rem] sm:text-[0.7rem] md:text-xs font-medium">Fluency Bridge Global Limited is scaling rapidly:</p>
@@ -99,7 +99,7 @@ export default function AboutUs() {
           </section>
 
           {/* Integrity value tile */}
-          <section className="liquid-glass motion-rise rounded-3xl p-6 sm:p-7 flex flex-col justify-center gap-2 sm:col-span-2 lg:col-span-2" style={rise()}>
+          <section className="liquid-glass motion-card rounded-3xl p-6 sm:p-7 flex flex-col justify-center gap-2 sm:col-span-2 lg:col-span-2" style={rise()}>
             <div className="relative flex items-center gap-2.5">
               <span className="flex items-center justify-center w-9 h-9 rounded-xl shrink-0" style={{ backgroundColor: 'var(--custom-green)' }}>
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,7 +115,7 @@ export default function AboutUs() {
           </section>
 
           {/* CTA — full-width tile */}
-          <section className="liquid-glass motion-rise rounded-3xl p-7 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left sm:col-span-2 lg:col-span-4" style={rise()}>
+          <section className="liquid-glass motion-card rounded-3xl p-7 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left sm:col-span-2 lg:col-span-4" style={rise()}>
             <div className="relative flex flex-col gap-1">
               <h2 className="sans-font text-xs sm:text-base md:text-lg font-black text-white">Meet the People Behind the Bridge</h2>
               <p className="text-white/80 text-[0.62rem] sm:text-[0.7rem] md:text-xs font-medium">

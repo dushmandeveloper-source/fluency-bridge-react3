@@ -206,24 +206,37 @@ h1, h2, h3, .serif-font {
   pointer-events: none;
 }
 
+/* Hover glow only (no transform) so it never fights the perpetual float */
 .liquid-glass:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.42);
+  border-color: rgba(255, 255, 255, 0.45);
   box-shadow:
-    0 20px 52px rgba(0, 0, 0, 0.34),
-    inset 0 1px 0 rgba(255, 255, 255, 0.65),
-    inset 0 0 36px rgba(255, 255, 255, 0.08);
+    0 22px 56px rgba(0, 0, 0, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.1);
 }
 
-/* Staggered entrance reveal (fill-mode: backwards so :hover transforms still
-   apply once the animation has finished). */
-@keyframes riseIn {
-  from { opacity: 0; transform: translateY(28px) scale(0.98); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+/* Bento card motion: a soft fade-in entrance (opacity) plus a perpetual gentle
+   float (transform). The two animations touch different properties so they don't
+   conflict; the per-card animation-delay both staggers the entrance and desyncs
+   the float. */
+@keyframes cardIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.motion-rise {
-  animation: riseIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+.motion-card {
+  animation: cardIn 0.6s ease-out backwards, cardFloat 6.5s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Pause the bob on hover so the card settles while you read it */
+.motion-card:hover {
+  animation-play-state: running, paused;
 }
 
 /* Soft drifting colour blob for the "liquid" backdrop inside tiles */
