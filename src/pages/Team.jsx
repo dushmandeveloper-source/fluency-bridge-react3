@@ -1,5 +1,8 @@
-import BannerBackground from '../components/BannerBackground';
-import ProfileCard from '../components/ProfileCard';
+import { useEffect, useState } from 'react';
+import gsap from 'gsap';
+
+import Reveal from '../components/Reveal';
+import teamBanner from '../assets/banner 2.png';
 import ceoPhoto from '../assets/team-ceo.jpeg';
 import janakiPhoto from '../assets/team-janaki.jpeg';
 import rasikaPhoto from '../assets/team-rasika.jpeg';
@@ -7,140 +10,160 @@ import wasanaPhoto from '../assets/team-wasana.jpeg';
 import consultant5Photo from '../assets/team-consultant-5.jpeg';
 import consultant6Photo from '../assets/team-consultant-6.jpeg';
 
-// Real advisory-board members. Photos are the plain headshots; names, titles and
-// qualifications are taken from the team's "Meet Our Team" profile cards.
+// Real advisory-board members. Names/titles/qualifications from the "Meet Our
+// Team" profile cards; the last two are placeholders until details arrive.
 const CONSULTANTS = [
-  {
-    id: 'janaki',
-    name: 'Janaki Wijerathna',
-    role: 'Senior Academic Consultant',
-    image: janakiPhoto,
-    lines: ['HNDE', 'BA Social Sciences (OUSL)', 'LA (CASS, AUK, NZ)'],
-  },
-  {
-    id: 'rasika',
-    name: 'Rasika Udugama',
-    role: 'Senior Academic Consultant — Teaching Programs',
-    image: rasikaPhoto,
-    lines: ['Registered Teacher — Teaching Council of Aotearoa NZ', 'BSc Agri Tech & Management — UoP', 'PGDE — OUSL'],
-  },
-  {
-    id: 'wasana',
-    name: 'Wasana Dilrukshi',
-    role: 'Senior Academic Consultant',
-    image: wasanaPhoto,
-    lines: [
-      'Master of Technological Futures (MTF) — AcademyEX NZ',
-      'MSc Electrical Engineering — Univ. of Moratuwa',
-      'BSc (Hons) Electrical & Electronic Eng — Univ. of Peradeniya',
-    ],
-  },
-  // Placeholder details — replace with real info when available
-  {
-    id: 'consultant5',
-    name: 'Lorem Ipsum',
-    role: 'Senior Academic Consultant',
-    image: consultant5Photo,
-    lines: ['Lorem ipsum dolor sit amet', 'Consectetur adipiscing elit', 'Sed do eiusmod tempor'],
-  },
-  {
-    id: 'consultant6',
-    name: 'Dolor Sit Amet',
-    role: 'Senior Academic Consultant',
-    image: consultant6Photo,
-    lines: ['Lorem ipsum dolor sit amet', 'Consectetur adipiscing elit', 'Sed do eiusmod tempor'],
-  },
+  { id: 'janaki', name: 'Janaki Wijerathna', role: 'Senior Academic Consultant', image: janakiPhoto, lines: ['HNDE', 'BA Social Sciences (OUSL)', 'LA (CASS, AUK, NZ)'] },
+  { id: 'rasika', name: 'Rasika Udugama', role: 'Senior Academic Consultant — Teaching Programs', image: rasikaPhoto, lines: ['Registered Teacher — Teaching Council of Aotearoa NZ', 'BSc Agri Tech & Management — UoP', 'PGDE — OUSL'] },
+  { id: 'wasana', name: 'Wasana Dilrukshi', role: 'Senior Academic Consultant', image: wasanaPhoto, lines: ['Master of Technological Futures (MTF) — AcademyEX NZ', 'MSc Electrical Engineering — Univ. of Moratuwa', 'BSc (Hons) Electrical & Electronic Eng — Univ. of Peradeniya'] },
+  { id: 'consultant5', name: 'Lorem Ipsum', role: 'Senior Academic Consultant', image: consultant5Photo, lines: ['Lorem ipsum dolor sit amet', 'Consectetur adipiscing elit', 'Sed do eiusmod tempor'] },
+  { id: 'consultant6', name: 'Dolor Sit Amet', role: 'Senior Academic Consultant', image: consultant6Photo, lines: ['Lorem ipsum dolor sit amet', 'Consectetur adipiscing elit', 'Sed do eiusmod tempor'] },
 ];
 
-const CEO_IMAGE = ceoPhoto;
-
-// Typography mirrors the home page: sans-font headings at the hero's responsive
-// sizes, home-sized cards.
 export default function Team() {
+  const [shown, setShown] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setShown(true), 150);
+    return () => clearTimeout(t);
+  }, []);
+
+  // GSAP: float the CEO card and slowly zoom every photo
+  useEffect(() => {
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return undefined;
+    const ctx = gsap.context(() => {
+      gsap.utils.toArray('.gsap-float').forEach((el, i) => {
+        gsap.to(el, { y: -14, duration: 3.6 + i * 0.4, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: i * 0.2 });
+      });
+      gsap.utils.toArray('.gsap-zoom').forEach((el, i) => {
+        gsap.to(el, { scale: 1.06, duration: 7 + i * 0.6, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+      });
+    });
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <BannerBackground fixed>
-      <main className="relative z-20 w-full px-6 py-28 sm:py-36">
-        {/* Page intro */}
-        <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 text-center mb-10 sm:mb-14">
-          <span
-            className="inline-flex items-center gap-2 text-[0.5rem] sm:text-[0.6rem] md:text-[0.65rem] font-bold uppercase tracking-[0.2em] text-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-full"
-            style={{ backgroundColor: 'var(--custom-blue)' }}
-          >
+    <div className="bg-white">
+      {/* ---------- Hero banner ---------- */}
+      <header className="relative h-[60vh] min-h-[400px] w-full overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center animate-bg-zoom" style={{ backgroundImage: `url(${teamBanner})` }} role="img" aria-label="Students walking on a bridge near a New Zealand campus" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/45 to-slate-900/80" />
+
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-20">
+          <span className={`inline-flex items-center gap-2 text-[0.6rem] sm:text-xs font-bold uppercase tracking-[0.25em] text-white px-4 py-1.5 rounded-full mb-5 transition-all duration-700 ${shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ backgroundColor: 'var(--custom-blue)' }}>
             Our Team
           </span>
-          <h1 className="sans-font text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-black text-white leading-[1.3] tracking-tight">
+          <h1 className={`sans-font text-3xl sm:text-5xl md:text-6xl font-black text-white leading-[1.1] tracking-tight max-w-4xl transition-all duration-700 delay-100 ${shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ textShadow: '0 4px 24px rgba(0,0,0,0.4)' }}>
             Leadership &amp; Advisory Board
           </h1>
-          <p className="text-white/85 text-[0.65rem] sm:text-xs md:text-sm lg:text-base font-medium max-w-2xl" style={{ textShadow: '0 2px 6px rgba(0,0,0,0.35)' }}>
-            A multidisciplinary team of professionals dedicated to ethically delivering the best education guidelines and
-            career pathways in New Zealand.
+          <p className={`text-white/90 text-sm sm:text-base md:text-lg font-medium max-w-2xl mt-5 leading-relaxed transition-all duration-700 delay-200 ${shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
+            A multidisciplinary team dedicated to ethically delivering the best education guidelines and career pathways in New Zealand.
           </p>
         </div>
 
-        {/* Founder & CEO */}
-        <section className="max-w-4xl mx-auto mb-12 sm:mb-16">
-          <h2 className="sans-font text-white text-base sm:text-xl md:text-2xl font-black tracking-tight mb-4 sm:mb-5 pl-1">Founder &amp; CEO</h2>
-          <div className="glass-panel rounded-2xl sm:rounded-[2rem] overflow-hidden grid grid-cols-1 md:grid-cols-5">
-            <div className="md:col-span-2 relative h-56 md:h-full overflow-hidden bg-white/10">
-              <img src={CEO_IMAGE} alt="Chathuranga Liyanage" className="absolute inset-0 w-full h-full object-cover object-top" />
-            </div>
-            <div className="md:col-span-3 px-5 sm:px-8 py-6 sm:py-8 flex flex-col gap-2.5">
-              <div>
-                <h3 className="sans-font text-sm sm:text-lg md:text-xl font-black text-white leading-tight">Chathuranga Liyanage</h3>
-                <p className="text-[0.5rem] sm:text-[0.6rem] md:text-[0.65rem] font-bold uppercase tracking-wider" style={{ color: 'var(--custom-green-light)' }}>
-                  Founder &amp; CEO, Fluency Bridge Global Limited
-                </p>
-              </div>
-              <p className="text-white/85 text-[0.65rem] sm:text-xs md:text-sm font-semibold">
-                <span style={{ color: 'var(--custom-green-light)' }}>Credentials:</span> B.Sc. Civil Engineering (Hons) —
-                University of Peradeniya (2011).
-              </p>
-              <p className="text-white/80 text-[0.65rem] sm:text-xs md:text-sm font-medium leading-relaxed">
-                Over 15 years of diverse, international experience in the civil engineering industry, currently directing
-                operations as a Construction Project Manager in New Zealand. He applies engineering precision and
-                structured project management to global education, mentoring future leaders with a philosophy built on
-                lived experience across all parent portfolios and subsidiary branches.
-              </p>
-            </div>
-          </div>
-        </section>
+        <div className="absolute -bottom-px left-0 right-0 h-12 bg-white" style={{ clipPath: 'ellipse(75% 100% at 50% 100%)' }} />
+      </header>
 
-        {/* Academic Consultants & Advisory Board */}
-        <section className="max-w-4xl mx-auto mb-12 sm:mb-16">
-          <h2 className="sans-font text-white text-base sm:text-xl md:text-2xl font-black tracking-tight mb-4 sm:mb-5 pl-1">
-            Academic Consultants &amp; Advisory Board
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {CONSULTANTS.map((person) => (
-              <ProfileCard key={person.id} name={person.name} role={person.role} image={person.image} lines={person.lines} accent="var(--custom-green-light)" />
+      {/* ---------- Founder & CEO ---------- */}
+      <section className="py-16 sm:py-24">
+        <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <Reveal className="reveal relative">
+            <div className="gsap-float relative">
+              <div className="absolute -inset-3 rounded-[2rem] opacity-20 blur-2xl" style={{ background: 'linear-gradient(135deg, var(--custom-green), var(--custom-blue))' }} />
+              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5] max-w-sm mx-auto lg:mx-0">
+                <img src={ceoPhoto} alt="Chathuranga Liyanage" className="w-full h-full object-cover object-top gsap-zoom" />
+              </div>
+            </div>
+          </Reveal>
+          <Reveal className="reveal flex flex-col gap-4" delay={150}>
+            <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green)' }}>Founder &amp; CEO</span>
+            <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight">Chathuranga Liyanage</h2>
+            <p className="font-bold text-sm" style={{ color: 'var(--custom-blue)' }}>Founder &amp; CEO — Fluency Bridge Global Limited</p>
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Over 15 years of diverse, international experience in the civil engineering industry, currently directing
+              operations as a Construction Project Manager in New Zealand. He applies engineering precision and structured
+              project management to global education, mentoring future leaders with a philosophy built on lived experience
+              across all parent portfolios and subsidiary branches.
+            </p>
+            <p className="text-slate-500 text-xs sm:text-sm font-semibold">B.Sc. Civil Engineering (Hons) — University of Peradeniya (2011)</p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ---------- Academic Consultants & Advisory Board ---------- */}
+      <section className="bg-slate-50 py-16 sm:py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <Reveal className="reveal text-center max-w-2xl mx-auto mb-12">
+            <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-blue)' }}>Advisory Board</span>
+            <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight mt-2">Academic Consultants &amp; Advisory Board</h2>
+            <p className="text-slate-500 text-sm sm:text-base mt-3">
+              Specialists holding baseline degrees from premier Sri Lankan universities and Masters/MBAs completed in New Zealand.
+            </p>
+          </Reveal>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {CONSULTANTS.map((c, i) => (
+              <Reveal key={c.id} delay={(i % 3) * 120} className="reveal bg-white rounded-3xl border border-slate-100 shadow-lg overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-500">
+                <div className="relative h-60 overflow-hidden bg-slate-100">
+                  <img src={c.image} alt={c.name} className="w-full h-full object-cover object-top gsap-zoom" />
+                  <span className="absolute top-4 left-4 h-1.5 w-10 rounded-full" style={{ backgroundColor: 'var(--custom-green)' }} />
+                </div>
+                <div className="p-6 flex flex-col gap-2 flex-1">
+                  <div>
+                    <h3 className="sans-font font-black text-slate-900 text-base sm:text-lg leading-tight">{c.name}</h3>
+                    <p className="text-[0.65rem] font-bold uppercase tracking-wider mt-0.5" style={{ color: 'var(--custom-blue)' }}>{c.role}</p>
+                  </div>
+                  <ul className="flex flex-col gap-1.5 mt-1">
+                    {c.lines.map((l) => (
+                      <li key={l} className="flex gap-2 items-start text-slate-500 text-xs sm:text-[0.8rem] leading-relaxed">
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: 'var(--custom-green)' }} />
+                        <span>{l}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Legal & Immigration Partners */}
-        <section className="max-w-4xl mx-auto">
-          <h2 className="sans-font text-white text-base sm:text-xl md:text-2xl font-black tracking-tight mb-4 sm:mb-5 pl-1">
-            Legal &amp; Immigration Partners
-          </h2>
-          <div className="glass-panel rounded-2xl sm:rounded-[2rem] px-6 sm:px-9 py-7 sm:py-9">
-            <p className="sans-font text-white font-black text-xs sm:text-base md:text-lg mb-2">Partnered Licensed Immigration Advisers &amp; Lawyers</p>
-            <p className="text-white/80 text-[0.65rem] sm:text-xs md:text-sm font-medium leading-relaxed">
-              To ensure absolute regulatory compliance for Fluency Bridge Global Limited, all legal immigration
-              strategies and visa applications are processed exclusively through our accredited New Zealand immigration
-              partners. Individual credentials and firm details are provided directly during personal consultations.
+      {/* ---------- Legal & Immigration Partners ---------- */}
+      <section className="py-16 sm:py-24">
+        <div className="max-w-4xl mx-auto px-6">
+          <Reveal className="reveal relative bg-white rounded-[2rem] border border-slate-100 shadow-xl p-8 sm:p-12 text-center flex flex-col items-center gap-4 overflow-hidden">
+            <span className="absolute top-0 left-0 right-0 h-1.5" style={{ background: 'linear-gradient(to right, var(--custom-blue), var(--custom-green))' }} />
+            <span className="flex items-center justify-center w-14 h-14 rounded-2xl mb-1" style={{ backgroundColor: 'var(--custom-blue)' }}>
+              <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </span>
+            <h2 className="sans-font text-xl sm:text-2xl md:text-3xl font-black text-slate-900 leading-tight">Legal &amp; Immigration Partners</h2>
+            <p className="font-bold text-sm" style={{ color: 'var(--custom-blue)' }}>Partnered Licensed Immigration Advisers &amp; Lawyers</p>
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
+              To ensure absolute regulatory compliance for Fluency Bridge Global Limited, all legal immigration strategies
+              and visa applications are processed exclusively through our accredited New Zealand immigration partners.
+              Individual credentials and firm details are provided directly during personal consultations.
             </p>
-          </div>
-        </section>
-      </main>
+          </Reveal>
+        </div>
+      </section>
 
-      {/* Fades the banner image into the footer's colour so the seam isn't visible */}
-      <div
-        className="absolute inset-x-0 bottom-0 h-40 sm:h-56 pointer-events-none z-10"
-        style={{
-          background:
-            'linear-gradient(to bottom, transparent 0%, rgba(0, 49, 133, 0.2) 50%, rgba(0, 49, 133, 0.55) 70%, rgba(0, 49, 133, 0.85) 88%, #002c78 100%)',
-        }}
-      />
-    </BannerBackground>
+      {/* ---------- CTA band ---------- */}
+      <section className="relative overflow-hidden py-16 sm:py-20" style={{ background: 'linear-gradient(120deg, var(--custom-blue-dark), var(--custom-blue) 55%, var(--custom-green))' }}>
+        <Reveal className="reveal relative max-w-4xl mx-auto px-6 text-center flex flex-col items-center gap-5">
+          <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">Ready to Start Your Journey?</h2>
+          <p className="text-white/85 text-sm sm:text-base max-w-xl">
+            Talk to our team about English coaching or your pathway to studying in New Zealand.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 mt-2">
+            <a href="#/contact" className="inline-flex items-center gap-2 bg-white text-slate-900 font-bold text-sm py-3 px-7 rounded-xl transition-all hover:opacity-90 interactive-el">
+              Contact Us
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            </a>
+            <a href="#/about" className="inline-flex items-center gap-2 bg-white/15 border border-white/40 text-white font-bold text-sm py-3 px-7 rounded-xl transition-all hover:bg-white/25 interactive-el">
+              About Us
+            </a>
+          </div>
+        </Reveal>
+      </section>
+    </div>
   );
 }
