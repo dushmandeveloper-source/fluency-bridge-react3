@@ -2,12 +2,14 @@ import { useState } from 'react';
 import fluencyBridgeLogo from '../assets/fluency-bridge-logo.png';
 
 const NAV_LINKS = [
-  { label: 'Home', href: '#', active: true, color: 'var(--custom-green)' },
-  { label: 'English Coaching', href: '#', color: 'var(--custom-green)' },
-  { label: 'NZ Academic Bridge', href: '#', color: 'var(--custom-blue)' },
+  { label: 'Home', href: '#/', route: 'home', color: 'var(--custom-green)' },
+  { label: 'English Coaching', href: '#', route: null, color: 'var(--custom-green)' },
+  { label: 'NZ Academic Bridge', href: '#', route: null, color: 'var(--custom-blue)' },
+  { label: 'About Us', href: '#/about', route: 'about', color: 'var(--custom-blue)' },
+  { label: 'Contact Us', href: '#/contact', route: 'contact', color: 'var(--custom-green)' },
 ];
 
-export default function Navbar() {
+export default function Navbar({ route = 'home' }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   // flex justify-between on mobile (2 visible groups); lg:grid grid-cols-3 once the center nav pill appears, so it lands at the true page center regardless of the side groups' widths
@@ -20,22 +22,25 @@ export default function Navbar() {
       {/* Hidden until lg: below that, the hamburger menu below handles navigation instead */}
       <div className="hidden lg:flex justify-center">
         <div className="glass-nav rounded-full p-1.5 flex items-center">
-          {NAV_LINKS.map((link, idx) => (
-            <span key={link.label} className="flex items-center">
-              {idx > 0 && <span className="text-slate-300 mx-2">|</span>}
-              <a
-                href={link.href}
-                className={
-                  link.active
-                    ? 'text-white px-6 py-2 rounded-full font-bold text-xs lg:text-sm shadow-md transition whitespace-nowrap'
-                    : 'text-slate-600 px-4 py-2 text-xs lg:text-sm font-semibold transition hover:opacity-70 whitespace-nowrap'
-                }
-                style={link.active ? { backgroundColor: link.color } : { color: link.color }}
-              >
-                {link.label}
-              </a>
-            </span>
-          ))}
+          {NAV_LINKS.map((link, idx) => {
+            const active = link.route === route;
+            return (
+              <span key={link.label} className="flex items-center">
+                {idx > 0 && <span className="text-slate-300 mx-2">|</span>}
+                <a
+                  href={link.href}
+                  className={
+                    active
+                      ? 'text-white px-5 py-2 rounded-full font-bold text-xs lg:text-sm shadow-md transition whitespace-nowrap'
+                      : 'text-slate-600 px-3 py-2 text-xs lg:text-sm font-semibold transition hover:opacity-70 whitespace-nowrap'
+                  }
+                  style={active ? { backgroundColor: link.color } : { color: link.color }}
+                >
+                  {link.label}
+                </a>
+              </span>
+            );
+          })}
         </div>
       </div>
 
@@ -73,21 +78,24 @@ export default function Navbar() {
 
       {menuOpen && (
         <div className="absolute top-full left-4 right-4 mt-3 lg:hidden glass-nav rounded-2xl p-3 flex flex-col gap-1">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className={
-                link.active
-                  ? 'text-white px-4 py-2.5 rounded-xl font-bold text-sm shadow-md transition'
-                  : 'text-slate-600 px-4 py-2.5 rounded-xl text-sm font-semibold transition hover:opacity-70'
-              }
-              style={link.active ? { backgroundColor: link.color } : { color: link.color }}
-            >
-              {link.label}
-            </a>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const active = link.route === route;
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className={
+                  active
+                    ? 'text-white px-4 py-2.5 rounded-xl font-bold text-sm shadow-md transition'
+                    : 'text-slate-600 px-4 py-2.5 rounded-xl text-sm font-semibold transition hover:opacity-70'
+                }
+                style={active ? { backgroundColor: link.color } : { color: link.color }}
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </div>
       )}
     </nav>

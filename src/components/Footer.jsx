@@ -1,10 +1,11 @@
+
 import fluencyBridgeLogo from '../assets/fluency-bridge-logo.png';
 
 const BRANCHES = ['Fluency Bridge Coaching', 'NZ Academic Bridge', 'About the Company'];
 const QUICK_LINKS = [
-  { label: 'Home', href: '#' },
-  { label: 'About Us', href: '#' },
-  { label: 'Contact Us', href: '#' },
+  { label: 'Home', href: '#/' },
+  { label: 'About Us', href: '#/about' },
+  { label: 'Contact Us', href: '#/contact' },
 ];
 
 export default function Footer() {
