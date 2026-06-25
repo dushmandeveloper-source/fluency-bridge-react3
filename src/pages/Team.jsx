@@ -11,19 +11,19 @@ const CONSULTANT_LINES = [
 // square crop, which was cutting off faces) and let the card anchor it to the top.
 const pexels = (id) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=700`;
 
-// Six advisory-board placeholders. `image` uses dummy (HD, South Asian) Pexels
-// portraits for now — swap these for the real team headshots when available.
+// Six advisory-board placeholders. `image` uses dummy (HD, youthful South Asian)
+// Pexels portraits for now — swap these for the real team headshots when available.
 const CONSULTANTS = [
-  { id: 1, name: 'Profile Space 1', role: 'Academic Consultant', image: pexels(7580766), lines: CONSULTANT_LINES },
-  { id: 2, name: 'Profile Space 2', role: 'Academic Consultant', image: pexels(7580822), lines: CONSULTANT_LINES },
-  { id: 3, name: 'Profile Space 3', role: 'Academic Consultant', image: pexels(7581126), lines: CONSULTANT_LINES },
-  { id: 4, name: 'Profile Space 4', role: 'Academic Consultant', image: pexels(7580837), lines: CONSULTANT_LINES },
-  { id: 5, name: 'Profile Space 5', role: 'Academic Consultant', image: pexels(7580992), lines: CONSULTANT_LINES },
-  { id: 6, name: 'Profile Space 6', role: 'Academic Consultant', image: pexels(7580944), lines: CONSULTANT_LINES },
+  { id: 1, name: 'Profile Space 1', role: 'Academic Consultant', image: pexels(7581116), lines: CONSULTANT_LINES },
+  { id: 2, name: 'Profile Space 2', role: 'Academic Consultant', image: pexels(6476365), lines: CONSULTANT_LINES },
+  { id: 3, name: 'Profile Space 3', role: 'Academic Consultant', image: pexels(7580984), lines: CONSULTANT_LINES },
+  { id: 4, name: 'Profile Space 4', role: 'Academic Consultant', image: pexels(8837153), lines: CONSULTANT_LINES },
+  { id: 5, name: 'Profile Space 5', role: 'Academic Consultant', image: pexels(9171219), lines: CONSULTANT_LINES },
+  { id: 6, name: 'Profile Space 6', role: 'Academic Consultant', image: pexels(8837155), lines: CONSULTANT_LINES },
 ];
 
 // Dummy CEO portrait for now — replace with the real headshot when available.
-const CEO_IMAGE = pexels(7580763);
+const CEO_IMAGE = pexels(7581111);
 
 // Typography mirrors the home page: sans-font headings at the hero's responsive
 // sizes, home-sized cards.
@@ -52,8 +52,8 @@ export default function Team() {
         <section className="max-w-4xl mx-auto mb-12 sm:mb-16">
           <h2 className="sans-font text-white text-base sm:text-xl md:text-2xl font-black tracking-tight mb-4 sm:mb-5 pl-1">Founder &amp; CEO</h2>
           <div className="glass-panel rounded-2xl sm:rounded-[2rem] overflow-hidden grid grid-cols-1 md:grid-cols-5">
-            <div className="md:col-span-2 relative h-48 md:h-auto md:min-h-[16rem] bg-white/10 overflow-hidden">
-              <img src={CEO_IMAGE} alt="Chathuranga Liyanage" className="w-full h-full object-cover object-top" />
+            <div className="md:col-span-2 relative h-56 md:h-full overflow-hidden bg-white/10">
+              <img src={CEO_IMAGE} alt="Chathuranga Liyanage" className="absolute inset-0 w-full h-full object-cover object-top" />
             </div>
             <div className="md:col-span-3 px-5 sm:px-8 py-6 sm:py-8 flex flex-col gap-2.5">
               <div>
