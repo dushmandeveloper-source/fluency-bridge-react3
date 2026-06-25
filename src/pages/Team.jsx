@@ -1,29 +1,41 @@
 import BannerBackground from '../components/BannerBackground';
 import ProfileCard from '../components/ProfileCard';
+import ceoPhoto from '../assets/team-ceo.jpeg';
+import janakiPhoto from '../assets/team-janaki.jpeg';
+import rasikaPhoto from '../assets/team-rasika.jpeg';
+import wasanaPhoto from '../assets/team-wasana.jpeg';
 
-const CONSULTANT_LINES = [
-  "Bachelor's Graduate (Sri Lanka)",
-  "Master's / MBA Graduate (New Zealand)",
-  'Dedicated academic strategist',
-];
-
-// HD portrait served by the Pexels CDN. We keep the full aspect ratio (no forced
-// square crop, which was cutting off faces) and let the card anchor it to the top.
-const pexels = (id) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=700`;
-
-// Six advisory-board placeholders. `image` uses dummy (HD, youthful South Asian)
-// Pexels portraits for now — swap these for the real team headshots when available.
+// Real advisory-board members. Photos are the plain headshots; names, titles and
+// qualifications are taken from the team's "Meet Our Team" profile cards.
 const CONSULTANTS = [
-  { id: 1, name: 'Profile Space 1', role: 'Academic Consultant', image: pexels(7581116), lines: CONSULTANT_LINES },
-  { id: 2, name: 'Profile Space 2', role: 'Academic Consultant', image: pexels(6476365), lines: CONSULTANT_LINES },
-  { id: 3, name: 'Profile Space 3', role: 'Academic Consultant', image: pexels(7580984), lines: CONSULTANT_LINES },
-  { id: 4, name: 'Profile Space 4', role: 'Academic Consultant', image: pexels(8837153), lines: CONSULTANT_LINES },
-  { id: 5, name: 'Profile Space 5', role: 'Academic Consultant', image: pexels(9171219), lines: CONSULTANT_LINES },
-  { id: 6, name: 'Profile Space 6', role: 'Academic Consultant', image: pexels(8837155), lines: CONSULTANT_LINES },
+  {
+    id: 'janaki',
+    name: 'Janaki Wijerathna',
+    role: 'Senior Academic Consultant',
+    image: janakiPhoto,
+    lines: ['HNDE', 'BA Social Sciences (OUSL)', 'LA (CASS, AUK, NZ)'],
+  },
+  {
+    id: 'rasika',
+    name: 'Rasika Udugama',
+    role: 'Senior Academic Consultant — Teaching Programs',
+    image: rasikaPhoto,
+    lines: ['Registered Teacher — Teaching Council of Aotearoa NZ', 'BSc Agri Tech & Management — UoP', 'PGDE — OUSL'],
+  },
+  {
+    id: 'wasana',
+    name: 'Wasana Dilrukshi',
+    role: 'Senior Academic Consultant',
+    image: wasanaPhoto,
+    lines: [
+      'Master of Technological Futures (MTF) — AcademyEX NZ',
+      'MSc Electrical Engineering — Univ. of Moratuwa',
+      'BSc (Hons) Electrical & Electronic Eng — Univ. of Peradeniya',
+    ],
+  },
 ];
 
-// Dummy CEO portrait for now — replace with the real headshot when available.
-const CEO_IMAGE = pexels(7581111);
+const CEO_IMAGE = ceoPhoto;
 
 // Typography mirrors the home page: sans-font headings at the hero's responsive
 // sizes, home-sized cards.
@@ -81,7 +93,7 @@ export default function Team() {
           <h2 className="sans-font text-white text-base sm:text-xl md:text-2xl font-black tracking-tight mb-4 sm:mb-5 pl-1">
             Academic Consultants &amp; Advisory Board
           </h2>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {CONSULTANTS.map((person) => (
               <ProfileCard key={person.id} name={person.name} role={person.role} image={person.image} lines={person.lines} accent="var(--custom-green-light)" />
             ))}
