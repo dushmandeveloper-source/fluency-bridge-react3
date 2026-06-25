@@ -9,9 +9,7 @@ import rasikaPhoto from '../assets/team-rasika.jpeg';
 import wasanaPhoto from '../assets/team-wasana.jpeg';
 import consultant5Photo from '../assets/team-consultant-5.jpeg';
 import consultant6Photo from '../assets/team-consultant-6.jpeg';
-
-// Hero banner — diverse advisory-board team (Pexels)
-const TEAM_BANNER = 'https://images.pexels.com/photos/7658416/pexels-photo-7658416.jpeg?auto=compress&cs=tinysrgb&w=1920';
+import heroBanner from '../assets/banner  new.png';
 
 // Real advisory-board members. Names/titles/qualifications from the "Meet Our
 // Team" profile cards; the last two are placeholders until details arrive.
@@ -47,8 +45,8 @@ export default function Team() {
   return (
     <div className="bg-white">
       {/* ---------- Hero banner ---------- */}
-      <header className="relative h-[60vh] min-h-[400px] w-full overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center animate-bg-zoom" style={{ backgroundImage: `url(${TEAM_BANNER})` }} role="img" aria-label="A diverse professional advisory team" />
+      <header className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center animate-bg-zoom" style={{ backgroundImage: `url(${heroBanner})` }} role="img" aria-label="Climbers reaching the summit with the New Zealand flag" />
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/45 to-slate-900/80" />
         <ParticleField />
 

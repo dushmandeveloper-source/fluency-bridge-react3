@@ -96,7 +96,7 @@ h1, h2, h3, .serif-font {
 }
 
 .animate-bg-zoom {
-  animation: zoomPan 25s ease-in-out infinite alternate;
+  animation: zoomPan 18s ease-in-out infinite alternate;
   transform-origin: top center;
 }
 

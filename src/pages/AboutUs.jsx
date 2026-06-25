@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import Reveal from '../components/Reveal';
 import ParticleField from '../components/ParticleField';
 import ceoPhoto from '../assets/team-ceo.jpeg';
-import aboutBanner from '../assets/abt banner.png';
+import aboutBanner from '../assets/banner  new.png';
 
 // Section imagery (banner is the supplied NZ students photo; others from Pexels)
 const ABOUT_BANNER = aboutBanner;
@@ -62,7 +62,7 @@ export default function AboutUs() {
   return (
     <div className="bg-white">
       {/* ---------- Hero banner ---------- */}
-      <header className="relative h-[68vh] min-h-[440px] w-full overflow-hidden">
+      <header className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center animate-bg-zoom"
           style={{ backgroundImage: `url(${ABOUT_BANNER})` }}

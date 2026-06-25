@@ -2,9 +2,7 @@ import { useEffect, useState } from 'react';
 
 import Reveal from '../components/Reveal';
 import ParticleField from '../components/ParticleField';
-
-// Hero banner — serene New Zealand scenery (Pexels)
-const CONTACT_BANNER = 'https://images.pexels.com/photos/2586067/pexels-photo-2586067.jpeg?auto=compress&cs=tinysrgb&w=1920';
+import heroBanner from '../assets/banner  new.png';
 
 // Purpose routing per the blueprint: each selection maps to the inbox that
 // should receive the enquiry.
@@ -45,8 +43,8 @@ export default function ContactUs() {
   return (
     <div className="bg-white">
       {/* ---------- Hero banner ---------- */}
-      <header className="relative h-[52vh] min-h-[360px] w-full overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center animate-bg-zoom" style={{ backgroundImage: `url(${CONTACT_BANNER})` }} role="img" aria-label="New Zealand mountain lake" />
+      <header className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center animate-bg-zoom" style={{ backgroundImage: `url(${heroBanner})` }} role="img" aria-label="Climbers reaching the summit with the New Zealand flag" />
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/45 to-slate-900/80" />
         <ParticleField />
 
