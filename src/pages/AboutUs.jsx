@@ -5,7 +5,7 @@ import BannerBackground from '../components/BannerBackground';
 // the Strategic Roadmap and Team pages. Typography mirrors the home page.
 export default function AboutUs() {
   return (
-    <BannerBackground>
+    <BannerBackground fixed>
       <main className="relative z-20 w-full px-6 py-28 sm:py-36">
         {/* Hero intro panel */}
         <section className="max-w-3xl mx-auto">
