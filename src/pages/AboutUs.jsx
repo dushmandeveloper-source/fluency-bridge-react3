@@ -47,6 +47,13 @@ export default function AboutUs() {
       gsap.utils.toArray('.gsap-zoom').forEach((el, i) => {
         gsap.to(el, { scale: 1.07, duration: 7 + i, ease: 'sine.inOut', yoyo: true, repeat: -1 });
       });
+      // Always-on subtle motion on the roadmap timeline
+      gsap.utils.toArray('.gsap-node').forEach((el, i) => {
+        gsap.to(el, { scale: 1.12, duration: 1.8 + i * 0.2, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: i * 0.2 });
+      });
+      gsap.utils.toArray('.gsap-card').forEach((el, i) => {
+        gsap.to(el, { y: -8, duration: 3 + i * 0.4, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: i * 0.3 });
+      });
     });
     return () => ctx.revert();
   }, []);
@@ -202,12 +209,12 @@ export default function AboutUs() {
               {ROADMAP.map((item, i) => (
                 <Reveal key={item.step} delay={i * 220} className="reveal relative flex flex-col items-center text-center">
                   <span
-                    className="sans-font relative z-10 flex items-center justify-center w-14 h-14 rounded-full text-white font-black text-lg shadow-lg ring-4 ring-white"
+                    className="gsap-node sans-font relative z-10 flex items-center justify-center w-14 h-14 rounded-full text-white font-black text-lg shadow-lg ring-4 ring-white"
                     style={{ backgroundColor: item.accent }}
                   >
                     {item.step}
                   </span>
-                  <div className="mt-5 bg-white rounded-3xl border border-slate-100 shadow-lg p-7 w-full hover:shadow-2xl transition-shadow duration-500">
+                  <div className="gsap-card mt-5 bg-white rounded-3xl border border-slate-100 shadow-lg p-7 w-full hover:shadow-2xl transition-shadow duration-500">
                     <h3 className="sans-font font-black text-slate-900 text-base sm:text-lg mb-2">{item.title}</h3>
                     <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">{item.text}</p>
                   </div>
