@@ -7,19 +7,22 @@ const CONSULTANT_LINES = [
   'Dedicated academic strategist',
 ];
 
-// Six advisory-board placeholders. `image` uses dummy randomuser.me portraits for
-// now — swap these for the real team headshots when available.
+// HD square crop served by the Pexels CDN
+const pexels = (id) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&fit=crop`;
+
+// Six advisory-board placeholders. `image` uses dummy (HD, South Asian) Pexels
+// portraits for now — swap these for the real team headshots when available.
 const CONSULTANTS = [
-  { id: 1, name: 'Profile Space 1', role: 'Academic Consultant', image: 'https://randomuser.me/api/portraits/men/32.jpg', lines: CONSULTANT_LINES },
-  { id: 2, name: 'Profile Space 2', role: 'Academic Consultant', image: 'https://randomuser.me/api/portraits/women/44.jpg', lines: CONSULTANT_LINES },
-  { id: 3, name: 'Profile Space 3', role: 'Academic Consultant', image: 'https://randomuser.me/api/portraits/men/55.jpg', lines: CONSULTANT_LINES },
-  { id: 4, name: 'Profile Space 4', role: 'Academic Consultant', image: 'https://randomuser.me/api/portraits/women/68.jpg', lines: CONSULTANT_LINES },
-  { id: 5, name: 'Profile Space 5', role: 'Academic Consultant', image: 'https://randomuser.me/api/portraits/men/41.jpg', lines: CONSULTANT_LINES },
-  { id: 6, name: 'Profile Space 6', role: 'Academic Consultant', image: 'https://randomuser.me/api/portraits/women/26.jpg', lines: CONSULTANT_LINES },
+  { id: 1, name: 'Profile Space 1', role: 'Academic Consultant', image: pexels(7580766), lines: CONSULTANT_LINES },
+  { id: 2, name: 'Profile Space 2', role: 'Academic Consultant', image: pexels(7580822), lines: CONSULTANT_LINES },
+  { id: 3, name: 'Profile Space 3', role: 'Academic Consultant', image: pexels(7581126), lines: CONSULTANT_LINES },
+  { id: 4, name: 'Profile Space 4', role: 'Academic Consultant', image: pexels(7580837), lines: CONSULTANT_LINES },
+  { id: 5, name: 'Profile Space 5', role: 'Academic Consultant', image: pexels(7580992), lines: CONSULTANT_LINES },
+  { id: 6, name: 'Profile Space 6', role: 'Academic Consultant', image: pexels(7580944), lines: CONSULTANT_LINES },
 ];
 
 // Dummy CEO portrait for now — replace with the real headshot when available.
-const CEO_IMAGE = 'https://randomuser.me/api/portraits/men/75.jpg';
+const CEO_IMAGE = pexels(7580763);
 
 // Typography mirrors the home page: sans-font headings at the hero's responsive
 // sizes, home-sized cards.
