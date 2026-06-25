@@ -1,17 +1,25 @@
 import BannerBackground from '../components/BannerBackground';
 import ProfileCard from '../components/ProfileCard';
 
-// Six advisory-board placeholders, ready for real headshots + details.
-const CONSULTANTS = Array.from({ length: 6 }, (_, i) => ({
-  id: i + 1,
-  name: `Profile Space ${i + 1}`,
-  role: 'Academic Consultant',
-  lines: [
-    "Bachelor's Graduate (Sri Lanka)",
-    "Master's / MBA Graduate (New Zealand)",
-    'Dedicated academic strategist',
-  ],
-}));
+const CONSULTANT_LINES = [
+  "Bachelor's Graduate (Sri Lanka)",
+  "Master's / MBA Graduate (New Zealand)",
+  'Dedicated academic strategist',
+];
+
+// Six advisory-board placeholders. `image` uses dummy randomuser.me portraits for
+// now — swap these for the real team headshots when available.
+const CONSULTANTS = [
+  { id: 1, name: 'Profile Space 1', role: 'Academic Consultant', image: 'https://randomuser.me/api/portraits/men/32.jpg', lines: CONSULTANT_LINES },
+  { id: 2, name: 'Profile Space 2', role: 'Academic Consultant', image: 'https://randomuser.me/api/portraits/women/44.jpg', lines: CONSULTANT_LINES },
+  { id: 3, name: 'Profile Space 3', role: 'Academic Consultant', image: 'https://randomuser.me/api/portraits/men/55.jpg', lines: CONSULTANT_LINES },
+  { id: 4, name: 'Profile Space 4', role: 'Academic Consultant', image: 'https://randomuser.me/api/portraits/women/68.jpg', lines: CONSULTANT_LINES },
+  { id: 5, name: 'Profile Space 5', role: 'Academic Consultant', image: 'https://randomuser.me/api/portraits/men/41.jpg', lines: CONSULTANT_LINES },
+  { id: 6, name: 'Profile Space 6', role: 'Academic Consultant', image: 'https://randomuser.me/api/portraits/women/26.jpg', lines: CONSULTANT_LINES },
+];
+
+// Dummy CEO portrait for now — replace with the real headshot when available.
+const CEO_IMAGE = 'https://randomuser.me/api/portraits/men/75.jpg';
 
 // Typography mirrors the home page: sans-font headings at the hero's responsive
 // sizes, home-sized cards.
@@ -40,13 +48,8 @@ export default function Team() {
         <section className="max-w-4xl mx-auto mb-12 sm:mb-16">
           <h2 className="sans-font text-white text-base sm:text-xl md:text-2xl font-black tracking-tight mb-4 sm:mb-5 pl-1">Founder &amp; CEO</h2>
           <div className="glass-panel rounded-2xl sm:rounded-[2rem] overflow-hidden grid grid-cols-1 md:grid-cols-5">
-            <div className="md:col-span-2 relative h-32 md:h-auto bg-white/10 flex items-center justify-center">
-              <div className="flex flex-col items-center gap-1.5 text-white/50">
-                <svg className="w-12 h-12 sm:w-14 sm:h-14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z" />
-                </svg>
-                <span className="text-[0.5rem] sm:text-[0.6rem] font-bold uppercase tracking-widest">Photo</span>
-              </div>
+            <div className="md:col-span-2 relative h-48 md:h-auto md:min-h-[16rem] bg-white/10 overflow-hidden">
+              <img src={CEO_IMAGE} alt="Chathuranga Liyanage" className="w-full h-full object-cover" />
             </div>
             <div className="md:col-span-3 px-5 sm:px-8 py-6 sm:py-8 flex flex-col gap-2.5">
               <div>
@@ -76,7 +79,7 @@ export default function Team() {
           </h2>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {CONSULTANTS.map((person) => (
-              <ProfileCard key={person.id} name={person.name} role={person.role} lines={person.lines} accent="var(--custom-green-light)" />
+              <ProfileCard key={person.id} name={person.name} role={person.role} image={person.image} lines={person.lines} accent="var(--custom-green-light)" />
             ))}
           </div>
         </section>
