@@ -2,13 +2,15 @@ import { useEffect, useState } from 'react';
 import gsap from 'gsap';
 
 import Reveal from '../components/Reveal';
-import teamBanner from '../assets/banner 2.png';
 import ceoPhoto from '../assets/team-ceo.jpeg';
 import janakiPhoto from '../assets/team-janaki.jpeg';
 import rasikaPhoto from '../assets/team-rasika.jpeg';
 import wasanaPhoto from '../assets/team-wasana.jpeg';
 import consultant5Photo from '../assets/team-consultant-5.jpeg';
 import consultant6Photo from '../assets/team-consultant-6.jpeg';
+
+// Hero banner — diverse advisory-board team (Pexels)
+const TEAM_BANNER = 'https://images.pexels.com/photos/7658416/pexels-photo-7658416.jpeg?auto=compress&cs=tinysrgb&w=1920';
 
 // Real advisory-board members. Names/titles/qualifications from the "Meet Our
 // Team" profile cards; the last two are placeholders until details arrive.
@@ -45,7 +47,7 @@ export default function Team() {
     <div className="bg-white">
       {/* ---------- Hero banner ---------- */}
       <header className="relative h-[60vh] min-h-[400px] w-full overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center animate-bg-zoom" style={{ backgroundImage: `url(${teamBanner})` }} role="img" aria-label="Students walking on a bridge near a New Zealand campus" />
+        <div className="absolute inset-0 bg-cover bg-center animate-bg-zoom" style={{ backgroundImage: `url(${TEAM_BANNER})` }} role="img" aria-label="A diverse professional advisory team" />
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/45 to-slate-900/80" />
 
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-20">
@@ -102,24 +104,26 @@ export default function Team() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {CONSULTANTS.map((c, i) => (
-              <Reveal key={c.id} delay={(i % 3) * 120} className="reveal bg-white rounded-3xl border border-slate-100 shadow-lg overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-500">
-                <div className="relative h-60 overflow-hidden bg-slate-100">
-                  <img src={c.image} alt={c.name} className="w-full h-full object-cover object-top gsap-zoom" />
-                  <span className="absolute top-4 left-4 h-1.5 w-10 rounded-full" style={{ backgroundColor: 'var(--custom-green)' }} />
-                </div>
-                <div className="p-6 flex flex-col gap-2 flex-1">
-                  <div>
-                    <h3 className="sans-font font-black text-slate-900 text-base sm:text-lg leading-tight">{c.name}</h3>
-                    <p className="text-[0.65rem] font-bold uppercase tracking-wider mt-0.5" style={{ color: 'var(--custom-blue)' }}>{c.role}</p>
+              <Reveal key={c.id} delay={(i % 3) * 120} className="reveal">
+                <div className="group bg-white rounded-3xl border border-slate-100 shadow-lg overflow-hidden flex flex-col h-full transition-all duration-300 ease-out hover:-translate-y-2.5 hover:shadow-2xl">
+                  <div className="relative h-60 overflow-hidden bg-slate-100">
+                    <img src={c.image} alt={c.name} className="w-full h-full object-cover object-top gsap-zoom" />
+                    <span className="absolute top-4 left-4 h-1.5 w-10 rounded-full" style={{ backgroundColor: 'var(--custom-green)' }} />
                   </div>
-                  <ul className="flex flex-col gap-1.5 mt-1">
-                    {c.lines.map((l) => (
-                      <li key={l} className="flex gap-2 items-start text-slate-500 text-xs sm:text-[0.8rem] leading-relaxed">
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: 'var(--custom-green)' }} />
-                        <span>{l}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="p-6 flex flex-col gap-2 flex-1">
+                    <div>
+                      <h3 className="sans-font font-black text-slate-900 text-base sm:text-lg leading-tight">{c.name}</h3>
+                      <p className="text-[0.65rem] font-bold uppercase tracking-wider mt-0.5" style={{ color: 'var(--custom-blue)' }}>{c.role}</p>
+                    </div>
+                    <ul className="flex flex-col gap-1.5 mt-1">
+                      {c.lines.map((l) => (
+                        <li key={l} className="flex gap-2 items-start text-slate-500 text-xs sm:text-[0.8rem] leading-relaxed">
+                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: 'var(--custom-green)' }} />
+                          <span>{l}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </Reveal>
             ))}
