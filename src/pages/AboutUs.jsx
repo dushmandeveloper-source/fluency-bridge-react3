@@ -13,28 +13,26 @@ export default function AboutUs() {
   return (
     <BannerBackground fixed>
       <main className="relative z-20 w-full px-6 py-28 sm:py-36">
-        {/* Hero intro panel */}
-        <section className="max-w-3xl mx-auto">
-          <div className="glass-panel rounded-2xl sm:rounded-[2rem] px-7 sm:px-12 py-12 sm:py-16 text-center flex flex-col items-center gap-5">
-            <span
-              className="inline-flex items-center gap-2 text-[0.5rem] sm:text-[0.6rem] md:text-[0.65rem] font-bold uppercase tracking-[0.2em] text-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-full"
-              style={{ backgroundColor: 'var(--custom-green)' }}
-            >
-              About Us
-            </span>
+        {/* Hero intro — text directly on the banner, no card (matches the Team page) */}
+        <section className="max-w-3xl mx-auto text-center flex flex-col items-center gap-4 sm:gap-5">
+          <span
+            className="inline-flex items-center gap-2 text-[0.5rem] sm:text-[0.6rem] md:text-[0.65rem] font-bold uppercase tracking-[0.2em] text-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-full"
+            style={{ backgroundColor: 'var(--custom-green)' }}
+          >
+            About Us
+          </span>
 
-            <h1 className="sans-font text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-black text-white leading-[1.3] tracking-tight">
-              Architecting Global Futures
-            </h1>
+          <h1 className="sans-font text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-black text-white leading-[1.3] tracking-tight">
+            Architecting Global Futures
+          </h1>
 
-            <p
-              className="text-white/90 text-[0.65rem] sm:text-xs md:text-sm lg:text-base font-medium leading-relaxed max-w-2xl"
-              style={{ textShadow: '0 2px 6px rgba(0,0,0,0.35)' }}
-            >
-              Fluency Bridge Global Limited is a premier New Zealand-based enterprise bridging the gap between regional
-              potential and global success — driven by industry professionals.
-            </p>
-          </div>
+          <p
+            className="text-white/90 text-[0.65rem] sm:text-xs md:text-sm lg:text-base font-medium leading-relaxed max-w-2xl"
+            style={{ textShadow: '0 2px 6px rgba(0,0,0,0.35)' }}
+          >
+            Fluency Bridge Global Limited is a premier New Zealand-based enterprise bridging the gap between regional
+            potential and global success — driven by industry professionals.
+          </p>
         </section>
 
         {/* Vision & Mission */}
