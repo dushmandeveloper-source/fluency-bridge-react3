@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 
 import ceoPhoto from '../assets/team-ceo.jpeg';
+import aboutBanner from '../assets/abt banner.png';
+import introImage from '../assets/banner 2.png';
 
-// Hero banner. To use your own image, save it into src/assets and swap this for
-// an `import` (e.g. `import aboutBanner from '../assets/about-banner.jpg'`).
-const ABOUT_BANNER = 'https://images.pexels.com/photos/6102918/pexels-photo-6102918.jpeg?auto=compress&cs=tinysrgb&w=1920';
-const INTRO_IMG = 'https://images.pexels.com/photos/8199763/pexels-photo-8199763.jpeg?auto=compress&cs=tinysrgb&w=1000';
+// Section imagery
+const ABOUT_BANNER = aboutBanner;
+const INTRO_IMG = introImage;
 const MISSION_IMG = 'https://images.pexels.com/photos/8199634/pexels-photo-8199634.jpeg?auto=compress&cs=tinysrgb&w=1000';
 const VALUES_IMG = 'https://images.pexels.com/photos/6684506/pexels-photo-6684506.jpeg?auto=compress&cs=tinysrgb&w=1000';
 
