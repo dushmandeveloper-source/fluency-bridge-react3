@@ -81,19 +81,18 @@ export default function Team() {
           </div>
         </section>
 
-        {/* Legal & Immigration Partners */}
-        <section className="max-w-4xl mx-auto">
-          <h2 className="sans-font text-white text-base sm:text-xl md:text-2xl font-black tracking-tight mb-4 sm:mb-5 pl-1">
+        {/* Link across to the Legal & Immigration Partners page */}
+        <section className="max-w-4xl mx-auto text-center">
+          <a
+            href="#/legal"
+            className="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm py-2.5 sm:py-3 px-6 sm:px-7 rounded-lg sm:rounded-xl transition-all hover:opacity-90 interactive-el"
+            style={{ backgroundColor: 'var(--custom-blue)' }}
+          >
             Legal &amp; Immigration Partners
-          </h2>
-          <div className="glass-panel rounded-2xl sm:rounded-[2rem] px-6 sm:px-9 py-7 sm:py-9">
-            <p className="sans-font text-white font-black text-xs sm:text-base md:text-lg mb-2">Partnered Licensed Immigration Advisers &amp; Lawyers</p>
-            <p className="text-white/80 text-[0.65rem] sm:text-xs md:text-sm font-medium leading-relaxed">
-              To ensure absolute regulatory compliance for Fluency Bridge Global Limited, all legal immigration
-              strategies and visa applications are processed exclusively through our accredited New Zealand immigration
-              partners. Individual credentials and firm details are provided directly during personal consultations.
-            </p>
-          </div>
+            <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
         </section>
       </main>
 
