@@ -70,7 +70,7 @@ export default function ContactUs() {
         <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-5 gap-6 lg:gap-8 items-stretch">
           {/* Form */}
           <Reveal className="reveal lg:col-span-3">
-            <form onSubmit={handleSubmit} className="h-full bg-white rounded-3xl border border-slate-100 shadow-xl p-6 sm:p-9 flex flex-col gap-4">
+            <form onSubmit={handleSubmit} className="h-full bg-white rounded-3xl border border-slate-100 brand-shadow p-6 sm:p-9 flex flex-col gap-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <label className="flex flex-col gap-1.5">
                   <span className="text-slate-700 text-xs font-bold uppercase tracking-wider">Name</span>
@@ -120,7 +120,7 @@ export default function ContactUs() {
 
           {/* Info + map */}
           <Reveal className="reveal lg:col-span-2 flex flex-col gap-6" delay={150}>
-            <div className="bg-white rounded-3xl border border-slate-100 shadow-xl p-6 sm:p-7 flex flex-col gap-5">
+            <div className="bg-white rounded-3xl border border-slate-100 brand-shadow p-6 sm:p-7 flex flex-col gap-5">
               <h2 className="sans-font font-black text-lg sm:text-xl text-slate-900">Reach Us Directly</h2>
 
               <a href="https://wa.me/642108631134" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-slate-900 font-bold text-sm hover:opacity-70 transition interactive-el">
@@ -143,7 +143,7 @@ export default function ContactUs() {
               </ul>
             </div>
 
-            <div className="bg-white rounded-3xl border border-slate-100 shadow-xl p-2 sm:p-3 overflow-hidden flex-1 flex min-h-[14rem]">
+            <div className="bg-white rounded-3xl border border-slate-100 brand-shadow p-2 sm:p-3 overflow-hidden flex-1 flex min-h-[14rem]">
               <iframe
                 title="Fluency Bridge Global Limited location"
                 src="https://www.google.com/maps?q=Auckland,New+Zealand&output=embed"

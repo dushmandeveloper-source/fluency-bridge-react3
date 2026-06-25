@@ -166,6 +166,15 @@ h1, h2, h3, .serif-font {
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
 }
 
+/* Soft blue-green tinted shadow so white cards lift off a white background */
+.brand-shadow {
+  box-shadow: 0 18px 44px -18px rgba(0, 74, 204, 0.30), 0 8px 26px -12px rgba(78, 166, 117, 0.24);
+  transition: box-shadow 0.4s ease;
+}
+.brand-shadow:hover {
+  box-shadow: 0 26px 58px -18px rgba(0, 74, 204, 0.40), 0 12px 34px -12px rgba(78, 166, 117, 0.32);
+}
+
 .accent-btn:hover {
   background-color: var(--btn-accent);
   border-color: var(--btn-accent);
