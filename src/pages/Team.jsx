@@ -3,7 +3,7 @@ import ProfileCard from '../components/ProfileCard';
 import ceoPhoto from '../assets/team-ceo.jpeg';
 import janakiPhoto from '../assets/team-janaki.jpeg';
 import rasikaPhoto from '../assets/team-rasika.jpeg';
-import consultant5Photo from '../assets/team-consultant-5.jpeg';
+import wasanaPhoto from '../assets/team-wasana.jpeg';
 
 // Real advisory-board members. Photos are the plain headshots; names, titles and
 // qualifications are taken from the team's "Meet Our Team" profile cards.
@@ -26,7 +26,7 @@ const CONSULTANTS = [
     id: 'wasana',
     name: 'Wasana Dilrukshi',
     role: 'Senior Academic Consultant',
-    image: consultant5Photo,
+    image: wasanaPhoto,
     lines: [
       'Master of Technological Futures (MTF) — AcademyEX NZ',
       'MSc Electrical Engineering — Univ. of Moratuwa',
