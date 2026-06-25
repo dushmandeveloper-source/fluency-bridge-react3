@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 
+import Reveal from '../components/Reveal';
 import ceoPhoto from '../assets/team-ceo.jpeg';
 import aboutBanner from '../assets/abt banner.png';
-import introImage from '../assets/banner 2.png';
 
-// Section imagery
+// Section imagery (banner is the supplied NZ students photo; others from Pexels)
 const ABOUT_BANNER = aboutBanner;
-const INTRO_IMG = introImage;
-const MISSION_IMG = 'https://images.pexels.com/photos/8199634/pexels-photo-8199634.jpeg?auto=compress&cs=tinysrgb&w=1000';
+const INTRO_IMG = 'https://images.pexels.com/photos/13440917/pexels-photo-13440917.jpeg?auto=compress&cs=tinysrgb&w=1100';
 const VALUES_IMG = 'https://images.pexels.com/photos/6684506/pexels-photo-6684506.jpeg?auto=compress&cs=tinysrgb&w=1000';
 
 const STATS = [
@@ -45,9 +44,9 @@ export default function AboutUs() {
           className="absolute inset-0 bg-cover bg-center animate-bg-zoom"
           style={{ backgroundImage: `url(${ABOUT_BANNER})` }}
           role="img"
-          aria-label="New Zealand alpine landscape"
+          aria-label="Students on a bridge with the New Zealand alps behind"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/45 to-slate-900/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/40 to-slate-900/80" />
 
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-20">
           <span
@@ -70,14 +69,13 @@ export default function AboutUs() {
           </p>
         </div>
 
-        {/* Curved transition into the white intro */}
         <div className="absolute -bottom-px left-0 right-0 h-12 bg-white" style={{ clipPath: 'ellipse(75% 100% at 50% 100%)' }} />
       </header>
 
       {/* ---------- Who we are ---------- */}
       <section className="py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <div className="flex flex-col gap-5">
+          <Reveal className="reveal flex flex-col gap-5">
             <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green)' }}>Who We Are</span>
             <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight">
               A premier New Zealand-based education enterprise
@@ -102,25 +100,25 @@ export default function AboutUs() {
                 </div>
               ))}
             </div>
-          </div>
+          </Reveal>
 
-          <div className="relative">
+          <Reveal className="reveal reveal-img relative" delay={150}>
             <div className="absolute -inset-3 rounded-[2rem] opacity-20 blur-2xl" style={{ background: 'linear-gradient(135deg, var(--custom-green), var(--custom-blue))' }} />
             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3]">
-              <img src={INTRO_IMG} alt="Students studying together" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src={INTRO_IMG} alt="Premier university campus" className="w-full h-full object-cover" />
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* ---------- Stats band ---------- */}
       <section className="bg-slate-50 border-y border-slate-100 py-12">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {STATS.map((s) => (
-            <div key={s.label} className="text-center">
+          {STATS.map((s, i) => (
+            <Reveal key={s.label} className="reveal text-center" delay={i * 90}>
               <p className="sans-font text-3xl sm:text-4xl font-black mb-1" style={{ color: 'var(--custom-blue)' }}>{s.value}</p>
               <p className="text-slate-500 text-xs sm:text-sm font-semibold leading-snug">{s.label}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -131,12 +129,12 @@ export default function AboutUs() {
           {[
             { label: 'Our Vision', color: 'var(--custom-green)', text: 'To establish a world-class global ecosystem that seamlessly integrates high-impact English coaching, transformational career coaching, and ethically compliant education consultancy — empowering individuals worldwide to confidently claim their place in the international market.' },
             { label: 'Our Mission', color: 'var(--custom-blue)', text: 'To democratize authentic language fluency through the Natural English Method while delivering transparent, zero-fee university placement under our dedicated NZ Academic Bridge branch — upholding student rights in strict alignment with New Zealand’s rigorous compliance frameworks.' },
-          ].map((c) => (
-            <div key={c.label} className="relative bg-white rounded-3xl border border-slate-100 shadow-lg p-8 sm:p-9 flex flex-col gap-4 hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-500 overflow-hidden">
+          ].map((c, i) => (
+            <Reveal key={c.label} delay={i * 140} className="reveal relative bg-white rounded-3xl border border-slate-100 shadow-lg p-8 sm:p-9 flex flex-col gap-4 hover:shadow-2xl transition-shadow duration-500 overflow-hidden">
               <span className="absolute top-0 left-0 h-1.5 w-full" style={{ backgroundColor: c.color }} />
               <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: c.color }}>{c.label}</span>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">{c.text}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -144,13 +142,13 @@ export default function AboutUs() {
       {/* ---------- Executive leadership ---------- */}
       <section className="bg-slate-50 py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <div className="relative order-2 lg:order-1">
+          <Reveal className="reveal reveal-img relative order-2 lg:order-1">
             <div className="absolute -inset-3 rounded-[2rem] opacity-20 blur-2xl" style={{ background: 'linear-gradient(135deg, var(--custom-blue), var(--custom-green))' }} />
             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5] max-w-sm mx-auto lg:mx-0">
               <img src={ceoPhoto} alt="Chathuranga Liyanage" className="w-full h-full object-cover object-top" />
             </div>
-          </div>
-          <div className="flex flex-col gap-4 order-1 lg:order-2">
+          </Reveal>
+          <Reveal className="reveal flex flex-col gap-4 order-1 lg:order-2" delay={150}>
             <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green)' }}>Executive Leadership</span>
             <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight">Chathuranga Liyanage</h2>
             <p className="font-bold text-sm" style={{ color: 'var(--custom-blue)' }}>Founder &amp; CEO — Fluency Bridge Global Limited</p>
@@ -162,26 +160,41 @@ export default function AboutUs() {
               academic stress.
             </p>
             <p className="text-slate-500 text-xs sm:text-sm font-semibold">B.Sc. Civil Engineering (Hons) — University of Peradeniya (2011)</p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* ---------- Strategic roadmap ---------- */}
-      <section className="py-16 sm:py-24">
+      {/* ---------- Strategic roadmap — horizontal timeline ---------- */}
+      <section className="py-16 sm:py-24 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-12">
+          <Reveal className="reveal text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-blue)' }}>Looking Ahead</span>
             <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight mt-2">Strategic Road Map &amp; Future Scale</h2>
-            <p className="text-slate-500 text-sm sm:text-base mt-3">Fluency Bridge Global Limited is scaling rapidly. Our roadmap includes:</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {ROADMAP.map((item) => (
-              <div key={item.step} className="relative bg-white rounded-3xl border border-slate-100 shadow-lg p-8 hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-500">
-                <span className="sans-font flex items-center justify-center w-12 h-12 rounded-2xl text-white font-black text-lg mb-5 shadow-lg" style={{ backgroundColor: item.accent }}>{item.step}</span>
-                <h3 className="sans-font font-black text-slate-900 text-base sm:text-lg mb-2">{item.title}</h3>
-                <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">{item.text}</p>
-              </div>
-            ))}
+            <p className="text-slate-500 text-sm sm:text-base mt-3">Fluency Bridge Global Limited is scaling rapidly. Our roadmap unfolds step by step:</p>
+          </Reveal>
+
+          <div className="relative">
+            {/* Connecting line that draws left-to-right */}
+            <div className="hidden md:block absolute top-7 left-[16.66%] right-[16.66%] h-1 rounded-full bg-slate-100">
+              <Reveal className="timeline-line h-full w-full rounded-full" style={{ background: 'linear-gradient(to right, var(--custom-green), var(--custom-blue), var(--custom-green))' }} />
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-10 md:gap-8">
+              {ROADMAP.map((item, i) => (
+                <Reveal key={item.step} delay={i * 220} className="reveal relative flex flex-col items-center text-center">
+                  <span
+                    className="sans-font relative z-10 flex items-center justify-center w-14 h-14 rounded-full text-white font-black text-lg shadow-lg ring-4 ring-white"
+                    style={{ backgroundColor: item.accent }}
+                  >
+                    {item.step}
+                  </span>
+                  <div className="mt-5 bg-white rounded-3xl border border-slate-100 shadow-lg p-7 w-full hover:shadow-2xl transition-shadow duration-500">
+                    <h3 className="sans-font font-black text-slate-900 text-base sm:text-lg mb-2">{item.title}</h3>
+                    <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">{item.text}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -189,12 +202,12 @@ export default function AboutUs() {
       {/* ---------- Integrity & compliance ---------- */}
       <section className="bg-slate-50 py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <div className="relative">
+          <Reveal className="reveal reveal-img relative">
             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3]">
-              <img src={VALUES_IMG} alt="Students in a classroom" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src={VALUES_IMG} alt="Students in a classroom" className="w-full h-full object-cover" />
             </div>
-          </div>
-          <div className="flex flex-col gap-5">
+          </Reveal>
+          <Reveal className="reveal flex flex-col gap-5" delay={150}>
             <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green)' }}>Our Promise</span>
             <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight">Uncompromised Integrity &amp; Official Compliance</h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
@@ -211,13 +224,13 @@ export default function AboutUs() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* ---------- CTA band ---------- */}
       <section className="relative overflow-hidden py-16 sm:py-20" style={{ background: 'linear-gradient(120deg, var(--custom-blue-dark), var(--custom-blue) 55%, var(--custom-green))' }}>
-        <div className="relative max-w-4xl mx-auto px-6 text-center flex flex-col items-center gap-5">
+        <Reveal className="reveal relative max-w-4xl mx-auto px-6 text-center flex flex-col items-center gap-5">
           <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">Meet the People Behind the Bridge</h2>
           <p className="text-white/85 text-sm sm:text-base max-w-xl">
             Our founder, advisory board and immigration partners — the professionals who walked the path.
@@ -231,7 +244,7 @@ export default function AboutUs() {
               Contact Us
             </a>
           </div>
-        </div>
+        </Reveal>
       </section>
     </div>
   );
