@@ -180,3 +180,56 @@ h1, h2, h3, .serif-font {
   border-left: 1px solid rgba(255, 255, 255, 0.6);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
 }
+
+/* Liquid-glass bento tile: layered translucency with a specular top-left
+   highlight, used for the About Us bento grid. */
+.liquid-glass {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow:
+    0 10px 36px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 0 32px rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease, border-color 0.45s ease;
+}
+
+/* Specular sheen in the top-left corner */
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(130% 90% at 0% 0%, rgba(255, 255, 255, 0.28), transparent 55%);
+  pointer-events: none;
+}
+
+.liquid-glass:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.42);
+  box-shadow:
+    0 20px 52px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    inset 0 0 36px rgba(255, 255, 255, 0.08);
+}
+
+/* Staggered entrance reveal (fill-mode: backwards so :hover transforms still
+   apply once the animation has finished). */
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(28px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.motion-rise {
+  animation: riseIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+/* Soft drifting colour blob for the "liquid" backdrop inside tiles */
+@keyframes blobDrift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(12px, -16px) scale(1.12); }
+}
+
+.animate-blob { animation: blobDrift 9s ease-in-out infinite; }
