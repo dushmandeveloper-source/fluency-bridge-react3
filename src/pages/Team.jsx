@@ -17,7 +17,7 @@ const CONSULTANTS = Array.from({ length: 6 }, (_, i) => ({
 // sizes, home-sized cards.
 export default function Team() {
   return (
-    <BannerBackground>
+    <BannerBackground fixed>
       <main className="relative z-20 w-full px-6 py-28 sm:py-36">
         {/* Page intro */}
         <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 text-center mb-10 sm:mb-14">
