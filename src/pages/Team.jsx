@@ -7,8 +7,9 @@ const CONSULTANT_LINES = [
   'Dedicated academic strategist',
 ];
 
-// HD square crop served by the Pexels CDN
-const pexels = (id) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&fit=crop`;
+// HD portrait served by the Pexels CDN. We keep the full aspect ratio (no forced
+// square crop, which was cutting off faces) and let the card anchor it to the top.
+const pexels = (id) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=700`;
 
 // Six advisory-board placeholders. `image` uses dummy (HD, South Asian) Pexels
 // portraits for now — swap these for the real team headshots when available.
@@ -52,7 +53,7 @@ export default function Team() {
           <h2 className="sans-font text-white text-base sm:text-xl md:text-2xl font-black tracking-tight mb-4 sm:mb-5 pl-1">Founder &amp; CEO</h2>
           <div className="glass-panel rounded-2xl sm:rounded-[2rem] overflow-hidden grid grid-cols-1 md:grid-cols-5">
             <div className="md:col-span-2 relative h-48 md:h-auto md:min-h-[16rem] bg-white/10 overflow-hidden">
-              <img src={CEO_IMAGE} alt="Chathuranga Liyanage" className="w-full h-full object-cover" />
+              <img src={CEO_IMAGE} alt="Chathuranga Liyanage" className="w-full h-full object-cover object-top" />
             </div>
             <div className="md:col-span-3 px-5 sm:px-8 py-6 sm:py-8 flex flex-col gap-2.5">
               <div>

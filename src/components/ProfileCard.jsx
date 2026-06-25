@@ -4,9 +4,9 @@
 export default function ProfileCard({ name, role, image, lines = [], accent = 'var(--custom-blue)' }) {
   return (
     <div className="group relative rounded-2xl sm:rounded-[2rem] bg-white/15 border border-white/30 backdrop-blur-md shadow-xl overflow-hidden flex flex-col transition-all duration-500 hover:-translate-y-2">
-      <div className="relative w-full h-24 sm:h-32 md:h-44 lg:h-48 bg-white/10 flex items-center justify-center overflow-hidden">
+      <div className="relative w-full h-40 sm:h-52 md:h-60 bg-white/10 flex items-center justify-center overflow-hidden">
         {image ? (
-          <img src={image} alt={name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <img src={image} alt={name} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
         ) : (
           <div className="flex flex-col items-center gap-1.5 text-white/50">
             <svg className="w-10 h-10 sm:w-12 sm:h-12" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
