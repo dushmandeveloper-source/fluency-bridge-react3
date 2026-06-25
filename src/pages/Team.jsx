@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import gsap from 'gsap';
 
 import Reveal from '../components/Reveal';
+import ParticleField from '../components/ParticleField';
 import ceoPhoto from '../assets/team-ceo.jpeg';
 import janakiPhoto from '../assets/team-janaki.jpeg';
 import rasikaPhoto from '../assets/team-rasika.jpeg';
@@ -49,8 +50,9 @@ export default function Team() {
       <header className="relative h-[60vh] min-h-[400px] w-full overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center animate-bg-zoom" style={{ backgroundImage: `url(${TEAM_BANNER})` }} role="img" aria-label="A diverse professional advisory team" />
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/45 to-slate-900/80" />
+        <ParticleField />
 
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-20">
+        <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-6 pt-20">
           <span className={`inline-flex items-center gap-2 text-[0.6rem] sm:text-xs font-bold uppercase tracking-[0.25em] text-white px-4 py-1.5 rounded-full mb-5 transition-all duration-700 ${shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ backgroundColor: 'var(--custom-blue)' }}>
             Our Team
           </span>
