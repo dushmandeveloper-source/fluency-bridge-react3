@@ -104,7 +104,7 @@ export default function AboutUs() {
             <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight">
               A premier New Zealand-based education enterprise
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed text-justify">
               Fluency Bridge Global Limited bridges the gap between regional potential and global success through a parent
               corporate infrastructure managing two distinct, specialised branches.
             </p>
@@ -159,7 +159,7 @@ export default function AboutUs() {
             <Reveal key={c.label} delay={i * 140} className="reveal relative bg-white rounded-3xl border border-slate-100 shadow-lg p-8 sm:p-9 flex flex-col gap-4 hover:shadow-2xl transition-shadow duration-500 overflow-hidden">
               <span className="absolute top-0 left-0 h-1.5 w-full" style={{ backgroundColor: c.color }} />
               <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: c.color }}>{c.label}</span>
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">{c.text}</p>
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed text-justify">{c.text}</p>
             </Reveal>
           ))}
         </div>
@@ -180,7 +180,7 @@ export default function AboutUs() {
             <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green)' }}>Executive Leadership</span>
             <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight">Chathuranga Liyanage</h2>
             <p className="font-bold text-sm" style={{ color: 'var(--custom-blue)' }}>Founder &amp; CEO — Fluency Bridge Global Limited</p>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed text-justify">
               An accomplished Construction Project Manager in New Zealand&apos;s civil engineering sector and an alumnus of
               the University of Peradeniya (2011). Having personally navigated and conquered intense linguistic barriers
               early in his career, Chathuranga engineered the <strong className="text-slate-900">Natural English Method</strong> —
@@ -240,7 +240,7 @@ export default function AboutUs() {
           <Reveal className="reveal flex flex-col gap-5" delay={150}>
             <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green)' }}>Our Promise</span>
             <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight">Uncompromised Integrity &amp; Official Compliance</h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed text-justify">
               We operate with absolute transparency and stand firmly by an ethical framework that strictly protects
               student rights. Our recruitment methodologies align with global benchmarks.
             </p>

@@ -13,10 +13,13 @@ import heroBanner from '../assets/banner  new.png';
 
 // Real advisory-board members. Names/titles/qualifications from the "Meet Our
 // Team" profile cards; the last two are placeholders until details arrive.
+// Most headshots frame the face the same way, so they crop well from the top.
+// `pos` overrides object-position only where a photo needs it — Wasana's shot
+// has extra headroom, so without this her face sits lower than the others.
 const CONSULTANTS = [
   { id: 'janaki', name: 'Janaki Wijerathna', role: 'Senior Academic Consultant', image: janakiPhoto, lines: ['HNDE', 'BA Social Sciences (OUSL)', 'LA (CASS, AUK, NZ)'] },
   { id: 'rasika', name: 'Rasika Udugama', role: 'Senior Academic Consultant — Teaching Programs', image: rasikaPhoto, lines: ['Registered Teacher — Teaching Council of Aotearoa NZ', 'BSc Agri Tech & Management — UoP', 'PGDE — OUSL'] },
-  { id: 'wasana', name: 'Wasana Dilrukshi', role: 'Senior Academic Consultant', image: wasanaPhoto, lines: ['Master of Technological Futures (MTF) — AcademyEX NZ', 'MSc Electrical Engineering — Univ. of Moratuwa', 'BSc (Hons) Electrical & Electronic Eng — Univ. of Peradeniya'] },
+  { id: 'wasana', name: 'Wasana Dilrukshi', role: 'Senior Academic Consultant', image: wasanaPhoto, pos: '50% 15%', lines: ['Master of Technological Futures (MTF) — AcademyEX NZ', 'MSc Electrical Engineering — Univ. of Moratuwa', 'BSc (Hons) Electrical & Electronic Eng — Univ. of Peradeniya'] },
   { id: 'consultant5', name: 'Lorem Ipsum', role: 'Senior Academic Consultant', image: consultant5Photo, lines: ['Lorem ipsum dolor sit amet', 'Consectetur adipiscing elit', 'Sed do eiusmod tempor'] },
   { id: 'consultant6', name: 'Dolor Sit Amet', role: 'Senior Academic Consultant', image: consultant6Photo, lines: ['Lorem ipsum dolor sit amet', 'Consectetur adipiscing elit', 'Sed do eiusmod tempor'] },
 ];
@@ -80,7 +83,7 @@ export default function Team() {
             <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green)' }}>Founder &amp; CEO</span>
             <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight">Chathuranga Liyanage</h2>
             <p className="font-bold text-sm" style={{ color: 'var(--custom-blue)' }}>Founder &amp; CEO — Fluency Bridge Global Limited</p>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed text-justify">
               Over 15 years of diverse, international experience in the civil engineering industry, currently directing
               operations as a Construction Project Manager in New Zealand. He applies engineering precision and structured
               project management to global education, mentoring future leaders with a philosophy built on lived experience
@@ -107,7 +110,7 @@ export default function Team() {
               <Reveal key={c.id} delay={(i % 3) * 120} className="reveal">
                 <div className="group bg-white rounded-3xl border border-slate-100 shadow-lg overflow-hidden flex flex-col h-full transition-all duration-300 ease-out hover:-translate-y-2.5 hover:shadow-2xl">
                   <div className="relative h-60 overflow-hidden bg-slate-100">
-                    <img src={c.image} alt={c.name} className="w-full h-full object-cover object-top gsap-zoom" />
+                    <img src={c.image} alt={c.name} style={{ objectPosition: c.pos ?? '50% top' }} className="w-full h-full object-cover gsap-zoom" />
                     <span className="absolute top-4 left-4 h-1.5 w-10 rounded-full" style={{ backgroundColor: 'var(--custom-green)' }} />
                   </div>
                   <div className="p-6 flex flex-col gap-2 flex-1">
@@ -141,7 +144,7 @@ export default function Team() {
             </span>
             <h2 className="sans-font text-xl sm:text-2xl md:text-3xl font-black text-slate-900 leading-tight">Legal &amp; Immigration Partners</h2>
             <p className="font-bold text-sm" style={{ color: 'var(--custom-blue)' }}>Partnered Licensed Immigration Advisers &amp; Lawyers</p>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl text-justify">
               To ensure absolute regulatory compliance for Fluency Bridge Global Limited, all legal immigration strategies
               and visa applications are processed exclusively through our accredited New Zealand immigration partners.
               Individual credentials and firm details are provided directly during personal consultations.
