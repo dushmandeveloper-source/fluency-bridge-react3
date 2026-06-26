@@ -27,8 +27,7 @@ const ROADMAP = [
 const COMPLIANCE = [
   'Fully compliant with New Zealand law',
   'Aligned with the London Statement (London Code)',
-  'NZ Education (Pastoral Care) Guidelines',
-  'Finalising INZ / Education NZ agency certification',
+  'NZ Education (Pastoral Care) Guidelines for international students',
 ];
 
 export default function AboutUs() {
@@ -241,8 +240,10 @@ export default function AboutUs() {
             <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green)' }}>Our Promise</span>
             <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight">Uncompromised Integrity &amp; Official Compliance</h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed text-justify">
-              We operate with absolute transparency and stand firmly by an ethical framework that strictly protects
-              student rights. Our recruitment methodologies align with global benchmarks.
+              We operate with absolute transparency and are fully compliant with New Zealand law. We stand firmly by an
+              ethical framework that strictly protects student rights. Our recruitment methodologies strictly align with
+              global benchmarks, including the London Statement (London Code) and the New Zealand Education (Pastoral
+              Care) Guidelines for international students.
             </p>
             <ul className="flex flex-col gap-3 mt-1">
               {COMPLIANCE.map((c) => (
@@ -254,6 +255,13 @@ export default function AboutUs() {
                 </li>
               ))}
             </ul>
+            <div className="mt-2 rounded-2xl border-l-4 bg-white/70 p-4 sm:p-5 shadow-sm" style={{ borderColor: 'var(--custom-blue)' }}>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed text-justify">
+                <span className="font-bold text-slate-900">Institutional Note:</span> We are currently finalised to
+                integrate official Immigration New Zealand (INZ) / Education New Zealand agency certifications to
+                officially badge our ecosystem for premium compliance.
+              </p>
+            </div>
           </Reveal>
         </div>
       </section>
