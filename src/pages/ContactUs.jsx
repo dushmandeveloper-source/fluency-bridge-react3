@@ -35,7 +35,8 @@ export default function ContactUs() {
         `Contact number: ${data.get('phone') ?? ''}\n` +
         `Email: ${data.get('email') ?? ''}\n` +
         `Purpose: ${selected.label}\n\n` +
-        `${data.get('message') ?? ''}`
+        `${data.get('message') ?? ''}\n\n` +
+        `Special notes: ${data.get('notes') ?? ''}`
     );
     window.location.href = `mailto:${selected.email}?subject=${subject}&body=${body}`;
   };
@@ -107,6 +108,11 @@ export default function ContactUs() {
               <label className="flex flex-col gap-1.5">
                 <span className="text-slate-700 text-xs font-bold uppercase tracking-wider">Message</span>
                 <textarea name="message" rows={4} placeholder="How can we help?" className={`${inputClass} resize-none`} />
+              </label>
+
+              <label className="flex flex-col gap-1.5">
+                <span className="text-slate-700 text-xs font-bold uppercase tracking-wider">Special Notes</span>
+                <textarea name="notes" rows={2} placeholder="Anything else we should know? (optional)" className={`${inputClass} resize-none`} />
               </label>
 
               <button type="submit" className="mt-1 w-full text-white font-bold py-3 rounded-xl transition-all hover:opacity-90 flex justify-center items-center gap-2 interactive-el" style={{ backgroundColor: 'var(--custom-blue)' }}>

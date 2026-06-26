@@ -154,7 +154,7 @@ export default function AboutUs() {
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-6 sm:gap-8">
           {[
             { label: 'Our Vision', color: 'var(--custom-green)', text: 'To establish a world-class global ecosystem that seamlessly integrates high-impact English coaching, transformational career coaching, and ethically compliant education consultancy — empowering individuals worldwide to confidently claim their place in the international market.' },
-            { label: 'Our Mission', color: 'var(--custom-blue)', text: 'To democratize authentic language fluency through the Natural English Method while delivering transparent, zero-fee university placement under our dedicated NZ Academic Bridge branch — upholding student rights in strict alignment with New Zealand’s rigorous compliance frameworks.' },
+            { label: 'Our Mission', color: 'var(--custom-blue)', text: 'To democratize authentic language fluency through the Natural English Method while simultaneously delivering transparent, zero-fee university placement under our dedicated NZ Academic Bridge branch. We pledge to deploy an expert team of multidisciplinary professionals who uphold student rights above all else, operating in strict alignment with international codes of conduct and New Zealand’s rigorous compliance frameworks.' },
           ].map((c, i) => (
             <Reveal key={c.label} delay={i * 140} className="reveal relative bg-white rounded-3xl border border-slate-100 shadow-lg p-8 sm:p-9 flex flex-col gap-4 hover:shadow-2xl transition-shadow duration-500 overflow-hidden">
               <span className="absolute top-0 left-0 h-1.5 w-full" style={{ backgroundColor: c.color }} />
