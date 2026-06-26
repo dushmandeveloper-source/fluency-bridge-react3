@@ -104,13 +104,14 @@ export default function AboutUs() {
               A premier New Zealand-based education enterprise
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed text-justify">
-              Fluency Bridge Global Limited bridges the gap between regional potential and global success through a parent
-              corporate infrastructure managing two distinct, specialised branches.
+              Fluency Bridge Global Limited is a premier New Zealand-based, service-oriented enterprise. We bridge the gap
+              between regional potential and global success through our parent corporate infrastructure, managing two
+              distinct, specialised operational branches:
             </p>
             <div className="flex flex-col gap-4 mt-1">
               {[
-                { name: 'Fluency Bridge', desc: 'Elite English communication coaching following the Natural English Method.', color: 'var(--custom-green)' },
-                { name: 'NZ Academic Bridge', desc: 'Zero-fee international student recruitment and expert tertiary placement.', color: 'var(--custom-blue)' },
+                { name: 'Fluency Bridge', desc: 'Our elite frontline program focusing on high-performance English communication coaching for professionals and international students following the Natural English Method.', color: 'var(--custom-green)' },
+                { name: 'NZ Academic Bridge', desc: 'Our specialised, dedicated branding branch established to execute all international student recruitment, expert tertiary placement, and career transition consultancy services.', color: 'var(--custom-blue)' },
               ].map((b) => (
                 <div key={b.name} className="flex gap-4 items-start">
                   <span className="mt-1 flex items-center justify-center w-8 h-8 rounded-xl shrink-0" style={{ backgroundColor: b.color }}>
