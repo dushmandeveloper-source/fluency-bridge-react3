@@ -7,21 +7,23 @@ import ceoPhoto from '../assets/team-ceo.jpeg';
 import janakiPhoto from '../assets/team-janaki.jpeg';
 import rasikaPhoto from '../assets/team-rasika.jpeg';
 import wasanaPhoto from '../assets/team-wasana.jpeg';
+import consultant5Photo from '../assets/team-consultant-5.jpeg';
+import consultant6Photo from '../assets/team-consultant-6.jpeg';
 import heroBanner from '../assets/banner  new.png';
 
 // Real advisory-board members. Names/titles/qualifications from the "Meet Our
-// Team" profile cards.
+// Team" profile cards. The last two cards keep their photos but show
+// placeholder labels until the real details are supplied — replace `name`,
+// `role` and each `lines` entry with the actual values.
 // Most headshots frame the face the same way, so they crop well from the top.
 // `pos` overrides object-position only where a photo needs it — Wasana's shot
 // has extra headroom, so without this her face sits lower than the others.
-//
-// To add another consultant, append an object with: id (unique slug), name,
-// role (their title), image (an imported photo), lines (array of qualification
-// strings), and optionally pos (CSS object-position to fine-tune the crop).
 const CONSULTANTS = [
   { id: 'janaki', name: 'Janaki Wijerathna', role: 'Senior Academic Consultant', image: janakiPhoto, lines: ['HNDE', 'BA Social Sciences (OUSL)', 'LA (CASS, AUK, NZ)'] },
   { id: 'rasika', name: 'Rasika Udugama', role: 'Senior Academic Consultant — Teaching Programs', image: rasikaPhoto, lines: ['Registered Teacher — Teaching Council of Aotearoa NZ', 'BSc Agri Tech & Management — UoP', 'PGDE — OUSL'] },
   { id: 'wasana', name: 'Wasana Dilrukshi', role: 'Senior Academic Consultant', image: wasanaPhoto, pos: '50% 15%', lines: ['Master of Technological Futures (MTF) — AcademyEX NZ', 'MSc Electrical Engineering — Univ. of Moratuwa', 'BSc (Hons) Electrical & Electronic Eng — Univ. of Peradeniya'] },
+  { id: 'consultant5', name: 'Full Name', role: 'Title / Position', image: consultant5Photo, lines: ['Qualification / Degree', 'University & Country', 'Specialisation (optional)'] },
+  { id: 'consultant6', name: 'Full Name', role: 'Title / Position', image: consultant6Photo, lines: ['Qualification / Degree', 'University & Country', 'Specialisation (optional)'] },
 ];
 
 export default function Team() {
