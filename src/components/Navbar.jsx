@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import fluencyBridgeLogo from '../assets/fluency-bridge-logo.png';
 
 const NAV_LINKS = [
@@ -13,6 +13,17 @@ const NAV_LINKS = [
 
 export default function Navbar({ route = 'home' }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // On desktop the centre links have no glass pill so they read cleanly over the
+  // banner. Once the page scrolls they can pass over white content, so fade the
+  // glass background (and dark text) back in to keep them visible.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   // Flex layout with a flex-1 centre group so the nav pill sizes to its content
   // and stays centred without a fixed 1/3 column (which used to overflow). The
@@ -24,22 +35,24 @@ export default function Navbar({ route = 'home' }) {
         <img src={fluencyBridgeLogo} alt="Fluency Bridge" className="h-9 sm:h-10 lg:h-12 object-contain" />
       </div>
 
-      {/* Hidden until xl: below that, the hamburger menu below handles navigation instead */}
+      {/* Hidden until xl: below that, the hamburger menu below handles navigation
+          instead. On desktop the links sit directly on the banner (no glass pill);
+          a soft text-shadow keeps them legible over the photo. */}
       <div className="hidden xl:flex flex-1 justify-center min-w-0">
-        <div className="glass-nav rounded-full p-1.5 flex items-center">
+        <div className={`rounded-full p-1.5 flex items-center transition-colors duration-300 ${scrolled ? 'glass-nav' : ''}`}>
           {NAV_LINKS.map((link, idx) => {
             const active = link.route === route;
             return (
               <span key={link.label} className="flex items-center">
-                {idx > 0 && <span className="text-slate-300 mx-1">|</span>}
+                {idx > 0 && <span className={`mx-1 ${scrolled ? 'text-slate-300' : 'text-white/40'}`}>|</span>}
                 <a
                   href={link.href}
                   className={
                     active
                       ? 'text-white px-3.5 2xl:px-4 py-2 rounded-full font-bold text-xs 2xl:text-sm shadow-md transition whitespace-nowrap'
-                      : 'text-slate-600 px-2.5 2xl:px-3 py-2 text-xs 2xl:text-sm font-semibold transition hover:opacity-70 whitespace-nowrap'
+                      : `px-2.5 2xl:px-3 py-2 text-xs 2xl:text-sm font-semibold transition hover:opacity-70 whitespace-nowrap ${scrolled ? 'text-slate-600' : 'text-white/90'}`
                   }
-                  style={active ? { backgroundColor: link.color } : { color: link.color }}
+                  style={active ? { backgroundColor: link.color } : scrolled ? { color: link.color } : { textShadow: '0 1px 6px rgba(0,0,0,0.45)' }}
                 >
                   {link.label}
                 </a>
