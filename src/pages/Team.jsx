@@ -57,7 +57,7 @@ export default function Team() {
 
         <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-6 pt-20">
           <span className={`inline-flex items-center gap-2 text-[0.6rem] sm:text-xs font-bold uppercase tracking-[0.25em] text-white px-4 py-1.5 rounded-full mb-5 transition-all duration-700 ${shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ backgroundColor: 'var(--custom-blue)' }}>
-            Our Team
+            Our Consultants
           </span>
           <h1 className={`sans-font text-3xl sm:text-5xl md:text-6xl font-black text-white leading-[1.1] tracking-tight max-w-4xl transition-all duration-700 delay-100 ${shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ textShadow: '0 4px 24px rgba(0,0,0,0.4)' }}>
             Leadership &amp; Advisory Board

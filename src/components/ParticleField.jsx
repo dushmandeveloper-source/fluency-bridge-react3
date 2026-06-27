@@ -1,12 +1,12 @@
 import { useMemo } from 'react';
 
 const COLORS = ['#a8e8c4', '#9cc8ff', '#ffffff'];
-const PARTICLE_COUNT = 28;
+const DEFAULT_PARTICLE_COUNT = 28;
 
-export default function ParticleField() {
+export default function ParticleField({ count = DEFAULT_PARTICLE_COUNT }) {
   const particles = useMemo(
     () =>
-      Array.from({ length: PARTICLE_COUNT }, (_, i) => {
+      Array.from({ length: count }, (_, i) => {
         const size = Math.random() * 3 + 2;
         const color = COLORS[Math.floor(Math.random() * COLORS.length)];
         const angle = Math.random() * Math.PI * 2;
@@ -23,7 +23,7 @@ export default function ParticleField() {
           animationDelay: `-${Math.random() * 7}s`,
         };
       }),
-    []
+    [count]
   );
 
   return (

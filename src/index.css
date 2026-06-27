@@ -215,6 +215,17 @@ h1, h2, h3, .serif-font {
   pointer-events: none;
 }
 
+/* About Us 2 floats its glass cards over the brighter NZ-students banner, so the
+   default near-white tint left white text low-contrast. Scope a darker frosted
+   tint to that page only (other pages keep the lighter glass). */
+.about2-glass .liquid-glass {
+  background: linear-gradient(135deg, rgba(13, 24, 45, 0.55), rgba(13, 24, 45, 0.34));
+  border-color: rgba(255, 255, 255, 0.24);
+}
+.about2-glass .liquid-glass:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
 /* Hover glow only (no transform) so it never fights the perpetual float */
 .liquid-glass:hover {
   border-color: rgba(255, 255, 255, 0.45);

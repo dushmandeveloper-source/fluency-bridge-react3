@@ -12,19 +12,26 @@ import bannerImage from '../assets/banner.png';
 // so the photo always frames like the home page regardless of how tall the page
 // is. Use this for long pages (e.g. the team grid) where an absolute, content-
 // sized background would scale up and zoom past the home framing.
-export default function BannerBackground({ children, overlayClassName = 'bg-slate-900/65', fixed = false }) {
+export default function BannerBackground({
+  children,
+  overlayClassName = 'bg-slate-900/65',
+  fixed = false,
+  image = bannerImage,
+  ariaLabel = 'Climber reaching the summit with the New Zealand flag',
+  particleCount,
+}) {
   const layer = fixed ? 'fixed' : 'absolute';
 
   return (
     <div className="relative">
       <div
         role="img"
-        aria-label="Climber reaching the summit with the New Zealand flag"
+        aria-label={ariaLabel}
         className={`${layer} inset-0 w-full h-full bg-cover bg-center animate-bg-zoom opacity-90 z-0`}
-        style={{ backgroundImage: `url(${bannerImage})` }}
+        style={{ backgroundImage: `url(${image})` }}
       />
       <div className={`${layer} inset-0 z-0 ${overlayClassName}`} />
-      <ParticleField />
+      <ParticleField count={particleCount} />
 
       {children}
     </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import Reveal from '../components/Reveal';
 import ParticleField from '../components/ParticleField';
+import CountryPhoneInput from '../components/CountryPhoneInput';
 import heroBanner from '../assets/banner  new.png';
 
 // Purpose routing per the blueprint: each selection maps to the inbox that
@@ -77,7 +78,7 @@ export default function ContactUs() {
                 </label>
                 <label className="flex flex-col gap-1.5">
                   <span className="text-slate-700 text-xs font-bold uppercase tracking-wider">Contact Number</span>
-                  <input name="phone" type="tel" placeholder="+64 ..." className={inputClass} />
+                  <CountryPhoneInput name="phone" defaultIso2="nz" />
                 </label>
               </div>
 

@@ -5,7 +5,7 @@ const BRANCHES = ['Fluency Bridge Coaching', 'NZ Academic Bridge'];
 const QUICK_LINKS = [
   { label: 'Home', href: '#/' },
   { label: 'About Us', href: '#/about' },
-  { label: 'Our Team', href: '#/team' },
+  { label: 'Our Consultants', href: '#/team' },
   { label: 'Contact Us', href: '#/contact' },
 ];
 

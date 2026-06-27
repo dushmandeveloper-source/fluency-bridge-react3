@@ -6,7 +6,8 @@ const NAV_LINKS = [
   { label: 'English Coaching', href: '#', route: null, color: 'var(--custom-green)' },
   { label: 'NZ Academic Bridge', href: '#', route: null, color: 'var(--custom-blue)' },
   { label: 'About Us', href: '#/about', route: 'about', color: 'var(--custom-blue)' },
-  { label: 'Our Team', href: '#/team', route: 'team', color: 'var(--custom-green)' },
+  { label: 'About Us 2', href: '#/about2', route: 'about2', color: 'var(--custom-blue)' },
+  { label: 'Our Consultants', href: '#/team', route: 'team', color: 'var(--custom-green)' },
   { label: 'Contact Us', href: '#/contact', route: 'contact', color: 'var(--custom-green)' },
 ];
 
