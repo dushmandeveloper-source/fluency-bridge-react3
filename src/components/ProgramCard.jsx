@@ -80,7 +80,7 @@ export default function ProgramCard({ program, interactive = false }) {
         <h4 className="text-sm sm:text-lg md:text-xl lg:text-2xl font-black mb-1.5 sm:mb-2 mt-0.5 sm:mt-1 sans-font" style={{ color: accentColor }}>
           {title}
         </h4>
-        <p className={`text-[0.65rem] sm:text-sm md:text-base leading-relaxed font-medium mb-3 sm:mb-4 line-clamp-2 flex-1 ${interactive ? 'text-slate-900' : 'text-slate-500'}`}>{description}</p>
+        <p className={`text-[0.65rem] sm:text-sm md:text-base leading-relaxed font-medium mb-3 sm:mb-4 flex-1 ${interactive ? 'text-slate-900 text-justify' : 'text-slate-500 line-clamp-2'}`}>{description}</p>
 
         <button
           className="accent-btn w-full bg-white border border-slate-200 text-slate-800 font-bold py-2 sm:py-3 rounded-lg sm:rounded-xl transition-all flex justify-center items-center gap-1.5 sm:gap-2 hover:text-white text-sm sm:text-base"

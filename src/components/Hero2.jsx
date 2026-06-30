@@ -13,7 +13,7 @@ export default function Hero2() {
       <div className="relative z-20 w-full max-w-4xl mx-auto px-6 md:px-12 flex flex-col items-center text-center">
         {/* Subtitle wraps to 2 lines on small screens (max-w caps width) instead of shrinking unreadably small */}
         <p
-          className={`text-white text-[0.65rem] sm:text-xs md:text-sm lg:text-base font-medium leading-relaxed max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl transition-all duration-1000 ease-out ${
+          className={`text-white text-sm sm:text-base md:text-lg lg:text-xl font-semibold leading-relaxed max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl transition-all duration-1000 ease-out ${
             subtextVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
           style={{
