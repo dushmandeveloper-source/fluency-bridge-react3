@@ -19,6 +19,7 @@ export default function BannerBackground({
   image = bannerImage,
   ariaLabel = 'Climber reaching the summit with the New Zealand flag',
   particleCount,
+  zoomOrigin = 'top center',
 }) {
   const layer = fixed ? 'fixed' : 'absolute';
 
@@ -28,7 +29,7 @@ export default function BannerBackground({
         role="img"
         aria-label={ariaLabel}
         className={`${layer} inset-0 w-full h-full bg-cover bg-center animate-bg-zoom opacity-90 z-0`}
-        style={{ backgroundImage: `url(${image})` }}
+        style={{ backgroundImage: `url(${image})`, transformOrigin: zoomOrigin }}
       />
       <div className={`${layer} inset-0 z-0 ${overlayClassName}`} />
       <ParticleField count={particleCount} />

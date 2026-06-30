@@ -1,0 +1,86 @@
+import { useEffect, useMemo, useRef } from 'react';
+import { animate, stagger, set } from 'animejs';
+
+function toChars(text) {
+  return text.split('').map((char, index) => ({
+    key: `${index}-${char}`,
+    char: char === ' ' ? ' ' : char,
+  }));
+}
+
+export default function MotionText({
+  text,
+  as: Tag = 'span',
+  className = '',
+  delayOffset = 0,
+  staggerMs = 40,
+  duration = 1200,
+  loop = false,
+  loopDelay = 3500,
+  accent = false,
+  glow = false,
+  accentColor,
+  glowRgb = '78, 166, 117',
+  onComplete,
+}) {
+  const containerRef = useRef(null);
+  const chars = useMemo(() => toChars(text), [text]);
+
+  useEffect(() => {
+    const letters = containerRef.current?.querySelectorAll('.motion-letter');
+    if (!letters || letters.length === 0) return;
+
+    let cancelled = false;
+    let timeoutId;
+
+    const playReveal = (isFirstPlay) => {
+      if (cancelled) return;
+      animate(letters, {
+        translateY: ['1.1em', '0em'],
+        opacity: [0, 1],
+        ease: 'outExpo',
+        duration,
+        delay: stagger(staggerMs, { start: isFirstPlay ? delayOffset : 0 }),
+        onComplete: () => {
+          if (cancelled) return;
+          if (isFirstPlay) onComplete?.();
+          if (loop) {
+            timeoutId = setTimeout(() => {
+              if (cancelled) return;
+              set(letters, { translateY: '1.1em', opacity: 0 });
+              playReveal(false);
+            }, loopDelay);
+          }
+        },
+      });
+    };
+
+    playReveal(true);
+
+    return () => {
+      cancelled = true;
+      clearTimeout(timeoutId);
+    };
+  }, [chars, delayOffset, staggerMs, duration, loop, loopDelay, onComplete]);
+
+  return (
+    // accent adds the italic Playfair Display font; glow alone keeps the caller's own font and just adds the drop-shadow glow
+    <Tag
+      ref={containerRef}
+      className={`${accent ? 'motion-text-accent' : ''} ${className}`}
+      style={{
+        color: accentColor,
+        filter:
+          accent || glow
+            ? `drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 8px rgba(${glowRgb}, 0.9)) drop-shadow(0 0 20px rgba(${glowRgb}, 0.7)) drop-shadow(0 0 40px rgba(${glowRgb}, 0.45))`
+            : undefined,
+      }}
+    >
+      {chars.map(({ key, char }) => (
+        <span key={key} className="motion-letter-mask">
+          <span className="motion-letter">{char}</span>
+        </span>
+      ))}
+    </Tag>
+  );
+}

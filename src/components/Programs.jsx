@@ -10,8 +10,14 @@ export default function Programs() {
         ))}
       </div>
 
-      {/* Fades the banner photo into the white content below (Stats/Why Choose Us section) so the seam isn't visible */}
-      <div className="hero-fade absolute inset-x-0 bottom-0 h-40 sm:h-56 pointer-events-none" />
+      {/* Fades the fixed background image into the footer's color (#002c78 matches the footer's own black/10 top overlay) so the seam isn't visible */}
+      <div
+        className="absolute inset-x-0 bottom-0 h-40 sm:h-56 pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(to bottom, transparent 0%, rgba(0, 49, 133, 0.2) 50%, rgba(0, 49, 133, 0.55) 70%, rgba(0, 49, 133, 0.85) 88%, #002c78 100%)',
+        }}
+      />
     </main>
   );
 }
