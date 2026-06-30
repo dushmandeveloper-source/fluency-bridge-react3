@@ -87,13 +87,14 @@ export default function Team() {
               <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green-light)' }}>Founder &amp; CEO</span>
               <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">Chathuranga Liyanage</h2>
               <p className="font-bold text-sm" style={{ color: 'var(--custom-blue-light)' }}>Founder &amp; CEO — Fluency Bridge Global Limited</p>
-              <p className="text-white/95 text-sm sm:text-base leading-relaxed text-justify">
-                Over 15 years of diverse, international experience in the civil engineering industry, currently directing
-                operations as a Construction Project Manager in New Zealand. He applies engineering precision and structured
-                project management to global education, mentoring future leaders with a philosophy built on lived experience
-                across all parent portfolios and subsidiary branches.
-              </p>
               <p className="text-white/80 text-xs sm:text-sm font-semibold">B.Sc. Civil Engineering (Hons) — University of Peradeniya (2011)</p>
+              <p className="text-white/95 text-sm sm:text-base leading-relaxed text-justify">
+                An accomplished Construction Project Manager in New Zealand&apos;s civil engineering sector and an alumnus
+                of the University of Peradeniya (2011). Having personally navigated and conquered intense linguistic
+                barriers early in his career, Chathuranga engineered the <strong className="text-white">Natural English
+                Method</strong> — a systematic, first-principles framework designed to fast-track real-world
+                communication dominance without academic stress.
+              </p>
             </Reveal>
           </div>
         </section>
