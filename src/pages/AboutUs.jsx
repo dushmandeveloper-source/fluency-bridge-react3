@@ -70,7 +70,7 @@ export default function AboutUs() {
       overlayClassName="bg-gradient-to-b from-slate-900/70 via-slate-900/55 to-slate-900/80"
       particleCount={52}
     >
-      <main className="about-glass relative z-20 w-full">
+      <main className="bright-banner-glass relative z-20 w-full">
 
         {/* ---------- Hero ---------- */}
         <header className="px-6 pt-28 pb-6 sm:pt-32 sm:pb-8">

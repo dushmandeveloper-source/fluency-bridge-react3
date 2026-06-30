@@ -8,7 +8,8 @@ const flagSrc = (iso2) => `https://flagcdn.com/w40/${iso2}.png`;
 // left and a free number input on the right, inside one bordered control. A
 // hidden input carries the combined "<dial> <number>" so the parent form's
 // FormData picks it up under `name` with no extra wiring.
-export default function CountryPhoneInput({ name = 'phone', defaultIso2 = 'nz', required = false }) {
+export default function CountryPhoneInput({ name = 'phone', defaultIso2 = 'nz', required = false, variant = 'light' }) {
+  const glass = variant === 'glass';
   const initial = useMemo(
     () => COUNTRIES.find((c) => c.iso2 === defaultIso2) ?? COUNTRIES.find((c) => c.iso2 === 'nz') ?? COUNTRIES[0],
     [defaultIso2]
@@ -56,23 +57,23 @@ export default function CountryPhoneInput({ name = 'phone', defaultIso2 = 'nz', 
 
   return (
     <div className="relative" ref={wrapRef}>
-      <div className="w-full flex items-stretch bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium transition focus-within:border-[color:var(--custom-blue)] focus-within:ring-2 focus-within:ring-blue-100">
+      <div className={`w-full flex items-stretch border rounded-xl text-sm font-medium transition ${glass ? 'bg-white/10 border-white/25 focus-within:border-white/60 focus-within:ring-2 focus-within:ring-white/15' : 'bg-slate-50 border-slate-200 focus-within:border-[color:var(--custom-blue)] focus-within:ring-2 focus-within:ring-blue-100'}`}>
         <button
           type="button"
           onClick={() => setOpen((o) => !o)}
           aria-haspopup="listbox"
           aria-expanded={open}
           aria-label={`Country code: ${country.name} ${country.dial}`}
-          className="flex items-center gap-2 pl-3.5 pr-2.5 py-3 shrink-0 rounded-l-xl hover:bg-slate-100 transition interactive-el"
+          className={`flex items-center gap-2 pl-3.5 pr-2.5 py-3 shrink-0 rounded-l-xl transition interactive-el ${glass ? 'hover:bg-white/10' : 'hover:bg-slate-100'}`}
         >
           <img src={flagSrc(country.iso2)} alt="" width="22" height="16" className="w-[22px] h-4 object-cover rounded-[3px] shadow-sm" />
-          <span className="text-slate-900 font-semibold tabular-nums">{country.dial}</span>
-          <svg className={`w-3.5 h-3.5 text-slate-400 transition-transform ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <span className={`font-semibold tabular-nums ${glass ? 'text-white' : 'text-slate-900'}`}>{country.dial}</span>
+          <svg className={`w-3.5 h-3.5 transition-transform ${glass ? 'text-white/60' : 'text-slate-400'} ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
 
-        <span className="w-px bg-slate-200 my-2" />
+        <span className={`w-px my-2 ${glass ? 'bg-white/20' : 'bg-slate-200'}`} />
 
         <input
           type="tel"
@@ -81,7 +82,7 @@ export default function CountryPhoneInput({ name = 'phone', defaultIso2 = 'nz', 
           onChange={(e) => setNumber(e.target.value)}
           placeholder="21 234 5678"
           aria-label="Phone number"
-          className="flex-1 min-w-0 bg-transparent px-3.5 py-3 text-slate-900 placeholder-slate-400 focus:outline-none rounded-r-xl"
+          className={`flex-1 min-w-0 bg-transparent px-3.5 py-3 focus:outline-none rounded-r-xl ${glass ? 'text-white placeholder-white/50' : 'text-slate-900 placeholder-slate-400'}`}
         />
 
         {/* Combined value for the form (e.g. "+64 21 234 5678") */}
