@@ -6,6 +6,7 @@ import Home2 from './pages/Home2';
 import AboutUs from './pages/AboutUs';
 import Team from './pages/Team';
 import ContactUs from './pages/ContactUs';
+import NZAcademicBridge from './pages/NZAcademicBridge';
 import { useHashRoute } from './useHashRoute';
 
 const PAGES = {
@@ -14,6 +15,7 @@ const PAGES = {
   about: AboutUs,
   team: Team,
   contact: ContactUs,
+  'nz-academic-bridge': NZAcademicBridge,
 };
 
 export default function App() {
