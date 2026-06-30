@@ -435,10 +435,8 @@ export default function FluencyBridge() {
                         <Icon path={s.icon} className="w-4 h-4 text-white" />
                       </span>
                       <span>
-                        <span className="block font-black text-sm text-white">Stage {s.num}</span>
-                        <span className="block text-[0.65rem] font-bold uppercase tracking-wider" style={{ color: active ? s.accent : 'rgba(255,255,255,0.45)' }}>
-                          {s.label}
-                        </span>
+                        <span className="block font-black text-sm text-white">{s.title}</span>
+                        <span className="block text-[0.65rem] font-bold text-white/45">Stage {s.num}</span>
                       </span>
                     </button>
                   );
@@ -449,9 +447,9 @@ export default function FluencyBridge() {
               <Reveal delay={100} className="reveal liquid-glass rounded-3xl p-8 sm:p-10 flex flex-col gap-5">
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="text-[0.65rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full text-white" style={{ backgroundColor: stage.accent }}>
-                    {stage.label}
+                    Stage {stage.num}
                   </span>
-                  <span className="text-white/40 text-[0.65rem] font-mono">Stage Milestone {stage.num}</span>
+                  <span className="text-white/40 text-[0.65rem] font-mono">Ethical Standard Checked</span>
                 </div>
 
                 <div className="flex items-center gap-4">
