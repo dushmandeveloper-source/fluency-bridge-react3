@@ -314,16 +314,6 @@ h1, h2, h3, .serif-font {
   mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
 
-/* Home 2 — gentle perpetual float for the hero-card badges */
-@keyframes floatBadge {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-.float-badge { animation: floatBadge 3.6s ease-in-out infinite; }
-.float-badge-slow { animation: floatBadge 4.8s ease-in-out infinite; }
-
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee,
-  .float-badge,
-  .float-badge-slow { animation: none; }
+  .animate-marquee { animation: none; }
 }

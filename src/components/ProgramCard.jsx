@@ -61,7 +61,7 @@ export default function ProgramCard({ program, interactive = false }) {
 
         {/* Stat badge sits in one top corner (positionClass), the logo badge below sits in the opposite corner */}
         <div
-          className={`absolute top-1 sm:top-3 ${badge.positionClass} text-white px-1 sm:px-5 py-0.5 sm:py-2.5 rounded-sm sm:rounded-xl shadow-lg transform ${badge.rotationClass} group-hover:rotate-0 transition-all duration-300 ${interactive ? 'float-badge-slow' : ''}`}
+          className={`absolute top-1 sm:top-3 ${badge.positionClass} text-white px-1 sm:px-5 py-0.5 sm:py-2.5 rounded-sm sm:rounded-xl shadow-lg transform ${badge.rotationClass} group-hover:rotate-0 transition-all duration-300`}
           style={{ backgroundColor: accentColor }}
         >
           <span className="block text-[8px] sm:text-xl md:text-2xl font-black mb-0 leading-none">{badge.value}</span>
@@ -70,7 +70,7 @@ export default function ProgramCard({ program, interactive = false }) {
 
         {/* Logo badge flush in its own top corner (iconPositionClass: left-4 or right-4), directly on the photo */}
         <div
-          className={`absolute top-1.5 sm:top-3 ${iconPositionClass} w-10 h-10 sm:w-14 sm:h-14 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-white rounded-lg sm:rounded-2xl flex items-center justify-center shadow-lg border border-slate-50 overflow-hidden ${interactive ? 'float-badge' : 'transition-transform group-hover:-translate-y-2'}`}
+          className={`absolute top-1.5 sm:top-3 ${iconPositionClass} w-10 h-10 sm:w-14 sm:h-14 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-white rounded-lg sm:rounded-2xl flex items-center justify-center shadow-lg border border-slate-50 overflow-hidden transition-transform group-hover:-translate-y-2`}
         >
           <img src={logo} alt={logoAlt} className="w-full h-full object-contain p-1 sm:p-2" />
         </div>
