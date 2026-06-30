@@ -34,7 +34,7 @@ export default function StatsBar() {
   return (
     // Negative top margin pulls this card up so it straddles the seam between the
     // banner photo above and the white page below, instead of sitting fully below it.
-    <section className="relative z-30 px-4 sm:px-6 -mt-14 sm:-mt-20 pb-2">
+    <section className="relative z-30 px-4 sm:px-6 -mt-20 sm:-mt-28 pb-2">
       <div className="max-w-5xl mx-auto bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-100 px-4 sm:px-8 py-6 sm:py-8">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-6 gap-x-4">
           {STATS.map((s, i) => (
