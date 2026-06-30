@@ -4,7 +4,6 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Home2 from './pages/Home2';
 import AboutUs from './pages/AboutUs';
-import AboutUs2 from './pages/AboutUs2';
 import Team from './pages/Team';
 import ContactUs from './pages/ContactUs';
 import { useHashRoute } from './useHashRoute';
@@ -13,7 +12,6 @@ const PAGES = {
   home: Home,
   home2: Home2,
   about: AboutUs,
-  about2: AboutUs2,
   team: Team,
   contact: ContactUs,
 };
