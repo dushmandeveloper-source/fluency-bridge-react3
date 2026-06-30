@@ -13,9 +13,7 @@ import consultant6Photo from '../assets/team-consultant-6.jpeg';
 import heroBanner from '../assets/banner  new.png';
 
 // Real advisory-board members. Names/titles/qualifications from the "Meet Our
-// Team" profile cards. The last two cards keep their photos but show
-// placeholder labels until the real details are supplied — replace `name`,
-// `role` and each `lines` entry with the actual values.
+// Team" profile cards.
 // Most headshots frame the face the same way, so they crop well from the top.
 // `pos` overrides object-position only where a photo needs it — Wasana's shot
 // has extra headroom, so without this her face sits lower than the others.
@@ -23,8 +21,8 @@ const CONSULTANTS = [
   { id: 'janaki', name: 'Janaki Wijerathna', role: 'Senior Academic Consultant', image: janakiPhoto, accent: 'var(--custom-green)', lines: ['HNDE', 'BA Social Sciences (OUSL)', 'LA (CASS, AUK, NZ)'] },
   { id: 'rasika', name: 'Rasika Udugama', role: 'Senior Academic Consultant — Teaching Programs', image: rasikaPhoto, accent: 'var(--custom-blue-light)', lines: ['Registered Teacher — Teaching Council of Aotearoa NZ', 'BSc Agri Tech & Management — UoP', 'PGDE — OUSL'] },
   { id: 'wasana', name: 'Wasana Dilrukshi', role: 'Senior Academic Consultant', image: wasanaPhoto, accent: 'var(--custom-green)', pos: '50% 15%', lines: ['Master of Technological Futures (MTF) — AcademyEX NZ', 'MSc Electrical Engineering — Univ. of Moratuwa', 'BSc (Hons) Electrical & Electronic Eng — Univ. of Peradeniya'] },
-  { id: 'consultant5', name: 'Full Name', role: 'Title / Position', image: consultant5Photo, accent: 'var(--custom-blue-light)', lines: ['Qualification / Degree', 'University & Country', 'Specialisation (optional)'] },
-  { id: 'consultant6', name: 'Full Name', role: 'Title / Position', image: consultant6Photo, accent: 'var(--custom-green)', lines: ['Qualification / Degree', 'University & Country', 'Specialisation (optional)'] },
+  { id: 'consultant5', name: 'Kelum Ponnamperuma', role: 'Senior Academic Consultant', image: consultant5Photo, accent: 'var(--custom-blue-light)', lines: ['B.Sc. Eng. (Hons) — University of Peradeniya, Sri Lanka'] },
+  { id: 'consultant6', name: 'Kaushalya Jayalath', role: 'Senior Academic Consultant', image: consultant6Photo, accent: 'var(--custom-green)', lines: ['BSc (Hons) Quantity Surveying', 'MSc CM (QS Major)', 'Massey University, Auckland, NZ'] },
 ];
 
 export default function Team() {
@@ -103,8 +101,8 @@ export default function Team() {
         <section className="py-6 sm:py-9">
           <div className="max-w-6xl mx-auto px-6">
             <Reveal className="reveal text-center max-w-2xl mx-auto mb-10">
-              <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-blue-light)' }}>Advisory Board</span>
-              <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight mt-2" style={{ textShadow: '0 2px 14px rgba(0,0,0,0.4)' }}>Academic Consultants &amp; Advisory Board</h2>
+              <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-blue-light)' }}>Academic Consultants &amp; Advisory Board</span>
+              <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight mt-2" style={{ textShadow: '0 2px 14px rgba(0,0,0,0.4)' }}>Meet Our Experts</h2>
               <p className="text-white/90 text-sm sm:text-base mt-3">
                 Specialists holding baseline degrees from premier Sri Lankan universities and Masters/MBAs completed in New Zealand.
               </p>
