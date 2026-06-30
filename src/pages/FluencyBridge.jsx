@@ -350,7 +350,7 @@ export default function FluencyBridge() {
       fixed
       image={heroBanner}
       ariaLabel="Professional speaking confidently in a modern corporate setting"
-      overlayClassName="bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900/85"
+      overlayClassName="bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-900/92"
       particleCount={48}
     >
       <main className="bright-banner-glass relative z-20 w-full">
