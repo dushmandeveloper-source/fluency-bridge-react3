@@ -29,9 +29,9 @@ const FEATURES = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-white pt-6 sm:pt-8 pb-16 sm:pb-24">
+    <section className="bg-white pt-6 sm:pt-8 pb-10 sm:pb-14">
       <div className="max-w-6xl mx-auto px-6">
-        <Reveal className="reveal text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+        <Reveal className="reveal text-center max-w-2xl mx-auto mb-8 sm:mb-10">
           <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight">Why Choose Fluency Bridge?</h2>
           <span className="block w-14 h-1 rounded-full mx-auto my-4" style={{ backgroundColor: 'var(--custom-green)' }} />
           <p className="text-slate-500 text-sm sm:text-base">We combine expertise, experience and genuine care to help you achieve your dreams.</p>

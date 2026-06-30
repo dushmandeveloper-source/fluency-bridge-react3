@@ -33,9 +33,9 @@ function Stars() {
 
 export default function Testimonials() {
   return (
-    <section className="bg-slate-50 py-16 sm:py-24">
+    <section className="bg-slate-50 py-10 sm:py-14">
       <div className="max-w-6xl mx-auto px-6">
-        <Reveal className="reveal text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+        <Reveal className="reveal text-center max-w-2xl mx-auto mb-8 sm:mb-10">
           <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight">What Our Students Say</h2>
           <span className="block w-14 h-1 rounded-full mx-auto mt-4" style={{ backgroundColor: 'var(--custom-blue)' }} />
         </Reveal>

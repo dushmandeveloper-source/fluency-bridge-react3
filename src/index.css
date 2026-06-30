@@ -297,3 +297,33 @@ h1, h2, h3, .serif-font {
 }
 
 .animate-blob { animation: blobDrift 9s ease-in-out infinite; }
+
+/* Home 2 — infinite partner marquee. The track holds two identical copies; sliding
+   it -50% loops seamlessly. Uniform per-item horizontal padding (not flex gap) keeps
+   the seam spacing identical to the inner spacing so the loop has no visible jump. */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 26s linear infinite; }
+.animate-marquee:hover { animation-play-state: paused; }
+
+/* Soft edge fade so logos drift in/out instead of hard-clipping at the container edge */
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+/* Home 2 — gentle perpetual float for the hero-card badges */
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.float-badge { animation: floatBadge 3.6s ease-in-out infinite; }
+.float-badge-slow { animation: floatBadge 4.8s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .float-badge,
+  .float-badge-slow { animation: none; }
+}

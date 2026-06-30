@@ -1,4 +1,5 @@
 import Reveal from './Reveal';
+import CountUp from './CountUp';
 
 const STATS = [
   {
@@ -51,7 +52,7 @@ export default function StatsBar() {
                     {s.icon}
                   </svg>
                 </span>
-                <p className="sans-font text-xl sm:text-2xl md:text-3xl font-black text-slate-900 whitespace-nowrap">{s.value}</p>
+                <CountUp value={s.value} className="sans-font text-xl sm:text-2xl md:text-3xl font-black text-slate-900 whitespace-nowrap" />
               </div>
               <p className="text-slate-500 text-[0.65rem] sm:text-xs font-semibold leading-snug">{s.label}</p>
             </Reveal>
