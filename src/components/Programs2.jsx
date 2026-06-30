@@ -10,10 +10,16 @@ export default function Programs2() {
         ))}
       </div>
 
-      {/* Fade reaches fully opaque white by its own bottom edge, and that edge lines up exactly
-          with where this padding (and the banner photo) ends, so no raw photo edge/line peeks
-          out past it — the floating StatsBar card then overlaps the top portion of this fade. */}
-      <div className="hero-fade absolute inset-x-0 bottom-0 h-24 sm:h-32 pointer-events-none" />
+      {/* Gradient fades to PURE white (#fff, matching the page below) and overhangs the seam by a
+          pixel (-bottom-px) so the banner photo's hard bottom edge is fully covered — no faint
+          line peeking out past the floating StatsBar card. */}
+      <div
+        className="absolute inset-x-0 -bottom-px h-24 sm:h-32 pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(to bottom, transparent 0%, transparent 40%, rgba(255,255,255,0.92) 72%, #ffffff 88%, #ffffff 100%)',
+        }}
+      />
     </main>
   );
 }
