@@ -132,6 +132,8 @@ export default function ContactUs() {
 
                 <div className="h-px bg-white/15" />
 
+                <p className="text-white/70 text-xs font-bold uppercase tracking-wider">If you&apos;re looking for</p>
+
                 <ul className="flex flex-col gap-4">
                   {PURPOSE_OPTIONS.map((option) => (
                     <li key={option.email} className="flex flex-col gap-0.5">
