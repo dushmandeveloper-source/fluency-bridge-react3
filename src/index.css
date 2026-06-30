@@ -215,11 +215,21 @@ h1, h2, h3, .serif-font {
   pointer-events: none;
 }
 
+/* Headshot photos shot on a flat studio backdrop: multiply blend merges the light
+   background into whatever's behind (the dark liquid-glass card), and the mask
+   fades the outer edges to transparent so there's no hard rectangle of backdrop
+   left visible in the corners — a CSS approximation of background removal. */
+.headshot-blend {
+  mix-blend-mode: multiply;
+  -webkit-mask-image: radial-gradient(120% 100% at 50% 38%, #000 55%, transparent 94%);
+  mask-image: radial-gradient(120% 100% at 50% 38%, #000 55%, transparent 94%);
+}
+
 /* About Us floats its glass cards over the brighter NZ-students banner, so the
    default near-white tint left white text low-contrast. Scope a darker frosted
    tint to that page only (other pages keep the lighter glass). */
 .about-glass .liquid-glass {
-  background: linear-gradient(135deg, rgba(13, 24, 45, 0.55), rgba(13, 24, 45, 0.34));
+  background: linear-gradient(135deg, rgba(8, 16, 32, 0.8), rgba(8, 16, 32, 0.62));
   border-color: rgba(255, 255, 255, 0.24);
 }
 .about-glass .liquid-glass:hover {

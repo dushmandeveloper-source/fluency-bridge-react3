@@ -166,7 +166,7 @@ export default function AboutUs() {
                   <div className="absolute -inset-3 rounded-[2rem] opacity-25 blur-2xl" style={{ background: 'linear-gradient(135deg, var(--custom-blue), var(--custom-green))' }} />
                   <div className="liquid-glass relative rounded-[2rem] overflow-hidden shadow-2xl p-2.5">
                     <div className="relative w-full aspect-[4/5] rounded-[1.5rem] overflow-hidden">
-                      <img src={ceoPhoto} alt="Chathuranga Liyanage" className="absolute inset-0 w-full h-full object-cover object-top gsap-zoom" />
+                      <img src={ceoPhoto} alt="Chathuranga Liyanage" className="headshot-blend absolute inset-0 w-full h-full object-cover object-top gsap-zoom" />
                     </div>
                   </div>
                 </div>
