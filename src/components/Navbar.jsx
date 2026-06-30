@@ -4,7 +4,7 @@ import fluencyBridgeLogo from '../assets/fluency-bridge-logo.png';
 const NAV_LINKS = [
   { label: 'Home', href: '#/', route: 'home', color: 'var(--custom-green)' },
   { label: 'Home 2', href: '#/home2', route: 'home2', color: 'var(--custom-green)' },
-  { label: 'Fluency Bridge', href: '#', route: null, color: 'var(--custom-green)' },
+  { label: 'Fluency Bridge', href: '#/fluency-bridge', route: 'fluency-bridge', color: 'var(--custom-green)' },
   { label: 'NZ Academic Bridge', href: '#/nz-academic-bridge', route: 'nz-academic-bridge', color: 'var(--custom-blue)' },
   { label: 'About Us', href: '#/about', route: 'about', color: 'var(--custom-blue)' },
   { label: 'Consultant Team', href: '#/team', route: 'team', color: 'var(--custom-green)' },
