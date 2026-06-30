@@ -91,7 +91,7 @@ export default function AboutUs() {
         <section className="py-6 sm:py-9">
           <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             <Reveal className="reveal liquid-glass rounded-3xl p-8 sm:p-10 flex flex-col gap-5">
-              <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green-light)' }}>Who We Are</span>
+              <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green-light)' }}>Our Story</span>
               <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">
                 A premier New Zealand-based education enterprise
               </h2>
