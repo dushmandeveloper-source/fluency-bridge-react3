@@ -8,8 +8,8 @@ import heroBanner from '../assets/banner  new.png';
 // Purpose routing per the blueprint: each selection maps to the inbox that
 // should receive the enquiry.
 const PURPOSE_OPTIONS = [
-  { value: 'fluency-bridge', label: 'Fluency Bridge Services', email: 'info@fluencybridge.co.nz' },
-  { value: 'nz-academic-bridge', label: 'NZ Academic Bridge Services', email: 'info@nzacademicbridge.co.nz' },
+  { value: 'fluency-bridge', label: 'English Coaching', email: 'info@fluencybridge.co.nz' },
+  { value: 'nz-academic-bridge', label: 'Academic Consultation', email: 'info@nzacademicbridge.co.nz' },
   { value: 'both', label: 'Both Services', email: 'info@fluencybg.com' },
 ];
 
