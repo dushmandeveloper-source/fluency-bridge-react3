@@ -146,6 +146,11 @@ export default function AboutUs() {
 
         {/* ---------- Vision & Mission ---------- */}
         <section className="py-6 sm:py-9">
+          <div className="max-w-6xl mx-auto px-6">
+            <Reveal className="reveal text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+              <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight" style={{ textShadow: '0 2px 14px rgba(0,0,0,0.4)' }}>Who We Are</h2>
+            </Reveal>
+          </div>
           <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-6 sm:gap-8">
             {VISION_MISSION.map((c, i) => (
               <Reveal key={c.label} delay={i * 140} className="reveal liquid-glass rounded-3xl p-8 sm:p-9 flex flex-col gap-4 overflow-hidden">
