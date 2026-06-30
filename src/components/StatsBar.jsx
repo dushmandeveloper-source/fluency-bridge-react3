@@ -35,19 +35,21 @@ export default function StatsBar() {
     <section className="relative z-20 bg-white pt-6 sm:pt-8 pb-10 sm:pb-14">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-8 gap-x-4">
         {STATS.map((s, i) => (
-          <Reveal key={s.label} delay={i * 80} className="reveal flex flex-col items-center text-center gap-2">
-            <span
-              className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full"
-              style={{
-                backgroundColor: i % 2 === 0 ? 'rgba(78,166,117,0.12)' : 'rgba(0,74,204,0.12)',
-                color: i % 2 === 0 ? 'var(--custom-green)' : 'var(--custom-blue)',
-              }}
-            >
-              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                {s.icon}
-              </svg>
-            </span>
-            <p className="sans-font text-xl sm:text-2xl md:text-3xl font-black text-slate-900">{s.value}</p>
+          <Reveal key={s.label} delay={i * 80} className="reveal flex flex-col items-start gap-1.5">
+            <div className="flex items-center gap-2 sm:gap-2.5">
+              <span
+                className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full shrink-0"
+                style={{
+                  backgroundColor: i % 2 === 0 ? 'rgba(78,166,117,0.12)' : 'rgba(0,74,204,0.12)',
+                  color: i % 2 === 0 ? 'var(--custom-green)' : 'var(--custom-blue)',
+                }}
+              >
+                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  {s.icon}
+                </svg>
+              </span>
+              <p className="sans-font text-xl sm:text-2xl md:text-3xl font-black text-slate-900 whitespace-nowrap">{s.value}</p>
+            </div>
             <p className="text-slate-500 text-[0.65rem] sm:text-xs font-semibold leading-snug">{s.label}</p>
           </Reveal>
         ))}
