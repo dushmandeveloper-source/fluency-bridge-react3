@@ -19,7 +19,7 @@ const STATS = [
   { value: '100%', label: 'Zero-Fee University Placement' },
   { value: 'NZ', label: 'Registered & Compliant' },
   { value: '15+', label: 'Years Industry Leadership' },
-  { value: '2', label: 'Specialised Branches' },
+  { value: '3', label: 'Specialised Services' },
 ];
 
 const BRANCHES = [
