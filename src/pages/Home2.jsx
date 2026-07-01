@@ -3,11 +3,11 @@ import gsap from 'gsap';
 
 import BannerBackground from '../components/BannerBackground';
 import Reveal from '../components/Reveal';
-import homeBanner from '../assets/banner.webp';
-import fluencyBridgeImage from '../assets/Fluency Bridge.webp';
-import nzAcademicBridgeImage from '../assets/NZ Academic Bridge.webp';
-import fluencyBridgeLogo from '../assets/fluency-bridge-logo.webp';
-import nzAcademicBridgeLogo from '../assets/nz-academic-bridge-logo.webp';
+import homeBanner from '../assets/banner.png';
+import fluencyBridgeImage from '../assets/Fluency Bridge.png';
+import nzAcademicBridgeImage from '../assets/NZ Academic Bridge.png';
+import fluencyBridgeLogo from '../assets/fluency-bridge-logo.png';
+import nzAcademicBridgeLogo from '../assets/nz-academic-bridge-logo.png';
 
 // Home — glassmorphism (liquid-glass) panels floating over the shared fixed home
 // banner image, mirroring the About Us layout. BannerBackground (fixed) supplies

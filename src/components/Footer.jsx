@@ -1,5 +1,5 @@
 
-import fluencyBridgeLogo from '../assets/fluency-bridge-logo.webp';
+import fluencyBridgeLogo from '../assets/fluency-bridge-logo.png';
 
 const BRANCHES = ['Fluency Bridge Coaching', 'NZ Academic Bridge'];
 const QUICK_LINKS = [

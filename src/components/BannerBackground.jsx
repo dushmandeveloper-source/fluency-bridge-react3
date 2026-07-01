@@ -1,5 +1,5 @@
 import ParticleField from './ParticleField';
-import bannerImage from '../assets/banner.webp';
+import bannerImage from '../assets/banner.png';
 
 // Shared banner backdrop used across every page: the same zooming hero photo,
 // dark contrast overlay and sparkle particles.

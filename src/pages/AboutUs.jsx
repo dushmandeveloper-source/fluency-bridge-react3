@@ -3,8 +3,8 @@ import gsap from 'gsap';
 
 import BannerBackground from '../components/BannerBackground';
 import Reveal from '../components/Reveal';
-import ceoPhoto from '../assets/team-ceo.webp';
-import aboutBanner from '../assets/banner  new.webp';
+import ceoPhoto from '../assets/team-ceo.png';
+import aboutBanner from '../assets/banner  new.png';
 
 // About Us — glassmorphism (liquid-glass) text panels floating over the shared
 // fixed banner image. BannerBackground (fixed) supplies the zooming photo, dark

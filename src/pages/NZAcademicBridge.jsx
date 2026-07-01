@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import BannerBackground from '../components/BannerBackground';
 import Reveal from '../components/Reveal';
-import heroBanner from '../assets/NZ Academic Bridge.webp';
+import heroBanner from '../assets/NZ Academic Bridge.png';
 
 // SVG icon paths for milestones / services
 const ICONS = {
