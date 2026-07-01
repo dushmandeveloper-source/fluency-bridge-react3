@@ -127,7 +127,7 @@ export default function NZAcademicBridge() {
               NZ Academic Bridge
             </span>
             <h1 className="sans-font text-3xl sm:text-5xl md:text-6xl font-black text-white leading-[1.1] tracking-tight" style={{ textShadow: '0 4px 24px rgba(0,0,0,0.45)' }}>
-              Your Bridge to Study, Grow &amp; Settle in New Zealand
+              Your Zero-Cost Pathway to New Zealand
             </h1>
             <div className="inline-flex items-center gap-2 rounded-full px-5 py-2" style={{ backgroundColor: 'var(--custom-green)' }}>
               <span className="text-white font-black text-xs sm:text-sm tracking-widest uppercase">Dream It. Plan It. Achieve It.</span>
