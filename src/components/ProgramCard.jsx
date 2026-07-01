@@ -51,7 +51,7 @@ export default function ProgramCard({ program, interactive = false }) {
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
     >
-      <div className="relative w-full h-28 sm:h-40 md:h-52 lg:h-60 overflow-hidden bg-slate-200 rounded-t-2xl sm:rounded-t-[2rem]">
+        <div className="relative w-full h-28 sm:h-40 md:h-52 lg:h-60 overflow-hidden bg-slate-200 rounded-t-2xl sm:rounded-t-[2rem]">
         <img
           src={image}
           alt={imageAlt}

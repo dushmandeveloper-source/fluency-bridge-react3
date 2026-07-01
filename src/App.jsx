@@ -1,7 +1,6 @@
 import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
 import Home2 from './pages/Home2';
 import AboutUs from './pages/AboutUs';
 import Team from './pages/Team';
@@ -11,8 +10,7 @@ import FluencyBridge from './pages/FluencyBridge';
 import { useHashRoute } from './useHashRoute';
 
 const PAGES = {
-  home: Home,
-  home2: Home2,
+  home: Home2,
   about: AboutUs,
   team: Team,
   contact: ContactUs,
@@ -22,7 +20,7 @@ const PAGES = {
 
 export default function App() {
   const route = useHashRoute();
-  const Page = PAGES[route] ?? Home;
+  const Page = PAGES[route] ?? Home2;
 
   return (
     <div className="antialiased relative min-h-screen flex flex-col">
