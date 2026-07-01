@@ -146,7 +146,7 @@ export default function Home2() {
 
         {/* ---------- Programs ---------- */}
         <section className="pt-2 pb-6 sm:pt-3 sm:pb-9">
-          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+          <div className="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
             {PROGRAMS.map((p, i) => (
               <Reveal key={p.id} delay={i * 150} className="reveal relative">
                 <div className="gsap-float relative h-full">
