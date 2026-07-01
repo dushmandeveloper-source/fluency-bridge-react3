@@ -136,7 +136,7 @@ export default function Home2() {
       <main className="bright-banner-glass relative z-20 w-full">
 
         {/* ---------- Hero ---------- */}
-        <header className="px-6 pt-28 pb-6 sm:pt-32 sm:pb-8">
+        <header className="px-6 pt-24 pb-3 sm:pt-28 sm:pb-4">
           <div className="max-w-3xl mx-auto flex flex-col items-center text-center gap-5">
             <p className="text-white/90 text-sm sm:text-base md:text-lg font-medium max-w-2xl leading-relaxed" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
               Premium English coaching and ethical New Zealand education consultancy — driven by industry professionals.
@@ -145,7 +145,7 @@ export default function Home2() {
         </header>
 
         {/* ---------- Programs ---------- */}
-        <section className="py-6 sm:py-9">
+        <section className="pt-2 pb-6 sm:pt-3 sm:pb-9">
           <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             {PROGRAMS.map((p, i) => (
               <Reveal key={p.id} delay={i * 150} className="reveal relative">
