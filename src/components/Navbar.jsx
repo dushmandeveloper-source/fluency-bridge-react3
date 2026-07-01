@@ -30,8 +30,10 @@ export default function Navbar({ route = 'home' }) {
   // so mid-size laptops never get a cramped/overlapping bar.
   return (
     <nav className="fixed w-full z-50 top-4 sm:top-6 px-4 lg:px-8 xl:px-12 flex justify-between items-center gap-3 interactive-el">
-      <div className="flex items-center shrink-0 glass-nav py-2 px-4 sm:px-5 rounded-full">
-        <img src={fluencyBridgeLogo} alt="Fluency Bridge" className="h-9 sm:h-10 lg:h-12 object-contain" />
+      <div className="flex-1 flex justify-start">
+        <div className="flex items-center shrink-0 glass-nav py-2 px-4 sm:px-5 rounded-full">
+          <img src={fluencyBridgeLogo} alt="Fluency Bridge" className="h-9 sm:h-10 lg:h-12 object-contain" />
+        </div>
       </div>
 
       {/* Hidden until xl: below that, the hamburger menu below handles navigation
@@ -61,7 +63,7 @@ export default function Navbar({ route = 'home' }) {
         </div>
       </div>
 
-      <div className="flex items-center shrink-0 gap-2 sm:gap-3">
+      <div className="flex-1 flex items-center justify-end gap-2 sm:gap-3">
         <a
           href="https://wa.me/642108631134"
           target="_blank"
