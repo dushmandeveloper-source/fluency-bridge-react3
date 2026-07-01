@@ -219,7 +219,7 @@ h1, h2, h3, .serif-font {
    default near-white tint left white text low-contrast. Scope a darker frosted
    tint to that page only (other pages keep the lighter glass). */
 .bright-banner-glass .liquid-glass {
-  background: linear-gradient(135deg, rgba(8, 16, 32, 0.8), rgba(8, 16, 32, 0.62));
+  background: linear-gradient(135deg, rgba(18, 30, 52, 0.52), rgba(18, 30, 52, 0.36));
   border-color: rgba(255, 255, 255, 0.24);
 }
 .bright-banner-glass .liquid-glass:hover {
