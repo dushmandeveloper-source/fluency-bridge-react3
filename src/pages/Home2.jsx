@@ -164,7 +164,7 @@ export default function Home2() {
                     </div>
                     <div className="flex flex-col flex-1 px-5 sm:px-6 pt-4 pb-4 gap-2.5">
                       <h3 className="sans-font text-xl sm:text-2xl font-black text-white leading-tight">{p.title}</h3>
-                      <p className="text-white/90 text-sm sm:text-base leading-relaxed text-justify flex-1">{p.description}</p>
+                      <p className="text-white/90 text-sm sm:text-base leading-relaxed text-left flex-1">{p.description}</p>
                       <a
                         href={p.href}
                         className="mt-1 inline-flex items-center justify-center gap-2 text-white font-bold text-sm py-3 px-6 rounded-xl transition-all hover:opacity-90 interactive-el"
