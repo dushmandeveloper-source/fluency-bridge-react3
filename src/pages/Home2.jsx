@@ -138,24 +138,9 @@ export default function Home2() {
         {/* ---------- Hero ---------- */}
         <header className="px-6 pt-28 pb-6 sm:pt-32 sm:pb-8">
           <div className="max-w-3xl mx-auto flex flex-col items-center text-center gap-5">
-            <span className="inline-flex items-center gap-2 text-[0.6rem] sm:text-xs font-bold uppercase tracking-[0.25em] text-white px-4 py-1.5 rounded-full" style={{ backgroundColor: 'var(--custom-green)' }}>
-              Welcome to Fluency Bridge
-            </span>
-            <h1 className="sans-font text-3xl sm:text-5xl md:text-6xl font-black text-white leading-[1.1] tracking-tight" style={{ textShadow: '0 4px 24px rgba(0,0,0,0.45)' }}>
-              Architecting Global Futures
-            </h1>
             <p className="text-white/90 text-sm sm:text-base md:text-lg font-medium max-w-2xl leading-relaxed" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
               Premium English coaching and ethical New Zealand education consultancy — driven by industry professionals.
             </p>
-            <div className="flex flex-wrap justify-center gap-3 mt-2">
-              <a href="#/contact" className="inline-flex items-center gap-2 text-white font-bold text-sm py-3 px-7 rounded-xl transition-all hover:opacity-90 interactive-el" style={{ backgroundColor: 'var(--custom-blue)' }}>
-                Book Free Consultation
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-              </a>
-              <a href="#/about" className="inline-flex items-center gap-2 bg-white/15 border border-white/40 text-white font-bold text-sm py-3 px-7 rounded-xl transition-all hover:bg-white/25 interactive-el">
-                Learn More
-              </a>
-            </div>
           </div>
         </header>
 
