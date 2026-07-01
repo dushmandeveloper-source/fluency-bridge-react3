@@ -60,7 +60,7 @@ export default function Footer() {
 
         <div>
           <h5 className="font-black text-lg mb-6 tracking-wide" style={{ color: 'var(--custom-green)' }}>
-            Branches
+            Services
           </h5>
           <ul className="space-y-4 text-sm font-semibold text-white/90">
             {BRANCHES.map((branch) => (
