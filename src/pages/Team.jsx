@@ -4,13 +4,13 @@ import gsap from 'gsap';
 import BannerBackground from '../components/BannerBackground';
 import Reveal from '../components/Reveal';
 import ProfileCard from '../components/ProfileCard';
-import ceoPhoto from '../assets/team-ceo.png';
-import janakiPhoto from '../assets/team-janaki.jpeg';
-import rasikaPhoto from '../assets/team-rasika.jpeg';
-import wasanaPhoto from '../assets/team-wasana.jpeg';
-import consultant5Photo from '../assets/team-consultant-5.jpeg';
-import consultant6Photo from '../assets/team-consultant-6.jpeg';
-import heroBanner from '../assets/banner  new.png';
+import ceoPhoto from '../assets/team-ceo.webp';
+import janakiPhoto from '../assets/team-janaki.webp';
+import rasikaPhoto from '../assets/team-rasika.webp';
+import wasanaPhoto from '../assets/team-wasana.webp';
+import consultant5Photo from '../assets/team-consultant-5.webp';
+import consultant6Photo from '../assets/team-consultant-6.webp';
+import heroBanner from '../assets/banner  new.webp';
 
 // Real advisory-board members. Names/titles/qualifications from the "Meet Our
 // Team" profile cards.

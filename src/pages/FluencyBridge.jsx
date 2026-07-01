@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import BannerBackground from '../components/BannerBackground';
 import Reveal from '../components/Reveal';
-import heroBanner from '../assets/Fluency Bridge.png';
+import heroBanner from '../assets/Fluency Bridge.webp';
 
 /* ─── Circular SVG ring progress ─────────────────────────────────── */
 function RingProgress({ value, size = 96, stroke = 7, color = 'var(--custom-green)', bg = 'rgba(255,255,255,0.08)' }) {

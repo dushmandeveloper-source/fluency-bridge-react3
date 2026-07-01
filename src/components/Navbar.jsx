@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import fluencyBridgeLogo from '../assets/fluency-bridge-logo.png';
+import fluencyBridgeLogo from '../assets/fluency-bridge-logo.webp';
 
 const NAV_LINKS = [
   { label: 'Home', href: '#/', route: 'home', color: 'var(--custom-green)' },

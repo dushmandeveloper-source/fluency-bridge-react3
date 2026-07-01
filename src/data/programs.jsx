@@ -1,7 +1,7 @@
-import fluencyBridgeImage from '../assets/Fluency Bridge.png';
-import nzAcademicBridgeImage from '../assets/NZ Academic Bridge.png';
-import fluencyBridgeLogo from '../assets/fluency-bridge-logo.png';
-import nzAcademicBridgeLogo from '../assets/nz-academic-bridge-logo.png';
+import fluencyBridgeImage from '../assets/Fluency Bridge.webp';
+import nzAcademicBridgeImage from '../assets/NZ Academic Bridge.webp';
+import fluencyBridgeLogo from '../assets/fluency-bridge-logo.webp';
+import nzAcademicBridgeLogo from '../assets/nz-academic-bridge-logo.webp';
 
 // badge.positionClass and iconPositionClass are kept on opposite top corners of the card image
 export const programs = [

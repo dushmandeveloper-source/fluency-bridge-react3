@@ -1,13 +1,17 @@
+import { lazy, Suspense } from 'react';
 import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home2 from './pages/Home2';
-import AboutUs from './pages/AboutUs';
-import Team from './pages/Team';
-import ContactUs from './pages/ContactUs';
-import NZAcademicBridge from './pages/NZAcademicBridge';
-import FluencyBridge from './pages/FluencyBridge';
 import { useHashRoute } from './useHashRoute';
+
+// Home is loaded eagerly (default landing view); every other route is
+// code-split so it only ships when the user navigates to it.
+const AboutUs = lazy(() => import('./pages/AboutUs'));
+const Team = lazy(() => import('./pages/Team'));
+const ContactUs = lazy(() => import('./pages/ContactUs'));
+const NZAcademicBridge = lazy(() => import('./pages/NZAcademicBridge'));
+const FluencyBridge = lazy(() => import('./pages/FluencyBridge'));
 
 const PAGES = {
   home: Home2,
@@ -27,7 +31,9 @@ export default function App() {
       <CustomCursor />
       <Navbar route={route} />
 
-      <Page />
+      <Suspense fallback={<div className="min-h-screen" />}>
+        <Page />
+      </Suspense>
 
       <Footer />
     </div>

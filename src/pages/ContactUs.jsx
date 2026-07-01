@@ -3,7 +3,7 @@ import { useState } from 'react';
 import BannerBackground from '../components/BannerBackground';
 import Reveal from '../components/Reveal';
 import CountryPhoneInput from '../components/CountryPhoneInput';
-import heroBanner from '../assets/banner  new.png';
+import heroBanner from '../assets/banner  new.webp';
 
 // Purpose routing per the blueprint: each selection maps to the inbox that
 // should receive the enquiry.
