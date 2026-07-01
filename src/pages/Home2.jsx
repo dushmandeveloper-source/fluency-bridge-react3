@@ -152,7 +152,7 @@ export default function Home2() {
                 <div className="gsap-float relative h-full">
                   <div className="absolute -inset-3 rounded-[2rem] opacity-25 blur-2xl" style={{ background: 'linear-gradient(135deg, var(--custom-green), var(--custom-blue))' }} />
                   <div className="liquid-glass relative h-full rounded-[2rem] shadow-2xl p-2.5 flex flex-col">
-                    <div className="relative w-full h-44 sm:h-56 rounded-[1.5rem] overflow-hidden shrink-0">
+                    <div className="relative w-full h-32 sm:h-40 rounded-[1.5rem] overflow-hidden shrink-0">
                       <img src={p.image} alt={p.title} className="absolute inset-0 w-full h-full object-cover gsap-zoom" />
                       <div className="absolute top-3 right-3 text-white px-3 py-2 rounded-xl shadow-lg text-center" style={{ backgroundColor: p.color }}>
                         <span className="block text-lg sm:text-xl font-black leading-none">{p.badge.value}</span>
@@ -162,7 +162,7 @@ export default function Home2() {
                         <img src={p.logo} alt={p.logoAlt} className="w-full h-full object-contain p-1.5" />
                       </div>
                     </div>
-                    <div className="flex flex-col flex-1 px-5 sm:px-6 pt-5 pb-5 gap-3">
+                    <div className="flex flex-col flex-1 px-5 sm:px-6 pt-4 pb-4 gap-2.5">
                       <h3 className="sans-font text-xl sm:text-2xl font-black text-white leading-tight">{p.title}</h3>
                       <p className="text-white/90 text-sm sm:text-base leading-relaxed text-justify flex-1">{p.description}</p>
                       <a
