@@ -104,7 +104,7 @@ const STAGES = [
     label: 'ACTIVATION PHASE',
     title: 'Dynamic Execution',
     icon: ICONS.play,
-    accent: 'var(--custom-blue-light)',
+    accent: 'var(--custom-green)',
     description:
       'Perform in mock corporate executive boards, negotiations, or community workshops, cementing bicultural confidence and lateral expression.',
   },
