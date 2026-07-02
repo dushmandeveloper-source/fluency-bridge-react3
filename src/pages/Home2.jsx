@@ -8,6 +8,7 @@ import fluencyBridgeImage from '../assets/Fluency Bridge.png';
 import nzAcademicBridgeImage from '../assets/NZ Academic Bridge.png';
 import fluencyBridgeLogo from '../assets/fluency-bridge-logo.png';
 import nzAcademicBridgeLogo from '../assets/nz-academic-bridge-logo.png';
+import ceoPhoto from '../assets/team-ceo.png';
 
 const STORY_IMG = 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&h=1500&q=80';
 
@@ -16,9 +17,19 @@ const STORY_IMG = 'https://images.unsplash.com/photo-1562774053-701939374585?aut
 // the zooming photo, dark overlay and sparkle particles; every card is a
 // transparent frosted-glass panel.
 
+// Temporarily hidden sections — flip to true to bring them back.
+const SHOW_WHY_CHOOSE_US = false;
+const SHOW_TESTIMONIALS = false;
+
 const BRANCHES = [
   { name: 'Fluency Bridge', href: '#/fluency-bridge', desc: 'Our elite frontline program focusing on high-performance English communication coaching for professionals and international students following the Natural English Method.', color: 'var(--custom-green)' },
   { name: 'NZ Academic Bridge', href: '#/nz-academic-bridge', desc: 'Our specialised, dedicated branding branch established to execute all international student recruitment, expert tertiary placement, and career transition consultancy services.', color: 'var(--custom-blue-light)' },
+];
+
+const VISION_MISSION = [
+  { label: 'Our Vision', color: 'var(--custom-green)', text: 'To serve as your primary partner in global professional and academic advancement, empowering you to command authoritative English communication and achieve a smooth, successful transition into New Zealand’s high-growth industries.' },
+  { label: 'Our Mission', color: 'var(--custom-blue-light)', text: 'We strive to eliminate structural and linguistic obstacles by providing expert coaching through our Natural Method, which integrates shadowing, mimicking, and active-passive listening to build authentic fluency. In parallel, we provide ethical, student-centered education consulting and international recruitment services, ensuring you receive transparent and comprehensive guidance with absolutely no agency fees charged to you.' },
+  { label: 'Our Values', color: 'var(--custom-green)', text: 'We operate with a commitment to absolute integrity, ensuring total clarity and honesty with no hidden costs or unexpected charges for our students. We prioritize practical, science-based learning that favors real-world skills like acoustic shadowing over traditional rote memorization, and we provide dedicated, long-term support that deeply respects the local culture and the unique heritage of Aotearoa New Zealand.' },
 ];
 
 const PROGRAMS = [
@@ -190,27 +201,21 @@ export default function Home2() {
 
         {/* ---------- Our Story ---------- */}
         <section className="py-6 sm:py-9">
-          <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-            <Reveal className="reveal liquid-glass rounded-3xl p-8 sm:p-10 flex flex-col gap-5">
-              <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green-light)' }}>A premier New Zealand-based education enterprise</span>
-              <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">
-                Our Story
-              </h2>
-              <p className="text-white/95 text-sm sm:text-base leading-relaxed text-justify">
-                Fluency Bridge Global Limited is a premier New Zealand-based, service-oriented enterprise. We bridge the
-                gap between regional potential and global success through our parent corporate infrastructure, managing
-                two distinct, specialised operational branches.
-              </p>
-            </Reveal>
-
-            <Reveal className="reveal relative" delay={150}>
-              <div className="gsap-float relative h-full">
-                <div className="absolute -inset-3 rounded-[2rem] opacity-25 blur-2xl" style={{ background: 'linear-gradient(135deg, var(--custom-green), var(--custom-blue))' }} />
-                <div className="liquid-glass relative h-full min-h-[18rem] rounded-[2rem] overflow-hidden shadow-2xl p-2.5">
-                  <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden">
-                    <img src={STORY_IMG} alt="Premier university campus" className="absolute inset-0 w-full h-full object-cover gsap-zoom" />
-                  </div>
-                </div>
+          <div className="max-w-6xl mx-auto px-6">
+            <Reveal className="reveal liquid-glass rounded-[2rem] overflow-hidden grid lg:grid-cols-2">
+              <div className="relative h-56 lg:h-auto order-1 lg:order-2">
+                <img src={STORY_IMG} alt="Premier university campus" className="absolute inset-0 w-full h-full object-cover gsap-zoom" />
+              </div>
+              <div className="p-8 sm:p-10 flex flex-col justify-center gap-5 order-2 lg:order-1">
+                <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green-light)' }}>A premier New Zealand-based education enterprise</span>
+                <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">
+                  Our Story
+                </h2>
+                <p className="text-white/95 text-sm sm:text-base leading-relaxed text-justify">
+                  Fluency Bridge Global Limited is a premier New Zealand-based, service-oriented enterprise. We bridge the
+                  gap between regional potential and global success through our parent corporate infrastructure, managing
+                  two distinct, specialised operational branches.
+                </p>
               </div>
             </Reveal>
           </div>
@@ -234,6 +239,24 @@ export default function Home2() {
           </div>
         </section>
 
+        {/* ---------- Who we are ---------- */}
+        <section className="py-6 sm:py-9">
+          <div className="max-w-6xl mx-auto px-6">
+            <Reveal className="reveal text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+              <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight" style={{ textShadow: '0 2px 14px rgba(0,0,0,0.4)' }}>Who We Are</h2>
+            </Reveal>
+          </div>
+          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-6 sm:gap-8">
+            {VISION_MISSION.map((c, i) => (
+              <Reveal key={c.label} delay={i * 140} className="reveal liquid-glass relative rounded-3xl p-8 sm:p-9 flex flex-col gap-4 overflow-hidden">
+                <span className="absolute top-0 left-0 h-1.5 w-full" style={{ backgroundColor: c.color }} />
+                <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: c.color }}>{c.label}</span>
+                <p className="text-white/95 text-sm sm:text-base leading-relaxed text-justify">{c.text}</p>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
         {/* ---------- Stats band ---------- */}
         <section className="py-6 sm:py-9">
           <div className="max-w-6xl mx-auto px-6">
@@ -250,7 +273,39 @@ export default function Home2() {
           </div>
         </section>
 
-        {/* ---------- Why choose us ---------- */}
+        {/* ---------- Meet Our CEO ---------- */}
+        <section className="py-6 sm:py-9">
+          <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+            <Reveal className="reveal relative order-2 lg:order-1">
+              <div className="gsap-float relative h-full flex items-center justify-center">
+                <div className="relative w-full max-w-sm mx-auto lg:mx-0">
+                  <div className="absolute -inset-3 rounded-[2rem] opacity-25 blur-2xl" style={{ background: 'linear-gradient(135deg, var(--custom-green), var(--custom-blue))' }} />
+                  <div className="liquid-glass relative rounded-[2rem] overflow-hidden shadow-2xl p-2.5">
+                    <div className="relative w-full aspect-[4/5] rounded-[1.5rem] overflow-hidden">
+                      <img src={ceoPhoto} alt="Chathuranga Liyanage" className="absolute inset-0 w-full h-full object-cover object-top gsap-zoom" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+            <Reveal className="reveal liquid-glass rounded-3xl p-8 sm:p-10 flex flex-col gap-4 order-1 lg:order-2" delay={150}>
+              <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green-light)' }}>Meet Our CEO</span>
+              <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">Chathuranga Liyanage</h2>
+              <p className="font-bold text-sm" style={{ color: 'var(--custom-blue-light)' }}>Founder &amp; CEO — Fluency Bridge Global Limited</p>
+              <p className="text-white/80 text-xs sm:text-sm font-semibold">B.Sc. Civil Engineering (Hons) — University of Peradeniya (2011)</p>
+              <p className="text-white/95 text-sm sm:text-base leading-relaxed text-justify">
+                Over 15 years of diverse, international experience in the civil engineering industry. Currently
+                directing operations as a Construction Project Manager in New Zealand. He applies engineering precision
+                and structured project management to global education,
+                mentoring future leaders with a philosophy built on lived experience across all parent portfolios and
+                subsidiary branches.
+              </p>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* ---------- Why choose us (hidden for now) ---------- */}
+        {SHOW_WHY_CHOOSE_US && (
         <section className="py-6 sm:py-9">
           <div className="max-w-6xl mx-auto px-6">
             <Reveal className="reveal text-center max-w-2xl mx-auto mb-8 sm:mb-10">
@@ -274,8 +329,10 @@ export default function Home2() {
             </div>
           </div>
         </section>
+        )}
 
-        {/* ---------- Testimonials ---------- */}
+        {/* ---------- Testimonials (hidden for now) ---------- */}
+        {SHOW_TESTIMONIALS && (
         <section className="py-6 sm:py-9">
           <div className="max-w-6xl mx-auto px-6">
             <Reveal className="reveal text-center max-w-2xl mx-auto mb-8 sm:mb-10">
@@ -305,6 +362,7 @@ export default function Home2() {
             </div>
           </div>
         </section>
+        )}
 
         {/* ---------- Partner institutions ---------- */}
         <section className="py-6 sm:py-9">

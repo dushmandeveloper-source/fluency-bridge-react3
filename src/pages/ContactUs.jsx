@@ -70,7 +70,7 @@ export default function ContactUs() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <label className="flex flex-col gap-1.5">
                     <span className="text-white/80 text-xs font-bold uppercase tracking-wider">Name</span>
-                    <input name="name" type="text" required placeholder="Your full name" className={inputClass} />
+                    <input name="name" type="text" required placeholder="Your name" className={inputClass} />
                   </label>
                   <label className="flex flex-col gap-1.5">
                     <span className="text-white/80 text-xs font-bold uppercase tracking-wider">Contact Number</span>
@@ -109,8 +109,7 @@ export default function ContactUs() {
                 </label>
 
                 <label className="flex flex-col gap-1.5">
-                  <span className="text-white/80 text-xs font-bold uppercase tracking-wider">Message</span>
-                  <textarea name="message" rows={4} placeholder="How can we help?" className={`${inputClass} resize-none`} />
+                  <textarea name="message" rows={4} placeholder="How can our team assist you?" className={`${inputClass} resize-none`} />
                 </label>
 
                 <button type="submit" className="mt-1 w-full text-white font-bold py-3 rounded-xl transition-all hover:opacity-90 flex justify-center items-center gap-2 interactive-el" style={{ backgroundColor: 'var(--custom-blue)' }}>
