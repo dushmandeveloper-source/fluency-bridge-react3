@@ -68,6 +68,14 @@ const SERVICES = [
   { title: 'Travel Assistance', icon: ICONS.globe },
 ];
 
+// Expert team 4-block panel from Image 1
+const EXPERT_TEAM = [
+  { label: 'Expert Guidance', icon: ICONS.star },
+  { label: 'Personalised Planning', icon: ICONS.user },
+  { label: 'Admission Support', icon: ICONS.docCheck },
+  { label: 'End-to-End Support', icon: ICONS.shield },
+];
+
 const COMPLIANCE_POINTS = [
   'Licensed Immigration Advisor Collaboration Only',
   'Full Transparency: No Hidden Extra Commissions',
@@ -225,6 +233,28 @@ export default function NZAcademicBridge() {
                 </div>
               </Reveal>
             </div>
+          </div>
+        </section>
+
+        {/* ---------- Our Expert Team (from Image 1) ---------- */}
+        <section className="py-6 sm:py-9">
+          <div className="max-w-5xl mx-auto px-6">
+            <Reveal className="reveal liquid-glass rounded-3xl p-8 sm:p-10">
+              <div className="text-center mb-8">
+                <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-blue-light)' }}>Our Promise</span>
+                <h2 className="sans-font text-xl sm:text-2xl md:text-3xl font-black text-white leading-tight mt-2">Our New Zealand Expert Team Will Assist You</h2>
+              </div>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+                {EXPERT_TEAM.map((e) => (
+                  <div key={e.label} className="flex flex-col items-center text-center gap-3 bg-white/10 rounded-2xl p-5">
+                    <span className="flex items-center justify-center w-12 h-12 rounded-xl" style={{ backgroundColor: '#ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: 'var(--custom-blue)' }}>
+                      <Icon path={e.icon} />
+                    </span>
+                    <p className="text-white font-bold text-xs sm:text-sm uppercase tracking-wide leading-snug">{e.label}</p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
           </div>
         </section>
 
