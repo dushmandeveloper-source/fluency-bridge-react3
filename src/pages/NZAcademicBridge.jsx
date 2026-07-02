@@ -120,7 +120,7 @@ export default function NZAcademicBridge() {
               NZ Academic Bridge
             </span>
             <h1 className="sans-font text-3xl sm:text-5xl md:text-6xl font-black text-white leading-[1.1] tracking-tight" style={{ textShadow: '0 4px 24px rgba(0,0,0,0.45)' }}>
-              Your Zero-Cost Pathway to <span style={{ color: 'var(--custom-blue)' }}>New Zealand</span>
+              Your Zero-Cost Pathway to <span style={{ color: 'var(--custom-blue)', textShadow: '0 2px 10px rgba(0,0,0,0.4), 0 0 18px rgba(91,157,255,0.85), 0 0 40px rgba(91,157,255,0.55)' }}>New Zealand</span>
             </h1>
             <p className="text-white/90 text-sm sm:text-base md:text-lg font-medium max-w-2xl leading-relaxed" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
               Ethical academic placement for international students. We align your qualifications with first-tier NZ

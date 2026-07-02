@@ -464,7 +464,7 @@ export default function FluencyBridge() {
               style={{ textShadow: '0 4px 24px rgba(0,0,0,0.45)' }}
             >
               Shift from Learning English{' '}
-              <span style={{ color: 'var(--custom-green)' }}>to Executing It</span>
+              <span style={{ color: 'var(--custom-green)', textShadow: '0 2px 10px rgba(0,0,0,0.4), 0 0 18px rgba(78,166,117,0.85), 0 0 40px rgba(78,166,117,0.55)' }}>to Executing It</span>
             </h1>
 
             <p
