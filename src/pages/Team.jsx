@@ -26,6 +26,14 @@ const CONSULTANTS = [
   { id: 'consultant6', name: 'Kaushalya Jayalath', role: 'Senior Academic Consultant', image: consultant6Photo, accent: 'var(--custom-green)', lines: ['BSc (Hons) Quantity Surveying', 'MSc CM (QS Major)', 'Massey University, Auckland, NZ'] },
 ];
 
+// Expert team 4-block panel
+const EXPERT_TEAM = [
+  { label: 'Expert Guidance', path: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z' },
+  { label: 'Personalised Planning', path: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' },
+  { label: 'Admission Support', path: 'M9 12.75L11.25 15 15 9.75M21 12c0 4.556-3.04 8.25-8.965 9.75C7.04 20.25 4 16.556 4 12V6.75l8-3.75 8 3.75V12z' },
+  { label: 'End-to-End Support', path: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+];
+
 export default function Team() {
   // GSAP: gentle perpetual float on the image cards + a slow zoom on the photos,
   // matching the motion on the About Us page.
@@ -66,6 +74,29 @@ export default function Team() {
             </p>
           </div>
         </header>
+
+        {/* ---------- Our Expert Team ---------- */}
+        <section className="py-6 sm:py-9">
+          <div className="max-w-5xl mx-auto px-6">
+            <Reveal className="reveal liquid-glass rounded-3xl p-8 sm:p-10">
+              <div className="text-center mb-8">
+                <h2 className="sans-font text-xl sm:text-2xl md:text-3xl font-black text-white leading-tight">Our New Zealand Expert Team Will Assist You</h2>
+              </div>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+                {EXPERT_TEAM.map((e) => (
+                  <div key={e.label} className="flex flex-col items-center text-center gap-3 bg-white/10 rounded-2xl p-5">
+                    <span className="flex items-center justify-center w-12 h-12 rounded-xl" style={{ backgroundColor: '#ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: 'var(--custom-blue)' }}>
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={e.path} />
+                      </svg>
+                    </span>
+                    <p className="text-white font-bold text-xs sm:text-sm uppercase tracking-wide leading-snug">{e.label}</p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </section>
 
         {/* ---------- Academic Consultants & Advisory Board ---------- */}
         <section className="pt-2 pb-6 sm:pt-3 sm:pb-9">
