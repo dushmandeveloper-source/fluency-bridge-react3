@@ -146,7 +146,7 @@ export default function NZAcademicBridge() {
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
                 {BENEFITS.map((b) => (
                   <div key={b.sub} className="flex flex-col items-center text-center gap-2.5">
-                    <span className="flex items-center justify-center w-11 h-11 rounded-xl backdrop-blur-md" style={{ backgroundColor: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.4)', color: 'var(--custom-green)' }}>
+                    <span className="flex items-center justify-center w-11 h-11 rounded-xl" style={{ backgroundColor: '#ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: 'var(--custom-green)' }}>
                       <Icon path={b.icon} />
                     </span>
                     <div>
@@ -186,8 +186,8 @@ export default function NZAcademicBridge() {
                       }`}
                     >
                       <span
-                        className="flex items-center justify-center w-7 h-7 rounded-full text-xs font-black shrink-0 backdrop-blur-md"
-                        style={{ backgroundColor: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.4)', color: active ? m.accent : 'rgba(255,255,255,0.7)' }}
+                        className="flex items-center justify-center w-7 h-7 rounded-full text-xs font-black shrink-0"
+                        style={{ backgroundColor: '#ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: active ? m.accent : 'rgba(15,23,42,0.4)' }}
                       >
                         {i + 1}
                       </span>
@@ -209,7 +209,7 @@ export default function NZAcademicBridge() {
                 </div>
 
                 <div className="flex items-center gap-4 mb-5">
-                  <span className="flex items-center justify-center w-12 h-12 rounded-2xl shrink-0 backdrop-blur-md" style={{ backgroundColor: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.4)', color: milestone.accent }}>
+                  <span className="flex items-center justify-center w-12 h-12 rounded-2xl shrink-0" style={{ backgroundColor: '#ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: milestone.accent }}>
                     <Icon path={milestone.icon} className="w-6 h-6" />
                   </span>
                   <div>
@@ -247,7 +247,7 @@ export default function NZAcademicBridge() {
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
                 {EXPERT_TEAM.map((e) => (
                   <div key={e.label} className="flex flex-col items-center text-center gap-3 bg-white/10 rounded-2xl p-5">
-                    <span className="flex items-center justify-center w-12 h-12 rounded-xl backdrop-blur-md" style={{ backgroundColor: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.4)', color: 'var(--custom-blue)' }}>
+                    <span className="flex items-center justify-center w-12 h-12 rounded-xl" style={{ backgroundColor: '#ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: 'var(--custom-blue)' }}>
                       <Icon path={e.icon} />
                     </span>
                     <p className="text-white font-bold text-xs sm:text-sm uppercase tracking-wide leading-snug">{e.label}</p>
@@ -269,7 +269,7 @@ export default function NZAcademicBridge() {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
               {SERVICES.map((s, i) => (
                 <Reveal key={s.title} delay={i * 70} className="reveal liquid-glass rounded-2xl p-5 flex flex-col items-center text-center gap-3">
-                  <span className="flex items-center justify-center w-11 h-11 rounded-xl backdrop-blur-md" style={{ backgroundColor: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.4)', color: 'var(--custom-green)' }}>
+                  <span className="flex items-center justify-center w-11 h-11 rounded-xl" style={{ backgroundColor: '#ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: 'var(--custom-green)' }}>
                     <Icon path={s.icon} />
                   </span>
                   <p className="text-white font-bold text-[0.65rem] sm:text-xs uppercase tracking-wider leading-snug">{s.title}</p>
@@ -280,7 +280,7 @@ export default function NZAcademicBridge() {
             {/* "Access to Licensed Immigration Advisors" callout from Image 2 */}
             <Reveal delay={100} className="reveal mt-5">
               <div className="liquid-glass rounded-2xl px-6 py-4 flex items-center justify-center gap-3">
-                <span className="flex items-center justify-center w-8 h-8 rounded-lg shrink-0 backdrop-blur-md" style={{ backgroundColor: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.4)', color: 'var(--custom-blue)' }}>
+                <span className="flex items-center justify-center w-8 h-8 rounded-lg shrink-0" style={{ backgroundColor: '#ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: 'var(--custom-blue)' }}>
                   <Icon path={ICONS.shield} className="w-4 h-4" />
                 </span>
                 <p className="text-white font-black text-sm sm:text-base uppercase tracking-wider text-center">Access to Licensed Immigration Advisors</p>
@@ -309,7 +309,7 @@ export default function NZAcademicBridge() {
               <ul className="flex flex-col gap-3">
                 {COMPLIANCE_POINTS.map((point) => (
                   <li key={point} className="flex gap-3 items-center">
-                    <span className="flex items-center justify-center w-6 h-6 rounded-full shrink-0 backdrop-blur-md" style={{ backgroundColor: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.4)', color: 'var(--custom-green)' }}>
+                    <span className="flex items-center justify-center w-6 h-6 rounded-full shrink-0" style={{ backgroundColor: '#ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: 'var(--custom-green)' }}>
                       <Icon path={ICONS.check} className="w-3.5 h-3.5" />
                     </span>
                     <span className="text-white/95 text-sm font-medium">{point}</span>

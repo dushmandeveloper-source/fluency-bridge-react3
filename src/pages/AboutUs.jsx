@@ -103,7 +103,7 @@ export default function AboutUs() {
               <div className="flex flex-col gap-4 mt-1">
                 {BRANCHES.map((b) => (
                   <div key={b.name} className="flex gap-4 items-start">
-                    <span className="mt-1 flex items-center justify-center w-8 h-8 rounded-xl shrink-0 backdrop-blur-md" style={{ backgroundColor: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.4)', color: b.color }}>
+                    <span className="mt-1 flex items-center justify-center w-8 h-8 rounded-xl shrink-0" style={{ backgroundColor: '#ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: b.color }}>
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" /></svg>
                     </span>
                     <div>
@@ -252,7 +252,7 @@ export default function AboutUs() {
               <ul className="flex flex-col gap-3 mt-1">
                 {COMPLIANCE.map((c) => (
                   <li key={c} className="flex gap-3 items-center">
-                    <span className="flex items-center justify-center w-6 h-6 rounded-full shrink-0 backdrop-blur-md" style={{ backgroundColor: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.4)', color: 'var(--custom-green)' }}>
+                    <span className="flex items-center justify-center w-6 h-6 rounded-full shrink-0" style={{ backgroundColor: '#ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: 'var(--custom-green)' }}>
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
                     </span>
                     <span className="text-white/95 text-sm font-medium">{c}</span>

@@ -123,7 +123,7 @@ export default function Team() {
           <div className="max-w-4xl mx-auto px-6">
             <Reveal className="reveal liquid-glass relative rounded-[2rem] p-8 sm:p-12 text-center flex flex-col items-center gap-4 overflow-hidden">
               <span className="absolute top-0 left-0 right-0 h-1.5" style={{ background: 'linear-gradient(to right, var(--custom-blue-light), var(--custom-green))' }} />
-              <span className="flex items-center justify-center w-14 h-14 rounded-2xl mb-1 backdrop-blur-md" style={{ backgroundColor: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.4)' }}>
+              <span className="flex items-center justify-center w-14 h-14 rounded-2xl mb-1" style={{ backgroundColor: '#ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
                 <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: 'var(--custom-blue)' }}><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
               </span>
               <h2 className="sans-font text-xl sm:text-2xl md:text-3xl font-black text-white leading-tight">Legal &amp; Immigration Partners</h2>
