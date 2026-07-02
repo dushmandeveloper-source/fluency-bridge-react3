@@ -123,13 +123,13 @@ export default function NZAcademicBridge() {
         {/* ---------- Hero ---------- */}
         <header className="px-6 pt-28 pb-6 sm:pt-32 sm:pb-8">
           <div className="max-w-3xl mx-auto flex flex-col items-center text-center gap-4">
-            <span className="inline-flex items-center gap-2 text-[0.6rem] sm:text-xs font-bold uppercase tracking-[0.25em] text-white px-4 py-1.5 rounded-full" style={{ backgroundColor: 'var(--custom-blue)' }}>
+            <span className="inline-flex items-center gap-2 text-[0.6rem] sm:text-xs font-bold uppercase tracking-[0.25em] text-white px-4 py-1.5 rounded-full" style={{ backgroundColor: 'var(--custom-green)' }}>
               NZ Academic Bridge
             </span>
             <h1 className="sans-font text-3xl sm:text-5xl md:text-6xl font-black text-white leading-[1.1] tracking-tight" style={{ textShadow: '0 4px 24px rgba(0,0,0,0.45)' }}>
-              Your Zero-Cost Pathway to New Zealand
+              Your Zero-Cost Pathway to <span style={{ color: 'var(--custom-blue-light)' }}>New Zealand</span>
             </h1>
-            <div className="inline-flex items-center gap-2 rounded-full px-5 py-2" style={{ backgroundColor: 'var(--custom-green)' }}>
+            <div className="inline-flex items-center gap-2 rounded-full px-5 py-2" style={{ backgroundColor: 'var(--custom-blue)' }}>
               <span className="text-white font-black text-xs sm:text-sm tracking-widest uppercase">Dream It. Plan It. Achieve It.</span>
             </div>
             <p className="text-white/90 text-sm sm:text-base md:text-lg font-medium max-w-2xl leading-relaxed" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
