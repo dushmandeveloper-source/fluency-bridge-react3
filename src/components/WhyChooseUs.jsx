@@ -45,8 +45,8 @@ export default function WhyChooseUs() {
               className="reveal bg-slate-50 border border-slate-100 rounded-2xl p-5 sm:p-7 flex flex-col items-center text-center gap-3 hover:shadow-lg transition-shadow duration-500"
             >
               <span
-                className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full"
-                style={{ backgroundColor: 'rgba(255,255,255,0.9)', boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.6)', color: f.color }}
+                className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-sm"
+                style={{ backgroundColor: '#ffffff', boxShadow: '0 1px 4px rgba(15,23,42,0.08), inset 0 0 0 1px rgba(15,23,42,0.04)', color: f.color }}
               >
                 <svg className="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   {f.icon}
