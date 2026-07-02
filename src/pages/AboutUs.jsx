@@ -68,7 +68,7 @@ export default function AboutUs() {
         <header className="px-6 pt-28 pb-6 sm:pt-32 sm:pb-8">
           <div className="max-w-3xl mx-auto flex flex-col items-center text-center gap-5">
             <span className="inline-flex items-center gap-2 text-[0.6rem] sm:text-xs font-bold uppercase tracking-[0.25em] text-white px-4 py-1.5 rounded-full" style={{ backgroundColor: 'var(--custom-green)' }}>
-              About Us
+              Executive Leadership
             </span>
             <h1 className="sans-font text-3xl sm:text-5xl md:text-6xl font-black text-white leading-[1.1] tracking-tight" style={{ textShadow: '0 4px 24px rgba(0,0,0,0.45)' }}>
               Architecting Global Futures
