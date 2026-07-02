@@ -125,7 +125,7 @@ export default function Team() {
               </p>
             </Reveal>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-start">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {CONSULTANTS.map((c, i) => (
                 <Reveal key={c.id} delay={(i % 3) * 120} className="reveal h-full">
                   <ProfileCard
