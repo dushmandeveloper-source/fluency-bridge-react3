@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { animate } from 'animejs';
+import gsap from 'gsap';
 import BannerBackground from '../components/BannerBackground';
 import Reveal from '../components/Reveal';
 import heroBanner from '../assets/flency bridge background image .jpeg';
@@ -165,6 +166,12 @@ const AI_FEATURES = [
     title: 'AI PROGRESS TRACKING',
     body: 'Diagnostic tracking mapping auditory accuracy, flow coherence, and visual score progressions.',
   },
+];
+
+const ROADMAP = [
+  { step: '01', title: 'NZQA Institute', text: 'Transitioning into a fully registered NZQA Institute.', accent: 'var(--custom-green)' },
+  { step: '02', title: 'Mobile Application', text: 'An advanced app with proprietary speech-evaluation metrics.', accent: 'var(--custom-blue-light)' },
+  { step: '03', title: 'CEFR Qualifications', text: 'Elite qualifications mapped directly to global CEFR benchmarks.', accent: 'var(--custom-green)' },
 ];
 
 const TESTIMONIALS = [
@@ -343,6 +350,16 @@ const TESTIMONIAL_SET = TESTIMONIALS.length;
 const TESTIMONIAL_TRACK = [...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS];
 
 export default function FluencyBridge() {
+  useEffect(() => {
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return undefined;
+    const ctx = gsap.context(() => {
+      gsap.utils.toArray('.gsap-node').forEach((el, i) => {
+        gsap.to(el, { scale: 1.12, duration: 1.8 + i * 0.2, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: i * 0.2 });
+      });
+    });
+    return () => ctx.revert();
+  }, []);
+
   const testimonialViewportRef = useRef(null);
   const testimonialTrackRef = useRef(null);
   const testimonialIndexRef = useRef(TESTIMONIAL_SET);
@@ -604,6 +621,40 @@ export default function FluencyBridge() {
               <Reveal delay={120} className="reveal">
                 <InteractiveModule />
               </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── Strategic roadmap — horizontal timeline ───────────── */}
+        <section className="py-6 sm:py-9 overflow-hidden">
+          <div className="max-w-6xl mx-auto px-6">
+            <Reveal className="reveal text-center max-w-2xl mx-auto mb-10">
+              <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-blue-light)' }}>Looking Ahead</span>
+              <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight mt-2" style={{ textShadow: '0 2px 14px rgba(0,0,0,0.4)' }}>Strategic Road Map &amp; Future Scale</h2>
+              <p className="text-white/90 text-sm sm:text-base mt-3">Fluency Bridge Global Limited is scaling rapidly. Our roadmap unfolds step by step:</p>
+            </Reveal>
+
+            <div className="relative">
+              <div className="hidden md:block absolute top-7 left-[16.66%] right-[16.66%] h-1 rounded-full bg-white/20">
+                <Reveal className="timeline-line h-full w-full rounded-full" style={{ background: 'linear-gradient(to right, var(--custom-green), var(--custom-blue-light), var(--custom-green))' }} />
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-10 md:gap-8">
+                {ROADMAP.map((item, i) => (
+                  <Reveal key={item.step} delay={i * 220} className="reveal relative flex flex-col items-center text-center">
+                    <span
+                      className="gsap-node sans-font relative z-10 flex items-center justify-center w-14 h-14 rounded-full text-white font-black text-lg shadow-lg ring-4 ring-white/40"
+                      style={{ backgroundColor: item.accent }}
+                    >
+                      {item.step}
+                    </span>
+                    <div className="liquid-glass mt-5 rounded-3xl p-7 w-full">
+                      <h3 className="sans-font font-black text-white text-base sm:text-lg mb-2">{item.title}</h3>
+                      <p className="text-white/90 text-xs sm:text-sm leading-relaxed">{item.text}</p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
             </div>
           </div>
         </section>
