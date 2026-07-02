@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { animate } from 'animejs';
 import BannerBackground from '../components/BannerBackground';
 import Reveal from '../components/Reveal';
 import heroBanner from '../assets/Fluency Bridge.png';
@@ -167,27 +168,21 @@ const AI_FEATURES = [
 ];
 
 const TESTIMONIALS = [
-  {
-    name: 'Priya M.',
-    role: 'Corporate Manager, Auckland',
-    quote:
-      'The shadowing method completely transformed how I communicate in board meetings. I no longer translate in my head.',
-    rating: 5,
-  },
-  {
-    name: 'Rajan T.',
-    role: 'Sales Executive, Wellington',
-    quote:
-      'Within six weeks I was leading negotiations I would have previously avoided. The acoustic mimicking phase was a revelation.',
-    rating: 5,
-  },
-  {
-    name: 'Dilnoza K.',
-    role: 'Graduate Engineer, Christchurch',
-    quote:
-      'Fluency Bridge gave me the bicultural confidence I needed. My pacing, intonation, and rhythm are now entirely natural.',
-    rating: 5,
-  },
+  { name: 'Chanaka', quote: 'Joining Fluency Bridge is the best decision I make this year. I feel much more confident when I speak now, thanks to your unique method.' },
+  { name: 'Dilini', quote: 'Your teaching style is very different. I stop translating in my head and finally starting to speak naturally. Highly recommend.' },
+  { name: 'Kasun', quote: 'I really struggle with my intonation before, but Chathuranga sir helped me fix it so quickly. Very practical sessions.' },
+  { name: 'Nadeesha', quote: 'Finally I found a place where focus is on rhythm and connected speech than grammar books.' },
+  { name: 'Ravindu', quote: 'Simple and effective lessons. I never thought I could sound this fluent in just few 12 weeks. Thank you so much.' },
+  { name: 'Anuththara', quote: 'Your way of teaching is very clear. It helps me to express my thoughts without worrying too much about the grammar rules.' },
+  { name: 'Sahan', quote: 'Great program. The way you teach intonation make my speech sound much more professional and natural.' },
+  { name: 'Ishara', quote: 'I love how we practice spontaneous speaking. It really help me to be ready for real-life conversations.' },
+  { name: 'Nuwan', quote: 'The Natural Method is truly working. I feel like I am talking with lot of confidence now.' },
+  { name: 'Tharushi', quote: "Thank you for the guidance. I was always afraid to speak up, but now I don't feel nervous when I have to talk." },
+  { name: 'Gayan', quote: 'Practical and very helpful for my career. The lessons are easy to follow and the improvement is very fast.' },
+  { name: 'Mahesh', quote: 'I appreciate how you focus on rhythm instead of just boring grammar. It make everything so much easier to understand.' },
+  { name: 'Chathuri', quote: 'Really enjoy the sessions. Your encouragement helped me to overcome my hesitation to speak in English.' },
+  { name: 'Pasindu', quote: 'Amazing experience. I learn so much about how to connect my words properly. Definitely worth the time.' },
+  { name: 'Senuri', quote: 'Excellent program for anyone who want to speak English fluently. The coaching is very personalized and supportive.' },
 ];
 
 /* ─── Small helpers ───────────────────────────────────────────────── */
@@ -341,7 +336,38 @@ function InteractiveModule() {
 
 /* ─── Page component ──────────────────────────────────────────────── */
 
+const TESTIMONIAL_GAP = 20; // px, matches gap-5
+
 export default function FluencyBridge() {
+  const testimonialViewportRef = useRef(null);
+  const testimonialTrackRef = useRef(null);
+  const [testimonialCardWidth, setTestimonialCardWidth] = useState(null);
+
+  useEffect(() => {
+    function measure() {
+      const el = testimonialViewportRef.current;
+      if (!el) return;
+      const visibleCount = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 640 ? 2 : 1;
+      setTestimonialCardWidth((el.clientWidth - TESTIMONIAL_GAP * (visibleCount - 1)) / visibleCount);
+    }
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, []);
+
+  useEffect(() => {
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return undefined;
+    const track = testimonialTrackRef.current;
+    if (!track) return undefined;
+    const anim = animate(track, {
+      translateX: ['0%', '-50%'],
+      duration: TESTIMONIALS.length * 4000,
+      ease: 'linear',
+      loop: true,
+    });
+    return () => anim.pause();
+  }, []);
+
   return (
     <BannerBackground
       fixed
@@ -543,37 +569,40 @@ export default function FluencyBridge() {
               </h2>
             </Reveal>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {TESTIMONIALS.map((t, i) => (
-                <Reveal key={t.name} delay={i * 80} className="reveal liquid-glass rounded-3xl p-7 flex flex-col gap-4">
-                  {/* stars */}
-                  <div className="flex gap-1">
-                    {Array.from({ length: t.rating }).map((_, s) => (
-                      <svg key={s} className="w-4 h-4" fill="var(--custom-green)" viewBox="0 0 20 20" aria-hidden="true">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
+            <div ref={testimonialViewportRef} className="overflow-hidden">
+              <div ref={testimonialTrackRef} className="flex gap-5" style={{ visibility: testimonialCardWidth ? 'visible' : 'hidden' }}>
+                {[...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
+                  <div
+                    key={i}
+                    className="liquid-glass rounded-3xl p-7 flex flex-col gap-4 shrink-0"
+                    style={{ width: testimonialCardWidth ? `${testimonialCardWidth}px` : undefined }}
+                  >
+                    {/* stars */}
+                    <div className="flex gap-1">
+                      {Array.from({ length: 5 }).map((_, s) => (
+                        <svg key={s} className="w-4 h-4" fill="var(--custom-green)" viewBox="0 0 20 20" aria-hidden="true">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
 
-                  <div className="flex gap-3 items-start">
-                    <Icon path={ICONS.quote} className="w-6 h-6 shrink-0 mt-0.5" style={{ color: 'var(--custom-green)' }} />
-                    <p className="text-white/90 text-sm leading-relaxed italic">{t.quote}</p>
-                  </div>
+                    <div className="flex gap-3 items-start">
+                      <Icon path={ICONS.quote} className="w-6 h-6 shrink-0 mt-0.5 text-white" />
+                      <p className="text-white/90 text-sm leading-relaxed italic">{t.quote}</p>
+                    </div>
 
-                  <div className="mt-auto flex items-center gap-3 pt-3 border-t border-white/15">
-                    <span
-                      className="flex items-center justify-center w-9 h-9 rounded-full font-black text-sm text-white shrink-0"
-                      style={{ backgroundColor: 'var(--custom-blue)' }}
-                    >
-                      {t.name[0]}
-                    </span>
-                    <div>
+                    <div className="mt-auto flex items-center gap-3 pt-3 border-t border-white/15">
+                      <span
+                        className="flex items-center justify-center w-9 h-9 rounded-full font-black text-sm text-white shrink-0"
+                        style={{ backgroundColor: 'var(--custom-blue)' }}
+                      >
+                        {t.name[0]}
+                      </span>
                       <p className="text-white font-bold text-sm">{t.name}</p>
-                      <p className="text-white/55 text-[0.65rem] font-semibold uppercase tracking-wider">{t.role}</p>
                     </div>
                   </div>
-                </Reveal>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
