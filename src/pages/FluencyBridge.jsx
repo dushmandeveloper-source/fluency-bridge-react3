@@ -337,36 +337,90 @@ function InteractiveModule() {
 /* ─── Page component ──────────────────────────────────────────────── */
 
 const TESTIMONIAL_GAP = 20; // px, matches gap-5
+const TESTIMONIAL_SET = TESTIMONIALS.length;
+// Triplicated so the track always has a buffer copy on both sides, letting the
+// carousel snap seamlessly when stepping past either edge of the middle set.
+const TESTIMONIAL_TRACK = [...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS];
 
 export default function FluencyBridge() {
   const testimonialViewportRef = useRef(null);
   const testimonialTrackRef = useRef(null);
+  const testimonialIndexRef = useRef(TESTIMONIAL_SET);
+  const testimonialCardWidthRef = useRef(0);
+  const testimonialTimerRef = useRef(null);
   const [testimonialCardWidth, setTestimonialCardWidth] = useState(null);
+  const [testimonialDot, setTestimonialDot] = useState(0);
 
   useEffect(() => {
     function measure() {
       const el = testimonialViewportRef.current;
       if (!el) return;
       const visibleCount = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 640 ? 2 : 1;
-      setTestimonialCardWidth((el.clientWidth - TESTIMONIAL_GAP * (visibleCount - 1)) / visibleCount);
+      const width = (el.clientWidth - TESTIMONIAL_GAP * (visibleCount - 1)) / visibleCount;
+      testimonialCardWidthRef.current = width;
+      setTestimonialCardWidth(width);
     }
     measure();
     window.addEventListener('resize', measure);
     return () => window.removeEventListener('resize', measure);
   }, []);
 
+  const goToTestimonialIndex = (nextIndexRaw) => {
+    const track = testimonialTrackRef.current;
+    const width = testimonialCardWidthRef.current;
+    if (!track || !width) return;
+    const step = width + TESTIMONIAL_GAP;
+    let nextIndex = nextIndexRaw;
+
+    setTestimonialDot(((nextIndex % TESTIMONIAL_SET) + TESTIMONIAL_SET) % TESTIMONIAL_SET);
+
+    animate(track, {
+      translateX: -(nextIndex * step),
+      duration: 900,
+      ease: 'inOutQuad',
+      onComplete: () => {
+        // Snap invisibly back into the middle copy once we drift into a buffer copy
+        if (nextIndex >= TESTIMONIAL_SET * 2) nextIndex -= TESTIMONIAL_SET;
+        else if (nextIndex < TESTIMONIAL_SET) nextIndex += TESTIMONIAL_SET;
+        testimonialIndexRef.current = nextIndex;
+        track.style.transform = `translateX(${-(nextIndex * step)}px)`;
+      },
+    });
+  };
+
+  const slideTestimonials = (direction) => goToTestimonialIndex(testimonialIndexRef.current + direction);
+
+  useEffect(() => {
+    testimonialTrackRef.current.style.transform = `translateX(${-(testimonialIndexRef.current * (testimonialCardWidth + TESTIMONIAL_GAP))}px)`;
+  }, [testimonialCardWidth]);
+
   useEffect(() => {
     if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return undefined;
-    const track = testimonialTrackRef.current;
-    if (!track) return undefined;
-    const anim = animate(track, {
-      translateX: ['0%', '-50%'],
-      duration: TESTIMONIALS.length * 4000,
-      ease: 'linear',
-      loop: true,
-    });
-    return () => anim.pause();
+    testimonialTimerRef.current = setInterval(() => slideTestimonials(1), 6000);
+    return () => clearInterval(testimonialTimerRef.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- runs once; slideTestimonials reads refs, not stale state
   }, []);
+
+  const restartTestimonialAutoplay = () => {
+    clearInterval(testimonialTimerRef.current);
+    if (!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+      testimonialTimerRef.current = setInterval(() => slideTestimonials(1), 6000);
+    }
+  };
+
+  const handleTestimonialNav = (direction) => {
+    clearInterval(testimonialTimerRef.current);
+    slideTestimonials(direction);
+    restartTestimonialAutoplay();
+  };
+
+  const handleTestimonialDotClick = (dot) => {
+    clearInterval(testimonialTimerRef.current);
+    const current = testimonialIndexRef.current;
+    const base = current - (((current % TESTIMONIAL_SET) + TESTIMONIAL_SET) % TESTIMONIAL_SET);
+    goToTestimonialIndex(base + dot);
+    restartTestimonialAutoplay();
+  };
 
   return (
     <BannerBackground
@@ -569,9 +623,33 @@ export default function FluencyBridge() {
               </h2>
             </Reveal>
 
-            <div ref={testimonialViewportRef} className="overflow-hidden">
-              <div ref={testimonialTrackRef} className="flex gap-5" style={{ visibility: testimonialCardWidth ? 'visible' : 'hidden' }}>
-                {[...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => handleTestimonialNav(-1)}
+                aria-label="Previous testimonial"
+                className="interactive-el hidden sm:flex items-center justify-center absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full shadow-lg"
+                style={{ backgroundColor: '#ffffff', color: 'var(--custom-blue)' }}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                onClick={() => handleTestimonialNav(1)}
+                aria-label="Next testimonial"
+                className="interactive-el hidden sm:flex items-center justify-center absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full shadow-lg"
+                style={{ backgroundColor: '#ffffff', color: 'var(--custom-blue)' }}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+
+              <div ref={testimonialViewportRef} className="overflow-hidden">
+                <div ref={testimonialTrackRef} className="flex gap-5" style={{ visibility: testimonialCardWidth ? 'visible' : 'hidden' }}>
+                  {TESTIMONIAL_TRACK.map((t, i) => (
                   <div
                     key={i}
                     className="liquid-glass rounded-3xl p-7 flex flex-col gap-4 shrink-0"
@@ -601,8 +679,25 @@ export default function FluencyBridge() {
                       <p className="text-white font-bold text-sm">{t.name}</p>
                     </div>
                   </div>
-                ))}
+                  ))}
+                </div>
               </div>
+            </div>
+
+            <div className="flex justify-center flex-wrap gap-2 mt-6">
+              {TESTIMONIALS.map((t, dot) => (
+                <button
+                  key={t.name}
+                  type="button"
+                  onClick={() => handleTestimonialDotClick(dot)}
+                  aria-label={`Show testimonial from ${t.name}`}
+                  className="interactive-el h-1.5 rounded-full transition-all"
+                  style={{
+                    width: dot === testimonialDot ? '1.5rem' : '0.375rem',
+                    backgroundColor: dot === testimonialDot ? 'var(--custom-green)' : 'rgba(255,255,255,0.25)',
+                  }}
+                />
+              ))}
             </div>
           </div>
         </section>
