@@ -28,8 +28,8 @@ export default function BannerBackground({
       <div
         role="img"
         aria-label={ariaLabel}
-        className={`${layer} inset-0 w-full h-full bg-cover bg-center animate-bg-zoom opacity-90 z-0`}
-        style={{ backgroundImage: `url(${image})`, transformOrigin: zoomOrigin }}
+        className={`${layer} inset-0 w-full h-full bg-cover animate-bg-zoom opacity-90 z-0`}
+        style={{ backgroundImage: `url(${image})`, backgroundPosition: zoomOrigin, transformOrigin: zoomOrigin }}
       />
       <div className={`${layer} inset-0 z-0 ${overlayClassName}`} />
       <ParticleField count={particleCount} />

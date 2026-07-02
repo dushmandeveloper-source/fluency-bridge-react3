@@ -21,14 +21,14 @@ export default function Footer() {
         {/* Four equal columns keep the gaps even and the block visually centered */}
         <div>
           {/* Logo + company name mirrors the header branding; white border and layered drop-shadows make it stand out against the dark footer */}
-          <div className="flex items-center gap-3 mb-5">
+          <a href="#/" className="flex items-center gap-3 mb-5 interactive-el" aria-label="Go to home">
             <img
               src={fluencyBridgeLogo}
               alt="Fluency Bridge"
               className="h-12 sm:h-16 object-contain bg-white rounded-xl border-2 border-white p-1.5 drop-shadow-[0_0_14px_rgba(255,255,255,1)] drop-shadow-[0_0_28px_rgba(255,255,255,0.85)] drop-shadow-[0_0_45px_rgba(255,255,255,0.6)]"
             />
             <span className="font-black text-sm tracking-wide leading-tight">Fluency Bridge Global Limited</span>
-          </div>
+          </a>
           <p className="text-sm text-white/80 mb-4 leading-relaxed font-medium">
             Architecting Global Futures through elite English coaching and ethical NZ education consultancy.
           </p>

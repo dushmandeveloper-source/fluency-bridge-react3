@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 import fluencyBridgeLogo from '../assets/fluency-bridge-logo.png';
 
 const NAV_LINKS = [
-  { label: 'Home', href: '#/', route: 'home', color: 'var(--custom-green)' },
+  { label: 'Home', href: '#/', route: 'home', color: 'var(--custom-blue)' },
   { label: 'Fluency Bridge', href: '#/fluency-bridge', route: 'fluency-bridge', color: 'var(--custom-green)' },
   { label: 'NZ Academic Bridge', href: '#/nz-academic-bridge', route: 'nz-academic-bridge', color: 'var(--custom-blue)' },
-  { label: 'About Us', href: '#/about', route: 'about', color: 'var(--custom-blue)' },
-  { label: 'Consultant Team', href: '#/team', route: 'team', color: 'var(--custom-green)' },
+  { label: 'About Us', href: '#/about', route: 'about', color: 'var(--custom-green)' },
+  { label: 'Consultant Team', href: '#/team', route: 'team', color: 'var(--custom-blue)' },
   { label: 'Contact Us', href: '#/contact', route: 'contact', color: 'var(--custom-green)' },
 ];
 
@@ -31,9 +31,9 @@ export default function Navbar({ route = 'home' }) {
   return (
     <nav className="fixed w-full z-50 top-4 sm:top-6 px-4 lg:px-8 xl:px-12 flex justify-between items-center gap-3 interactive-el">
       <div className="flex justify-start">
-        <div className="flex items-center shrink-0 glass-nav py-2 px-4 sm:px-5 rounded-full">
+        <a href="#/" className="flex items-center shrink-0 glass-nav py-2 px-4 sm:px-5 rounded-full interactive-el" aria-label="Go to home">
           <img src={fluencyBridgeLogo} alt="Fluency Bridge" className="h-9 sm:h-10 lg:h-12 object-contain" />
-        </div>
+        </a>
       </div>
 
       {/* Hidden until xl: below that, the hamburger menu below handles navigation

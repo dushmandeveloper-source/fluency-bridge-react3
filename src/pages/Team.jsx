@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 import gsap from 'gsap';
 
 import BannerBackground from '../components/BannerBackground';
@@ -51,39 +51,6 @@ const EXPERT_TEAM = [
 ];
 
 export default function Team() {
-  const [openConsultantId, setOpenConsultantId] = useState(null);
-  const closeTimeoutRef = useRef(null);
-
-  const openPopup = (id) => {
-    clearTimeout(closeTimeoutRef.current);
-    setOpenConsultantId(id);
-  };
-  const scheduleClose = () => {
-    clearTimeout(closeTimeoutRef.current);
-    closeTimeoutRef.current = setTimeout(() => setOpenConsultantId(null), 250);
-  };
-  const closeNow = () => {
-    clearTimeout(closeTimeoutRef.current);
-    setOpenConsultantId(null);
-  };
-
-  useEffect(() => {
-    if (!openConsultantId) return undefined;
-    const onKeyDown = (e) => {
-      if (e.key === 'Escape') closeNow();
-    };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [openConsultantId]);
-
-  const openConsultant = CONSULTANTS.find((c) => c.id === openConsultantId) ?? null;
-  const [popupVisible, setPopupVisible] = useState(false);
-
-  useEffect(() => {
-    const raf = requestAnimationFrame(() => setPopupVisible(!!openConsultant));
-    return () => cancelAnimationFrame(raf);
-  }, [openConsultant]);
-
   // GSAP: gentle perpetual float on the image cards + a slow zoom on the photos,
   // matching the motion on the About Us page.
   useEffect(() => {
@@ -158,17 +125,19 @@ export default function Team() {
               </p>
             </Reveal>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-start">
               {CONSULTANTS.map((c, i) => (
                 <Reveal key={c.id} delay={(i % 3) * 120} className="reveal h-full">
-                  <div
-                    className="h-full cursor-pointer interactive-el"
-                    onMouseEnter={() => openPopup(c.id)}
-                    onMouseLeave={scheduleClose}
-                    onClick={() => openPopup(c.id)}
-                  >
-                    <ProfileCard name={c.name} role={c.role} image={c.image} pos={c.pos} lines={c.lines} accent={c.accent} />
-                  </div>
+                  <ProfileCard
+                    name={c.name}
+                    role={c.role}
+                    image={c.image}
+                    pos={c.pos}
+                    lines={c.lines}
+                    background={c.background}
+                    quote={c.quote}
+                    accent={c.accent}
+                  />
                 </Reveal>
               ))}
             </div>
@@ -226,82 +195,6 @@ export default function Team() {
         }}
       />
 
-      {/* ---------- Consultant detail popup ---------- */}
-      {openConsultant && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/60 transition-opacity duration-200 ease-out"
-          style={{ opacity: popupVisible ? 1 : 0 }}
-          onClick={closeNow}
-          onMouseEnter={() => openPopup(openConsultant.id)}
-          onMouseLeave={scheduleClose}
-        >
-          <div
-            className="liquid-glass relative rounded-3xl overflow-hidden shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto grid sm:grid-cols-2 transition-transform duration-200 ease-out"
-            style={{ transform: popupVisible ? 'scale(1)' : 'scale(0.95)' }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              onClick={closeNow}
-              aria-label="Close"
-              className="interactive-el absolute top-3 right-3 z-10 flex items-center justify-center w-9 h-9 rounded-full"
-              style={{ backgroundColor: '#ffffff', color: 'var(--custom-blue)' }}
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" /></svg>
-            </button>
-
-            <div className="relative h-56 sm:h-full">
-              <img
-                src={openConsultant.image}
-                alt={openConsultant.name}
-                style={{ objectPosition: openConsultant.pos ?? '50% top' }}
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            <div className="p-6 sm:p-8 flex flex-col gap-4">
-              <div>
-                <h3 className="sans-font text-xl sm:text-2xl font-black text-white leading-tight">{openConsultant.name}</h3>
-                <p className="text-xs sm:text-sm font-bold uppercase tracking-wider mt-1" style={{ color: openConsultant.accent }}>{openConsultant.role}</p>
-              </div>
-
-              {openConsultant.lines?.length > 0 && (
-                <div>
-                  <p className="text-white/60 text-[0.65rem] font-bold uppercase tracking-wider mb-2">Academic Background</p>
-                  <ul className="text-white/90 text-sm leading-relaxed space-y-1.5">
-                    {openConsultant.lines.map((line, idx) => (
-                      <li key={idx} className="flex gap-2">
-                        <span style={{ color: openConsultant.accent }}>•</span>
-                        <span>{line}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {openConsultant.background?.length > 0 && (
-                <div>
-                  <p className="text-white/60 text-[0.65rem] font-bold uppercase tracking-wider mb-2">Professional Background</p>
-                  <ul className="text-white/90 text-sm leading-relaxed space-y-1.5">
-                    {openConsultant.background.map((line, idx) => (
-                      <li key={idx} className="flex gap-2">
-                        <span style={{ color: openConsultant.accent }}>•</span>
-                        <span>{line}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {openConsultant.quote && (
-                <p className="text-white/90 text-sm italic leading-relaxed border-l-2 pl-4" style={{ borderColor: openConsultant.accent }}>
-                  &ldquo;{openConsultant.quote}&rdquo;
-                </p>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
     </BannerBackground>
   );
 }

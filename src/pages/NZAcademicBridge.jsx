@@ -109,6 +109,7 @@ export default function NZAcademicBridge() {
       ariaLabel="Students walking through a sunny university campus with graduation caps overhead"
       overlayClassName="bg-gradient-to-b from-slate-900/85 via-slate-900/72 to-slate-900/90"
       particleCount={52}
+      zoomOrigin="center 25%"
     >
       <main className="bright-banner-glass relative z-20 w-full">
 
@@ -279,7 +280,7 @@ export default function NZAcademicBridge() {
               <ul className="flex flex-col gap-3">
                 {COMPLIANCE_POINTS.map((point) => (
                   <li key={point} className="flex gap-3 items-center">
-                    <span className="flex items-center justify-center w-6 h-6 rounded-full shrink-0" style={{ backgroundColor: '#ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: 'var(--custom-green)' }}>
+                    <span className="flex items-center justify-center w-6 h-6 rounded-full shrink-0" style={{ backgroundColor: 'var(--custom-green)', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: '#ffffff' }}>
                       <Icon path={ICONS.check} className="w-3.5 h-3.5" />
                     </span>
                     <span className="text-white/95 text-sm font-medium">{point}</span>

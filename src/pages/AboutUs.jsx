@@ -95,7 +95,7 @@ export default function AboutUs() {
               <div className="flex flex-col gap-4 mt-1">
                 {BRANCHES.map((b) => (
                   <div key={b.name} className="flex gap-4 items-start">
-                    <span className="mt-1 flex items-center justify-center w-8 h-8 rounded-xl shrink-0" style={{ backgroundColor: '#ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: b.color }}>
+                    <span className="mt-1 flex items-center justify-center w-8 h-8 rounded-xl shrink-0" style={{ backgroundColor: b.color, boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: '#ffffff' }}>
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" /></svg>
                     </span>
                     <div>
@@ -163,31 +163,26 @@ export default function AboutUs() {
 
         {/* ---------- Executive leadership ---------- */}
         <section className="py-6 sm:py-9">
-          <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-            <Reveal className="reveal relative order-2 lg:order-1">
-              <div className="gsap-float relative h-full flex items-center justify-center">
-                <div className="relative w-full max-w-sm mx-auto lg:mx-0">
-                  <div className="absolute -inset-3 rounded-[2rem] opacity-25 blur-2xl" style={{ background: 'linear-gradient(135deg, var(--custom-blue), var(--custom-green))' }} />
-                  <div className="liquid-glass relative rounded-[2rem] overflow-hidden shadow-2xl p-2.5">
-                    <div className="relative w-full aspect-[4/5] rounded-[1.5rem] overflow-hidden">
-                      <img src={ceoPhoto} alt="Chathuranga Liyanage" className="absolute inset-0 w-full h-full object-cover object-top gsap-zoom" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div className="max-w-6xl mx-auto px-6">
+            <Reveal className="reveal text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+              <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight" style={{ textShadow: '0 2px 14px rgba(0,0,0,0.4)' }}>Executive Leadership</h2>
             </Reveal>
-            <Reveal className="reveal liquid-glass rounded-3xl p-8 sm:p-10 flex flex-col gap-4 order-1 lg:order-2" delay={150}>
-              <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green-light)' }}>Executive Leadership</span>
-              <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">Chathuranga Liyanage</h2>
-              <p className="font-bold text-sm" style={{ color: 'var(--custom-blue-light)' }}>Founder &amp; CEO — Fluency Bridge Global Limited</p>
-              <p className="text-white/80 text-xs sm:text-sm font-semibold">B.Sc. Civil Engineering (Hons) — University of Peradeniya (2011)</p>
-              <p className="text-white/95 text-sm sm:text-base leading-relaxed text-justify">
-                Over 15 years of diverse, international experience in the civil engineering industry. Currently
-                directing operations as a Construction Project Manager in New Zealand. He applies engineering precision
-                and structured project management to global education,
-                mentoring future leaders with a philosophy built on lived experience across all parent portfolios and
-                subsidiary branches.
-              </p>
+            <Reveal className="reveal liquid-glass rounded-3xl overflow-hidden grid lg:grid-cols-2 gap-0 items-center">
+              <div className="relative order-2 lg:order-1 w-full max-w-[320px] sm:max-w-[380px] aspect-[4/5] mx-auto my-6 lg:my-0">
+                <img src={ceoPhoto} alt="Chathuranga Liyanage" className="absolute inset-0 w-full h-full object-cover object-top rounded-2xl" />
+              </div>
+              <div className="p-8 sm:p-10 flex flex-col justify-center gap-4 order-1 lg:order-2">
+                <h3 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">Chathuranga Liyanage</h3>
+                <p className="font-bold text-sm" style={{ color: 'var(--custom-blue-light)' }}>Founder &amp; CEO — Fluency Bridge Global Limited</p>
+                <p className="text-white/80 text-xs sm:text-sm font-semibold">B.Sc. Civil Engineering (Hons) — University of Peradeniya (2011)</p>
+                <p className="text-white/95 text-sm sm:text-base leading-relaxed text-justify">
+                  Over 15 years of diverse, international experience in the civil engineering industry. Currently
+                  directing operations as a Construction Project Manager in New Zealand. He applies engineering precision
+                  and structured project management to global education,
+                  mentoring future leaders with a philosophy built on lived experience across all parent portfolios and
+                  subsidiary branches.
+                </p>
+              </div>
             </Reveal>
           </div>
         </section>
@@ -217,7 +212,7 @@ export default function AboutUs() {
               <ul className="flex flex-col gap-3 mt-1">
                 {COMPLIANCE.map((c) => (
                   <li key={c} className="flex gap-3 items-center">
-                    <span className="flex items-center justify-center w-6 h-6 rounded-full shrink-0" style={{ backgroundColor: '#ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: 'var(--custom-green)' }}>
+                    <span className="flex items-center justify-center w-6 h-6 rounded-full shrink-0" style={{ backgroundColor: 'var(--custom-green)', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: '#ffffff' }}>
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
                     </span>
                     <span className="text-white/95 text-sm font-medium">{c}</span>
