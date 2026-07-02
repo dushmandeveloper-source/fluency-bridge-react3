@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 
 import BannerBackground from '../components/BannerBackground';
@@ -51,16 +51,38 @@ const EXPERT_TEAM = [
 ];
 
 export default function Team() {
-  const [activeConsultant, setActiveConsultant] = useState(null);
+  const [openConsultantId, setOpenConsultantId] = useState(null);
+  const closeTimeoutRef = useRef(null);
+
+  const openPopup = (id) => {
+    clearTimeout(closeTimeoutRef.current);
+    setOpenConsultantId(id);
+  };
+  const scheduleClose = () => {
+    clearTimeout(closeTimeoutRef.current);
+    closeTimeoutRef.current = setTimeout(() => setOpenConsultantId(null), 250);
+  };
+  const closeNow = () => {
+    clearTimeout(closeTimeoutRef.current);
+    setOpenConsultantId(null);
+  };
 
   useEffect(() => {
-    if (!activeConsultant) return undefined;
+    if (!openConsultantId) return undefined;
     const onKeyDown = (e) => {
-      if (e.key === 'Escape') setActiveConsultant(null);
+      if (e.key === 'Escape') closeNow();
     };
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [activeConsultant]);
+  }, [openConsultantId]);
+
+  const openConsultant = CONSULTANTS.find((c) => c.id === openConsultantId) ?? null;
+  const [popupVisible, setPopupVisible] = useState(false);
+
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => setPopupVisible(!!openConsultant));
+    return () => cancelAnimationFrame(raf);
+  }, [openConsultant]);
 
   // GSAP: gentle perpetual float on the image cards + a slow zoom on the photos,
   // matching the motion on the About Us page.
@@ -141,8 +163,9 @@ export default function Team() {
                 <Reveal key={c.id} delay={(i % 3) * 120} className="reveal h-full">
                   <div
                     className="h-full cursor-pointer interactive-el"
-                    onMouseEnter={() => setActiveConsultant(c)}
-                    onClick={() => setActiveConsultant(c)}
+                    onMouseEnter={() => openPopup(c.id)}
+                    onMouseLeave={scheduleClose}
+                    onClick={() => openPopup(c.id)}
                   >
                     <ProfileCard name={c.name} role={c.role} image={c.image} pos={c.pos} lines={c.lines} accent={c.accent} />
                   </div>
@@ -204,18 +227,22 @@ export default function Team() {
       />
 
       {/* ---------- Consultant detail popup ---------- */}
-      {activeConsultant && (
+      {openConsultant && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/60"
-          onClick={() => setActiveConsultant(null)}
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/60 transition-opacity duration-200 ease-out"
+          style={{ opacity: popupVisible ? 1 : 0 }}
+          onClick={closeNow}
+          onMouseEnter={() => openPopup(openConsultant.id)}
+          onMouseLeave={scheduleClose}
         >
           <div
-            className="liquid-glass relative rounded-3xl overflow-hidden shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto grid sm:grid-cols-2"
+            className="liquid-glass relative rounded-3xl overflow-hidden shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto grid sm:grid-cols-2 transition-transform duration-200 ease-out"
+            style={{ transform: popupVisible ? 'scale(1)' : 'scale(0.95)' }}
             onClick={(e) => e.stopPropagation()}
           >
             <button
               type="button"
-              onClick={() => setActiveConsultant(null)}
+              onClick={closeNow}
               aria-label="Close"
               className="interactive-el absolute top-3 right-3 z-10 flex items-center justify-center w-9 h-9 rounded-full"
               style={{ backgroundColor: '#ffffff', color: 'var(--custom-blue)' }}
@@ -225,26 +252,26 @@ export default function Team() {
 
             <div className="relative h-56 sm:h-full">
               <img
-                src={activeConsultant.image}
-                alt={activeConsultant.name}
-                style={{ objectPosition: activeConsultant.pos ?? '50% top' }}
+                src={openConsultant.image}
+                alt={openConsultant.name}
+                style={{ objectPosition: openConsultant.pos ?? '50% top' }}
                 className="w-full h-full object-cover"
               />
             </div>
 
             <div className="p-6 sm:p-8 flex flex-col gap-4">
               <div>
-                <h3 className="sans-font text-xl sm:text-2xl font-black text-white leading-tight">{activeConsultant.name}</h3>
-                <p className="text-xs sm:text-sm font-bold uppercase tracking-wider mt-1" style={{ color: activeConsultant.accent }}>{activeConsultant.role}</p>
+                <h3 className="sans-font text-xl sm:text-2xl font-black text-white leading-tight">{openConsultant.name}</h3>
+                <p className="text-xs sm:text-sm font-bold uppercase tracking-wider mt-1" style={{ color: openConsultant.accent }}>{openConsultant.role}</p>
               </div>
 
-              {activeConsultant.lines?.length > 0 && (
+              {openConsultant.lines?.length > 0 && (
                 <div>
                   <p className="text-white/60 text-[0.65rem] font-bold uppercase tracking-wider mb-2">Academic Background</p>
                   <ul className="text-white/90 text-sm leading-relaxed space-y-1.5">
-                    {activeConsultant.lines.map((line, idx) => (
+                    {openConsultant.lines.map((line, idx) => (
                       <li key={idx} className="flex gap-2">
-                        <span style={{ color: activeConsultant.accent }}>•</span>
+                        <span style={{ color: openConsultant.accent }}>•</span>
                         <span>{line}</span>
                       </li>
                     ))}
@@ -252,13 +279,13 @@ export default function Team() {
                 </div>
               )}
 
-              {activeConsultant.background?.length > 0 && (
+              {openConsultant.background?.length > 0 && (
                 <div>
                   <p className="text-white/60 text-[0.65rem] font-bold uppercase tracking-wider mb-2">Professional Background</p>
                   <ul className="text-white/90 text-sm leading-relaxed space-y-1.5">
-                    {activeConsultant.background.map((line, idx) => (
+                    {openConsultant.background.map((line, idx) => (
                       <li key={idx} className="flex gap-2">
-                        <span style={{ color: activeConsultant.accent }}>•</span>
+                        <span style={{ color: openConsultant.accent }}>•</span>
                         <span>{line}</span>
                       </li>
                     ))}
@@ -266,9 +293,9 @@ export default function Team() {
                 </div>
               )}
 
-              {activeConsultant.quote && (
-                <p className="text-white/90 text-sm italic leading-relaxed border-l-2 pl-4" style={{ borderColor: activeConsultant.accent }}>
-                  &ldquo;{activeConsultant.quote}&rdquo;
+              {openConsultant.quote && (
+                <p className="text-white/90 text-sm italic leading-relaxed border-l-2 pl-4" style={{ borderColor: openConsultant.accent }}>
+                  &ldquo;{openConsultant.quote}&rdquo;
                 </p>
               )}
             </div>
