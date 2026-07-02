@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import gsap from 'gsap';
 
 import BannerBackground from '../components/BannerBackground';
@@ -18,10 +18,26 @@ import heroBanner from '../assets/banner  new.png';
 // `pos` overrides object-position only where a photo needs it — Wasana's shot
 // has extra headroom, so without this her face sits lower than the others.
 const CONSULTANTS = [
-  { id: 'chathuranga', name: 'Chathuranga Liyanage', role: 'Founder & CEO', image: ceoPhoto, accent: 'var(--custom-blue-light)', lines: ['B.Sc. Civil Engineering (Hons) — University of Peradeniya (2011)', 'Construction Project Manager, New Zealand', '15+ years international civil engineering experience'] },
-  { id: 'janaki', name: 'Janaki Wijerathna', role: 'Senior Academic Consultant', image: janakiPhoto, accent: 'var(--custom-green)', lines: ['HNDE', 'BA Social Sciences (OUSL)', 'LA (CASS, AUK, NZ)'] },
-  { id: 'rasika', name: 'Rasika Udugama', role: 'Senior Academic Consultant — Teaching Programs', image: rasikaPhoto, accent: 'var(--custom-blue-light)', lines: ['Registered Teacher — Teaching Council of Aotearoa NZ', 'BSc Agri Tech & Management — UoP', 'PGDE — OUSL'] },
-  { id: 'wasana', name: 'Wasana Dilrukshi', role: 'Senior Academic Consultant', image: wasanaPhoto, accent: 'var(--custom-green)', pos: '50% 15%', lines: ['Master of Technological Futures (MTF) — AcademyEX NZ', 'MSc Electrical Engineering — Univ. of Moratuwa', 'BSc (Hons) Electrical & Electronic Eng — Univ. of Peradeniya'] },
+  {
+    id: 'chathuranga', name: 'Chathuranga Liyanage', role: 'Founder & CEO', image: ceoPhoto, accent: 'var(--custom-blue-light)',
+    lines: ['B.Sc. Civil Engineering (Hons) — University of Peradeniya (2011)', 'Construction Project Manager, New Zealand', '15+ years international civil engineering experience'],
+    quote: 'With a passion for education and global opportunities, I founded NZ Academic Bridge to help students achieve their dream of studying and building a successful future in New Zealand.',
+  },
+  {
+    id: 'janaki', name: 'Janaki Wijerathna', role: 'Senior Academic Consultant', image: janakiPhoto, accent: 'var(--custom-green)',
+    lines: ['HNDE', 'BA Social Sciences (OUSL)', 'LA (CASS, AUK, NZ)'],
+    quote: 'I am passionate about helping students achieve their academic and career aspirations. With a strong academic background and years of experience, I am committed to providing personalized guidance and support at every step of your journey to success in New Zealand.',
+  },
+  {
+    id: 'rasika', name: 'Rasika Udugama', role: 'Senior Academic Consultant — Teaching Programs', image: rasikaPhoto, accent: 'var(--custom-blue-light)',
+    lines: ['Registered Teacher — Teaching Council of Aotearoa NZ', 'BSc Agri Tech & Management — UoP', 'PGDE — OUSL'],
+    quote: 'I am passionate about empowering students to achieve their academic and career goals. I am here to guide and support you every step of the way on your journey to study and build a successful future in New Zealand.',
+  },
+  {
+    id: 'wasana', name: 'Wasana Dilrukshi', role: 'Senior Academic Consultant', image: wasanaPhoto, accent: 'var(--custom-green)', pos: '50% 15%',
+    lines: ['Master of Technological Futures (MTF) — AcademyEX NZ', 'MSc Electrical Engineering — Univ. of Moratuwa', 'BSc (Hons) Electrical & Electronic Eng — Univ. of Peradeniya'],
+    background: ['8+ Years of Experience in Electronics Engineering, Research & Development', 'Former Senior Sensor Development Engineer at Contrinex', 'Experienced in product development, industrial sensors, testing, and innovation'],
+  },
   { id: 'consultant5', name: 'Kelum Ponnamperuma', role: 'Senior Academic Consultant', image: consultant5Photo, accent: 'var(--custom-blue-light)', lines: ['B.Sc. Eng. (Hons) — University of Peradeniya, Sri Lanka'] },
   { id: 'consultant6', name: 'Kaushalya Jayalath', role: 'Senior Academic Consultant', image: consultant6Photo, accent: 'var(--custom-green)', lines: ['BSc (Hons) Quantity Surveying', 'MSc CM (QS Major)', 'Massey University, Auckland, NZ'] },
 ];
@@ -35,6 +51,17 @@ const EXPERT_TEAM = [
 ];
 
 export default function Team() {
+  const [activeConsultant, setActiveConsultant] = useState(null);
+
+  useEffect(() => {
+    if (!activeConsultant) return undefined;
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') setActiveConsultant(null);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [activeConsultant]);
+
   // GSAP: gentle perpetual float on the image cards + a slow zoom on the photos,
   // matching the motion on the About Us page.
   useEffect(() => {
@@ -112,7 +139,13 @@ export default function Team() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {CONSULTANTS.map((c, i) => (
                 <Reveal key={c.id} delay={(i % 3) * 120} className="reveal h-full">
-                  <ProfileCard name={c.name} role={c.role} image={c.image} pos={c.pos} lines={c.lines} accent={c.accent} />
+                  <div
+                    className="h-full cursor-pointer interactive-el"
+                    onMouseEnter={() => setActiveConsultant(c)}
+                    onClick={() => setActiveConsultant(c)}
+                  >
+                    <ProfileCard name={c.name} role={c.role} image={c.image} pos={c.pos} lines={c.lines} accent={c.accent} />
+                  </div>
                 </Reveal>
               ))}
             </div>
@@ -169,6 +202,79 @@ export default function Team() {
             'linear-gradient(to bottom, transparent 0%, rgba(0, 49, 133, 0.2) 50%, rgba(0, 49, 133, 0.55) 70%, rgba(0, 49, 133, 0.85) 88%, #002c78 100%)',
         }}
       />
+
+      {/* ---------- Consultant detail popup ---------- */}
+      {activeConsultant && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/60"
+          onClick={() => setActiveConsultant(null)}
+        >
+          <div
+            className="liquid-glass relative rounded-3xl overflow-hidden shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto grid sm:grid-cols-2"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setActiveConsultant(null)}
+              aria-label="Close"
+              className="interactive-el absolute top-3 right-3 z-10 flex items-center justify-center w-9 h-9 rounded-full"
+              style={{ backgroundColor: '#ffffff', color: 'var(--custom-blue)' }}
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+
+            <div className="relative h-56 sm:h-full">
+              <img
+                src={activeConsultant.image}
+                alt={activeConsultant.name}
+                style={{ objectPosition: activeConsultant.pos ?? '50% top' }}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            <div className="p-6 sm:p-8 flex flex-col gap-4">
+              <div>
+                <h3 className="sans-font text-xl sm:text-2xl font-black text-white leading-tight">{activeConsultant.name}</h3>
+                <p className="text-xs sm:text-sm font-bold uppercase tracking-wider mt-1" style={{ color: activeConsultant.accent }}>{activeConsultant.role}</p>
+              </div>
+
+              {activeConsultant.lines?.length > 0 && (
+                <div>
+                  <p className="text-white/60 text-[0.65rem] font-bold uppercase tracking-wider mb-2">Academic Background</p>
+                  <ul className="text-white/90 text-sm leading-relaxed space-y-1.5">
+                    {activeConsultant.lines.map((line, idx) => (
+                      <li key={idx} className="flex gap-2">
+                        <span style={{ color: activeConsultant.accent }}>•</span>
+                        <span>{line}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {activeConsultant.background?.length > 0 && (
+                <div>
+                  <p className="text-white/60 text-[0.65rem] font-bold uppercase tracking-wider mb-2">Professional Background</p>
+                  <ul className="text-white/90 text-sm leading-relaxed space-y-1.5">
+                    {activeConsultant.background.map((line, idx) => (
+                      <li key={idx} className="flex gap-2">
+                        <span style={{ color: activeConsultant.accent }}>•</span>
+                        <span>{line}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {activeConsultant.quote && (
+                <p className="text-white/90 text-sm italic leading-relaxed border-l-2 pl-4" style={{ borderColor: activeConsultant.accent }}>
+                  &ldquo;{activeConsultant.quote}&rdquo;
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </BannerBackground>
   );
 }
