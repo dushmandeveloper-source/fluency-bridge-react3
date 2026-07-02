@@ -429,10 +429,10 @@ export default function FluencyBridge() {
                       }`}
                     >
                       <span
-                        className="flex items-center justify-center w-8 h-8 rounded-full shrink-0"
-                        style={{ backgroundColor: active ? s.accent : 'rgba(255,255,255,0.18)' }}
+                        className="flex items-center justify-center w-8 h-8 rounded-full shrink-0 backdrop-blur-md"
+                        style={{ backgroundColor: 'rgba(255,255,255,0.3)', border: '1px solid rgba(255,255,255,0.4)', color: active ? s.accent : 'rgba(255,255,255,0.7)' }}
                       >
-                        <Icon path={s.icon} className="w-4 h-4 text-white" />
+                        <Icon path={s.icon} className="w-4 h-4" />
                       </span>
                       <span>
                         <span className="block font-black text-sm text-white">{s.title}</span>
@@ -454,10 +454,10 @@ export default function FluencyBridge() {
 
                 <div className="flex items-center gap-4">
                   <span
-                    className="flex items-center justify-center w-14 h-14 rounded-2xl shrink-0"
-                    style={{ backgroundColor: stage.accent }}
+                    className="flex items-center justify-center w-14 h-14 rounded-2xl shrink-0 backdrop-blur-md"
+                    style={{ backgroundColor: 'rgba(255,255,255,0.3)', border: '1px solid rgba(255,255,255,0.4)', color: stage.accent }}
                   >
-                    <Icon path={stage.icon} className="w-7 h-7 text-white" />
+                    <Icon path={stage.icon} className="w-7 h-7" />
                   </span>
                   <h3 className="sans-font text-xl sm:text-2xl font-black text-white leading-tight">
                     {stage.title}
@@ -519,10 +519,10 @@ export default function FluencyBridge() {
                   className="reveal liquid-glass rounded-3xl p-7 flex flex-col gap-4"
                 >
                   <span
-                    className="flex items-center justify-center w-12 h-12 rounded-2xl shrink-0"
-                    style={{ backgroundColor: i % 2 === 0 ? 'var(--custom-green)' : 'var(--custom-blue)' }}
+                    className="flex items-center justify-center w-12 h-12 rounded-2xl shrink-0 backdrop-blur-md"
+                    style={{ backgroundColor: 'rgba(255,255,255,0.3)', border: '1px solid rgba(255,255,255,0.4)', color: i % 2 === 0 ? 'var(--custom-green)' : 'var(--custom-blue)' }}
                   >
-                    <Icon path={o.icon} className="w-6 h-6 text-white" />
+                    <Icon path={o.icon} className="w-6 h-6" />
                   </span>
                   <h3 className="sans-font text-sm sm:text-base font-black text-white leading-tight uppercase tracking-wide">
                     {o.title}
@@ -561,10 +561,10 @@ export default function FluencyBridge() {
                     <div key={f.title} className="liquid-glass rounded-2xl p-5 flex flex-col gap-3">
                       <div className="flex items-center gap-2">
                         <span
-                          className="flex items-center justify-center w-8 h-8 rounded-lg shrink-0"
-                          style={{ backgroundColor: 'var(--custom-green)', opacity: 0.92 }}
+                          className="flex items-center justify-center w-8 h-8 rounded-lg shrink-0 backdrop-blur-md"
+                          style={{ backgroundColor: 'rgba(255,255,255,0.3)', border: '1px solid rgba(255,255,255,0.4)', color: 'var(--custom-green)' }}
                         >
-                          <Icon path={f.icon} className="w-4 h-4 text-white" />
+                          <Icon path={f.icon} className="w-4 h-4" />
                         </span>
                         <span className="text-white font-black text-[0.6rem] uppercase tracking-wider leading-tight">
                           {f.title}
