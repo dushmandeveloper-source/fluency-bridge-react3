@@ -29,8 +29,8 @@ const BRANCHES = [
 
 const VISION_MISSION = [
   { label: 'Our Vision', color: 'var(--custom-green)', text: 'To serve as your primary partner in global professional and academic advancement, empowering you to command authoritative English communication and achieve a smooth, successful transition into New Zealand’s high-growth industries.' },
-  { label: 'Our Mission', color: 'var(--custom-blue-light)', text: 'We strive to eliminate structural and linguistic obstacles by providing expert coaching through our Natural Method, which integrates shadowing, mimicking, and active-passive listening to build authentic fluency. In parallel, we provide ethical, student-centered education consulting and international recruitment services, ensuring you receive transparent and comprehensive guidance with absolutely no agency fees charged to you.' },
-  { label: 'Our Values', color: 'var(--custom-green)', text: 'We operate with a commitment to absolute integrity, ensuring total clarity and honesty with no hidden costs or unexpected charges for our students. We prioritize practical, science-based learning that favors real-world skills like acoustic shadowing over traditional rote memorization, and we provide dedicated, long-term support that deeply respects the local culture and the unique heritage of Aotearoa New Zealand.' },
+  { label: 'Our Mission', color: 'var(--custom-green)', text: 'We strive to eliminate structural and linguistic obstacles by providing expert coaching through our Natural Method, which integrates shadowing, mimicking, and active-passive listening to build authentic fluency. In parallel, we provide ethical, student-centered education consulting and international recruitment services, ensuring you receive transparent and comprehensive guidance with absolutely no agency fees charged to you.' },
+  { label: 'Our Values', color: 'var(--custom-blue-light)', text: 'We operate with a commitment to absolute integrity, ensuring total clarity and honesty with no hidden costs or unexpected charges for our students. We prioritize practical, science-based learning that favors real-world skills like acoustic shadowing over traditional rote memorization, and we provide dedicated, long-term support that deeply respects the local culture and the unique heritage of Aotearoa New Zealand.' },
 ];
 
 const ROADMAP = [
@@ -152,10 +152,17 @@ export default function AboutUs() {
               <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight" style={{ textShadow: '0 2px 14px rgba(0,0,0,0.4)' }}>Who We Are</h2>
             </Reveal>
           </div>
-          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-6 sm:gap-8">
+          <div className="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-6 sm:gap-8">
             {VISION_MISSION.map((c, i) => (
-              <Reveal key={c.label} delay={i * 140} className="reveal liquid-glass rounded-3xl p-8 sm:p-9 flex flex-col gap-4 overflow-hidden">
-                <span className="absolute top-0 left-0 h-1.5 w-full" style={{ backgroundColor: c.color }} />
+              <Reveal
+                key={c.label}
+                delay={i * 140}
+                className={`reveal liquid-glass rounded-3xl p-8 sm:p-9 flex flex-col gap-4 overflow-hidden ${i === 2 ? 'md:col-span-2 md:max-w-md md:mx-auto md:w-full' : ''}`}
+              >
+                <span
+                  className={`absolute h-1.5 w-1/2 ${i === 2 ? 'bottom-0 left-1/4' : i === 1 ? 'top-0 right-0' : 'top-0 left-0'}`}
+                  style={{ backgroundColor: c.color }}
+                />
                 <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: c.color }}>{c.label}</span>
                 <p className="text-white/95 text-sm sm:text-base leading-relaxed text-justify">{c.text}</p>
               </Reveal>
