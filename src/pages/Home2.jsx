@@ -209,7 +209,7 @@ export default function Home2() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {FEATURES.map((f, i) => (
                 <Reveal key={f.title} delay={i * 100} className="reveal liquid-glass rounded-3xl p-5 sm:p-7 flex flex-col items-center text-center gap-3">
-                  <span className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full backdrop-blur-md" style={{ backgroundColor: 'rgba(255,255,255,0.3)', border: '1px solid rgba(255,255,255,0.4)', color: f.color }}>
+                  <span className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full backdrop-blur-md" style={{ backgroundColor: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.4)', color: f.color }}>
                     <svg className="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       {f.icon}
                     </svg>

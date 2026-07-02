@@ -430,7 +430,7 @@ export default function FluencyBridge() {
                     >
                       <span
                         className="flex items-center justify-center w-8 h-8 rounded-full shrink-0 backdrop-blur-md"
-                        style={{ backgroundColor: 'rgba(255,255,255,0.3)', border: '1px solid rgba(255,255,255,0.4)', color: active ? s.accent : 'rgba(255,255,255,0.7)' }}
+                        style={{ backgroundColor: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.4)', color: active ? s.accent : 'rgba(255,255,255,0.7)' }}
                       >
                         <Icon path={s.icon} className="w-4 h-4" />
                       </span>
@@ -455,7 +455,7 @@ export default function FluencyBridge() {
                 <div className="flex items-center gap-4">
                   <span
                     className="flex items-center justify-center w-14 h-14 rounded-2xl shrink-0 backdrop-blur-md"
-                    style={{ backgroundColor: 'rgba(255,255,255,0.3)', border: '1px solid rgba(255,255,255,0.4)', color: stage.accent }}
+                    style={{ backgroundColor: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.4)', color: stage.accent }}
                   >
                     <Icon path={stage.icon} className="w-7 h-7" />
                   </span>
@@ -520,7 +520,7 @@ export default function FluencyBridge() {
                 >
                   <span
                     className="flex items-center justify-center w-12 h-12 rounded-2xl shrink-0 backdrop-blur-md"
-                    style={{ backgroundColor: 'rgba(255,255,255,0.3)', border: '1px solid rgba(255,255,255,0.4)', color: i % 2 === 0 ? 'var(--custom-green)' : 'var(--custom-blue)' }}
+                    style={{ backgroundColor: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.4)', color: i % 2 === 0 ? 'var(--custom-green)' : 'var(--custom-blue)' }}
                   >
                     <Icon path={o.icon} className="w-6 h-6" />
                   </span>
@@ -562,7 +562,7 @@ export default function FluencyBridge() {
                       <div className="flex items-center gap-2">
                         <span
                           className="flex items-center justify-center w-8 h-8 rounded-lg shrink-0 backdrop-blur-md"
-                          style={{ backgroundColor: 'rgba(255,255,255,0.3)', border: '1px solid rgba(255,255,255,0.4)', color: 'var(--custom-green)' }}
+                          style={{ backgroundColor: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.4)', color: 'var(--custom-green)' }}
                         >
                           <Icon path={f.icon} className="w-4 h-4" />
                         </span>
