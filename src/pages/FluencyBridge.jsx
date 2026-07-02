@@ -342,9 +342,6 @@ function InteractiveModule() {
 /* ─── Page component ──────────────────────────────────────────────── */
 
 export default function FluencyBridge() {
-  const [activeStage, setActiveStage] = useState(0);
-  const stage = STAGES[activeStage];
-
   return (
     <BannerBackground
       fixed
@@ -412,83 +409,30 @@ export default function FluencyBridge() {
               </p>
             </Reveal>
 
-            <div className="grid lg:grid-cols-[280px_1fr] gap-5">
-              {/* Stage selector tabs */}
-              <Reveal className="reveal flex lg:flex-col gap-3">
-                {STAGES.map((s, i) => {
-                  const active = i === activeStage;
-                  return (
-                    <button
-                      key={s.num}
-                      type="button"
-                      onClick={() => setActiveStage(i)}
-                      className={`shrink-0 lg:w-full text-left flex items-center gap-3 rounded-2xl px-4 py-4 transition interactive-el ${
-                        active
-                          ? 'liquid-glass shadow-xl'
-                          : 'bg-slate-900/60 border border-white/15 hover:bg-slate-900/75'
-                      }`}
-                    >
-                      <span
-                        className="flex items-center justify-center w-8 h-8 rounded-full shrink-0"
-                        style={{ backgroundColor: '#ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: active ? s.accent : 'rgba(15,23,42,0.4)' }}
-                      >
-                        <Icon path={s.icon} className="w-4 h-4" />
-                      </span>
-                      <span>
-                        <span className="block font-black text-sm text-white">{s.title}</span>
-                        <span className="block text-[0.65rem] font-bold text-white/45">Stage {s.num}</span>
-                      </span>
-                    </button>
-                  );
-                })}
-              </Reveal>
-
-              {/* Stage detail */}
-              <Reveal delay={100} className="reveal liquid-glass rounded-3xl p-8 sm:p-10 flex flex-col gap-5">
-                <div className="flex flex-wrap items-center gap-3">
-                  <span className="text-[0.65rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full text-white" style={{ backgroundColor: stage.accent }}>
-                    Stage {stage.num}
+            <div className="grid sm:grid-cols-3 gap-6 sm:gap-8">
+              {STAGES.map((s, i) => (
+                <Reveal
+                  key={s.num}
+                  delay={i * 140}
+                  className="reveal liquid-glass relative rounded-3xl p-8 sm:p-9 flex flex-col gap-4 overflow-hidden"
+                >
+                  <span className="absolute top-0 left-0 h-1.5 w-full" style={{ backgroundColor: s.accent }} />
+                  <span
+                    className="self-start text-[0.65rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full text-white"
+                    style={{ backgroundColor: s.accent }}
+                  >
+                    Stage {s.num}
                   </span>
-                  <span className="text-white/40 text-[0.65rem] font-mono">Ethical Standard Checked</span>
-                </div>
-
-                <div className="flex items-center gap-4">
                   <span
                     className="flex items-center justify-center w-14 h-14 rounded-2xl shrink-0"
-                    style={{ backgroundColor: '#ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: stage.accent }}
+                    style={{ backgroundColor: '#ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: s.accent }}
                   >
-                    <Icon path={stage.icon} className="w-7 h-7" />
+                    <Icon path={s.icon} className="w-7 h-7" />
                   </span>
-                  <h3 className="sans-font text-xl sm:text-2xl font-black text-white leading-tight">
-                    {stage.title}
-                  </h3>
-                </div>
-
-                <p className="text-white/90 text-sm sm:text-base leading-relaxed text-justify">
-                  {stage.description}
-                </p>
-
-                <div className="h-px bg-white/15" />
-
-                <div className="flex items-center justify-between gap-4 flex-wrap">
-                  <div className="flex items-center gap-2 text-white/55 text-xs sm:text-sm">
-                    <Icon path={ICONS.shield} className="w-4 h-4 shrink-0" />
-                    <span>Systems-driven. Scientifically structured.</span>
-                  </div>
-                  <div className="flex gap-2">
-                    {STAGES.map((_, i) => (
-                      <button
-                        key={i}
-                        type="button"
-                        onClick={() => setActiveStage(i)}
-                        className="w-2 h-2 rounded-full transition-all interactive-el"
-                        style={{ backgroundColor: i === activeStage ? 'var(--custom-green)' : 'rgba(255,255,255,0.25)' }}
-                        aria-label={`Stage ${i + 1}`}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </Reveal>
+                  <h3 className="sans-font text-xl font-black text-white leading-tight">{s.title}</h3>
+                  <p className="text-white/90 text-sm leading-relaxed text-justify">{s.description}</p>
+                </Reveal>
+              ))}
             </div>
           </div>
         </section>
