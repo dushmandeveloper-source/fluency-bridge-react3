@@ -9,10 +9,17 @@ import nzAcademicBridgeImage from '../assets/NZ Academic Bridge.png';
 import fluencyBridgeLogo from '../assets/fluency-bridge-logo.png';
 import nzAcademicBridgeLogo from '../assets/nz-academic-bridge-logo.png';
 
+const STORY_IMG = 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&h=1500&q=80';
+
 // Home — glassmorphism (liquid-glass) panels floating over the shared fixed home
 // banner image, mirroring the About Us layout. BannerBackground (fixed) supplies
 // the zooming photo, dark overlay and sparkle particles; every card is a
 // transparent frosted-glass panel.
+
+const BRANCHES = [
+  { name: 'Fluency Bridge', href: '#/fluency-bridge', desc: 'Our elite frontline program focusing on high-performance English communication coaching for professionals and international students following the Natural English Method.', color: 'var(--custom-green)' },
+  { name: 'NZ Academic Bridge', href: '#/nz-academic-bridge', desc: 'Our specialised, dedicated branding branch established to execute all international student recruitment, expert tertiary placement, and career transition consultancy services.', color: 'var(--custom-blue-light)' },
+];
 
 const PROGRAMS = [
   {
@@ -176,6 +183,52 @@ export default function Home2() {
                     </div>
                   </div>
                 </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        {/* ---------- Our Story ---------- */}
+        <section className="py-6 sm:py-9">
+          <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+            <Reveal className="reveal liquid-glass rounded-3xl p-8 sm:p-10 flex flex-col gap-5">
+              <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green-light)' }}>A premier New Zealand-based education enterprise</span>
+              <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">
+                Our Story
+              </h2>
+              <p className="text-white/95 text-sm sm:text-base leading-relaxed text-justify">
+                Fluency Bridge Global Limited is a premier New Zealand-based, service-oriented enterprise. We bridge the
+                gap between regional potential and global success through our parent corporate infrastructure, managing
+                two distinct, specialised operational branches.
+              </p>
+            </Reveal>
+
+            <Reveal className="reveal relative" delay={150}>
+              <div className="gsap-float relative h-full">
+                <div className="absolute -inset-3 rounded-[2rem] opacity-25 blur-2xl" style={{ background: 'linear-gradient(135deg, var(--custom-green), var(--custom-blue))' }} />
+                <div className="liquid-glass relative h-full min-h-[18rem] rounded-[2rem] overflow-hidden shadow-2xl p-2.5">
+                  <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden">
+                    <img src={STORY_IMG} alt="Premier university campus" className="absolute inset-0 w-full h-full object-cover gsap-zoom" />
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          <div className="max-w-6xl mx-auto px-6 grid sm:grid-cols-2 gap-6 mt-6 lg:mt-8">
+            {BRANCHES.map((b, i) => (
+              <Reveal key={b.name} delay={i * 120} className="reveal">
+                <a
+                  href={b.href}
+                  className="liquid-glass relative rounded-3xl p-6 sm:p-7 flex flex-col gap-3 h-full overflow-hidden transition-all duration-300 ease-out hover:-translate-y-2 interactive-el"
+                >
+                  <span className="absolute top-0 left-0 right-0 h-1.5" style={{ backgroundColor: b.color }} />
+                  <span className="flex items-center justify-center w-10 h-10 rounded-xl shrink-0" style={{ backgroundColor: '#ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.15)', color: b.color }}>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" /></svg>
+                  </span>
+                  <p className="font-black text-white text-base sm:text-lg">{b.name}</p>
+                  <p className="text-white/90 text-sm leading-relaxed">{b.desc}</p>
+                </a>
               </Reveal>
             ))}
           </div>
