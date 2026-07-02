@@ -149,7 +149,7 @@ export default function Home2() {
           <div className="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
             {PROGRAMS.map((p, i) => (
               <Reveal key={p.id} delay={i * 150} className="reveal relative">
-                <div className="gsap-float relative h-full">
+                <div className="relative h-full">
                   <div className="absolute -inset-3 rounded-[2rem] opacity-25 blur-2xl" style={{ background: 'linear-gradient(135deg, var(--custom-green), var(--custom-blue))' }} />
                   <div className="liquid-glass relative h-full rounded-[2rem] shadow-2xl p-2.5 flex flex-col">
                     <div className="relative w-full h-32 sm:h-40 rounded-[1.5rem] overflow-hidden shrink-0">

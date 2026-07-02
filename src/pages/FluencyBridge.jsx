@@ -95,7 +95,7 @@ const STAGES = [
     label: 'REMODELING PHASE',
     title: 'Acoustic Mimicking',
     icon: ICONS.mic,
-    accent: '#e8b84b',
+    accent: 'var(--custom-blue)',
     description:
       'Under guidance, you instantly mouth and repeat words with 0.2s delay (shadowing). This matches physical jaw coordination and breath control to native speeds.',
   },
