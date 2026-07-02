@@ -52,7 +52,7 @@ export default function ContactUs() {
             <span className="inline-flex items-center gap-2 text-[0.6rem] sm:text-xs font-bold uppercase tracking-[0.25em] text-white px-4 py-1.5 rounded-full" style={{ backgroundColor: 'var(--custom-blue)' }}>
               Contact Us
             </span>
-            <h1 className="sans-font text-3xl sm:text-5xl md:text-6xl font-black text-white leading-[1.1] tracking-tight" style={{ textShadow: '0 4px 24px rgba(0,0,0,0.45)' }}>
+            <h1 className="sans-font text-2xl sm:text-4xl md:text-6xl font-black text-white leading-[1.1] tracking-tight whitespace-nowrap" style={{ textShadow: '0 4px 24px rgba(0,0,0,0.45)' }}>
               Let&apos;s Start the Conversation
             </h1>
             <p className="text-white/90 text-sm sm:text-base md:text-lg font-medium max-w-2xl leading-relaxed" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>

@@ -3,8 +3,8 @@
 // layout is ready to drop real headshots into later.
 export default function ProfileCard({ name, role, image, pos, lines = [], accent = 'var(--custom-blue)' }) {
   return (
-    <div className="group liquid-glass relative rounded-2xl sm:rounded-[2rem] shadow-xl flex flex-col transition-all duration-500 hover:-translate-y-2">
-      <div className="relative w-full h-40 sm:h-52 md:h-60 bg-white/10 flex items-center justify-center overflow-hidden">
+    <div className="group liquid-glass relative rounded-2xl sm:rounded-[2rem] shadow-xl flex flex-col h-full transition-all duration-300 ease-out hover:-translate-y-3 hover:scale-[1.03] hover:z-10">
+      <div className="relative w-full h-40 sm:h-52 md:h-60 bg-white flex items-center justify-center overflow-hidden">
         {image ? (
           <img
             src={image}

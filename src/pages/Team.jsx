@@ -53,7 +53,7 @@ export default function Team() {
       <main className="bright-banner-glass relative z-20 w-full">
 
         {/* ---------- Hero ---------- */}
-        <header className="px-6 pt-28 pb-6 sm:pt-32 sm:pb-8">
+        <header className="px-6 pt-28 pb-2 sm:pt-32 sm:pb-3">
           <div className="max-w-3xl mx-auto flex flex-col items-center text-center gap-5">
             <span className="inline-flex items-center gap-2 text-[0.6rem] sm:text-xs font-bold uppercase tracking-[0.25em] text-white px-4 py-1.5 rounded-full" style={{ backgroundColor: 'var(--custom-green)' }}>
               Our Consultants
@@ -68,7 +68,7 @@ export default function Team() {
         </header>
 
         {/* ---------- Academic Consultants & Advisory Board ---------- */}
-        <section className="py-6 sm:py-9">
+        <section className="pt-2 pb-6 sm:pt-3 sm:pb-9">
           <div className="max-w-6xl mx-auto px-6">
             <Reveal className="reveal text-center max-w-2xl mx-auto mb-10">
               <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-blue-light)' }}>Academic Consultants &amp; Advisory Board</span>
@@ -80,7 +80,7 @@ export default function Team() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {CONSULTANTS.map((c, i) => (
-                <Reveal key={c.id} delay={(i % 3) * 120} className="reveal">
+                <Reveal key={c.id} delay={(i % 3) * 120} className="reveal h-full">
                   <ProfileCard name={c.name} role={c.role} image={c.image} pos={c.pos} lines={c.lines} accent={c.accent} />
                 </Reveal>
               ))}
