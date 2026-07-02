@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import BannerBackground from '../components/BannerBackground';
 import Reveal from '../components/Reveal';
-import heroBanner from '../assets/NZ Academic Bridge.png';
+import heroBanner from '../assets/nz-academic-bridge background.jpg';
 
 // SVG icon paths for milestones / services
 const ICONS = {
@@ -241,8 +241,7 @@ export default function NZAcademicBridge() {
           <div className="max-w-5xl mx-auto px-6">
             <Reveal className="reveal liquid-glass rounded-3xl p-8 sm:p-10">
               <div className="text-center mb-8">
-                <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-blue-light)' }}>Our Promise</span>
-                <h2 className="sans-font text-xl sm:text-2xl md:text-3xl font-black text-white leading-tight mt-2">Our New Zealand Expert Team Will Assist You</h2>
+                <h2 className="sans-font text-xl sm:text-2xl md:text-3xl font-black text-white leading-tight">Our New Zealand Expert Team Will Assist You</h2>
               </div>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
                 {EXPERT_TEAM.map((e) => (

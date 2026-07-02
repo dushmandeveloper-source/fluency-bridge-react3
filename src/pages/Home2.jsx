@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import { animate } from 'animejs';
 
 import BannerBackground from '../components/BannerBackground';
 import Reveal from '../components/Reveal';
@@ -19,7 +20,6 @@ const STORY_IMG = 'https://images.unsplash.com/photo-1562774053-701939374585?aut
 
 // Temporarily hidden sections — flip to true to bring them back.
 const SHOW_WHY_CHOOSE_US = false;
-const SHOW_TESTIMONIALS = false;
 
 const BRANCHES = [
   { name: 'Fluency Bridge', href: '#/fluency-bridge', desc: 'Our elite frontline program focusing on high-performance English communication coaching for professionals and international students following the Natural English Method.', color: 'var(--custom-green)' },
@@ -97,36 +97,30 @@ const FEATURES = [
 ];
 
 const TESTIMONIALS = [
-  {
-    quote: 'Fluency Bridge helped me build real confidence in English and reach the IELTS score I needed for university.',
-    name: 'IELTS Student',
-    role: 'University Applicant',
-  },
-  {
-    quote: 'The team guided me through every step of the placement and visa process. Professional and trustworthy from day one.',
-    name: 'NZ Academic Bridge Client',
-    role: 'International Student',
-  },
-  {
-    quote: 'The coaching sessions are practical and engaging — my confidence speaking English improved so much.',
-    name: 'Fluency Bridge Student',
-    role: 'English Coaching Programme',
-  },
+  { name: 'Chanaka', quote: 'Joining Fluency Bridge is the best decision I make this year. I feel much more confident when I speak now, thanks to your unique method.' },
+  { name: 'Dilini', quote: 'Your teaching style is very different. I stop translating in my head and finally starting to speak naturally. Highly recommend.' },
+  { name: 'Kasun', quote: 'I really struggle with my intonation before, but Chathuranga sir helped me fix it so quickly. Very practical sessions.' },
+  { name: 'Nadeesha', quote: 'Finally I found a place where focus is on rhythm and connected speech than grammar books.' },
+  { name: 'Ravindu', quote: 'Simple and effective lessons. I never thought I could sound this fluent in just few 12 weeks. Thank you so much.' },
+  { name: 'Anuththara', quote: 'Your way of teaching is very clear. It helps me to express my thoughts without worrying too much about the grammar rules.' },
+  { name: 'Sahan', quote: 'Great program. The way you teach intonation make my speech sound much more professional and natural.' },
+  { name: 'Ishara', quote: 'I love how we practice spontaneous speaking. It really help me to be ready for real-life conversations.' },
+  { name: 'Nuwan', quote: 'The Natural Method is truly working. I feel like I am talking with lot of confidence now.' },
+  { name: 'Tharushi', quote: "Thank you for the guidance. I was always afraid to speak up, but now I don't feel nervous when I have to talk." },
+  { name: 'Gayan', quote: 'Practical and very helpful for my career. The lessons are easy to follow and the improvement is very fast.' },
+  { name: 'Mahesh', quote: 'I appreciate how you focus on rhythm instead of just boring grammar. It make everything so much easier to understand.' },
+  { name: 'Chathuri', quote: 'Really enjoy the sessions. Your encouragement helped me to overcome my hesitation to speak in English.' },
+  { name: 'Pasindu', quote: 'Amazing experience. I learn so much about how to connect my words properly. Definitely worth the time.' },
+  { name: 'Senuri', quote: 'Excellent program for anyone who want to speak English fluently. The coaching is very personalized and supportive.' },
 ];
 
-const PARTNERS = ['The University of Auckland', 'AUT', 'Massey University', 'Unitec', 'NZQA'];
+const TESTIMONIAL_GAP = 20; // px, matches gap-5
+const TESTIMONIAL_SET = TESTIMONIALS.length;
+// Triplicated so the track always has a buffer copy on both sides, letting the
+// carousel snap seamlessly when stepping past either edge of the middle set.
+const TESTIMONIAL_TRACK = [...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS];
 
-function Stars() {
-  return (
-    <div className="flex gap-0.5" style={{ color: 'var(--custom-green-light)' }}>
-      {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-          <path d="M10 1.5l2.59 5.86 6.41.56-4.84 4.27 1.46 6.31L10 15.42l-5.62 3.08 1.46-6.31L1 7.92l6.41-.56L10 1.5z" />
-        </svg>
-      ))}
-    </div>
-  );
-}
+const PARTNERS = ['The University of Auckland', 'AUT', 'Massey University', 'Unitec', 'NZQA'];
 
 export default function Home2() {
   // GSAP: gentle perpetual float on the image cards + a slow zoom on the photos,
@@ -143,6 +137,85 @@ export default function Home2() {
     });
     return () => ctx.revert();
   }, []);
+
+  const testimonialViewportRef = useRef(null);
+  const testimonialTrackRef = useRef(null);
+  const testimonialIndexRef = useRef(TESTIMONIAL_SET);
+  const testimonialCardWidthRef = useRef(0);
+  const testimonialTimerRef = useRef(null);
+  const [testimonialCardWidth, setTestimonialCardWidth] = useState(null);
+  const [testimonialDot, setTestimonialDot] = useState(0);
+
+  useEffect(() => {
+    function measure() {
+      const el = testimonialViewportRef.current;
+      if (!el) return;
+      const visibleCount = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 640 ? 2 : 1;
+      const width = (el.clientWidth - TESTIMONIAL_GAP * (visibleCount - 1)) / visibleCount;
+      testimonialCardWidthRef.current = width;
+      setTestimonialCardWidth(width);
+    }
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, []);
+
+  const goToTestimonialIndex = (nextIndexRaw) => {
+    const track = testimonialTrackRef.current;
+    const width = testimonialCardWidthRef.current;
+    if (!track || !width) return;
+    const step = width + TESTIMONIAL_GAP;
+    let nextIndex = nextIndexRaw;
+
+    setTestimonialDot(((nextIndex % TESTIMONIAL_SET) + TESTIMONIAL_SET) % TESTIMONIAL_SET);
+
+    animate(track, {
+      translateX: -(nextIndex * step),
+      duration: 900,
+      ease: 'inOutQuad',
+      onComplete: () => {
+        // Snap invisibly back into the middle copy once we drift into a buffer copy
+        if (nextIndex >= TESTIMONIAL_SET * 2) nextIndex -= TESTIMONIAL_SET;
+        else if (nextIndex < TESTIMONIAL_SET) nextIndex += TESTIMONIAL_SET;
+        testimonialIndexRef.current = nextIndex;
+        track.style.transform = `translateX(${-(nextIndex * step)}px)`;
+      },
+    });
+  };
+
+  const slideTestimonials = (direction) => goToTestimonialIndex(testimonialIndexRef.current + direction);
+
+  useEffect(() => {
+    testimonialTrackRef.current.style.transform = `translateX(${-(testimonialIndexRef.current * (testimonialCardWidth + TESTIMONIAL_GAP))}px)`;
+  }, [testimonialCardWidth]);
+
+  useEffect(() => {
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return undefined;
+    testimonialTimerRef.current = setInterval(() => slideTestimonials(1), 6000);
+    return () => clearInterval(testimonialTimerRef.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- runs once; slideTestimonials reads refs, not stale state
+  }, []);
+
+  const restartTestimonialAutoplay = () => {
+    clearInterval(testimonialTimerRef.current);
+    if (!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+      testimonialTimerRef.current = setInterval(() => slideTestimonials(1), 6000);
+    }
+  };
+
+  const handleTestimonialNav = (direction) => {
+    clearInterval(testimonialTimerRef.current);
+    slideTestimonials(direction);
+    restartTestimonialAutoplay();
+  };
+
+  const handleTestimonialDotClick = (dot) => {
+    clearInterval(testimonialTimerRef.current);
+    const current = testimonialIndexRef.current;
+    const base = current - (((current % TESTIMONIAL_SET) + TESTIMONIAL_SET) % TESTIMONIAL_SET);
+    goToTestimonialIndex(base + dot);
+    restartTestimonialAutoplay();
+  };
 
   return (
     <BannerBackground
@@ -331,38 +404,101 @@ export default function Home2() {
         </section>
         )}
 
-        {/* ---------- Testimonials (hidden for now) ---------- */}
-        {SHOW_TESTIMONIALS && (
+        {/* ---------- Testimonials – Endorsed by Global Minds ---------- */}
         <section className="py-6 sm:py-9">
           <div className="max-w-6xl mx-auto px-6">
-            <Reveal className="reveal text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-              <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight" style={{ textShadow: '0 2px 14px rgba(0,0,0,0.4)' }}>What Our Students Say</h2>
-              <span className="block w-14 h-1 rounded-full mx-auto mt-4" style={{ backgroundColor: 'var(--custom-blue-light)' }} />
+            <Reveal className="reveal text-center max-w-2xl mx-auto mb-10">
+              <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green-light)' }}>
+                Endorsed by Global Minds
+              </span>
+              <h2
+                className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight mt-2"
+                style={{ textShadow: '0 2px 14px rgba(0,0,0,0.4)' }}
+              >
+                Real testimonies of students
+              </h2>
             </Reveal>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              {TESTIMONIALS.map((t, i) => (
-                <Reveal key={t.name} delay={i * 120} className="reveal liquid-glass rounded-3xl p-6 sm:p-7 flex flex-col gap-4">
-                  <Stars />
-                  <p className="text-white/90 text-sm leading-relaxed flex-1">&ldquo;{t.quote}&rdquo;</p>
-                  <div className="flex items-center gap-3 pt-2 border-t border-white/20">
-                    <span
-                      className="flex items-center justify-center w-9 h-9 rounded-full text-white font-black text-xs shrink-0"
-                      style={{ backgroundColor: i % 2 === 0 ? 'var(--custom-green)' : 'var(--custom-blue)' }}
-                    >
-                      {t.name.split(' ').map((w) => w[0]).slice(0, 2).join('')}
-                    </span>
-                    <div>
-                      <p className="font-bold text-white text-xs sm:text-sm">{t.name}</p>
-                      <p className="text-white/60 text-[0.65rem] sm:text-xs">{t.role}</p>
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => handleTestimonialNav(-1)}
+                aria-label="Previous testimonial"
+                className="interactive-el hidden sm:flex items-center justify-center absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full shadow-lg"
+                style={{ backgroundColor: '#ffffff', color: 'var(--custom-blue)' }}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                onClick={() => handleTestimonialNav(1)}
+                aria-label="Next testimonial"
+                className="interactive-el hidden sm:flex items-center justify-center absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full shadow-lg"
+                style={{ backgroundColor: '#ffffff', color: 'var(--custom-blue)' }}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+
+              <div ref={testimonialViewportRef} className="overflow-hidden">
+                <div ref={testimonialTrackRef} className="flex gap-5" style={{ visibility: testimonialCardWidth ? 'visible' : 'hidden' }}>
+                  {TESTIMONIAL_TRACK.map((t, i) => (
+                  <div
+                    key={i}
+                    className="liquid-glass rounded-3xl p-7 flex flex-col gap-4 shrink-0"
+                    style={{ width: testimonialCardWidth ? `${testimonialCardWidth}px` : undefined }}
+                  >
+                    {/* stars */}
+                    <div className="flex gap-1">
+                      {Array.from({ length: 5 }).map((_, s) => (
+                        <svg key={s} className="w-4 h-4" fill="var(--custom-green)" viewBox="0 0 20 20" aria-hidden="true">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
+
+                    <div className="flex gap-3 items-start">
+                      <svg className="w-6 h-6 shrink-0 mt-0.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                      </svg>
+                      <p className="text-white/90 text-sm leading-relaxed italic">{t.quote}</p>
+                    </div>
+
+                    <div className="mt-auto flex items-center gap-3 pt-3 border-t border-white/15">
+                      <span
+                        className="flex items-center justify-center w-9 h-9 rounded-full font-black text-sm text-white shrink-0"
+                        style={{ backgroundColor: 'var(--custom-blue)' }}
+                      >
+                        {t.name[0]}
+                      </span>
+                      <p className="text-white font-bold text-sm">{t.name}</p>
                     </div>
                   </div>
-                </Reveal>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-center flex-wrap gap-2 mt-6">
+              {TESTIMONIALS.map((t, dot) => (
+                <button
+                  key={t.name}
+                  type="button"
+                  onClick={() => handleTestimonialDotClick(dot)}
+                  aria-label={`Show testimonial from ${t.name}`}
+                  className="interactive-el h-1.5 rounded-full transition-all"
+                  style={{
+                    width: dot === testimonialDot ? '1.5rem' : '0.375rem',
+                    backgroundColor: dot === testimonialDot ? 'var(--custom-green)' : 'rgba(255,255,255,0.25)',
+                  }}
+                />
               ))}
             </div>
           </div>
         </section>
-        )}
 
         {/* ---------- Partner institutions ---------- */}
         <section className="py-6 sm:py-9">
