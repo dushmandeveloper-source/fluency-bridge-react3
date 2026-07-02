@@ -46,7 +46,7 @@ export default function WhyChooseUs() {
             >
               <span
                 className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full"
-                style={{ backgroundColor: f.color === 'var(--custom-green)' ? 'rgba(78,166,117,0.12)' : 'rgba(0,74,204,0.12)', color: f.color }}
+                style={{ backgroundColor: 'rgba(255,255,255,0.9)', boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.6)', color: f.color }}
               >
                 <svg className="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   {f.icon}
