@@ -18,6 +18,7 @@ import heroBanner from '../assets/banner  new.png';
 // `pos` overrides object-position only where a photo needs it — Wasana's shot
 // has extra headroom, so without this her face sits lower than the others.
 const CONSULTANTS = [
+  { id: 'chathuranga', name: 'Chathuranga Liyanage', role: 'Founder & CEO', image: ceoPhoto, accent: 'var(--custom-blue-light)', lines: ['B.Sc. Civil Engineering (Hons) — University of Peradeniya (2011)', 'Construction Project Manager, New Zealand', '15+ years international civil engineering experience'] },
   { id: 'janaki', name: 'Janaki Wijerathna', role: 'Senior Academic Consultant', image: janakiPhoto, accent: 'var(--custom-green)', lines: ['HNDE', 'BA Social Sciences (OUSL)', 'LA (CASS, AUK, NZ)'] },
   { id: 'rasika', name: 'Rasika Udugama', role: 'Senior Academic Consultant — Teaching Programs', image: rasikaPhoto, accent: 'var(--custom-blue-light)', lines: ['Registered Teacher — Teaching Council of Aotearoa NZ', 'BSc Agri Tech & Management — UoP', 'PGDE — OUSL'] },
   { id: 'wasana', name: 'Wasana Dilrukshi', role: 'Senior Academic Consultant', image: wasanaPhoto, accent: 'var(--custom-green)', pos: '50% 15%', lines: ['Master of Technological Futures (MTF) — AcademyEX NZ', 'MSc Electrical Engineering — Univ. of Moratuwa', 'BSc (Hons) Electrical & Electronic Eng — Univ. of Peradeniya'] },
@@ -57,45 +58,14 @@ export default function Team() {
             <span className="inline-flex items-center gap-2 text-[0.6rem] sm:text-xs font-bold uppercase tracking-[0.25em] text-white px-4 py-1.5 rounded-full" style={{ backgroundColor: 'var(--custom-green)' }}>
               Our Consultants
             </span>
-            <h1 className="sans-font text-3xl sm:text-5xl md:text-6xl font-black text-white leading-[1.1] tracking-tight" style={{ textShadow: '0 4px 24px rgba(0,0,0,0.45)' }}>
-              Leadership &amp; Advisory Board
+            <h1 className="sans-font text-2xl sm:text-4xl md:text-6xl font-black text-white leading-[1.1] tracking-tight whitespace-nowrap" style={{ textShadow: '0 4px 24px rgba(0,0,0,0.45)' }}>
+              Leadership and Advisory Board
             </h1>
             <p className="text-white/90 text-sm sm:text-base md:text-lg font-medium max-w-2xl leading-relaxed" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
               A multidisciplinary team dedicated to ethically delivering the best education guidelines and career pathways in New Zealand.
             </p>
           </div>
         </header>
-
-        {/* ---------- Founder & CEO ---------- */}
-        <section className="py-6 sm:py-9">
-          <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-            <Reveal className="reveal relative order-2 lg:order-1">
-              <div className="gsap-float relative h-full flex items-center justify-center">
-                <div className="relative w-full max-w-sm mx-auto lg:mx-0">
-                  <div className="absolute -inset-3 rounded-[2rem] opacity-25 blur-2xl" style={{ background: 'linear-gradient(135deg, var(--custom-green), var(--custom-blue))' }} />
-                  <div className="liquid-glass relative rounded-[2rem] overflow-hidden shadow-2xl p-2.5">
-                    <div className="relative w-full aspect-[4/5] rounded-[1.5rem] overflow-hidden">
-                      <img src={ceoPhoto} alt="Chathuranga Liyanage" className="absolute inset-0 w-full h-full object-cover object-top gsap-zoom" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal className="reveal liquid-glass rounded-3xl p-8 sm:p-10 flex flex-col gap-4 order-1 lg:order-2" delay={150}>
-              <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green-light)' }}>Meet Our CEO</span>
-              <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">Chathuranga Liyanage</h2>
-              <p className="font-bold text-sm" style={{ color: 'var(--custom-blue-light)' }}>Founder &amp; CEO — Fluency Bridge Global Limited</p>
-              <p className="text-white/80 text-xs sm:text-sm font-semibold">B.Sc. Civil Engineering (Hons) — University of Peradeniya (2011)</p>
-              <p className="text-white/95 text-sm sm:text-base leading-relaxed text-justify">
-                Over 15 years of diverse, international experience in the civil engineering industry. Currently
-                directing operations as a Construction Project Manager in New Zealand. He applies engineering precision
-                and structured project management to global education,
-                mentoring future leaders with a philosophy built on lived experience across all parent portfolios and
-                subsidiary branches.
-              </p>
-            </Reveal>
-          </div>
-        </section>
 
         {/* ---------- Academic Consultants & Advisory Board ---------- */}
         <section className="py-6 sm:py-9">
