@@ -11,7 +11,7 @@ import wasanaPhoto from '../assets/team-wasana.jpeg';
 import consultant5Photo from '../assets/team-consultant-5.jpeg';
 import consultant6Photo from '../assets/team-consultant-6.jpeg';
 import sandrinePhoto from '../assets/team-sandrine.png';
-import heroBanner from '../assets/banner  new.png';
+import heroBanner from '../assets/consultant-team-banner.png';
 
 // Real advisory-board members. Names/titles/qualifications from the "Meet Our
 // Team" profile cards.
@@ -25,9 +25,9 @@ const CONSULTANTS = [
     quote: 'With a passion for education and global opportunities, I founded NZ Academic Bridge to help students achieve their dream of studying and building a successful future in New Zealand.',
   },
   {
-    id: 'janaki', name: 'Janaki Wijerathna', role: 'Senior Academic Consultant', image: janakiPhoto, accent: 'var(--custom-green)',
-    lines: ['HNDE', 'BA Social Sciences (OUSL)', 'LA (CASS, AUK, NZ)'],
-    quote: 'I am passionate about helping students achieve their academic and career aspirations. With a strong academic background and years of experience, I am committed to providing personalized guidance and support at every step of your journey to success in New Zealand.',
+    id: 'wasana', name: 'Wasana Dilrukshi', role: 'Senior Academic Consultant', image: wasanaPhoto, accent: 'var(--custom-green)', pos: '50% 15%',
+    lines: ['Master of Technological Futures (MTF) — AcademyEX NZ', 'MSc Electrical Engineering — Univ. of Moratuwa', 'BSc (Hons) Electrical & Electronic Eng — Univ. of Peradeniya'],
+    background: ['8+ Years of Experience in Electronics Engineering, Research & Development', 'Former Senior Sensor Development Engineer at Contrinex', 'Experienced in product development, industrial sensors, testing, and innovation'],
   },
   {
     id: 'rasika', name: 'Rasika Udugama', role: 'Senior Academic Consultant — Teaching Programs', image: rasikaPhoto, accent: 'var(--custom-blue-light)',
@@ -35,14 +35,14 @@ const CONSULTANTS = [
     quote: 'I am passionate about empowering students to achieve their academic and career goals. I am here to guide and support you every step of the way on your journey to study and build a successful future in New Zealand.',
   },
   {
-    id: 'wasana', name: 'Wasana Dilrukshi', role: 'Senior Academic Consultant', image: wasanaPhoto, accent: 'var(--custom-green)', pos: '50% 15%',
-    lines: ['Master of Technological Futures (MTF) — AcademyEX NZ', 'MSc Electrical Engineering — Univ. of Moratuwa', 'BSc (Hons) Electrical & Electronic Eng — Univ. of Peradeniya'],
-    background: ['8+ Years of Experience in Electronics Engineering, Research & Development', 'Former Senior Sensor Development Engineer at Contrinex', 'Experienced in product development, industrial sensors, testing, and innovation'],
-  },
-  {
     id: 'consultant5', name: 'Kelum Ponnamperuma', role: 'Senior Academic Consultant', image: consultant5Photo, accent: 'var(--custom-blue-light)',
     lines: ['B.Sc. Eng. (Hons) — University of Peradeniya, Sri Lanka'],
     quote: 'Dedicated to guiding students towards the right academic path and providing the support they need to achieve their dreams in New Zealand.',
+  },
+  {
+    id: 'janaki', name: 'Janaki Wijerathna', role: 'Senior Academic Consultant', image: janakiPhoto, accent: 'var(--custom-green)',
+    lines: ['HNDE', 'BA Social Sciences (OUSL)', 'LA (CASS, AUK, NZ)'],
+    quote: 'I am passionate about helping students achieve their academic and career aspirations. With a strong academic background and years of experience, I am committed to providing personalized guidance and support at every step of your journey to success in New Zealand.',
   },
   {
     id: 'consultant6', name: 'Kaushalya Jayalath', role: 'Senior Academic Consultant', image: consultant6Photo, accent: 'var(--custom-green)',
@@ -176,27 +176,28 @@ export default function Team() {
         <section className="py-6 sm:py-9">
           <div className="max-w-6xl mx-auto px-6">
             <Reveal className="reveal liquid-glass rounded-3xl overflow-hidden grid lg:grid-cols-2 gap-0 items-center">
-              <div className="relative order-2 lg:order-1 w-full max-w-[320px] sm:max-w-[380px] aspect-[4/5] mx-auto my-6 lg:my-0">
-                <img src={sandrinePhoto} alt="Sandrine Savarit" className="absolute inset-0 w-full h-full object-contain" />
+              <div className="order-2 lg:order-1 flex justify-center my-8 lg:my-10">
+                <div
+                  className="relative w-52 h-52 sm:w-60 sm:h-60 rounded-full overflow-hidden shrink-0 ring-4 ring-white/30 shadow-xl"
+                  style={{ backgroundColor: '#ffffff' }}
+                >
+                  <img
+                    src={sandrinePhoto}
+                    alt="Sandrine Savarit"
+                    className="absolute inset-0 w-full h-full object-cover object-top scale-110"
+                  />
+                </div>
               </div>
               <div className="p-8 sm:p-10 flex flex-col justify-center gap-4 order-1 lg:order-2">
                 <h3 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">Sandrine Savarit</h3>
                 <p className="font-bold text-sm" style={{ color: 'var(--custom-blue-light)' }}>Licensed Immigration Adviser — Licence No. 202000905</p>
                 <p className="text-white/95 text-sm sm:text-base leading-relaxed text-justify">
-                  Sandrine Savarit is a New Zealand Licensed Immigration Adviser with extensive experience helping
-                  international students, skilled professionals, families, investors and employers navigate New
-                  Zealand&rsquo;s immigration system.
+                  Sandrine Savarit is a New Zealand Licensed Immigration Adviser who works independently in collaboration
+                  with NZ Academic Bridge, providing trusted immigration advice and representation before Immigration New Zealand.
                 </p>
                 <p className="text-white/95 text-sm sm:text-base leading-relaxed text-justify">
-                  Working independently in collaboration with NZ Academic Bridge, Sandrine provides professional
-                  immigration advice and representation before Immigration New Zealand. She specialises in student
-                  visas, post-study work visas, work visas, partnership visas and residence pathways, offering
-                  practical, strategic advice tailored to each client&rsquo;s circumstances.
-                </p>
-                <p className="text-white/95 text-sm sm:text-base leading-relaxed text-justify">
-                  Known for her professionalism, integrity and personalised human approach, Sandrine is approachable
-                  and committed to helping clients make informed decisions and achieve their immigration goals with
-                  confidence.
+                  She specialises in student visas, work visas, post-study work visas, partnership visas, and residence
+                  pathways, delivering practical, personalised guidance with professionalism, integrity, and a client-first approach.
                 </p>
               </div>
             </Reveal>

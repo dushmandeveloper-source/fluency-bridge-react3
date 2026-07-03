@@ -5,13 +5,12 @@ import { animate } from 'animejs';
 import BannerBackground from '../components/BannerBackground';
 import Reveal from '../components/Reveal';
 import homeBanner from '../assets/banner.png';
-import fluencyBridgeImage from '../assets/Fluency Bridge.png';
+import fluencyBridgeImage from '../assets/home-banner.png';
 import nzAcademicBridgeImage from '../assets/NZ Academic Bridge.png';
 import fluencyBridgeLogo from '../assets/NZ01.png';
 import nzAcademicBridgeLogo from '../assets/NZ02.png';
 import ceoPhoto from '../assets/team-ceo.png';
-
-const STORY_IMG = 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&h=1500&q=80';
+import ourStoryImage from '../assets/our-story.png';
 
 // Home — glassmorphism (liquid-glass) panels floating over the shared fixed home
 // banner image, mirroring the About Us layout. BannerBackground (fixed) supplies
@@ -253,7 +252,7 @@ export default function Home2() {
                     </div>
                     <div className="flex flex-col flex-1 px-5 sm:px-6 pt-4 pb-4 gap-2.5">
                       <h3 className="sans-font text-xl sm:text-2xl font-black text-white leading-tight">{p.title}</h3>
-                      <p className="text-white/90 text-sm sm:text-base leading-relaxed text-left flex-1">{p.description}</p>
+                      <p className="text-white/90 text-sm sm:text-base leading-relaxed text-justify flex-1">{p.description}</p>
                       <a
                         href={p.href}
                         className="mt-1 inline-flex items-center justify-center gap-2 text-white font-bold text-sm py-3 px-6 rounded-xl transition-all hover:opacity-90 interactive-el"
@@ -275,10 +274,9 @@ export default function Home2() {
           <div className="max-w-6xl mx-auto px-6">
             <Reveal className="reveal liquid-glass rounded-[2rem] overflow-hidden grid lg:grid-cols-2">
               <div className="relative h-56 lg:h-auto order-1 lg:order-2">
-                <img src={STORY_IMG} alt="Premier university campus" className="absolute inset-0 w-full h-full object-cover gsap-zoom" />
+                <img src={ourStoryImage} alt="Premier university campus" className="absolute inset-0 w-full h-full object-cover gsap-zoom" />
               </div>
               <div className="p-8 sm:p-10 flex flex-col justify-center gap-5 order-2 lg:order-1">
-                <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green-light)' }}>A premier New Zealand-based education enterprise</span>
                 <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">
                   Our Story
                 </h2>
@@ -303,7 +301,7 @@ export default function Home2() {
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" /></svg>
                   </span>
                   <p className="font-black text-white text-base sm:text-lg">{b.name}</p>
-                  <p className="text-white/90 text-sm leading-relaxed">{b.desc}</p>
+                  <p className="text-white/95 text-sm sm:text-base leading-relaxed text-justify">{b.desc}</p>
                 </a>
               </Reveal>
             ))}

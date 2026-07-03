@@ -5,15 +5,12 @@ import BannerBackground from '../components/BannerBackground';
 import Reveal from '../components/Reveal';
 import ceoPhoto from '../assets/team-ceo.png';
 import aboutBanner from '../assets/banner  new.png';
+import ourStoryImage from '../assets/our-story.png';
+import ourPromiseImage from '../assets/our-promise.png';
 
 // About Us — glassmorphism (liquid-glass) text panels floating over the shared
 // fixed banner image. BannerBackground (fixed) supplies the zooming photo, dark
 // overlay and sparkle particles.
-
-// HD, portrait-cropped photos so they fill the tall glass cards crisply without
-// the zoomed-in "stretched" look a wide landscape source gave.
-const INTRO_IMG = 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&h=1500&q=80';
-const VALUES_IMG = 'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1200&h=1500&q=80';
 
 const STATS = [
   { value: '100%', label: 'Zero-Fee University Placement' },
@@ -71,7 +68,7 @@ export default function AboutUs() {
               Executive Leadership
             </span>
             <h1 className="sans-font text-3xl sm:text-5xl md:text-6xl font-black text-white leading-[1.1] tracking-tight" style={{ textShadow: '0 4px 24px rgba(0,0,0,0.45)' }}>
-              Architecting Global Futures
+              A premier New Zealand-based education enterprise
             </h1>
             <p className="text-white/90 text-sm sm:text-base md:text-lg font-medium max-w-2xl leading-relaxed" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
               Premium English coaching and ethical New Zealand education consultancy — driven by industry professionals.
@@ -83,7 +80,6 @@ export default function AboutUs() {
         <section className="py-6 sm:py-9">
           <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             <Reveal className="reveal liquid-glass rounded-3xl p-8 sm:p-10 flex flex-col gap-5">
-              <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green-light)' }}>A premier New Zealand-based education enterprise</span>
               <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">
                 Our Story
               </h2>
@@ -112,7 +108,7 @@ export default function AboutUs() {
                 <div className="absolute -inset-3 rounded-[2rem] opacity-25 blur-2xl" style={{ background: 'linear-gradient(135deg, var(--custom-green), var(--custom-blue))' }} />
                 <div className="liquid-glass relative h-full min-h-[18rem] rounded-[2rem] overflow-hidden shadow-2xl p-2.5">
                   <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden">
-                    <img src={INTRO_IMG} alt="Premier university campus" className="absolute inset-0 w-full h-full object-cover gsap-zoom" />
+                    <img src={ourStoryImage} alt="Premier university campus" className="absolute inset-0 w-full h-full object-cover gsap-zoom" />
                   </div>
                 </div>
               </div>
@@ -195,7 +191,7 @@ export default function AboutUs() {
                 <div className="absolute -inset-3 rounded-[2rem] opacity-25 blur-2xl" style={{ background: 'linear-gradient(135deg, var(--custom-green), var(--custom-blue))' }} />
                 <div className="liquid-glass relative h-full min-h-[18rem] rounded-[2rem] overflow-hidden shadow-2xl p-2.5">
                   <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden">
-                    <img src={VALUES_IMG} alt="Students collaborating in a study group" className="absolute inset-0 w-full h-full object-cover gsap-zoom" />
+                    <img src={ourPromiseImage} alt="Students collaborating in a study group" className="absolute inset-0 w-full h-full object-cover gsap-zoom" />
                   </div>
                 </div>
               </div>
