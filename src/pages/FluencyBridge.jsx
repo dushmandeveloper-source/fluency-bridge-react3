@@ -464,7 +464,7 @@ export default function FluencyBridge() {
               style={{ textShadow: '0 4px 24px rgba(0,0,0,0.45)' }}
             >
               Shift from Learning English{' '}
-              <span style={{ color: 'var(--custom-green)', textShadow: '0 2px 10px rgba(0,0,0,0.4), 0 0 18px rgba(78,166,117,0.85), 0 0 40px rgba(78,166,117,0.55)' }}>to Executing It</span>
+              <span style={{ color: 'var(--custom-green)', textShadow: '0 2px 10px rgba(0,0,0,0.4)' }}>to Executing It</span>
             </h1>
 
             <p
@@ -479,10 +479,10 @@ export default function FluencyBridge() {
               href="https://wa.me/642108631134"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-full px-7 py-3 font-black text-sm text-white uppercase tracking-widest transition-opacity hover:opacity-85 interactive-el"
+              className="inline-flex items-center gap-2 rounded-full px-5 py-2 transition-opacity hover:opacity-85 interactive-el"
               style={{ backgroundColor: 'var(--custom-green)' }}
             >
-              Start Your Fluency Journey
+              <span className="text-white font-black text-xs sm:text-sm tracking-widest uppercase">Start Your Fluency Journey</span>
             </a>
           </div>
         </header>
