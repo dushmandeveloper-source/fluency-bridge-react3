@@ -110,7 +110,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 mb-4 text-center text-xs text-white leading-relaxed whitespace-normal sm:whitespace-nowrap overflow-x-auto">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 mb-4 text-center text-xs text-white leading-relaxed">
         <p>
           Fluency Bridge Global Ltd. is a registered New Zealand company. Services under{' '}
           <a
