@@ -10,12 +10,12 @@ export default function ProfileCard({ name, role, image, pos, lines = [], backgr
 
   return (
     <div className="group liquid-glass relative rounded-2xl sm:rounded-[2rem] shadow-xl flex flex-col h-full overflow-hidden transition-shadow duration-300 ease-out hover:shadow-2xl">
-      <div className="relative w-full h-56 sm:h-52 md:h-60 bg-white flex items-center justify-center overflow-hidden shrink-0">
+      <div className="relative w-full aspect-[3/4] sm:h-52 sm:aspect-auto md:h-60 bg-white flex items-center justify-center overflow-hidden shrink-0">
         {image ? (
           <img
             src={image}
             alt={name}
-            style={{ objectPosition: pos ?? '50% 15%' }}
+            style={{ objectPosition: pos ?? '50% 12%' }}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
         ) : (
