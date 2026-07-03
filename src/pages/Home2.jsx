@@ -529,7 +529,7 @@ export default function Home2() {
         <div className="absolute inset-x-0 bottom-0 h-[80%]" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(0, 49, 133, 0.28) 100%)' }} />
         <div className="absolute inset-x-0 bottom-0 h-[60%]" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(0, 49, 133, 0.5) 100%)' }} />
         <div className="absolute inset-x-0 bottom-0 h-[38%]" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(0, 49, 133, 0.75) 100%)' }} />
-        <div className="absolute inset-x-0 bottom-0 h-[18%]" style={{ background: 'linear-gradient(to bottom, transparent 0%, #002c78 100%)' }} />
+        <div className="absolute inset-x-0 bottom-0 h-[18%]" style={{ background: 'linear-gradient(to bottom, transparent 0%, #003185 100%)' }} />
       </div>
     </BannerBackground>
   );
