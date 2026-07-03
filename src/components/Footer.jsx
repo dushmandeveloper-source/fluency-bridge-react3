@@ -17,6 +17,14 @@ export default function Footer() {
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/30 pointer-events-none" />
 
+      {/* Layered light-to-dark cloudy fade at the top edge, continuing the banner's transition into the footer */}
+      <div className="absolute inset-x-0 top-0 h-24 sm:h-32 pointer-events-none">
+        <div className="absolute inset-x-0 top-0 h-full" style={{ background: 'linear-gradient(to top, transparent 0%, rgba(180,205,255,0.18) 100%)' }} />
+        <div className="absolute inset-x-0 top-0 h-[75%]" style={{ background: 'linear-gradient(to top, transparent 0%, rgba(180,205,255,0.12) 100%)' }} />
+        <div className="absolute inset-x-0 top-0 h-1/2" style={{ background: 'linear-gradient(to top, transparent 0%, rgba(255,255,255,0.14) 100%)' }} />
+        <div className="absolute inset-x-0 top-0 h-1/4" style={{ background: 'linear-gradient(to top, transparent 0%, rgba(255,255,255,0.2) 100%)' }} />
+      </div>
+
       <div className="relative z-10 max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-16">
         {/* Four equal columns keep the gaps even and the block visually centered */}
         <div>
