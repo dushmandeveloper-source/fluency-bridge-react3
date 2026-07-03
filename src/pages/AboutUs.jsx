@@ -249,15 +249,6 @@ export default function AboutUs() {
         </section>
 
       </main>
-
-      {/* Fades the banner image into the footer's colour so the seam isn't visible */}
-      <div
-        className="absolute inset-x-0 bottom-0 h-40 sm:h-56 pointer-events-none z-10"
-        style={{
-          background:
-            'linear-gradient(to bottom, transparent 0%, rgba(0, 49, 133, 0.2) 50%, rgba(0, 49, 133, 0.55) 70%, rgba(0, 49, 133, 0.85) 88%, #002c78 100%)',
-        }}
-      />
     </BannerBackground>
   );
 }
