@@ -47,7 +47,7 @@ export default function Footer() {
           <h5 className="font-black text-lg mb-6 tracking-wide" style={{ color: 'var(--custom-green)' }}>
             Quick Links
           </h5>
-          <ul className="space-y-4 text-sm font-semibold text-white/90">
+          <ul className="space-y-4 text-sm font-semibold text-white">
             {QUICK_LINKS.map((link) => (
               <li key={link.label}>
                 <a href={link.href} className="hover:text-white transition interactive-el">
@@ -62,7 +62,7 @@ export default function Footer() {
           <h5 className="font-black text-lg mb-6 tracking-wide" style={{ color: 'var(--custom-green)' }}>
             Services
           </h5>
-          <ul className="space-y-4 text-sm font-semibold text-white/90">
+          <ul className="space-y-4 text-sm font-semibold text-white">
             {BRANCHES.map((branch) => (
               <li key={branch}>
                 <a href="#" className="hover:text-white transition interactive-el">
@@ -77,7 +77,7 @@ export default function Footer() {
           <h5 className="font-black text-lg mb-6 tracking-wide" style={{ color: 'var(--custom-green)' }}>
             Reach
           </h5>
-          <ul className="space-y-4 text-sm font-semibold text-white/90">
+          <ul className="space-y-4 text-sm font-semibold text-white">
             <li>
               <a
                 href="https://wa.me/642108631134"
