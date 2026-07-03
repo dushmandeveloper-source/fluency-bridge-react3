@@ -15,15 +15,11 @@ export default function Footer() {
       className="text-white pt-10 sm:pt-12 pb-10 relative z-20 flex-1 flex flex-col justify-between"
       style={{ backgroundColor: 'var(--custom-blue-dark)' }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/30 pointer-events-none" />
-
-      {/* Layered light-to-dark cloudy fade at the top edge, continuing the banner's transition into the footer */}
-      <div className="absolute inset-x-0 top-0 h-24 sm:h-32 pointer-events-none">
-        <div className="absolute inset-x-0 top-0 h-full" style={{ background: 'linear-gradient(to top, transparent 0%, rgba(180,205,255,0.18) 100%)' }} />
-        <div className="absolute inset-x-0 top-0 h-[75%]" style={{ background: 'linear-gradient(to top, transparent 0%, rgba(180,205,255,0.12) 100%)' }} />
-        <div className="absolute inset-x-0 top-0 h-1/2" style={{ background: 'linear-gradient(to top, transparent 0%, rgba(255,255,255,0.14) 100%)' }} />
-        <div className="absolute inset-x-0 top-0 h-1/4" style={{ background: 'linear-gradient(to top, transparent 0%, rgba(255,255,255,0.2) 100%)' }} />
-      </div>
+      {/* Continues the banner's light-to-dark progression down through the footer, deepening gradually to full black toward the bottom */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.32) 100%)' }}
+      />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-16">
         {/* Four equal columns keep the gaps even and the block visually centered */}
