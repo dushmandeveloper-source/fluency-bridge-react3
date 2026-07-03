@@ -12,12 +12,12 @@ const QUICK_LINKS = [
 export default function Footer() {
   return (
     <footer
-      className="text-white pt-6 sm:pt-8 pb-6 relative z-20 flex-1 flex flex-col justify-between"
+      className="text-white pt-10 sm:pt-12 pb-10 relative z-20 flex-1 flex flex-col justify-between"
       style={{ backgroundColor: 'var(--custom-blue-dark)' }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/5 to-black/15 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/30 pointer-events-none" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 mb-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-16">
         {/* Four equal columns keep the gaps even and the block visually centered */}
         <div>
           {/* Logo + company name mirrors the header branding; white border and layered drop-shadows make it stand out against the dark footer */}
@@ -136,7 +136,7 @@ export default function Footer() {
         </p>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 border-t border-white/20 pt-5 flex flex-col md:flex-row justify-between items-center text-xs font-semibold text-white">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-semibold text-white">
         <p>&copy; 2026 Fluency Bridge Global Limited. All rights reserved.</p>
         <p className="italic font-serif text-white mt-4 md:mt-0 text-sm">Cross over to natural English.</p>
       </div>
