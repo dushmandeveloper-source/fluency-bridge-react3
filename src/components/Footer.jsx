@@ -110,6 +110,13 @@ export default function Footer() {
         </div>
       </div>
 
+      <div className="relative z-10 max-w-6xl mx-auto px-6 mb-8 text-center text-xs text-white/50 leading-relaxed">
+        <p>
+          Fluency Bridge Global Ltd. is a registered New Zealand company.
+          <br className="hidden sm:block" /> Services under fluencybridge.co.nz and nzacademicbridge.co.nz are proudly operated by Fluency Bridge Global.
+        </p>
+      </div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-6 border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-semibold text-white/60">
         <p>&copy; 2026 Fluency Bridge Global Limited. All rights reserved.</p>
         <p className="italic font-serif text-white/80 mt-4 md:mt-0 text-sm">Cross over to natural English.</p>
