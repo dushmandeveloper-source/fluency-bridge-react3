@@ -10,6 +10,7 @@ import rasikaPhoto from '../assets/team-rasika.jpeg';
 import wasanaPhoto from '../assets/team-wasana.jpeg';
 import consultant5Photo from '../assets/team-consultant-5.jpeg';
 import consultant6Photo from '../assets/team-consultant-6.jpeg';
+import sandrinePhoto from '../assets/team-sandrine.png';
 import heroBanner from '../assets/banner  new.png';
 
 // Real advisory-board members. Names/titles/qualifications from the "Meet Our
@@ -167,6 +168,44 @@ export default function Team() {
                 and visa applications are processed exclusively through our accredited New Zealand immigration partners.
                 Individual credentials and firm details are provided directly during personal consultations.
               </p>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* ---------- Sandrine Savarit — Licensed Immigration Adviser ---------- */}
+        <section className="py-6 sm:py-9">
+          <div className="max-w-4xl mx-auto px-6">
+            <Reveal className="reveal liquid-glass relative rounded-[2rem] p-8 sm:p-12 overflow-hidden">
+              <span className="absolute top-0 left-0 right-0 h-1.5" style={{ background: 'linear-gradient(to right, var(--custom-blue-light), var(--custom-green))' }} />
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8">
+                <img
+                  src={sandrinePhoto}
+                  alt="Sandrine Savarit"
+                  className="w-40 sm:w-48 h-auto object-contain shrink-0"
+                />
+                <div className="flex flex-col gap-3 text-center sm:text-left">
+                  <div>
+                    <h3 className="sans-font text-lg sm:text-xl md:text-2xl font-black text-white leading-tight">Sandrine Savarit</h3>
+                    <p className="font-bold text-sm" style={{ color: 'var(--custom-blue-light)' }}>Licensed Immigration Adviser — Licence No. 202000905</p>
+                  </div>
+                  <p className="text-white/90 text-sm sm:text-base leading-relaxed text-justify">
+                    Sandrine Savarit is a New Zealand Licensed Immigration Adviser with extensive experience helping
+                    international students, skilled professionals, families, investors and employers navigate New
+                    Zealand&rsquo;s immigration system.
+                  </p>
+                  <p className="text-white/90 text-sm sm:text-base leading-relaxed text-justify">
+                    Working independently in collaboration with NZ Academic Bridge, Sandrine provides professional
+                    immigration advice and representation before Immigration New Zealand. She specialises in student
+                    visas, post-study work visas, work visas, partnership visas and residence pathways, offering
+                    practical, strategic advice tailored to each client&rsquo;s circumstances.
+                  </p>
+                  <p className="text-white/90 text-sm sm:text-base leading-relaxed text-justify">
+                    Known for her professionalism, integrity and personalised human approach, Sandrine is approachable
+                    and committed to helping clients make informed decisions and achieve their immigration goals with
+                    confidence.
+                  </p>
+                </div>
+              </div>
             </Reveal>
           </div>
         </section>
