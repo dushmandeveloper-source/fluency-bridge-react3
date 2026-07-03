@@ -128,7 +128,7 @@ export default function Footer() {
             className="font-bold hover:underline interactive-el"
             style={{ color: 'var(--custom-green)' }}
           >
-            fluencybridge.co.nz
+            Fluency Bridge
           </a>{' '}
           and{' '}
           <a
@@ -138,7 +138,7 @@ export default function Footer() {
             className="font-bold hover:underline interactive-el"
             style={{ color: 'var(--custom-green)' }}
           >
-            nzacademicbridge.co.nz
+            NZ Academic Bridge
           </a>{' '}
           are proudly operated by Fluency Bridge Global.
         </p>
