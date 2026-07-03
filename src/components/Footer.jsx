@@ -16,21 +16,6 @@ export default function Footer() {
       style={{ backgroundColor: 'var(--custom-blue-dark)' }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/5 to-black/15 pointer-events-none" />
-      <div
-        className="absolute inset-0 pointer-events-none opacity-60 mix-blend-soft-light"
-        style={{
-          backgroundImage:
-            'radial-gradient(ellipse 55% 40% at 15% 10%, rgba(255,255,255,0.35), transparent 60%), radial-gradient(ellipse 45% 35% at 80% 5%, rgba(255,255,255,0.25), transparent 65%), radial-gradient(ellipse 60% 45% at 50% 100%, rgba(255,255,255,0.18), transparent 70%)',
-        }}
-      />
-      {/* Layered cloudy fade at the top edge: light haze fading into progressively darker blue */}
-      <div
-        className="absolute inset-x-0 top-0 h-24 sm:h-32 pointer-events-none"
-        style={{
-          background:
-            'linear-gradient(to bottom, rgba(255,255,255,0.22) 0%, rgba(180,205,255,0.12) 25%, rgba(0,49,133,0.35) 50%, rgba(0,49,133,0.7) 75%, rgba(0,49,133,1) 100%)',
-        }}
-      />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 mb-8">
         {/* Four equal columns keep the gaps even and the block visually centered */}
