@@ -120,8 +120,6 @@ const TESTIMONIAL_SET = TESTIMONIALS.length;
 // carousel snap seamlessly when stepping past either edge of the middle set.
 const TESTIMONIAL_TRACK = [...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS];
 
-const PARTNERS = ['The University of Auckland', 'AUT', 'Massey University', 'Unitec', 'NZQA'];
-
 export default function Home2() {
   // GSAP: gentle perpetual float on the image cards + a slow zoom on the photos,
   // matching the About Us motion language.
@@ -499,27 +497,6 @@ export default function Home2() {
                 />
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* ---------- Partner institutions ---------- */}
-        <section className="py-6 sm:py-9">
-          <div className="max-w-6xl mx-auto px-6">
-            <Reveal className="reveal liquid-glass rounded-3xl px-6 py-8 sm:py-9">
-              <h2 className="sans-font text-xl sm:text-2xl md:text-3xl font-black text-white leading-tight text-center mb-6">Our Partner Institutions</h2>
-              <div className="marquee-mask overflow-hidden">
-                <div className="animate-marquee flex w-max items-center">
-                  {[...PARTNERS, ...PARTNERS].map((name, i) => (
-                    <span
-                      key={i}
-                      className="sans-font font-black text-white/70 text-sm sm:text-lg uppercase tracking-wide whitespace-nowrap px-7 sm:px-10 hover:text-white transition-colors"
-                    >
-                      {name}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
           </div>
         </section>
 
