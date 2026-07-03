@@ -23,12 +23,12 @@ export default function Footer() {
             'radial-gradient(ellipse 55% 40% at 15% 10%, rgba(255,255,255,0.35), transparent 60%), radial-gradient(ellipse 45% 35% at 80% 5%, rgba(255,255,255,0.25), transparent 65%), radial-gradient(ellipse 60% 45% at 50% 100%, rgba(255,255,255,0.18), transparent 70%)',
         }}
       />
-      {/* Layered cloudy fade at the top edge: light, then progressively darker bands of the same blue */}
+      {/* Layered cloudy fade at the top edge: light haze fading into progressively darker blue */}
       <div
         className="absolute inset-x-0 top-0 h-24 sm:h-32 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to bottom, rgba(0, 49, 133, 0) 0%, rgba(0, 49, 133, 0.25) 30%, rgba(0, 49, 133, 0.55) 60%, rgba(0, 49, 133, 0.85) 85%, rgba(0, 49, 133, 1) 100%)',
+            'linear-gradient(to bottom, rgba(255,255,255,0.22) 0%, rgba(180,205,255,0.12) 25%, rgba(0,49,133,0.35) 50%, rgba(0,49,133,0.7) 75%, rgba(0,49,133,1) 100%)',
         }}
       />
 
