@@ -29,10 +29,10 @@ export default function Footer() {
             />
             <span className="font-black text-sm tracking-wide leading-tight">Fluency Bridge Global Limited</span>
           </a>
-          <p className="text-sm text-white/80 mb-4 leading-relaxed font-medium">
+          <p className="text-sm text-white mb-4 leading-relaxed font-medium">
             Architecting Global Futures through elite English coaching and ethical NZ education consultancy.
           </p>
-          <p className="text-xs text-white/60 mb-6 font-bold uppercase tracking-wider">New Zealand Registered</p>
+          <p className="text-xs text-white mb-6 font-bold uppercase tracking-wider">New Zealand Registered</p>
           <div className="flex gap-4 text-sm font-bold text-white">
             <a href="#" className="hover:text-white/70 transition interactive-el">
               Facebook ↗
@@ -110,16 +110,16 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 mb-4 text-center text-xs text-white/50 leading-relaxed">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 mb-4 text-center text-xs text-white leading-relaxed">
         <p>
           Fluency Bridge Global Ltd. is a registered New Zealand company.
           <br className="hidden sm:block" /> Services under fluencybridge.co.nz and nzacademicbridge.co.nz are proudly operated by Fluency Bridge Global.
         </p>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 border-t border-white/20 pt-5 flex flex-col md:flex-row justify-between items-center text-xs font-semibold text-white/60">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 border-t border-white/20 pt-5 flex flex-col md:flex-row justify-between items-center text-xs font-semibold text-white">
         <p>&copy; 2026 Fluency Bridge Global Limited. All rights reserved.</p>
-        <p className="italic font-serif text-white/80 mt-4 md:mt-0 text-sm">Cross over to natural English.</p>
+        <p className="italic font-serif text-white mt-4 md:mt-0 text-sm">Cross over to natural English.</p>
       </div>
     </footer>
   );
