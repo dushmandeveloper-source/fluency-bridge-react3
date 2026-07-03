@@ -38,7 +38,7 @@ export default function ProfileCard({ name, role, image, pos, lines = [], backgr
         </div>
 
         {lines.length > 0 && (
-          <ul className="text-white/80 text-[0.7rem] sm:text-sm md:text-[0.9rem] font-medium leading-relaxed space-y-1 mt-0.5">
+          <ul className="text-white/80 text-[0.65rem] sm:text-[0.8rem] md:text-sm font-medium leading-relaxed space-y-1 mt-0.5">
             {(expanded ? lines : lines.slice(0, 2)).map((line, idx) => (
               <li key={idx} className="flex gap-1.5">
                 <span style={{ color: accent }}>•</span>
