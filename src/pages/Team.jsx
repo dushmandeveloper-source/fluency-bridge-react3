@@ -38,8 +38,16 @@ const CONSULTANTS = [
     lines: ['Master of Technological Futures (MTF) — AcademyEX NZ', 'MSc Electrical Engineering — Univ. of Moratuwa', 'BSc (Hons) Electrical & Electronic Eng — Univ. of Peradeniya'],
     background: ['8+ Years of Experience in Electronics Engineering, Research & Development', 'Former Senior Sensor Development Engineer at Contrinex', 'Experienced in product development, industrial sensors, testing, and innovation'],
   },
-  { id: 'consultant5', name: 'Kelum Ponnamperuma', role: 'Senior Academic Consultant', image: consultant5Photo, accent: 'var(--custom-blue-light)', lines: ['B.Sc. Eng. (Hons) — University of Peradeniya, Sri Lanka'] },
-  { id: 'consultant6', name: 'Kaushalya Jayalath', role: 'Senior Academic Consultant', image: consultant6Photo, accent: 'var(--custom-green)', lines: ['BSc (Hons) Quantity Surveying', 'MSc CM (QS Major)', 'Massey University, Auckland, NZ'] },
+  {
+    id: 'consultant5', name: 'Kelum Ponnamperuma', role: 'Senior Academic Consultant', image: consultant5Photo, accent: 'var(--custom-blue-light)',
+    lines: ['B.Sc. Eng. (Hons) — University of Peradeniya, Sri Lanka'],
+    quote: 'Dedicated to guiding students towards the right academic path and providing the support they need to achieve their dreams in New Zealand.',
+  },
+  {
+    id: 'consultant6', name: 'Kaushalya Jayalath', role: 'Senior Academic Consultant', image: consultant6Photo, accent: 'var(--custom-green)',
+    lines: ['BSc (Hons) Quantity Surveying', 'MSc CM (QS Major)', 'Massey University, Auckland, NZ'],
+    quote: 'I am passionate about guiding students toward the right educational path and supporting them in achieving their academic and career goals in New Zealand. I strive to make the journey smooth, successful and truly rewarding.',
+  },
 ];
 
 // Expert team 4-block panel
