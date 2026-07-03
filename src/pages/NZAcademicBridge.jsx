@@ -109,7 +109,7 @@ export default function NZAcademicBridge() {
       ariaLabel="Students walking through a sunny university campus with graduation caps overhead"
       overlayClassName="bg-gradient-to-b from-slate-900/85 via-slate-900/72 to-slate-900/90"
       particleCount={52}
-      zoomOrigin="center 25%"
+      zoomOrigin="center 85%"
     >
       <main className="bright-banner-glass relative z-20 w-full">
 
