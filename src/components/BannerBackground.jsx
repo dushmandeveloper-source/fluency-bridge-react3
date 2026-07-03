@@ -36,12 +36,12 @@ export default function BannerBackground({
 
       {children}
 
-      {/* Fades the banner image into the footer as one smooth blend: white haze, through a soft green wash, into the footer blue */}
+      {/* Fades the banner image into the footer as one smooth blend: soft green wash into the footer blue */}
       <div
         className="absolute inset-x-0 bottom-0 h-56 sm:h-72 pointer-events-none z-10"
         style={{
           background:
-            'linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.12) 18%, rgba(180,225,200,0.22) 38%, rgba(78,166,117,0.3) 55%, rgba(30,110,150,0.55) 72%, rgba(0,49,133,0.85) 88%, #003185 100%)',
+            'linear-gradient(to bottom, transparent 0%, rgba(78,166,117,0.22) 35%, rgba(30,110,150,0.55) 65%, rgba(0,49,133,0.85) 88%, #003185 100%)',
         }}
       />
     </div>
