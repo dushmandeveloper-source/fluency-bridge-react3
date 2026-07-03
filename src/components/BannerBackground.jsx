@@ -36,14 +36,14 @@ export default function BannerBackground({
 
       {children}
 
-      {/* Fades the banner image gradually into the footer's colour: white haze, into a soft green mid-tone, into the footer blue */}
-      <div className="absolute inset-x-0 bottom-0 h-56 sm:h-72 pointer-events-none z-10">
-        <div className="absolute inset-x-0 bottom-0 top-0" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.1) 100%)' }} />
-        <div className="absolute inset-x-0 bottom-0 h-[80%]" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(78,166,117,0.16) 100%)' }} />
-        <div className="absolute inset-x-0 bottom-0 h-[60%]" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(78,166,117,0.22) 40%, rgba(0,49,133,0.55) 100%)' }} />
-        <div className="absolute inset-x-0 bottom-0 h-[38%]" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(0, 49, 133, 0.78) 100%)' }} />
-        <div className="absolute inset-x-0 bottom-0 h-[18%]" style={{ background: 'linear-gradient(to bottom, transparent 0%, #003185 100%)' }} />
-      </div>
+      {/* Fades the banner image into the footer as one smooth blend: white haze, through a soft green wash, into the footer blue */}
+      <div
+        className="absolute inset-x-0 bottom-0 h-56 sm:h-72 pointer-events-none z-10"
+        style={{
+          background:
+            'linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.12) 18%, rgba(180,225,200,0.22) 38%, rgba(78,166,117,0.3) 55%, rgba(30,110,150,0.55) 72%, rgba(0,49,133,0.85) 88%, #003185 100%)',
+        }}
+      />
     </div>
   );
 }

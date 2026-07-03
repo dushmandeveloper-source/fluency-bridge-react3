@@ -15,10 +15,20 @@ export default function Footer() {
       className="text-white pt-10 sm:pt-12 pb-10 relative z-20 flex-1 flex flex-col justify-between"
       style={{ backgroundColor: 'var(--custom-blue-dark)' }}
     >
-      {/* Continues the banner's light-to-dark progression down through the footer, with a soft green echo near the top, deepening to black toward the bottom */}
+      {/* Continues the banner's blend into the footer: a soft cloudy wash of white/green/blue near the top, deepening to black toward the bottom */}
       <div
-        className="absolute inset-x-0 top-0 h-32 pointer-events-none"
-        style={{ background: 'linear-gradient(to bottom, rgba(78,166,117,0.14) 0%, transparent 100%)' }}
+        className="absolute inset-x-0 top-0 h-40 pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(to bottom, rgba(255,255,255,0.08) 0%, rgba(78,166,117,0.12) 45%, transparent 100%)',
+        }}
+      />
+      <div
+        className="absolute inset-0 pointer-events-none opacity-70 mix-blend-soft-light"
+        style={{
+          backgroundImage:
+            'radial-gradient(ellipse 60% 45% at 20% 0%, rgba(255,255,255,0.3), transparent 60%), radial-gradient(ellipse 50% 40% at 75% 10%, rgba(78,166,117,0.28), transparent 65%), radial-gradient(ellipse 55% 40% at 45% 100%, rgba(91,157,255,0.2), transparent 70%)',
+        }}
       />
       <div
         className="absolute inset-0 pointer-events-none"
