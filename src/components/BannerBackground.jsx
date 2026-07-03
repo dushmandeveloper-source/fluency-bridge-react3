@@ -31,7 +31,6 @@ export default function BannerBackground({
         className={`${layer} inset-0 w-full h-full bg-cover animate-bg-zoom opacity-90 z-0`}
         style={{ backgroundImage: `url(${image})`, backgroundPosition: zoomOrigin, transformOrigin: zoomOrigin }}
       />
-      {fixed && <div className={`absolute inset-0 z-0 ${overlayClassName}`} />}
       <div className={`${layer} inset-0 z-0 ${overlayClassName}`} />
       <ParticleField count={particleCount} />
 
