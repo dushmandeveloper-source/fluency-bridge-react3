@@ -109,6 +109,7 @@ export default function ContactUs() {
                 </label>
 
                 <label className="flex flex-col gap-1.5">
+                  <span className="text-white/80 text-xs font-bold uppercase tracking-wider">Message</span>
                   <textarea name="message" rows={4} placeholder="How can our team assist you?" className={`${inputClass} resize-none`} />
                 </label>
 
