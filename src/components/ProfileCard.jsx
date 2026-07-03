@@ -10,12 +10,12 @@ export default function ProfileCard({ name, role, image, pos, lines = [], backgr
 
   return (
     <div className="group liquid-glass relative rounded-2xl sm:rounded-[2rem] shadow-xl flex flex-col h-full overflow-hidden transition-shadow duration-300 ease-out hover:shadow-2xl">
-      <div className="relative w-full h-40 sm:h-52 md:h-60 bg-white flex items-center justify-center overflow-hidden shrink-0">
+      <div className="relative w-full h-56 sm:h-52 md:h-60 bg-white flex items-center justify-center overflow-hidden shrink-0">
         {image ? (
           <img
             src={image}
             alt={name}
-            style={{ objectPosition: pos ?? '50% top' }}
+            style={{ objectPosition: pos ?? '50% 15%' }}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
         ) : (
@@ -31,14 +31,14 @@ export default function ProfileCard({ name, role, image, pos, lines = [], backgr
 
       <div className="px-3 sm:px-5 md:px-6 pt-2.5 sm:pt-5 pb-2.5 sm:pb-6 flex flex-col gap-1.5 flex-1">
         <div>
-          <h4 className="sans-font text-xs sm:text-base md:text-lg font-black text-white leading-tight">{name}</h4>
-          <p className="text-[0.5rem] sm:text-[0.6rem] md:text-[0.65rem] font-bold uppercase tracking-wider" style={{ color: accent }}>
+          <h4 className="sans-font text-base sm:text-lg md:text-xl font-black text-white leading-tight">{name}</h4>
+          <p className="text-[0.65rem] sm:text-xs md:text-sm font-bold uppercase tracking-wider" style={{ color: accent }}>
             {role}
           </p>
         </div>
 
         {lines.length > 0 && (
-          <ul className="text-white/80 text-[0.5rem] sm:text-[0.6rem] md:text-[0.65rem] font-medium leading-relaxed space-y-1 mt-0.5">
+          <ul className="text-white/80 text-[0.7rem] sm:text-sm md:text-[0.9rem] font-medium leading-relaxed space-y-1 mt-0.5">
             {(expanded ? lines : lines.slice(0, 2)).map((line, idx) => (
               <li key={idx} className="flex gap-1.5">
                 <span style={{ color: accent }}>•</span>
@@ -52,8 +52,8 @@ export default function ProfileCard({ name, role, image, pos, lines = [], backgr
           <div className="flex flex-col gap-2.5 mt-1 pt-2.5 border-t border-white/10">
             {background.length > 0 && (
               <div>
-                <p className="text-white/50 text-[0.5rem] sm:text-[0.6rem] font-bold uppercase tracking-wider mb-1">Professional Background</p>
-                <ul className="text-white/85 text-[0.55rem] sm:text-[0.65rem] leading-relaxed space-y-1">
+                <p className="text-white/50 text-[0.65rem] sm:text-xs font-bold uppercase tracking-wider mb-1">Professional Background</p>
+                <ul className="text-white/85 text-[0.7rem] sm:text-sm leading-relaxed space-y-1">
                   {background.map((line, idx) => (
                     <li key={idx} className="flex gap-1.5">
                       <span style={{ color: accent }}>•</span>
@@ -65,7 +65,7 @@ export default function ProfileCard({ name, role, image, pos, lines = [], backgr
             )}
 
             {quote && (
-              <p className="text-white/85 text-[0.55rem] sm:text-[0.65rem] italic leading-relaxed border-l-2 pl-2.5" style={{ borderColor: accent }}>
+              <p className="text-white/85 text-[0.7rem] sm:text-sm italic leading-relaxed border-l-2 pl-2.5" style={{ borderColor: accent }}>
                 &ldquo;{quote}&rdquo;
               </p>
             )}
@@ -75,7 +75,7 @@ export default function ProfileCard({ name, role, image, pos, lines = [], backgr
         <button
           type="button"
           onClick={() => setExpanded((v) => !v)}
-          className="interactive-el mt-auto pt-2 sm:pt-3 inline-flex items-center justify-center gap-1.5 text-[0.6rem] sm:text-xs font-bold uppercase tracking-wider rounded-full py-2 sm:py-2.5 transition-all hover:gap-2.5"
+          className="interactive-el mt-auto pt-2 sm:pt-3 inline-flex items-center justify-center gap-1.5 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-full py-2 sm:py-2.5 transition-all hover:gap-2.5"
           style={{ color: accent, border: `1.5px solid ${accent}` }}
         >
           {expanded ? 'Show Less' : 'View More'}
