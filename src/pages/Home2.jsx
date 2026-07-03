@@ -525,10 +525,10 @@ export default function Home2() {
 
       {/* Fades the banner image into the footer's colour so the seam isn't visible */}
       <div
-        className="absolute inset-x-0 bottom-0 h-40 sm:h-56 pointer-events-none z-10"
+        className="absolute inset-x-0 bottom-0 h-20 sm:h-28 pointer-events-none z-10"
         style={{
           background:
-            'linear-gradient(to bottom, transparent 0%, rgba(0, 49, 133, 0.2) 40%, rgba(0, 49, 133, 0.55) 60%, rgba(0, 49, 133, 0.85) 80%, #003185 100%)',
+            'linear-gradient(to bottom, transparent 0%, rgba(0, 49, 133, 0.35) 45%, rgba(0, 49, 133, 0.75) 75%, #003185 100%)',
         }}
       />
     </BannerBackground>
