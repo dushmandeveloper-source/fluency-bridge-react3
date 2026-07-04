@@ -78,6 +78,18 @@ const ICONS = {
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
       d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
   ),
+  ear: (
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+      d="M8 14c0 2.21 1.79 4 4 4s4-1.79 4-4V9a4 4 0 00-8 0m4-7a7 7 0 017 7v5a7 7 0 01-14 0M8 14a4 4 0 004 4" />
+  ),
+  bolt: (
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+      d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13l0-8z" />
+  ),
+  waveform: (
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+      d="M3 12h2l2-7 3 14 3-11 2 4h5" />
+  ),
 };
 
 /* ─── Data – exact text from the PDF ─────────────────────────────── */
@@ -87,7 +99,7 @@ const STAGES = [
     num: '01',
     label: 'INPUT PHASE',
     title: 'Active Listening',
-    icon: ICONS.sound,
+    icon: ICONS.ear,
     accent: 'var(--custom-green)',
     description:
       'Candidates analyze native pacing, vowel stresses, and intonation flows rather than solitary words, training the auditory system to recognize natural speech patterns.',
@@ -105,7 +117,7 @@ const STAGES = [
     num: '03',
     label: 'ACTIVATION PHASE',
     title: 'Dynamic Execution',
-    icon: ICONS.play,
+    icon: ICONS.bolt,
     accent: 'var(--custom-green)',
     description:
       'Perform in mock corporate executive boards, negotiations, or community workshops, cementing bicultural confidence and lateral expression.',
@@ -157,7 +169,7 @@ const AI_FEATURES = [
     body: 'Acoustic analyzing measuring voice pacing, syllable stress ratios, and tonal dips.',
   },
   {
-    icon: ICONS.sound,
+    icon: ICONS.waveform,
     title: 'REAL-TIME TONE SHADOWING',
     body: 'Instantly matches vocal delivery speeds to standard executive levels to overcome speech anxiety.',
   },

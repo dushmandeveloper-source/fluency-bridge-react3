@@ -256,27 +256,14 @@ export default function Home2() {
                     <div className="flex flex-col flex-1 px-5 sm:px-6 pt-4 pb-4 gap-2.5">
                       <h3 className="sans-font text-xl sm:text-2xl font-black text-white leading-tight">{p.title}</h3>
                       <p className="text-white/90 text-sm sm:text-base leading-relaxed text-justify flex-1">{p.description}</p>
-                      <div className="mt-1 flex items-center gap-3">
-                        <a
-                          href={p.href}
-                          className="flex-1 inline-flex items-center justify-center gap-2 text-white font-bold text-sm py-3 px-6 rounded-xl transition-all hover:opacity-90 interactive-el"
-                          style={{ backgroundColor: p.color }}
-                        >
-                          {p.buttonText}
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                        </a>
-                        <a
-                          href={p.facebookHref}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${p.title} on Facebook`}
-                          className="shrink-0 flex items-center justify-center w-11 h-11 rounded-xl bg-white shadow-lg transition hover:opacity-80 interactive-el"
-                        >
-                          <svg className="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fill={p.color} d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                          </svg>
-                        </a>
-                      </div>
+                      <a
+                        href={p.href}
+                        className="mt-1 inline-flex items-center justify-center gap-2 text-white font-bold text-sm py-3 px-6 rounded-xl transition-all hover:opacity-90 interactive-el"
+                        style={{ backgroundColor: p.color }}
+                      >
+                        {p.buttonText}
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                      </a>
                     </div>
                   </div>
                 </div>

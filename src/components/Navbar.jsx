@@ -36,7 +36,7 @@ export default function Navbar({ route = 'home' }) {
     <nav className="fixed w-full z-50 top-4 sm:top-6 px-4 lg:px-8 xl:px-12 flex justify-between items-center gap-3 interactive-el">
       <div className="flex justify-start xl:flex-1">
         <a href="#/" className="flex items-center shrink-0 interactive-el" aria-label="Go to home">
-          <div className={`${isNzAcademic ? 'h-[4.5rem] w-[4.5rem] sm:h-20 sm:w-20 lg:h-[5.5rem] lg:w-[5.5rem]' : 'h-16 w-16 sm:h-[4.5rem] sm:w-[4.5rem] lg:h-20 lg:w-20'} rounded-full overflow-hidden shrink-0`}>
+          <div className={`${isNzAcademic ? 'h-20 w-20 sm:h-24 sm:w-24 lg:h-28 lg:w-28' : 'h-[4.5rem] w-[4.5rem] sm:h-20 sm:w-20 lg:h-24 lg:w-24'} rounded-full overflow-hidden shrink-0 shadow-lg`}>
             <img src={logo} alt={logoAlt} className="w-full h-full object-cover rounded-full" />
           </div>
         </a>
