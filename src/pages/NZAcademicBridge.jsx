@@ -26,7 +26,7 @@ const ICONS = {
 const MILESTONES = [
   {
     num: '01', title: 'Consultation', subtitle: 'Objective Profiling', icon: ICONS.globe, accent: 'var(--custom-green)',
-    description: 'Initial profiling and review of previous academic logs, previous engineering or bachelors transcripts, and strategic New Zealand migration opportunities.',
+    description: 'Initial profiling and review of previous academic qualifications, relevant past experiences, and strategic New Zealand migration opportunities.',
   },
   {
     num: '02', title: 'University Matching', subtitle: 'Pathways Navigation', icon: ICONS.cap, accent: 'var(--custom-blue-light)',
@@ -41,8 +41,8 @@ const MILESTONES = [
     description: 'Comprehensive reviews of student financial portfolios and visa letters, fully coordinated in collaboration with Licensed Immigration Advisers (LIA) to ensure maximum compliance.',
   },
   {
-    num: '05', title: 'Arrival Support', subtitle: 'Auckland Landing Support', icon: ICONS.plane, accent: 'var(--custom-green)',
-    description: 'Sincere in-person support in Auckland: airport guidelines, setting up local bank accounts, IRD tax registration, mobile network cards, and finding safe student houses.',
+    num: '05', title: 'Arrival Support', subtitle: 'New Zealand Landing Support', icon: ICONS.plane, accent: 'var(--custom-green)',
+    description: 'Sincere in-person support: airport guidelines, setting up local bank accounts, IRD tax registration, mobile network cards, and finding safe student accommodation.',
   },
   {
     num: '06', title: 'Career Coaching', subtitle: 'NZ Workforce Settlement', icon: ICONS.briefcase, accent: 'var(--custom-blue-light)',
@@ -69,8 +69,8 @@ const SERVICES = [
 ];
 
 const COMPLIANCE_POINTS = [
-  'Licensed Immigration Advisor Collaboration Only',
-  'Full Transparency: No Hidden Extra Commissions',
+  'Collaboration of Licensed Immigration Advisors Only',
+  'Full Transparency: No Hidden Charges to Students',
   'Student-First Course Placement Matching',
 ];
 
@@ -270,8 +270,8 @@ export default function NZAcademicBridge() {
               </div>
               <h3 className="sans-font text-xl sm:text-2xl font-black text-white leading-tight">Ethical Education Recruitment</h3>
               <p className="text-white/90 text-sm leading-relaxed text-justify">
-                NZ Academic Bridge operates strictly under the Education Code of Practice (Pastoral Care of Tertiary and
-                International Learners) and coordinates student claims in tandem with Licensed Immigration Advisers (LIA).
+                NZ Academic Bridge operates strictly under the Education (Pastoral Care of Tertiary and
+                International Learners) Code of Practice and the London Statement, and coordinates student claims in tandem with Licensed Immigration Advisers (LIA).
               </p>
               <div className="h-px bg-white/15" />
               <ul className="flex flex-col gap-3">
@@ -295,8 +295,8 @@ export default function NZAcademicBridge() {
               </p>
               <p className="text-white/90 text-sm leading-relaxed text-justify">
                 We operate on strict <strong className="text-white">Ethical Recruitment Standards</strong>. Our
-                consultancy is built on long-term relationships, tracking student success beyond enrollment to
-                settlement support in central Auckland, Christchurch, and beyond.
+                consultancy is built on long-term relationships, tracking student success beyond enrolment through
+                ongoing settlement support across New Zealand.
               </p>
               <p className="text-white/90 text-sm leading-relaxed text-justify">
                 All our institutional associations comply with Section 11 of the Immigration Advisers Licensing Act
@@ -351,7 +351,7 @@ export default function NZAcademicBridge() {
               <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-green-light)' }}>Your Signature to New Zealand</span>
               <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">We Make Your Dreams a Reality!</h2>
               <p className="text-white/90 text-sm sm:text-base max-w-xl">
-                Speak with a consultant today about your zero-cost pathway to studying, working, and settling in New Zealand.
+                Speak with one of our consultants today to discover the best possible pathway for studying, working, and settling in New Zealand.
               </p>
 
               {/* Contact info from the promo images */}

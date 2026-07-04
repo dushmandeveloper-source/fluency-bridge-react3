@@ -25,14 +25,14 @@ const CONSULTANTS = [
     quote: 'With a passion for education and global opportunities, I founded NZ Academic Bridge to help students achieve their dream of studying and building a successful future in New Zealand.',
   },
   {
-    id: 'wasana', name: 'Wasana Dilrukshi', role: 'Senior Academic Consultant', image: wasanaPhoto, accent: 'var(--custom-green)', pos: '50% 15%',
-    lines: ['Master of Technological Futures (MTF) — AcademyEX NZ', 'MSc Electrical Engineering — Univ. of Moratuwa', 'BSc (Hons) Electrical & Electronic Eng — Univ. of Peradeniya'],
-    background: ['8+ Years of Experience in Electronics Engineering, Research & Development', 'Former Senior Sensor Development Engineer at Contrinex', 'Experienced in product development, industrial sensors, testing, and innovation'],
+    id: 'rasika', name: 'Rasika Udugama', role: 'Senior Academic Consultant — Teaching Programs', image: rasikaPhoto, accent: 'var(--custom-blue-light)',
+    lines: ['Registered Teacher — Teaching Council of Aotearoa New Zealand', 'BSc Agriculture Technology & Management — University of Peradeniya', 'Postgraduate Diploma in Education — Open University of Sri Lanka'],
+    quote: 'I am passionate about empowering students to achieve their academic and career goals. I am here to guide and support you every step of the way on your journey to study and build a successful future in New Zealand.',
   },
   {
-    id: 'rasika', name: 'Rasika Udugama', role: 'Senior Academic Consultant — Teaching Programs', image: rasikaPhoto, accent: 'var(--custom-blue-light)',
-    lines: ['Registered Teacher — Teaching Council of Aotearoa NZ', 'BSc Agri Tech & Management — UoP', 'PGDE — OUSL'],
-    quote: 'I am passionate about empowering students to achieve their academic and career goals. I am here to guide and support you every step of the way on your journey to study and build a successful future in New Zealand.',
+    id: 'wasana', name: 'Wasana Dilrukshi', role: 'Senior Academic Consultant', image: wasanaPhoto, accent: 'var(--custom-green)', pos: '50% 15%',
+    lines: ['Master of Technological Futures (MTF) — AcademyEX New Zealand', 'MSc Electrical Engineering — University of Moratuwa', 'BSc (Hons) Electrical & Electronic Engineering — University of Peradeniya'],
+    quote: "Dedicated to providing the personalized guidance and dedicated support students need to navigate their educational journey. My passion is to guide you toward building a successful and fulfilling future in New Zealand. Let's achieve your academic aspirations together.",
   },
   {
     id: 'consultant5', name: 'Kelum Ponnamperuma', role: 'Senior Academic Consultant', image: consultant5Photo, accent: 'var(--custom-blue-light)',
@@ -41,7 +41,7 @@ const CONSULTANTS = [
   },
   {
     id: 'janaki', name: 'Janaki Wijerathna', role: 'Senior Academic Consultant', image: janakiPhoto, accent: 'var(--custom-green)',
-    lines: ['HNDE', 'BA Social Sciences (OUSL)', 'LA (CASS, AUK, NZ)'],
+    lines: ['HNDE', 'BA Social Sciences — Open University of Sri Lanka', 'LA (CASS, AUK, NZ)'],
     quote: 'I am passionate about helping students achieve their academic and career aspirations. With a strong academic background and years of experience, I am committed to providing personalized guidance and support at every step of your journey to success in New Zealand.',
   },
   {
