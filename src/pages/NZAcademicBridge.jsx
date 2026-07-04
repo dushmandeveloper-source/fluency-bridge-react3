@@ -127,7 +127,7 @@ export default function NZAcademicBridge() {
               colleges and major universities under rigorous compliance standards, with 100% free counseling.
             </p>
             <span className="text-white font-black text-xs sm:text-sm tracking-widest uppercase rounded-full px-5 py-2 shadow-lg" style={{ backgroundColor: 'var(--custom-blue)' }}>
-              Dream It. Plan It. Achieve It.
+              Dream It Plan It Achieve It
             </span>
           </div>
         </header>
