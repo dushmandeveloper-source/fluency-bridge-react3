@@ -126,7 +126,7 @@ export default function NZAcademicBridge() {
               Ethical academic placement for international students. We align your qualifications with first-tier NZ
               colleges and major universities under rigorous compliance standards, with 100% free counseling.
             </p>
-            <span className="text-white font-black text-sm sm:text-base uppercase tracking-wider py-3.5 px-8 rounded-full shadow-lg" style={{ backgroundColor: 'var(--custom-blue)' }}>
+            <span className="text-white font-black text-xs sm:text-sm tracking-widest uppercase rounded-full px-5 py-2 shadow-lg" style={{ backgroundColor: 'var(--custom-blue)' }}>
               Dream It. Plan It. Achieve It.
             </span>
           </div>
