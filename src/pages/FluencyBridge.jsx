@@ -3,7 +3,7 @@ import { animate } from 'animejs';
 import gsap from 'gsap';
 import BannerBackground from '../components/BannerBackground';
 import Reveal from '../components/Reveal';
-import heroBanner from '../assets/fluency-bridgebg.png';
+import heroBanner from '../assets/flency bridge background imagenewst  .jpeg';
 
 /* ─── Circular SVG ring progress ─────────────────────────────────── */
 function RingProgress({ value, size = 96, stroke = 7, color = 'var(--custom-green)', bg = 'rgba(255,255,255,0.08)' }) {
