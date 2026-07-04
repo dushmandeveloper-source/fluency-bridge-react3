@@ -71,7 +71,7 @@ export default function AboutUs() {
               A premier New Zealand-based education entity
             </h1>
             <p className="text-white/90 text-sm sm:text-base md:text-lg font-medium max-w-2xl leading-relaxed" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
-              Premium English coaching and ethical New Zealand education consultancy — driven by industry professionals.
+              Premium English coaching and ethical New Zealand education consultancy.
             </p>
           </div>
         </header>

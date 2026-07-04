@@ -21,7 +21,7 @@ export default function Hero2() {
               '0 0 8px rgba(78, 166, 117, 0.65), 0 0 8px rgba(0, 74, 204, 0.65), 0 0 20px rgba(0, 74, 204, 0.45), 0 2px 4px rgba(0, 0, 0, 0.3)',
           }}
         >
-          Premium English Coaching and Ethical New Zealand Education Consultancy driven by industry professionals.
+          Premium English Coaching and Ethical New Zealand Education Consultancy.
         </p>
       </div>
     </header>
