@@ -226,7 +226,7 @@ export default function Home2() {
         {/* ---------- Hero ---------- */}
         <header className="px-6 pt-24 pb-3 sm:pt-28 sm:pb-4">
           <div className="max-w-3xl mx-auto flex flex-col items-center text-center gap-5">
-            <p className="text-white/90 text-sm sm:text-base md:text-lg font-medium max-w-2xl leading-relaxed" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
+            <p className="text-white/90 text-xl sm:text-2xl md:text-3xl font-bold max-w-2xl leading-tight" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
               Premium English coaching and ethical New Zealand education consultancy — driven by industry professionals.
             </p>
           </div>
@@ -246,8 +246,8 @@ export default function Home2() {
                         <span className="block text-lg sm:text-xl font-black leading-none">{p.badge.value}</span>
                         <span className="block text-[8px] sm:text-[9px] uppercase tracking-wider font-bold leading-tight">{p.badge.label}</span>
                       </div>
-                      <div className="absolute top-3 left-3 w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg overflow-hidden">
-                        <img src={p.logo} alt={p.logoAlt} className="w-full h-full object-contain p-1.5" />
+                      <div className="absolute top-3 left-3 w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center shadow-lg overflow-hidden">
+                        <img src={p.logo} alt={p.logoAlt} className="w-full h-full object-cover rounded-full" />
                       </div>
                     </div>
                     <div className="flex flex-col flex-1 px-5 sm:px-6 pt-4 pb-4 gap-2.5">

@@ -3,9 +3,9 @@ import fluencyBridgeLogo from '../assets/fluency-bridge-logo.png';
 
 const NAV_LINKS = [
   { label: 'Home', href: '#/', route: 'home', color: 'var(--custom-blue)' },
+  { label: 'About Us', href: '#/about', route: 'about', color: 'var(--custom-green)' },
   { label: 'Fluency Bridge', href: '#/fluency-bridge', route: 'fluency-bridge', color: 'var(--custom-green)' },
   { label: 'NZ Academic Bridge', href: '#/nz-academic-bridge', route: 'nz-academic-bridge', color: 'var(--custom-blue)' },
-  { label: 'About Us', href: '#/about', route: 'about', color: 'var(--custom-green)' },
   { label: 'Consultant Team', href: '#/team', route: 'team', color: 'var(--custom-blue)' },
   { label: 'Contact Us', href: '#/contact', route: 'contact', color: 'var(--custom-green)' },
 ];
@@ -30,7 +30,7 @@ export default function Navbar({ route = 'home' }) {
   // so mid-size laptops never get a cramped/overlapping bar.
   return (
     <nav className="fixed w-full z-50 top-4 sm:top-6 px-4 lg:px-8 xl:px-12 flex justify-between items-center gap-3 interactive-el">
-      <div className="flex justify-start">
+      <div className="flex justify-start xl:flex-1">
         <a href="#/" className="flex items-center shrink-0 glass-nav py-2 px-4 sm:px-5 rounded-full interactive-el" aria-label="Go to home">
           <img src={fluencyBridgeLogo} alt="Fluency Bridge" className="h-9 sm:h-10 lg:h-12 object-contain" />
         </a>
@@ -39,7 +39,7 @@ export default function Navbar({ route = 'home' }) {
       {/* Hidden until xl: below that, the hamburger menu below handles navigation
           instead. On desktop the links sit directly on the banner (no glass pill);
           a soft text-shadow keeps them legible over the photo. */}
-      <div className="hidden xl:flex flex-1 justify-center min-w-0">
+      <div className="hidden xl:flex justify-center min-w-0 shrink-0">
         <div className={`rounded-full p-1.5 flex items-center transition-colors duration-300 ${scrolled ? 'glass-nav' : ''}`}>
           {NAV_LINKS.map((link, idx) => {
             const active = link.route === route;
@@ -50,8 +50,8 @@ export default function Navbar({ route = 'home' }) {
                   href={link.href}
                   className={
                     active
-                      ? 'text-white px-3.5 2xl:px-4 py-2 rounded-full font-bold text-xs 2xl:text-sm shadow-md transition whitespace-nowrap'
-                      : `px-2.5 2xl:px-3 py-2 text-xs 2xl:text-sm font-semibold transition hover:opacity-70 whitespace-nowrap ${scrolled ? 'text-slate-600' : 'text-white/90'}`
+                      ? 'text-white px-3.5 2xl:px-4 py-2 rounded-full font-bold text-sm 2xl:text-base shadow-md transition whitespace-nowrap'
+                      : `px-2.5 2xl:px-3 py-2 text-sm 2xl:text-base font-semibold transition hover:opacity-70 whitespace-nowrap ${scrolled ? 'text-slate-600' : 'text-white/90'}`
                   }
                   style={active ? { backgroundColor: link.color } : scrolled ? { color: link.color } : { textShadow: '0 1px 6px rgba(0,0,0,0.45)' }}
                 >
@@ -63,7 +63,7 @@ export default function Navbar({ route = 'home' }) {
         </div>
       </div>
 
-      <div className="flex items-center justify-end gap-2 sm:gap-3">
+      <div className="flex items-center justify-end gap-2 sm:gap-3 xl:flex-1">
         <a
           href="https://wa.me/642108631134"
           target="_blank"
@@ -106,8 +106,8 @@ export default function Navbar({ route = 'home' }) {
                 onClick={() => setMenuOpen(false)}
                 className={
                   active
-                    ? 'text-white px-4 py-2.5 rounded-xl font-bold text-sm shadow-md transition'
-                    : 'text-slate-600 px-4 py-2.5 rounded-xl text-sm font-semibold transition hover:opacity-70'
+                    ? 'text-white px-4 py-2.5 rounded-xl font-bold text-base shadow-md transition'
+                    : 'text-slate-600 px-4 py-2.5 rounded-xl text-base font-semibold transition hover:opacity-70'
                 }
                 style={active ? { backgroundColor: link.color } : { color: link.color }}
               >
