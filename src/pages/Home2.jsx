@@ -39,6 +39,7 @@ const PROGRAMS = [
     logo: fluencyBridgeLogo,
     logoAlt: 'Fluency Bridge logo',
     badge: { value: '100%', label: 'Natural Method' },
+    swapBadgeLogo: true,
     title: 'Fluency Bridge',
     description:
       'Elite frontline program focusing on high-performance English communication coaching for professionals and international students.',
