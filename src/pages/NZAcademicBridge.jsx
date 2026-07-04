@@ -271,7 +271,7 @@ export default function NZAcademicBridge() {
               <h3 className="sans-font text-xl sm:text-2xl font-black text-white leading-tight">Ethical Education Recruitment</h3>
               <p className="text-white/90 text-sm leading-relaxed text-justify">
                 NZ Academic Bridge operates strictly under the Education (Pastoral Care of Tertiary and
-                International Learners) Code of Practice and the London Statement, and coordinates student claims in tandem with Licensed Immigration Advisers (LIA).
+                International Learners) Code of Practice 2021 and the London Statement, and coordinates student claims in tandem with Licensed Immigration Advisers (LIA).
               </p>
               <div className="h-px bg-white/15" />
               <ul className="flex flex-col gap-3">

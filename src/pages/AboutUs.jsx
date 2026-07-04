@@ -32,7 +32,7 @@ const VISION_MISSION = [
 
 const COMPLIANCE = [
   'Fully compliant with New Zealand law',
-  'Aligned with the London Code of Practice 2021. London Statement',
+  'Aligned with the London Statement',
   'NZ Education (Pastoral Care) Guidelines for international students',
 ];
 
@@ -202,7 +202,7 @@ export default function AboutUs() {
               <p className="text-white/95 text-sm sm:text-base leading-relaxed text-justify">
                 We operate with absolute transparency and are fully compliant with New Zealand law. We stand firmly by an
                 ethical framework that strictly protects student rights. Our recruitment methodologies strictly align with
-                global benchmarks, including the London Code of Practice 2021. London Statement and the New Zealand Education (Pastoral
+                global benchmarks, including the London Statement and the New Zealand Education (Pastoral
                 Care) Guidelines for international students.
               </p>
               <ul className="flex flex-col gap-3 mt-1">
