@@ -44,7 +44,7 @@ const PROGRAMS = [
       'Elite frontline program focusing on high-performance English communication coaching for professionals and international students.',
     buttonText: 'Explore coaching',
     color: 'var(--custom-green)',
-    facebookHref: '#',
+    facebookHref: 'https://www.facebook.com/share/1QpNGEReAV/?mibextid=wwXIfr',
   },
   {
     id: 'nz-academic-bridge',
@@ -59,7 +59,7 @@ const PROGRAMS = [
       'Dedicated branding branch to execute international student recruitment, tertiary placement, and career transition consultancy.',
     buttonText: 'Explore consultancy',
     color: 'var(--custom-blue-light)',
-    facebookHref: '#',
+    facebookHref: 'https://www.facebook.com/share/1KrECNtYBq/?mibextid=wwXIfr',
   },
 ];
 
@@ -263,7 +263,7 @@ export default function Home2() {
                           style={{ backgroundColor: p.color }}
                         >
                           {p.buttonText}
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                         </a>
                         <a
                           href={p.facebookHref}
@@ -468,7 +468,7 @@ export default function Home2() {
                     {/* stars */}
                     <div className="flex gap-1">
                       {Array.from({ length: 5 }).map((_, s) => (
-                        <svg key={s} className="w-4 h-4" fill="var(--custom-green)" viewBox="0 0 20 20" aria-hidden="true">
+                        <svg key={s} className="w-5 h-5" fill="var(--custom-green)" viewBox="0 0 20 20" aria-hidden="true">
                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                         </svg>
                       ))}
@@ -525,7 +525,7 @@ export default function Home2() {
               <div className="flex flex-wrap justify-center gap-3 mt-2">
                 <a href="#/contact" className="inline-flex items-center gap-2 text-white font-bold text-sm py-3 px-7 rounded-xl transition-all hover:opacity-90 interactive-el" style={{ backgroundColor: 'var(--custom-blue)' }}>
                   Book Free Consultation
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                 </a>
                 <a href="#/team" className="inline-flex items-center gap-2 bg-white/15 border border-white/40 text-white font-bold text-sm py-3 px-7 rounded-xl transition-all hover:bg-white/25 interactive-el">
                   Meet Our Consultants

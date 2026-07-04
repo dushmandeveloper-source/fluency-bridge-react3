@@ -24,7 +24,7 @@ export default function CTABanner() {
             className="inline-flex items-center gap-2 bg-white text-slate-900 font-bold text-sm py-3 px-7 rounded-xl transition-all hover:opacity-90 interactive-el shrink-0"
           >
             Book Free Consultation
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </a>

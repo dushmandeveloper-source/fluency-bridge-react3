@@ -23,7 +23,7 @@ function Stars() {
   return (
     <div className="flex gap-0.5" style={{ color: 'var(--custom-green)' }}>
       {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+        <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
           <path d="M10 1.5l2.59 5.86 6.41.56-4.84 4.27 1.46 6.31L10 15.42l-5.62 3.08 1.46-6.31L1 7.92l6.41-.56L10 1.5z" />
         </svg>
       ))}

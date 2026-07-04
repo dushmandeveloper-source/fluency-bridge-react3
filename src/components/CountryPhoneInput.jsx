@@ -68,7 +68,7 @@ export default function CountryPhoneInput({ name = 'phone', defaultIso2 = 'nz', 
         >
           <img src={flagSrc(country.iso2)} alt="" width="22" height="16" className="w-[22px] h-4 object-cover rounded-[3px] shadow-sm" />
           <span className={`font-semibold tabular-nums ${glass ? 'text-white' : 'text-slate-900'}`}>{country.dial}</span>
-          <svg className={`w-3.5 h-3.5 transition-transform ${glass ? 'text-white/60' : 'text-slate-400'} ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className={`w-4 h-4 transition-transform ${glass ? 'text-white/60' : 'text-slate-400'} ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
