@@ -229,7 +229,7 @@ export default function Home2() {
 
         {/* ---------- Hero ---------- */}
         <header className="px-6 pt-24 pb-3 sm:pt-28 sm:pb-4">
-          <div className="max-w-3xl mx-auto flex flex-col items-center text-center gap-5">
+          <div className="max-w-4xl mx-auto flex flex-col items-start text-left gap-5">
             <p className="text-white/90 text-xl sm:text-2xl md:text-3xl font-bold max-w-2xl leading-tight" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
               Premium English coaching and ethical<br />
               New&nbsp;Zealand education consultancy.
