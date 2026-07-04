@@ -44,6 +44,7 @@ const PROGRAMS = [
       'Elite frontline program focusing on high-performance English communication coaching for professionals and international students.',
     buttonText: 'Explore coaching',
     color: 'var(--custom-green)',
+    facebookHref: '#',
   },
   {
     id: 'nz-academic-bridge',
@@ -52,11 +53,13 @@ const PROGRAMS = [
     logo: nzAcademicBridgeLogo,
     logoAlt: 'NZ Academic Bridge logo',
     badge: { value: '100%', label: 'Free Placement' },
+    swapBadgeLogo: true,
     title: 'NZ Academic Bridge',
     description:
       'Dedicated branding branch to execute international student recruitment, tertiary placement, and career transition consultancy.',
     buttonText: 'Explore consultancy',
     color: 'var(--custom-blue-light)',
+    facebookHref: '#',
   },
 ];
 
@@ -242,25 +245,38 @@ export default function Home2() {
                   <div className="liquid-glass relative h-full rounded-[2rem] shadow-2xl p-2.5 flex flex-col">
                     <div className="relative w-full h-32 sm:h-40 rounded-[1.5rem] overflow-hidden shrink-0">
                       <img src={p.image} alt={p.title} className="absolute inset-0 w-full h-full object-cover gsap-zoom" />
-                      <div className="absolute top-3 right-3 text-white px-3 py-2 rounded-xl shadow-lg text-center" style={{ backgroundColor: p.color }}>
+                      <div className={`absolute top-3 ${p.swapBadgeLogo ? 'left-3' : 'right-3'} text-white px-3 py-2 rounded-xl shadow-lg text-center`} style={{ backgroundColor: p.color }}>
                         <span className="block text-lg sm:text-xl font-black leading-none">{p.badge.value}</span>
                         <span className="block text-[8px] sm:text-[9px] uppercase tracking-wider font-bold leading-tight">{p.badge.label}</span>
                       </div>
-                      <div className="absolute top-3 left-3 w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center shadow-lg overflow-hidden">
+                      <div className={`absolute top-3 ${p.swapBadgeLogo ? 'right-3' : 'left-3'} w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center shadow-lg overflow-hidden`}>
                         <img src={p.logo} alt={p.logoAlt} className="w-full h-full object-cover rounded-full" />
                       </div>
                     </div>
                     <div className="flex flex-col flex-1 px-5 sm:px-6 pt-4 pb-4 gap-2.5">
                       <h3 className="sans-font text-xl sm:text-2xl font-black text-white leading-tight">{p.title}</h3>
                       <p className="text-white/90 text-sm sm:text-base leading-relaxed text-justify flex-1">{p.description}</p>
-                      <a
-                        href={p.href}
-                        className="mt-1 inline-flex items-center justify-center gap-2 text-white font-bold text-sm py-3 px-6 rounded-xl transition-all hover:opacity-90 interactive-el"
-                        style={{ backgroundColor: p.color }}
-                      >
-                        {p.buttonText}
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                      </a>
+                      <div className="mt-1 flex items-center gap-3">
+                        <a
+                          href={p.href}
+                          className="flex-1 inline-flex items-center justify-center gap-2 text-white font-bold text-sm py-3 px-6 rounded-xl transition-all hover:opacity-90 interactive-el"
+                          style={{ backgroundColor: p.color }}
+                        >
+                          {p.buttonText}
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                        </a>
+                        <a
+                          href={p.facebookHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${p.title} on Facebook`}
+                          className="shrink-0 flex items-center justify-center w-11 h-11 rounded-xl bg-white shadow-lg transition hover:opacity-80 interactive-el"
+                        >
+                          <svg className="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill={p.color} d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                          </svg>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -366,7 +382,7 @@ export default function Home2() {
                 <p className="text-white/95 text-sm sm:text-base leading-relaxed text-justify">
                   Over 15 years of diverse, international experience in the civil engineering industry. Currently
                   directing operations as a Construction Project Manager in New Zealand. He applies engineering precision
-                  and structured project management to global education,
+                  and project management skills to global education,
                   mentoring future leaders with a philosophy built on lived experience across all parent portfolios and
                   subsidiary branches.
                 </p>

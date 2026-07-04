@@ -32,7 +32,7 @@ const VISION_MISSION = [
 
 const COMPLIANCE = [
   'Fully compliant with New Zealand law',
-  'Aligned with the London Statement (London Code)',
+  'Aligned with the London Code of Practice 2021. London Statement',
   'NZ Education (Pastoral Care) Guidelines for international students',
 ];
 
@@ -68,7 +68,7 @@ export default function AboutUs() {
               Executive Leadership
             </span>
             <h1 className="sans-font text-3xl sm:text-5xl md:text-6xl font-black text-white leading-[1.1] tracking-tight" style={{ textShadow: '0 4px 24px rgba(0,0,0,0.45)' }}>
-              A premier New Zealand-based education enterprise
+              A premier New Zealand-based education entity
             </h1>
             <p className="text-white/90 text-sm sm:text-base md:text-lg font-medium max-w-2xl leading-relaxed" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
               Premium English coaching and ethical New Zealand education consultancy — driven by industry professionals.
@@ -174,7 +174,7 @@ export default function AboutUs() {
                 <p className="text-white/95 text-sm sm:text-base leading-relaxed text-justify">
                   Over 15 years of diverse, international experience in the civil engineering industry. Currently
                   directing operations as a Construction Project Manager in New Zealand. He applies engineering precision
-                  and structured project management to global education,
+                  and project management skills to global education,
                   mentoring future leaders with a philosophy built on lived experience across all parent portfolios and
                   subsidiary branches.
                 </p>
@@ -202,7 +202,7 @@ export default function AboutUs() {
               <p className="text-white/95 text-sm sm:text-base leading-relaxed text-justify">
                 We operate with absolute transparency and are fully compliant with New Zealand law. We stand firmly by an
                 ethical framework that strictly protects student rights. Our recruitment methodologies strictly align with
-                global benchmarks, including the London Statement (London Code) and the New Zealand Education (Pastoral
+                global benchmarks, including the London Code of Practice 2021. London Statement and the New Zealand Education (Pastoral
                 Care) Guidelines for international students.
               </p>
               <ul className="flex flex-col gap-3 mt-1">
@@ -219,7 +219,7 @@ export default function AboutUs() {
                 <p className="text-white/90 text-xs sm:text-sm leading-relaxed text-justify">
                   <span className="font-bold text-white">Institutional Note:</span> We are currently finalised to
                   integrate official Immigration New Zealand (INZ) / Education New Zealand agency certifications to
-                  officially badge our ecosystem for premium compliance.
+                  officially endorse our ecosystem for premium compliance.
                 </p>
               </div>
             </Reveal>

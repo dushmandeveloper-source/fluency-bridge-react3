@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import fluencyBridgeLogo from '../assets/fluency-bridge-logo.png';
+import fluencyBridgeLogo from '../assets/NZ01.png';
 
 const NAV_LINKS = [
   { label: 'Home', href: '#/', route: 'home', color: 'var(--custom-blue)' },
@@ -31,8 +31,10 @@ export default function Navbar({ route = 'home' }) {
   return (
     <nav className="fixed w-full z-50 top-4 sm:top-6 px-4 lg:px-8 xl:px-12 flex justify-between items-center gap-3 interactive-el">
       <div className="flex justify-start xl:flex-1">
-        <a href="#/" className="flex items-center shrink-0 glass-nav py-2 px-4 sm:px-5 rounded-full interactive-el" aria-label="Go to home">
-          <img src={fluencyBridgeLogo} alt="Fluency Bridge" className="h-9 sm:h-10 lg:h-12 object-contain" />
+        <a href="#/" className="flex items-center shrink-0 glass-nav py-2 px-2 rounded-full interactive-el" aria-label="Go to home">
+          <div className="h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 rounded-full overflow-hidden shrink-0">
+            <img src={fluencyBridgeLogo} alt="Fluency Bridge" className="w-full h-full object-cover rounded-full" />
+          </div>
         </a>
       </div>
 
