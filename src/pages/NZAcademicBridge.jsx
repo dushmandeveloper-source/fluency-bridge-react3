@@ -120,14 +120,14 @@ export default function NZAcademicBridge() {
               NZ Academic Bridge
             </span>
             <h1 className="sans-font text-3xl sm:text-5xl md:text-6xl font-black text-white leading-[1.1] tracking-tight" style={{ textShadow: '0 4px 24px rgba(0,0,0,0.45)' }}>
-              Your Bridge to <span style={{ color: 'var(--custom-blue)', textShadow: '0 2px 10px rgba(0,0,0,0.4)' }}>New Zealand</span> Education.
+              Your Bridge to <span style={{ color: 'var(--custom-blue)', textShadow: '0 2px 10px rgba(0,0,0,0.4)' }}>New Zealand</span> Education
             </h1>
             <p className="text-white/90 text-sm sm:text-base md:text-lg font-medium max-w-2xl leading-relaxed" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
               Ethical academic placement for international students. We align your qualifications with first-tier NZ
               colleges and major universities under rigorous compliance standards, with 100% free counseling.
             </p>
             <span className="text-white font-black text-xs sm:text-sm tracking-widest uppercase rounded-full px-5 py-2 shadow-lg" style={{ backgroundColor: 'var(--custom-blue)' }}>
-              Dream It Plan It Achieve It
+              Dream It. Plan It. Achieve It.
             </span>
           </div>
         </header>
