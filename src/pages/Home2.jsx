@@ -227,10 +227,10 @@ export default function Home2() {
       <main className="bright-banner-glass relative z-20 w-full">
 
         {/* ---------- Hero ---------- */}
-        <header className="px-6 pt-24 pb-3 sm:pt-28 sm:pb-4">
-          <div className="max-w-3xl mx-auto flex flex-col items-center text-center gap-5">
+        <header className="px-6 lg:px-8 xl:px-12 pt-24 pb-3 sm:pt-28 sm:pb-4">
+          <div className="max-w-3xl flex flex-col items-start text-left gap-5">
             <p className="text-white/90 text-xl sm:text-2xl md:text-3xl font-bold max-w-2xl leading-tight" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
-              Premium English coaching and ethical New Zealand education consultancy.
+              Premium English coaching and ethical New&nbsp;Zealand education consultancy.
             </p>
           </div>
         </header>
