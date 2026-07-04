@@ -3,7 +3,7 @@ import { animate } from 'animejs';
 import gsap from 'gsap';
 import BannerBackground from '../components/BannerBackground';
 import Reveal from '../components/Reveal';
-import heroBanner from '../assets/flency bridge background image .jpeg';
+import heroBanner from '../assets/fluency-bridgebg.png';
 
 /* ─── Circular SVG ring progress ─────────────────────────────────── */
 function RingProgress({ value, size = 96, stroke = 7, color = 'var(--custom-green)', bg = 'rgba(255,255,255,0.08)' }) {
@@ -169,8 +169,8 @@ const AI_FEATURES = [
 ];
 
 const ROADMAP = [
-  { step: '01', title: 'NZQA Institute', text: 'Transitioning into a fully registered NZQA Institute.', accent: 'var(--custom-green)' },
-  { step: '02', title: 'Mobile Application', text: 'An advanced app with proprietary speech-evaluation metrics.', accent: 'var(--custom-blue-light)' },
+  { step: '01', title: 'Mobile Application', text: 'An advanced app with proprietary speech-evaluation metrics.', accent: 'var(--custom-blue-light)' },
+  { step: '02', title: 'NZQA Institute', text: 'Transitioning into a fully registered NZQA Institute.', accent: 'var(--custom-green)' },
   { step: '03', title: 'CEFR Qualifications', text: 'Elite qualifications mapped directly to global CEFR benchmarks.', accent: 'var(--custom-green)' },
 ];
 
@@ -656,6 +656,27 @@ export default function FluencyBridge() {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ─── The Tech Edge & The F-BEST Exam ────────────────────── */}
+        <section className="py-6 sm:py-9">
+          <div className="max-w-4xl mx-auto px-6">
+            <Reveal className="reveal liquid-glass rounded-3xl p-8 sm:p-10 flex flex-col gap-4">
+              <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--custom-blue-light)' }}>Innovation Pipeline</span>
+              <h2 className="sans-font text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight">The Tech Edge &amp; The F-BEST Exam</h2>
+              <p className="text-white/90 text-sm sm:text-base leading-relaxed text-justify">
+                Our upcoming mobile ecosystem acts as a digital speech accelerator, providing shadowing and mimicking
+                modules for real-time accent, rhythm, and pacing calibration, supported by automated performance analytics.
+              </p>
+              <p className="text-white/90 text-sm sm:text-base leading-relaxed text-justify">
+                As part of our long-term vision to align with CEFR standards, we are developing the F-BEST (Fluency
+                Bridge English Skills Test). Designed as a future alternative to internationally recognised English
+                proficiency examinations such as IELTS and PTE, the F-BEST exam will seek formal validation and
+                recognition from the New Zealand Qualifications Authority (NZQA), providing students with an
+                internationally competitive and accredited qualification under Fluency Bridge Global Limited.
+              </p>
+            </Reveal>
           </div>
         </section>
 

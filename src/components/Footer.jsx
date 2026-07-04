@@ -1,5 +1,6 @@
 
 import fluencyBridgeLogo from '../assets/NZ01.png';
+import nzAcademicBridgeLogo from '../assets/NZ02.png';
 
 const BRANCHES = ['Fluency Bridge Coaching', 'NZ Academic Bridge'];
 const QUICK_LINKS = [
@@ -9,7 +10,17 @@ const QUICK_LINKS = [
   { label: 'Contact Us', href: '#/contact' },
 ];
 
-export default function Footer() {
+const FACEBOOK_HREFS = {
+  'fluency-bridge': 'https://www.facebook.com/share/1QpNGEReAV/?mibextid=wwXIfr',
+  'nz-academic-bridge': 'https://www.facebook.com/share/1KrECNtYBq/?mibextid=wwXIfr',
+};
+
+export default function Footer({ route }) {
+  const isFluencyBridgePage = route === 'fluency-bridge';
+  const isNzAcademicPage = route === 'nz-academic-bridge' || route === 'team';
+  const logo = isNzAcademicPage ? nzAcademicBridgeLogo : fluencyBridgeLogo;
+  const logoAlt = isNzAcademicPage ? 'NZ Academic Bridge' : 'Fluency Bridge';
+  const facebookHref = FACEBOOK_HREFS[route === 'team' ? 'nz-academic-bridge' : route] ?? FACEBOOK_HREFS['fluency-bridge'];
   return (
     <footer
       className="text-white pt-10 sm:pt-12 pb-10 relative z-20 flex-1 flex flex-col justify-between"
@@ -26,11 +37,11 @@ export default function Footer() {
         <div>
           {/* Logo + company name mirrors the header branding; white border and layered drop-shadows make it stand out against the dark footer */}
           <a href="#/" className="flex items-center gap-3 mb-5 interactive-el" aria-label="Go to home">
-            <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-white border-2 border-white flex items-center justify-center overflow-hidden p-2 shrink-0 drop-shadow-[0_0_14px_rgba(255,255,255,1)] drop-shadow-[0_0_28px_rgba(255,255,255,0.85)] drop-shadow-[0_0_45px_rgba(255,255,255,0.6)]">
+            <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-full overflow-hidden shrink-0">
               <img
-                src={fluencyBridgeLogo}
-                alt="Fluency Bridge"
-                className="w-full h-full object-contain"
+                src={logo}
+                alt={logoAlt}
+                className="w-full h-full object-cover rounded-full"
               />
             </div>
             <span className="font-black text-sm tracking-wide leading-tight">Fluency Bridge Global Limited</span>
@@ -40,41 +51,45 @@ export default function Footer() {
           </p>
           <p className="text-xs text-white mb-6 font-bold uppercase tracking-wider">New Zealand Registered</p>
           <div className="flex gap-3">
-            <a href="https://www.facebook.com/share/1QpNGEReAV/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex items-center justify-center w-9 h-9 rounded-full bg-white hover:opacity-80 transition interactive-el">
+            <a href={facebookHref} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex items-center justify-center w-9 h-9 rounded-full bg-white hover:opacity-80 transition interactive-el">
               <svg className="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
                 <path fill="#1877F2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
               </svg>
             </a>
-            <a href="#" aria-label="LinkedIn" className="flex items-center justify-center w-9 h-9 rounded-full bg-white hover:opacity-80 transition interactive-el">
-              <svg className="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
-                <path fill="#0A66C2" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </a>
-            <a href="https://www.instagram.com/fluency_bridge/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex items-center justify-center w-9 h-9 rounded-full bg-white hover:opacity-80 transition interactive-el">
-              <svg className="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
-                <defs>
-                  <radialGradient id="igGradient" cx="30%" cy="107%" r="150%">
-                    <stop offset="0%" stopColor="#fdf497"/>
-                    <stop offset="5%" stopColor="#fdf497"/>
-                    <stop offset="45%" stopColor="#fd5949"/>
-                    <stop offset="60%" stopColor="#d6249f"/>
-                    <stop offset="90%" stopColor="#285AEB"/>
-                  </radialGradient>
-                </defs>
-                <path fill="url(#igGradient)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-              </svg>
-            </a>
-            <a href="https://www.youtube.com/channel/UCerz2yHrXmeXdYS0a5J5M_w" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="flex items-center justify-center w-9 h-9 rounded-full bg-white hover:opacity-80 transition interactive-el">
-              <svg className="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
-                <path fill="#FF0000" d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/>
-                <path fill="#FFFFFF" d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-              </svg>
-            </a>
-            <a href="#" aria-label="TikTok" className="flex items-center justify-center w-9 h-9 rounded-full bg-white hover:opacity-80 transition interactive-el">
-              <svg className="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
-                <path fill="#000000" d="M16.6 5.82c-1.05-.94-1.66-2.24-1.66-3.68h-3.14v13.8c0 1.55-1.26 2.8-2.8 2.8s-2.8-1.25-2.8-2.8 1.26-2.8 2.8-2.8c.28 0 .55.04.8.12V9.9a6 6 0 00-.8-.05c-3.28 0-5.94 2.66-5.94 5.94S6.72 21.73 10 21.73s5.94-2.66 5.94-5.94V9.14a8.9 8.9 0 005.06 1.57V7.57a5.4 5.4 0 01-4.4-1.75z"/>
-              </svg>
-            </a>
+            {!isFluencyBridgePage && (
+              <>
+                <a href="#" aria-label="LinkedIn" className="flex items-center justify-center w-9 h-9 rounded-full bg-white hover:opacity-80 transition interactive-el">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="#0A66C2" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
+                <a href="https://www.instagram.com/fluency_bridge/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex items-center justify-center w-9 h-9 rounded-full bg-white hover:opacity-80 transition interactive-el">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
+                    <defs>
+                      <radialGradient id="igGradient" cx="30%" cy="107%" r="150%">
+                        <stop offset="0%" stopColor="#fdf497"/>
+                        <stop offset="5%" stopColor="#fdf497"/>
+                        <stop offset="45%" stopColor="#fd5949"/>
+                        <stop offset="60%" stopColor="#d6249f"/>
+                        <stop offset="90%" stopColor="#285AEB"/>
+                      </radialGradient>
+                    </defs>
+                    <path fill="url(#igGradient)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                  </svg>
+                </a>
+                <a href="https://www.youtube.com/channel/UCerz2yHrXmeXdYS0a5J5M_w" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="flex items-center justify-center w-9 h-9 rounded-full bg-white hover:opacity-80 transition interactive-el">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="#FF0000" d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/>
+                    <path fill="#FFFFFF" d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                </a>
+                <a href="#" aria-label="TikTok" className="flex items-center justify-center w-9 h-9 rounded-full bg-white hover:opacity-80 transition interactive-el">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="#000000" d="M16.6 5.82c-1.05-.94-1.66-2.24-1.66-3.68h-3.14v13.8c0 1.55-1.26 2.8-2.8 2.8s-2.8-1.25-2.8-2.8 1.26-2.8 2.8-2.8c.28 0 .55.04.8.12V9.9a6 6 0 00-.8-.05c-3.28 0-5.94 2.66-5.94 5.94S6.72 21.73 10 21.73s5.94-2.66 5.94-5.94V9.14a8.9 8.9 0 005.06 1.57V7.57a5.4 5.4 0 01-4.4-1.75z"/>
+                  </svg>
+                </a>
+              </>
+            )}
           </div>
         </div>
 

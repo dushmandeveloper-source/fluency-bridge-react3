@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import fluencyBridgeLogo from '../assets/NZ01.png';
+import nzAcademicBridgeLogo from '../assets/NZ02.png';
 
 const NAV_LINKS = [
   { label: 'Home', href: '#/', route: 'home', color: 'var(--custom-blue)' },
@@ -13,6 +14,9 @@ const NAV_LINKS = [
 export default function Navbar({ route = 'home' }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const isNzAcademic = route === 'nz-academic-bridge' || route === 'team';
+  const logo = isNzAcademic ? nzAcademicBridgeLogo : fluencyBridgeLogo;
+  const logoAlt = isNzAcademic ? 'NZ Academic Bridge' : 'Fluency Bridge';
 
   // On desktop the centre links have no glass pill so they read cleanly over the
   // banner. Once the page scrolls they can pass over white content, so fade the
@@ -31,9 +35,9 @@ export default function Navbar({ route = 'home' }) {
   return (
     <nav className="fixed w-full z-50 top-4 sm:top-6 px-4 lg:px-8 xl:px-12 flex justify-between items-center gap-3 interactive-el">
       <div className="flex justify-start xl:flex-1">
-        <a href="#/" className="flex items-center shrink-0 glass-nav py-2 px-2 rounded-full interactive-el" aria-label="Go to home">
-          <div className="h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 rounded-full overflow-hidden shrink-0">
-            <img src={fluencyBridgeLogo} alt="Fluency Bridge" className="w-full h-full object-cover rounded-full" />
+        <a href="#/" className="flex items-center shrink-0 interactive-el" aria-label="Go to home">
+          <div className={`${isNzAcademic ? 'h-[4.5rem] w-[4.5rem] sm:h-20 sm:w-20 lg:h-[5.5rem] lg:w-[5.5rem]' : 'h-16 w-16 sm:h-[4.5rem] sm:w-[4.5rem] lg:h-20 lg:w-20'} rounded-full overflow-hidden shrink-0`}>
+            <img src={logo} alt={logoAlt} className="w-full h-full object-cover rounded-full" />
           </div>
         </a>
       </div>

@@ -249,7 +249,7 @@ export default function Home2() {
                         <span className="block text-lg sm:text-xl font-black leading-none">{p.badge.value}</span>
                         <span className="block text-[8px] sm:text-[9px] uppercase tracking-wider font-bold leading-tight">{p.badge.label}</span>
                       </div>
-                      <div className={`absolute top-3 ${p.swapBadgeLogo ? 'right-3' : 'left-3'} w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center shadow-lg overflow-hidden`}>
+                      <div className={`absolute top-3 ${p.swapBadgeLogo ? 'right-3' : 'left-3'} ${p.id === 'nz-academic-bridge' ? 'w-20 h-20 sm:w-24 sm:h-24' : 'w-[4.5rem] h-[4.5rem] sm:w-[5.5rem] sm:h-[5.5rem]'} rounded-full flex items-center justify-center shadow-lg overflow-hidden`}>
                         <img src={p.logo} alt={p.logoAlt} className="w-full h-full object-cover rounded-full" />
                       </div>
                     </div>

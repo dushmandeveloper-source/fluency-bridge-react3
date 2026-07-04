@@ -6,7 +6,7 @@ import Reveal from '../components/Reveal';
 import ceoPhoto from '../assets/team-ceo.png';
 import aboutBanner from '../assets/banner  new.png';
 import ourStoryImage from '../assets/our-story.png';
-import ourPromiseImage from '../assets/our-promise.png';
+import ourPromiseImage from '../assets/endorsement.jpg';
 
 // About Us — glassmorphism (liquid-glass) text panels floating over the shared
 // fixed banner image. BannerBackground (fixed) supplies the zooming photo, dark
@@ -191,7 +191,7 @@ export default function AboutUs() {
                 <div className="absolute -inset-3 rounded-[2rem] opacity-25 blur-2xl" style={{ background: 'linear-gradient(135deg, var(--custom-green), var(--custom-blue))' }} />
                 <div className="liquid-glass relative h-full min-h-[18rem] rounded-[2rem] overflow-hidden shadow-2xl p-2.5">
                   <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden">
-                    <img src={ourPromiseImage} alt="Students collaborating in a study group" className="absolute inset-0 w-full h-full object-cover gsap-zoom" />
+                    <img src={ourPromiseImage} alt="Official immigration and university admissions documentation being signed" className="absolute inset-0 w-full h-full object-cover gsap-zoom" />
                   </div>
                 </div>
               </div>

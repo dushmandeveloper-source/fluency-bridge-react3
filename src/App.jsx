@@ -29,7 +29,7 @@ export default function App() {
 
       <Page />
 
-      <Footer />
+      <Footer route={route} />
     </div>
   );
 }
