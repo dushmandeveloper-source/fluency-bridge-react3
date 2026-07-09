@@ -57,7 +57,7 @@ export default function Footer({ route }) {
                 className="w-full h-full object-cover rounded-full"
               />
             </div>
-            <span className="font-black text-sm tracking-wide leading-tight">Fluency Bridge Global Limited</span>
+            <span className="font-black text-sm tracking-wide leading-tight">{isNzAcademicPage ? 'NZ Academic Bridge' : 'Fluency Bridge Global Limited'}</span>
           </a>
           <p className="text-sm text-white mb-4 leading-relaxed font-medium">
             Architecting Global Futures through elite English coaching and ethical NZ education consultancy.
