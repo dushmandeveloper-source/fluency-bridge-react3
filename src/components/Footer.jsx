@@ -15,11 +15,25 @@ const FACEBOOK_HREFS = {
   'nz-academic-bridge': 'https://www.facebook.com/share/1KrECNtYBq/?mibextid=wwXIfr',
 };
 
+// Facebook: NZ Academic Bridge page owns nz-academic-bridge + team (consultants);
+// Fluency Bridge page owns home, about, fluency-bridge, and contact.
+const NZ_ACADEMIC_FACEBOOK_ROUTES = new Set(['nz-academic-bridge', 'team']);
+
+const INSTAGRAM_HREFS = {
+  'fluency-bridge': 'https://www.instagram.com/fluency_bridge/',
+  'nz-academic-bridge': 'https://www.instagram.com/nzacademicbridge?igsh=MXR0dmQ2OGNocTlobQ==',
+};
+
+// Instagram: NZ Academic Bridge owns nz-academic-bridge, team (consultants), and contact;
+// Fluency Bridge owns home, about, and fluency-bridge.
+const NZ_ACADEMIC_INSTAGRAM_ROUTES = new Set(['nz-academic-bridge', 'team', 'contact']);
+
 export default function Footer({ route }) {
   const isNzAcademicPage = route === 'nz-academic-bridge' || route === 'team';
   const logo = isNzAcademicPage ? nzAcademicBridgeLogo : fluencyBridgeLogo;
   const logoAlt = isNzAcademicPage ? 'NZ Academic Bridge' : 'Fluency Bridge';
-  const facebookHref = FACEBOOK_HREFS[route === 'team' ? 'nz-academic-bridge' : route] ?? FACEBOOK_HREFS['fluency-bridge'];
+  const facebookHref = NZ_ACADEMIC_FACEBOOK_ROUTES.has(route) ? FACEBOOK_HREFS['nz-academic-bridge'] : FACEBOOK_HREFS['fluency-bridge'];
+  const instagramHref = NZ_ACADEMIC_INSTAGRAM_ROUTES.has(route) ? INSTAGRAM_HREFS['nz-academic-bridge'] : INSTAGRAM_HREFS['fluency-bridge'];
   return (
     <footer
       className="text-white pt-10 sm:pt-12 pb-10 relative z-20 flex-1 flex flex-col justify-between"
@@ -60,7 +74,7 @@ export default function Footer({ route }) {
                 <path fill="#0A66C2" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
               </svg>
             </a>
-            <a href="https://www.instagram.com/fluency_bridge/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex items-center justify-center w-9 h-9 rounded-full bg-white hover:opacity-80 transition interactive-el">
+            <a href={instagramHref} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex items-center justify-center w-9 h-9 rounded-full bg-white hover:opacity-80 transition interactive-el">
               <svg className="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
                 <defs>
                   <radialGradient id="igGradient" cx="30%" cy="107%" r="150%">
