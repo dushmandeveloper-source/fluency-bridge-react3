@@ -215,13 +215,6 @@ export default function AboutUs() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-2 rounded-2xl border-l-4 bg-white/10 p-4 sm:p-5" style={{ borderColor: 'var(--custom-blue-light)' }}>
-                <p className="text-white/90 text-xs sm:text-sm leading-relaxed text-justify">
-                  <span className="font-bold text-white">Institutional Note:</span> We are currently finalised to
-                  integrate official Immigration New Zealand (INZ) / Education New Zealand agency certifications to
-                  officially endorse our ecosystem for premium compliance.
-                </p>
-              </div>
             </Reveal>
           </div>
         </section>
