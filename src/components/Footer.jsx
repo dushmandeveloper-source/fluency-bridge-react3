@@ -80,7 +80,7 @@ export default function Footer({ route }) {
                 <path fill="#FFFFFF" d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
             </a>
-            <a href="#" aria-label="TikTok" className="flex items-center justify-center w-9 h-9 rounded-full bg-white hover:opacity-80 transition interactive-el">
+            <a href="https://www.tiktok.com/@fluency_bridge_global?_r=1&_t=ZS-97mAUfnrdRd" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="flex items-center justify-center w-9 h-9 rounded-full bg-white hover:opacity-80 transition interactive-el">
               <svg className="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
                 <path fill="#000000" d="M16.6 5.82c-1.05-.94-1.66-2.24-1.66-3.68h-3.14v13.8c0 1.55-1.26 2.8-2.8 2.8s-2.8-1.25-2.8-2.8 1.26-2.8 2.8-2.8c.28 0 .55.04.8.12V9.9a6 6 0 00-.8-.05c-3.28 0-5.94 2.66-5.94 5.94S6.72 21.73 10 21.73s5.94-2.66 5.94-5.94V9.14a8.9 8.9 0 005.06 1.57V7.57a5.4 5.4 0 01-4.4-1.75z"/>
               </svg>
