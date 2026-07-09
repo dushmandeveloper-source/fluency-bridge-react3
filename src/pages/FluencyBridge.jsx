@@ -138,7 +138,7 @@ const OUTCOMES = [
   {
     icon: ICONS.shield,
     title: 'Bold Confidence Building',
-    body: 'Overcome immediate performance anxiety during executive boardrooms, sales negotiations, and community dinners.',
+    body: 'Overcome immediate performance anxiety during executive boardrooms, sales negotiations, and social settings.',
   },
   {
     icon: ICONS.briefcase,
