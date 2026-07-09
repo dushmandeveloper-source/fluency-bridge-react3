@@ -265,11 +265,10 @@ export default function NZAcademicBridge() {
           <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             <Reveal className="reveal liquid-glass relative rounded-3xl p-8 sm:p-9 flex flex-col gap-5 overflow-hidden">
               <span className="absolute top-0 left-0 right-0 h-1.5" style={{ background: 'linear-gradient(to right, var(--custom-green), var(--custom-blue-light))' }} />
-              <div className="flex items-center justify-between gap-3">
+              <div className="flex items-center gap-3">
                 <span className="text-[0.65rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full text-white" style={{ backgroundColor: 'var(--custom-green)' }}>
                   Compliance Verification
                 </span>
-                <span className="text-white/40 text-xs font-mono">IAdvisors #20078</span>
               </div>
               <h3 className="sans-font text-xl sm:text-2xl font-black text-white leading-tight">Ethical Education Recruitment</h3>
               <p className="text-white/90 text-sm leading-relaxed text-justify">
