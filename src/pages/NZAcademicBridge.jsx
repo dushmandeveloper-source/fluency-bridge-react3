@@ -302,7 +302,7 @@ export default function NZAcademicBridge() {
               </p>
               <p className="text-white/90 text-sm leading-relaxed text-justify">
                 All our institutional associations comply with Section 11 of the Immigration Advisers Licensing Act
-                2007. We never provide unlicensed migration advice, maintaining a pristine registry with zero clearance
+                2007. We never provide unlicensed immigration advice, maintaining a pristine registry with zero clearance
                 delays.
               </p>
             </Reveal>
