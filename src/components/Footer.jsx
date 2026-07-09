@@ -49,7 +49,7 @@ export default function Footer({ route }) {
         {/* Four equal columns keep the gaps even and the block visually centered */}
         <div>
           {/* Logo + company name mirrors the header branding; white border and layered drop-shadows make it stand out against the dark footer */}
-          <a href="#/" className="flex items-center gap-3 mb-5 interactive-el" aria-label="Go to home">
+          <a href={isNzAcademicPage ? '#/nz-academic-bridge' : '#/'} className="flex items-center gap-3 mb-5 interactive-el" aria-label={isNzAcademicPage ? 'Go to NZ Academic Bridge' : 'Go to home'}>
             <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-full overflow-hidden shrink-0">
               <img
                 src={logo}

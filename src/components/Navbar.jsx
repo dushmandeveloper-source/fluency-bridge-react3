@@ -17,6 +17,8 @@ export default function Navbar({ route = 'home' }) {
   const isNzAcademic = route === 'nz-academic-bridge' || route === 'team';
   const logo = isNzAcademic ? nzAcademicBridgeLogo : fluencyBridgeLogo;
   const logoAlt = isNzAcademic ? 'NZ Academic Bridge' : 'Fluency Bridge';
+  const logoHref = isNzAcademic ? '#/nz-academic-bridge' : '#/';
+  const logoAriaLabel = isNzAcademic ? 'Go to NZ Academic Bridge' : 'Go to home';
 
   // On desktop the centre links have no glass pill so they read cleanly over the
   // banner. Once the page scrolls they can pass over white content, so fade the
@@ -35,7 +37,7 @@ export default function Navbar({ route = 'home' }) {
   return (
     <nav className="fixed w-full z-50 top-4 sm:top-6 px-4 lg:px-8 xl:px-12 flex justify-between items-center gap-3 interactive-el">
       <div className="flex justify-start xl:flex-1">
-        <a href="#/" className="flex items-center shrink-0 interactive-el" aria-label="Go to home">
+        <a href={logoHref} className="flex items-center shrink-0 interactive-el" aria-label={logoAriaLabel}>
           <div className={`${isNzAcademic ? 'h-20 w-20 sm:h-24 sm:w-24 lg:h-28 lg:w-28' : 'h-[4.5rem] w-[4.5rem] sm:h-20 sm:w-20 lg:h-24 lg:w-24'} rounded-full overflow-hidden shrink-0 shadow-lg`}>
             <img src={logo} alt={logoAlt} className="w-full h-full object-cover rounded-full" />
           </div>
