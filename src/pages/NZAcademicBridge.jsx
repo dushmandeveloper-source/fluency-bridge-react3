@@ -85,7 +85,7 @@ const FAQS = [
   },
   {
     q: 'Does the company offer in-country settlement support?',
-    a: 'Absolutely. We believe our relationship begins, rather than ends, when you land. Our NZ Academic Bridge program includes comprehensive in-country arrival briefings, Auckland airport guidelines, tax setup (IRD number), banking facilitation, CV translation to NZ styles, and community connections.',
+    a: 'Absolutely. We believe our relationship begins, rather than ends, when you land. Our NZ Academic Bridge program includes comprehensive in-country arrival briefings, airport guidelines, tax setup (IRD number), banking facilitation, CV translation to NZ styles, and community connections.',
   },
 ];
 
